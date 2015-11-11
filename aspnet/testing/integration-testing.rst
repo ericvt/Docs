@@ -7,7 +7,7 @@ Integration testing ensures that an application's components function correctly 
 In this article:
   - `Introduction to Integration Testing`_
   - `Integration Testing ASP.NET`_
-  - `Refactoring`_
+  - `Refactoring to use Middleware`_
 
 
 `Download sample from GitHub <https://github.com/aspnet/docs/tree/master/aspnet/testing/integration-testing/sample>`_. 
@@ -30,7 +30,7 @@ To get set up to run integration tests, you'll need to create a test project, re
 
 The Test Host
 ^^^^^^^^^^^^^
-ASP.NET includes a test host that can be added to integration test projects and used to host ASP.NET applications, serving test requests without the need for  real web host. The provided sample includes an integration test project which has been configured to use `xUnit <https://xunit.github.io/>`_ and the Test Host, as you can see from this excerpt from its ``project.json`` file:
+ASP.NET includes a test host that can be added to integration test projects and used to host ASP.NET applications, serving test requests without the need for a real web host. The provided sample includes an integration test project which has been configured to use `xUnit <https://xunit.github.io/>`_ and the Test Host, as you can see from this excerpt from its ``project.json`` file:
 
 .. literalinclude:: integration-testing/sample/test/PrimeWeb.IntegrationTests/project.json
   :linenos:
@@ -69,8 +69,8 @@ Note that we're not really trying to test the correctness of our prime number ch
 
 Now that we have a set of passing tests, it's a good time to think about whether we're happy with the current way in which we've designed our application. If we see any `code smells <http://deviq.com/code-smells/>`_, now may be a good time to refactor the application to improve its design.
 
-Refactoring
------------
+Refactoring to use Middleware
+-----------------------------
 Refactoring is the process of changing an application's code to improve its design without changing its behavior. It should ideally be done when there is a suite of passing tests, since these help ensure the system's behavior remains the same before and after the changes. Looking at the way in which the prime checking logic is implemented in our web application, we see:
 
 .. code-block:: c#
