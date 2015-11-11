@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
+using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.DependencyInjection;
 using PrimeWeb.Services;
 
@@ -16,11 +18,15 @@ namespace PrimeWeb
         {
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env)
         {
             // Add the platform handler to the request pipeline.
             app.UseIISPlatformHandler();
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.Run(async (context) =>
             {

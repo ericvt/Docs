@@ -10,7 +10,7 @@ namespace PrimeWeb.Services
             {
                 return false;
             }
-            for(int divisor=2;divisor <= Math.Sqrt(candidate);divisor++)
+            for(int divisor=2; divisor <= Math.Sqrt(candidate); divisor++)
             {
                 if(candidate % divisor == 0)
                 {

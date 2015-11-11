@@ -15,7 +15,7 @@ Getting Started with Testing
 ----------------------------
 Having a suite of automated tests is one of the best ways to ensure a software application does what its authors intended it to do. There are many different kinds of tests for software applications, including :doc:`integration tests <integration-testing>`, web tests, load tests, and many others. At the lowest level are unit tests, which test individual software components or methods. Unit tests should only test code within the developer's control, and should not test infrastructure concerns, like databases, file systems, or network resources. Unit tests may be written using `Test Driven Development(TDD) <http://deviq.com/test-driven-development/>`_, or they can be added to existing code to confirm its correctness. In either case, they should be small, well-named, and fast, since ideally you will want to be able to run hundreds of them before pushing your changes into the project's shared code repository.
 
-.. note:: A `unit test naming convention <http://ardalis.com/unit-test-naming-convention>`_ I've found to be very effective is to name the class and test such that it forms a sentence, e.g. ``PricingCalculatorShould.ReturnZeroGivenQuantityZero()``. This makes for very readable test results, and tends to be far more helpful than naming test classes "FooTests" or "BarTests".
+.. note:: Developers often struggle with coming up with good names for their test classes and methods. As a starting point, the ASP.NET product team follows `these conventions <https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests>`_
 
 When writing unit tests, be careful you don't accidentally introduce dependencies on infrastructure. These tend to make tests slower and more brittle, and thus should be reserved for integration tests. You can avoid these hidden dependencies in your application code by following the `Explicit Dependencies Principle <http://deviq.com/explicit-dependencies-principle/>`_ and using :doc:`/fundamentals/dependency-injection` to request your dependencies from the framework. You can also keep your unit tests in a separate project from your integration tests, and ensure your unit test project doesn't have references to or dependencies on infrastructure packages.
 
@@ -28,16 +28,16 @@ A test project is just a class library with references to a test runner and the 
 	global.json
 	PrimeWeb.sln
 	src/
-	   PrimeWeb/
-	      project.json
-		  Startup.cs
-		  Services/
-		     PrimeService.cs
+		PrimeWeb/
+			project.json
+			Startup.cs
+			Services/
+				PrimeService.cs
 	test/
-	   PrimeWeb.UnitTests/
-	      project.json
-		  Services/
-		     PrimeService_IsPrimeShould.cs
+		PrimeWeb.UnitTests/
+			project.json
+			Services/
+				PrimeService_IsPrimeShould.cs
 		  
 It is important that there be a folder/directory with the name of the project you are testing (PrimeWeb above), since the file system is used to find your project.
 
