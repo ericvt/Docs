@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using System;
+using PrimeWeb.Services;
 
 namespace PrimeWeb.Middleware
 {
@@ -13,7 +14,8 @@ namespace PrimeWeb.Middleware
             {
                 throw new ArgumentNullException(nameof(builder));
             }
-            return builder.Use(next => new PrimeCheckerMiddleware(next, options).Invoke);
+            var primeService = builder.ApplicationServices.GetService(typeof (PrimeService)) as PrimeService;
+            return builder.Use(next => new PrimeCheckerMiddleware(next, options, primeService).Invoke);
         }
 
         public static IApplicationBuilder UsePrimeChecker(this IApplicationBuilder builder,

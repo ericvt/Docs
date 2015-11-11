@@ -1,29 +1,35 @@
-﻿using Microsoft.AspNet.TestHost;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNet.TestHost;
+using Microsoft.Framework.DependencyInjection;
 using Xunit;
+using PrimeWeb.Services;
 
 namespace PrimeWeb.IntegrationTests
 {
     public class PrimeWebCheckPrimeShould
     {
-        private TestServer _server;
+        private readonly TestServer _server;
+        private readonly HttpClient _client;
         public PrimeWebCheckPrimeShould()
         {
             // Arrange
-            _server = TestServer.Create(new Startup().Configure);
+            _server = new TestServer(TestServer.CreateBuilder()
+                .UseStartup<Startup>());
+            _client = _server.CreateClient();
         }
 
-        private async Task<string> GetCheckPrimeResponseString(string querystring = "")
+        private async Task<string> GetCheckPrimeResponseString(
+            string querystring = "")
         {
             string request = "/checkprime";
             if(!String.IsNullOrEmpty(querystring))
             {
                 request += "?" + querystring;
             }
-            var response = await _server.CreateClient().GetAsync(request);
+            var response = await _client.GetAsync(request);
+            response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsStringAsync();
         }

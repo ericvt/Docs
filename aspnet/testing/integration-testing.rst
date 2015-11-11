@@ -44,9 +44,9 @@ Once the Microsoft.AspNet.TestHost package is included in the project, you will 
 .. literalinclude:: integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs
   :linenos:
   :language: c#
-  :lines: 10-30
-  :dedent: 4
-  :emphasize-lines: 7
+  :lines: 10-32
+  :dedent: 8
+  :emphasize-lines: 6-7
 
 These tests are using the Arrange-Act-Assert pattern, but in this case all of the Arrange step is done in the constructor, which creates an instance of ``TestServer``. There are several different ways to configure a ``TestServer`` when you create it; in this example we are passing in the ``Configure`` method from our system under test (SUT)'s ``Startup`` class. This method will be used to configure the request pipeline of the ``TestServer`` identically to how the SUT server would be configured.
 
@@ -57,9 +57,9 @@ Now we can add a few additional integration tests to confirm that the prime chec
 .. literalinclude:: integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs
   :linenos:
   :language: c#
-  :lines: 10-62
+  :lines: 10-68
   :dedent: 4
-  :emphasize-lines: 7
+  :emphasize-lines: 8-9
 
 Note that we're not really trying to test the correctness of our prime number checker with these tests, but rather that the web application is doing what we expect. We already have unit test coverage that gives us confidence in ``PrimeService``, as you can see here:
 
@@ -75,13 +75,17 @@ Refactoring is the process of changing an application's code to improve its desi
 
 .. code-block:: c#
   :linenos:
-  :emphasize-lines: 9-29
+  :emphasize-lines: 13-33
 
-    public void Configure(IApplicationBuilder app)
+    public void Configure(IApplicationBuilder app,
+        IHostingEnvironment env)
     {
         // Add the platform handler to the request pipeline.
         app.UseIISPlatformHandler();
-        app.UseDeveloperExceptionPage();
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
 
         app.Run(async (context) =>
         {
@@ -113,7 +117,6 @@ Refactoring is the process of changing an application's code to improve its desi
         });
     }
 
-  
 This code works, but it's far from how we would like to implement this kind of functionality in an ASP.NET application, even as simple a one as this is. Imagine what the ``Configure`` method would look like if we needed to add this much code to it every time we added another URL endpoint! 
 
 One option we can consider is adding `MVC <http://docs.asp.net/projects/mvc>`_ to the application, and creating a controller to handle the prime checking. However, assuming we don't currently need any other MVC functionality, that's a bit overkill. 
@@ -124,10 +127,12 @@ We can, however, take advantage of ASP.NET's :doc:`/fundamentals/middleware` sup
 
 Since our middleware is simply going to respond to a particular path, we can model it after the `Microsoft.AspNet.Diagnostics.WelcomePage <https://github.com/aspnet/Diagnostics/tree/1.0.0-beta8/src/Microsoft.AspNet.Diagnostics/WelcomePage>`_ middleware, which has similar behavior. We want to allow the path the middleware uses to be specified as a parameter, so the middleware class expects a ``RequestDelegate`` and a ``PrimeCheckerOptions`` instance in its constructor. If the path of the request doesn't match what this middleware is configured to expect, we simply call the next middleware in the chain and do nothing further. The rest of the implementation code that was in ``Configure`` is now in the ``Invoke`` method.
 
+.. note:: Since our middleware depends on the ``PrimeService`` service, we are also requesting an instance of this service via the constructor. The framework will provide this service via :doc:`/fundamentals/dependency-injection`, assuming it has been configured (e.g. in ``ConfigureServices``).
+
 .. literalinclude:: integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs
   :linenos:
   :language: c#
-  :emphasize-lines: 9,33,40-57
+  :emphasize-lines: 39-62
 
 .. note:: Since this middleware acts as an endpoint in the request delegate chain when its path matches, there is no call to ``_next.Invoke`` in the case where this middleware handles the request.
 
@@ -136,9 +141,9 @@ With this middleware in place and some helpful extension methods created to make
 .. literalinclude:: integration-testing/sample/src/PrimeWeb/Startup.cs
   :linenos:
   :language: c#
-  :lines: 20-32
+  :lines: 18-34
   :dedent: 8
-  :emphasize-lines: 7
+  :emphasize-lines: 11
 
 Following this refactoring, we are confident that the web application still works as before, since our integration tests are all passing.
 
