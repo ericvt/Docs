@@ -1,0 +1,325 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\diagnostics.rst:2
+msgid "Diagnostics"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:6
+msgid ""
+"ASP.NET 5 includes a number of new features that can assist with diagnosing "
+"problems. Configuring different handlers for application errors or to "
+"display additional information about the application can easily be achieved "
+"in the application's startup class."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:13
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:9
+msgid "`Configuring an error handling page`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:10
+msgid "`Using the error page during development`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:11
+msgid "`HTTP 500 errors on Azure`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:12
+msgid "`The runtime info page`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:13
+msgid "`The welcome page`_"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:15
+msgid ""
+"`Browse or download samples on GitHub "
+"<https://github.com/aspnet/Docs/tree/master/aspnet/fundamentals/diagnostics/sample>`_."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:20
+msgid "Configuring an error handling page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:22
+msgid ""
+"In ASP.NET 5, you configure the pipeline for each request in the ``Startup``"
+" class's ``Configure()`` method (learn more about :doc:`configuration`). You"
+" can add a simple error page, meant only for use during development, very "
+"easily. All that's required is to add a dependency on "
+"``Microsoft.AspNet.Diagnostics`` to the project (and a ``using`` statement "
+"to ``Startup.cs``), and then add one line to ``Configure()`` in "
+"``Startup.cs``:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:31
+msgid ""
+"The above code, which is built from the ASP.NET 5 Empty template, includes a"
+" simple mechanism for creating an exception on line 36. If a request "
+"includes a non-empty querystring parameter for the variable ``throw`` (e.g. "
+"a path of ``/?throw=true``), an exception will be thrown. Line 21 makes the "
+"call to ``UseErrorPage()`` to enable the error page middleware."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:33
+msgid ""
+"Notice that the call to ``UseErrorPage()`` is wrapped inside an ``if`` "
+"condition that checks the current ``EnvironmentName``. This is a good "
+"practice, since you typically do not want to share detailed diagnostic "
+"information about your application publicly once it is in production. This "
+"check uses the ``ASPNET_ENV`` environment variable. If you are using Visual "
+"Studio 2015, you can customize the environment variables used when the "
+"application runs in the web application project's properties, under the "
+"Debug tab, as shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:37
+msgid ""
+"Setting the ``ASPNET_ENV`` variable to anything other than Development (e.g."
+" Production) will cause the application not to call ``UseErrorPage()``, and "
+"thus any exceptions will be handled by the underlying web server package(in "
+"this case, ``Microsoft.AspNet.Server.IIS``) as shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:41
+msgid ""
+"We will cover the features provided by the error page in the next section "
+"(ensure ``ASPNET_ENV`` is reset to Development if you are following along)."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:44
+msgid "Using the error page during development"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:46
+msgid ""
+"The default error page will display some useful diagnostics information when"
+" an unhandled exception occurs within the web processing pipeline. The error"
+" page includes several tabs with information about the exception that was "
+"triggered and the request that was made. The first tab shows the stack "
+"trace:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:50
+msgid "The next tab shows the contents of the Querystring collection, if any:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:54
+msgid ""
+"In this case, you can see the value of the ``throw`` parameter that was "
+"passed to this request. This request didn't have any cookies, but if it did,"
+" they would appear on the Cookies tab. You can see the headers that were "
+"passed, here:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:58
+msgid ""
+"In the current pre-release build, the Cookies section of ErrorPage is not "
+"yet enabled. `View ErrorPage Source "
+"<https://github.com/aspnet/Diagnostics/blob/dev/src/Microsoft.AspNet.Diagnostics/Views/ErrorPage.cshtml>`_."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:61
+msgid "HTTP 500 errors on Azure"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:63
+msgid ""
+"If your app throws an exception before the ``Configure`` method in "
+"*Startup.cs* completes, the error page won't be configured. For local "
+"development using IIS Express, you'll still get a call stack showing where "
+"the exception occurred. The same app deployed to Azure (or another "
+"production server) will return an HTTP 500 error with no message details. "
+"ASP.NET 5 uses a new configuration model that is not based on *web.config*, "
+"and when you create a new web app with Visual Studio 2015, the project no "
+"longer contains a *web.config* file. (See `Understanding ASP.NET 5 Web Apps "
+"<http://docs.asp.net/en/latest/conceptual-overview/understanding-"
+"aspnet5-apps.html>`_.)"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:65
+msgid ""
+"The publish wizard in Visual Studio 2015 creates a *web.config* file if you "
+"don't have one. If you have a *web.config* file in the *wwwroot* folder, "
+"deploy inserts the markup into the the *web.config* file it generates."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:67
+msgid ""
+"To get detailed error messages on Azure, add the following *web.config* file"
+" to the *wwwroot* folder."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:69
+msgid ""
+"Security warning: Enabling detailed error message can leak critical "
+"information from your app. You should never enable detailed error messages "
+"on a production app."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:80
+msgid "The runtime info page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:82
+msgid ""
+"In addition to :ref:`configuring and displaying an error page <configure-"
+"error-page>`, you can also add a runtime info page by simply calling an "
+"extension method in ``Startup.cs``. The following line, is used to enable "
+"this feature:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:88
+msgid ""
+"Once this is added to your ASP.NET application, you can browse to the "
+"specified path (``/runtimeinfo``) to see information about the runtime that "
+"is being used and the packages that are included in the application, as "
+"shown below:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:92
+msgid ""
+"The path for this page can be optionally specified in the call to "
+"``UseRuntimeInfoPage()``. It accepts a `RuntimeInfoPageOptions "
+"<https://github.com/aspnet/Diagnostics/blob/dev/src/Microsoft.AspNet.Diagnostics/RuntimeInfoPageOptions.cs>`_"
+" instance as a parameter, which has a ``Path`` property. For example, to "
+"specify a path of ``/info`` you would call ``UseRuntimeInfoPage()`` as shown"
+" here:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:98
+msgid ""
+"As with ``UseErrorPage()``, it is a good idea to limit public access to "
+"diagnostic information about your application. As such, in our sample we are"
+" only implementing ``UseRuntimeInfoPage()`` when the EnvironmentName is set "
+"to Development."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:100
+msgid ""
+"Remember that the ``Configure()`` method in ``Startup.cs`` is defining the "
+"pipeline that will be used by all requests to your application, which means "
+"the order is important. If for example you move the call to "
+"``UseRuntimeInfoPage()`` after the call to ``app.Run()`` in the examples "
+"shown here, it will never be called because ``app.Run()`` will handle the "
+"request before it reaches the call to ``UseRuntimeInfoPage``."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:105
+msgid "The welcome page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:107
+msgid ""
+"Another extension method you may find useful, especially when you're first "
+"spinning up a new ASP.NET 5 application, is the ``UseWelcomePage()`` method."
+" Add it to ``Configure()`` like so:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:113
+msgid ""
+"Once included, this will handle all requests (by default) with a cool hello "
+"world page that uses embedded images and fonts to display a rich view, as "
+"shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:117
+msgid ""
+"You can optionally configure the welcome page to only respond to certain "
+"paths. The code shown below will configure the page to only be displayed for"
+" the ``/welcome`` path (other paths will be ignored, and will fall through "
+"to other handlers):"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:123
+msgid ""
+"Configured in this manner, the :ref:`startup.cs <diag-startup>` shown above "
+"will respond to requests as follows:"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:0
+msgid "Requests"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:128
+msgid "Path"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:129
+msgid "Result"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:130
+msgid "/runtimeinfo"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:131
+msgid "``UseRuntimeInfoPage`` will handle and display runtime info page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:132
+msgid "/welcome"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:133
+msgid "``UseWelcomePage`` will handle and display welcome page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:134
+msgid "paths without ``?throw=``"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:135
+msgid "``app.Run()`` will respond with \"Hello World!\""
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:136
+msgid "paths with ``?throw=``"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:137
+msgid ""
+"``app.Run()`` throws an exception; ``UseErrorPage`` handles, displays an "
+"error page"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:140
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:142
+msgid ""
+"In ASP.NET 5, you can easily add error pages, view diagnostic information, "
+"or respond to requests with a simple welcome page by adding just one line to"
+" your app's ``Startup.cs`` class."
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:145
+msgid "Additional Resources"
+msgstr ""
+
+#: ..\..\fundamentals\diagnostics.rst:147
+msgid ""
+":doc:`Using Application Insights <application-insights>` - Collect detailed "
+"usage and diagnostic data for your application."
+msgstr ""

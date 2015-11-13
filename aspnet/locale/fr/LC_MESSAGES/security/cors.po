@@ -1,0 +1,490 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\cors.rst:2
+msgid "Enabling Cross-Origin Requests (CORS)"
+msgstr ""
+
+#: ..\..\security\cors.rst:4
+msgid "By `Mike Wasson`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:6
+msgid ""
+"Browser security prevents a web page from making AJAX requests to another "
+"domain. This restriction is called the *same-origin policy*, and prevents a "
+"malicious site from reading sensitive data from another site. However, "
+"sometimes you might want to let other sites make cross-origin requests to "
+"your web app."
+msgstr ""
+
+#: ..\..\security\cors.rst:8
+msgid ""
+"`Cross Origin Resource Sharing <http://www.w3.org/TR/cors/>`_ (CORS) is a "
+"W3C standard that allows a server to relax the same-origin policy. Using "
+"CORS, a server can explicitly allow some cross-origin requests while "
+"rejecting others. CORS is safer and more flexible than earlier techniques "
+"such as `JSONP <http://en.wikipedia.org/wiki/JSONP>`_. This topic shows how "
+"to enable CORS in your ASP.NET 5 application."
+msgstr ""
+
+#: ..\..\security\cors.rst:15
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\security\cors.rst:11
+msgid "`What is \"same origin\"?`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:12
+msgid "`Add the CORS package`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:13
+msgid "`Configure CORS in your app`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:14
+msgid "`CORS policy options`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:15
+msgid "`How CORS works`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:17
+msgid ""
+"This topic covers general ASP.NET 5 apps. For information about CORS support"
+" in ASP.NET MVC 6, see :ref:`Specifying a CORS Policy <mvc:cors-policy>`."
+msgstr ""
+
+#: ..\..\security\cors.rst:20
+msgid "What is \"same origin\"?"
+msgstr ""
+
+#: ..\..\security\cors.rst:22
+msgid ""
+"Two URLs have the same origin if they have identical schemes, hosts, and "
+"ports. (`RFC 6454 <http://tools.ietf.org/html/rfc6454>`_)"
+msgstr ""
+
+#: ..\..\security\cors.rst:24
+msgid "These two URLs have the same origin:"
+msgstr ""
+
+#: ..\..\security\cors.rst:26
+msgid "http://example.com/foo.html"
+msgstr ""
+
+#: ..\..\security\cors.rst:27
+msgid "http://example.com/bar.html"
+msgstr ""
+
+#: ..\..\security\cors.rst:29
+msgid "These URLs have different origins than the previous two:"
+msgstr ""
+
+#: ..\..\security\cors.rst:31
+msgid "http://example.net - Different domain"
+msgstr ""
+
+#: ..\..\security\cors.rst:32
+msgid "http://example.com:9000/foo.html - Different port"
+msgstr ""
+
+#: ..\..\security\cors.rst:33
+msgid "https://example.com/foo.html - Different scheme"
+msgstr ""
+
+#: ..\..\security\cors.rst:34
+msgid "http://www.example.com/foo.html - Different subdomain"
+msgstr ""
+
+#: ..\..\security\cors.rst:36
+msgid "Internet Explorer does not consider the port when comparing origins."
+msgstr ""
+
+#: ..\..\security\cors.rst:39
+msgid "Add the CORS package"
+msgstr ""
+
+#: ..\..\security\cors.rst:41
+msgid "In your project.json file, add the following:"
+msgstr ""
+
+#: ..\..\security\cors.rst:49
+msgid "Configure CORS in your app"
+msgstr ""
+
+#: ..\..\security\cors.rst:51
+msgid ""
+"This section shows how to configure CORS. First, add the CORS service. In "
+"Startup.cs:"
+msgstr ""
+
+#: ..\..\security\cors.rst:58
+msgid ""
+"Next, configure a cross-origin policy, using the ``CorsPolicyBuilder`` "
+"class. There are two ways to do this. The first is to call UseCors with a "
+"lambda:"
+msgstr ""
+
+#: ..\..\security\cors.rst:65
+msgid ""
+"The lambda takes a CorsPolicyBuilder object. I’ll describe all of the "
+"configuration options later in this topic. In this example, the policy "
+"allows cross-origin requests from \"http://example.com\" and no other "
+"origins."
+msgstr ""
+
+#: ..\..\security\cors.rst:67
+msgid ""
+"Note that CorsPolicyBuilder has a fluent API, so you can chain method calls:"
+msgstr ""
+
+#: ..\..\security\cors.rst:75
+msgid ""
+"The second approach is to define one or more named CORS policies, and then "
+"select the policy by name at run time."
+msgstr ""
+
+#: ..\..\security\cors.rst:82
+msgid ""
+"This example adds a CORS policy named \"AllowSpecificOrigin\". To select the"
+" policy, pass the name to UseCors."
+msgstr ""
+
+#: ..\..\security\cors.rst:87
+msgid "CORS policy options"
+msgstr ""
+
+#: ..\..\security\cors.rst:89
+msgid ""
+"This section describes the various options that you can set in a CORS "
+"policy."
+msgstr ""
+
+#: ..\..\security\cors.rst:91
+msgid "`Set the allowed origins`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:92
+msgid "`Set the allowed HTTP methods`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:93
+msgid "`Set the allowed request headers`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:94
+msgid "`Set the exposed response headers`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:95
+msgid "`Credentials in cross-origin requests`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:96
+msgid "`Set the preflight expiration time`_"
+msgstr ""
+
+#: ..\..\security\cors.rst:98
+msgid "For some options it may be helpful to read `How CORS works`_ first."
+msgstr ""
+
+#: ..\..\security\cors.rst:101
+msgid "Set the allowed origins"
+msgstr ""
+
+#: ..\..\security\cors.rst:103
+msgid "To allow one or more specific origins:"
+msgstr ""
+
+#: ..\..\security\cors.rst:111
+msgid "To allow all origins:"
+msgstr ""
+
+#: ..\..\security\cors.rst:119
+msgid ""
+"Consider carefully before allowing requests from any origin. It means that "
+"literally any website can make AJAX calls to your app."
+msgstr ""
+
+#: ..\..\security\cors.rst:122
+msgid "Set the allowed HTTP methods"
+msgstr ""
+
+#: ..\..\security\cors.rst:124
+msgid "To specify which HTTP methods are allowed to access the resource."
+msgstr ""
+
+#: ..\..\security\cors.rst:132
+msgid "To allow all HTTP methods:"
+msgstr ""
+
+#: ..\..\security\cors.rst:140
+msgid ""
+"This affects pre-flight requests and Access-Control-Allow-Methods header."
+msgstr ""
+
+#: ..\..\security\cors.rst:143
+msgid "Set the allowed request headers"
+msgstr ""
+
+#: ..\..\security\cors.rst:145
+msgid ""
+"A CORS preflight request might include an Access-Control-Request-Headers "
+"header, listing the HTTP headers set by the application (the so-called "
+"\"author request headers\")."
+msgstr ""
+
+#: ..\..\security\cors.rst:147
+msgid "To whitelist specific headers:"
+msgstr ""
+
+#: ..\..\security\cors.rst:155
+msgid "To allow all author request headers:"
+msgstr ""
+
+#: ..\..\security\cors.rst:163
+msgid ""
+"Browsers are not entirely consistent in how they set Access-Control-Request-"
+"Headers. If you set headers to anything other than \"*\", you should include"
+" at least \"accept\", \"content-type\", and \"origin\", plus any custom "
+"headers that you want to support."
+msgstr ""
+
+#: ..\..\security\cors.rst:166
+msgid "Set the exposed response headers"
+msgstr ""
+
+#: ..\..\security\cors.rst:168
+msgid ""
+"By default, the browser does not expose all of the response headers to the "
+"application. (See http://www.w3.org/TR/cors/#simple-response-header.) The "
+"response headers that are available by default are:"
+msgstr ""
+
+#: ..\..\security\cors.rst:170
+msgid "Cache-Control"
+msgstr ""
+
+#: ..\..\security\cors.rst:171
+msgid "Content-Language"
+msgstr ""
+
+#: ..\..\security\cors.rst:172
+msgid "Content-Type"
+msgstr ""
+
+#: ..\..\security\cors.rst:173
+msgid "Expires"
+msgstr ""
+
+#: ..\..\security\cors.rst:174
+msgid "Last-Modified"
+msgstr ""
+
+#: ..\..\security\cors.rst:175
+msgid "Pragma"
+msgstr ""
+
+#: ..\..\security\cors.rst:177
+msgid ""
+"The CORS spec calls these *simple response headers*. To make other headers "
+"available to the application:"
+msgstr ""
+
+#: ..\..\security\cors.rst:186
+msgid "Credentials in cross-origin requests"
+msgstr ""
+
+#: ..\..\security\cors.rst:188
+msgid ""
+"Credentials require special handling in a CORS request. By default, the "
+"browser does not send any credentials with a cross-origin request. "
+"Credentials include cookies as well as HTTP authentication schemes. To send "
+"credentials with a cross-origin request, the client must set "
+"XMLHttpRequest.withCredentials to true."
+msgstr ""
+
+#: ..\..\security\cors.rst:190
+msgid "Using XMLHttpRequest directly:"
+msgstr ""
+
+#: ..\..\security\cors.rst:198
+msgid "In jQuery:"
+msgstr ""
+
+#: ..\..\security\cors.rst:209
+msgid ""
+"In addition, the server must allow the credentials. To allow cross-origin "
+"credentials:"
+msgstr ""
+
+#: ..\..\security\cors.rst:217
+msgid ""
+"Now the HTTP response will include an Access-Control-Allow-Credentials "
+"header, which tells the browser that the server allows credentials for a "
+"cross-origin request."
+msgstr ""
+
+#: ..\..\security\cors.rst:219
+msgid ""
+"If the browser sends credentials, but the response does not include a valid "
+"Access-Control-Allow-Credentials header, the browser will not expose the "
+"response to the application, and the AJAX request fails."
+msgstr ""
+
+#: ..\..\security\cors.rst:221
+msgid ""
+"Be very careful about allowing cross-origin credentials, because it means a "
+"website at another domain can send a logged-in user’s credentials to your "
+"app on the user’s behalf, without the user being aware. The CORS spec also "
+"states that setting origins to \"*\" (all origins) is invalid if the Access-"
+"Control-Allow-Credentials header is present."
+msgstr ""
+
+#: ..\..\security\cors.rst:224
+msgid "Set the preflight expiration time"
+msgstr ""
+
+#: ..\..\security\cors.rst:226
+msgid ""
+"The Access-Control-Max-Age header specifies how long the response to the "
+"preflight request can be cached. To set this header:"
+msgstr ""
+
+#: ..\..\security\cors.rst:237
+msgid "How CORS works"
+msgstr ""
+
+#: ..\..\security\cors.rst:239
+msgid ""
+"This section describes what happens in a CORS request, at the level of the "
+"HTTP messages. It’s important to understand how CORS works, so that you can "
+"configure the your CORS policy correctly, and troubleshoot if things don’t "
+"work as you expect."
+msgstr ""
+
+#: ..\..\security\cors.rst:241
+msgid ""
+"The CORS specification introduces several new HTTP headers that enable "
+"cross-origin requests. If a browser supports CORS, it sets these headers "
+"automatically for cross-origin requests; you don’t need to do anything "
+"special in your JavaScript code."
+msgstr ""
+
+#: ..\..\security\cors.rst:243
+msgid ""
+"Here is an example of a cross-origin request. The \"Origin\" header gives "
+"the domain of the site that is making the request::"
+msgstr ""
+
+#: ..\..\security\cors.rst:254
+msgid ""
+"If the server allows the request, it sets the Access-Control-Allow-Origin "
+"header. The value of this header either matches the Origin header, or is the"
+" wildcard value \"*\", meaning that any origin is allowed.::"
+msgstr ""
+
+#: ..\..\security\cors.rst:266
+msgid ""
+"If the response does not include the Access-Control-Allow-Origin header, the"
+" AJAX request fails. Specifically, the browser disallows the request. Even "
+"if the server returns a successful response, the browser does not make the "
+"response available to the client application."
+msgstr ""
+
+#: ..\..\security\cors.rst:269
+msgid "Preflight Requests"
+msgstr ""
+
+#: ..\..\security\cors.rst:271
+msgid ""
+"For some CORS requests, the browser sends an additional request, called a "
+"\"preflight request\", before it sends the actual request for the resource. "
+"The browser can skip the preflight request if the following conditions are "
+"true:"
+msgstr ""
+
+#: ..\..\security\cors.rst:274
+msgid "The request method is GET, HEAD, or POST, and"
+msgstr ""
+
+#: ..\..\security\cors.rst:275
+msgid ""
+"The application does not set any request headers other than Accept, Accept-"
+"Language, Content-Language, Content-Type, or Last-Event-ID, and"
+msgstr ""
+
+#: ..\..\security\cors.rst:276
+msgid "The Content-Type header (if set) is one of the following:"
+msgstr ""
+
+#: ..\..\security\cors.rst:278
+msgid "application/x-www-form-urlencoded"
+msgstr ""
+
+#: ..\..\security\cors.rst:279
+msgid "multipart/form-data"
+msgstr ""
+
+#: ..\..\security\cors.rst:280
+msgid "text/plain"
+msgstr ""
+
+#: ..\..\security\cors.rst:282
+msgid ""
+"The rule about request headers applies to headers that the application sets "
+"by calling setRequestHeader on the XMLHttpRequest object. (The CORS "
+"specification calls these \"author request headers\".) The rule does not "
+"apply to headers the browser can set, such as User-Agent, Host, or Content-"
+"Length."
+msgstr ""
+
+#: ..\..\security\cors.rst:284
+msgid "Here is an example of a preflight request::"
+msgstr ""
+
+#: ..\..\security\cors.rst:296
+msgid ""
+"The pre-flight request uses the HTTP OPTIONS method. It includes two special"
+" headers:"
+msgstr ""
+
+#: ..\..\security\cors.rst:298
+msgid ""
+"Access-Control-Request-Method: The HTTP method that will be used for the "
+"actual request."
+msgstr ""
+
+#: ..\..\security\cors.rst:299
+msgid ""
+"Access-Control-Request-Headers: A list of request headers that the "
+"application set on the actual request. (Again, this does not include headers"
+" that the browser sets.)"
+msgstr ""
+
+#: ..\..\security\cors.rst:301
+msgid ""
+"Here is an example response, assuming that the server allows the request::"
+msgstr ""
+
+#: ..\..\security\cors.rst:312
+msgid ""
+"The response includes an Access-Control-Allow-Methods header that lists the "
+"allowed methods, and optionally an Access-Control-Allow-Headers header, "
+"which lists the allowed headers. If the preflight request succeeds, the "
+"browser sends the actual request, as described earlier."
+msgstr ""

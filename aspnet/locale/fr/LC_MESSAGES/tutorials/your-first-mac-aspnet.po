@@ -1,0 +1,386 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:2
+msgid "Your First ASP.NET 5 Application on a Mac"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:4
+msgid "By `Steve Smith`_, `Daniel Roth`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:6
+msgid ""
+"ASP.NET 5 is cross-platform and can be developed and run on Mac OS X as well"
+" as Linux and Windows. See how you can quickly install, scaffold, run, "
+"debug, and deploy ASP.NET applications on a Mac."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:13
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:9
+msgid "`Setting Up Your Development Environment`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:10
+msgid "`Scaffolding Applications Using Yeoman`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:11
+msgid "`Developing ASP.NET Applications on a Mac With Visual Studio Code`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:12
+msgid "`Running Locally Using Kestrel`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:13
+msgid "`Publishing to Azure`_"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:16
+msgid "Setting Up Your Development Environment"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:18
+msgid ""
+"First, make sure you have :doc:`installed ASP.NET on your Mac OS X machine "
+"</getting-started/installing-on-mac>`. This step will include installing the"
+" .NET Execution Environment (DNX) and the .NET Version Manager (DNVM). You "
+"can check which DNX version you have active by running ``dnvm list``."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:21
+msgid "Scaffolding Applications Using Yeoman"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:23
+msgid ""
+"You can quickly scaffold a new ASP.NET 5 or DNX application on a Mac using "
+":doc:`Yeoman </client-side/yeoman>`."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:25
+msgid ""
+"First install Yeoman by following the `instructions "
+"<http://yeoman.io/learning/index.html>`__ on the Yeoman site."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:27
+msgid ""
+"Install the `OmniSharp ASP.NET generators <https://github.com/omnisharp"
+"/generator-aspnet>`__ by running::"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:31
+msgid ""
+"Create a folder for your solution and then add an ``src`` subfolder for your"
+" project source code."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:33
+msgid ""
+"In your solution folder add a global.json file to indicate the DNX version:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:44
+msgid "From your ``src`` folder run the aspnet generator::"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:48
+msgid ""
+"For the purposes of this tutorial select `Empty Application` to create an "
+"empty ASP.NET 5 app."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:53
+msgid "Developing ASP.NET Applications on a Mac With Visual Studio Code"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:55
+msgid ""
+"Now, install Visual Studio Code from https://code.visualstudio.com. The "
+"first time you run Visual Studio Code should see a welcome screen:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:59
+msgid ""
+"To get started with your first ASP.NET application on a Mac, select File -> "
+"Open and choose the folder with your ASP.NET application."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:63
+msgid ""
+"Visual Studio Code may detect that you need to restore dependencies, as "
+"shown in this screenshot:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:67
+msgid ""
+"From a Terminal / bash prompt, run ``dnu restore`` to restore the project's "
+"dependencies. Alternately, you can press ``command shift p`` and then type "
+"``>d`` as shown:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:71
+msgid ""
+"This will allow you to run commands directly from within Visual Studio Code,"
+" including ``dnu restore`` and any commands defined in ``project.json``."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:73
+msgid ""
+"At this point, you should be able to host and browse to this simple ASP.NET "
+"web application, which we'll see in a moment."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:75
+msgid ""
+"This empty project template simply displays \"Hello World!\". Open "
+"``Startup.cs`` in Visual Studio Code to see how this is configured:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:79
+msgid ""
+"If this is your first time using Visual Studio Code (or just *Code* for "
+"short), note that it provides a very streamlined, fast, clean interface for "
+"quickly working with files, while still providing tooling to make writing "
+"code extremely productive."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:85
+msgid ""
+"In the left navigation bar, there are four icons, representing four "
+"viewlets:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:82
+msgid "Explore"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:83
+msgid "Search"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:84
+msgid "Git"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:85
+msgid "Debug"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:87
+msgid ""
+"The Explore viewlet allows you to quickly navigate within the folder system,"
+" as well as easily see the files you are currently working with. It displays"
+" a badge to indicate whether any files have unsaved changes, and new folders"
+" and files can easily be created (without having to open a separate dialog "
+"window). You can easily Save All from a menu option that appears on mouse "
+"over, as well."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:89
+msgid ""
+"The Search viewlet allows you to quickly search within the folder structure,"
+" searching filenames as well as contents."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:91
+msgid ""
+"*Code* will integrate with Git if it is installed on your system. You can "
+"easily initialize a new repository, make commits, and push changes from the "
+"Git viewlet."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:95
+msgid ""
+"The Debug viewlet supports interactive debugging of applications. Currently "
+"only node.js and mono applications are supported by the interactive "
+"debugger."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:97
+msgid ""
+"Finally, Code's editor has a ton of great features. You should note right "
+"away that several using statements are underlined, because Code has "
+"determined they are not necessary. Note that classes and methods also "
+"display how many references there are in the project to them. If you're "
+"coming from Visual Studio, Code includes many of the keyboard shortcuts "
+"you're used to, such as ``command k c`` to comment a block of code, and "
+"``command k u`` to uncomment."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:100
+msgid "Running Locally Using Kestrel"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:102
+msgid ""
+"The sample we're using is configured to use Kestrel as its web server. You "
+"can see it configured in the ``project.json`` file, where it is specified as"
+" a dependency and as a command."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:125
+msgid ""
+"Run the ``dnx . kestrel`` command to launch the web application locally:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:129
+msgid ""
+"Navigate to ``localhost:5000`` (as specified in ``hosting.ini``) and you "
+"should see:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:133
+msgid "To stop the web server once you've started it simply press ``Ctrl+C``."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:135
+msgid ""
+"We can update the application to output information to the console whenever "
+"a request is received. Update the ``Configure`` method as follows:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:150
+msgid ""
+"Save the file and restart the web server. Make a few requests to the URL. "
+"You should see the request information output in the Terminal window (recall"
+" that most browsers will automatically attempt to request a ``favicon.ico`` "
+"file when making a request to a new domain):"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:154
+msgid ""
+"As you can see, it's quite straightforward, especially if you're already "
+"familiar with command line tooling, to get started building ASP.NET "
+"applications using Visual Studio Code on Mac OS X."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:157
+msgid "Publishing to Azure"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:159
+msgid ""
+"Once you've developed your application, you can easily use the Git "
+"integration built into Visual Studio Code to push updates to production, "
+"hosted on `Microsoft Azure <http://azure.microsoft.com>`_."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:162
+msgid "Initialize Git"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:164
+msgid ""
+"First, if you haven't already done so, initialize Git in the folder you're "
+"working in. Simply click on the Git viewlet and click the ``Initialize Git "
+"repository`` button."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:168
+msgid ""
+"Add a commit message as shown in the image above, and press enter or click "
+"the checkmark icon to commit the staged files. Now Git is tracking changes, "
+"so if you make an update to a file, the Git viewlet will display how many "
+"files have changed since your last commit."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:171
+msgid "Initialize Azure Website"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:173
+msgid ""
+"You can deploy to Azure Web Apps directly using Git. Azure also supports "
+"other publishing workflows, but being able to simply perform a ``git push`` "
+"to a remote can be a very convenient way to make updates."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:175
+msgid ""
+"First, `create a new Web App <https://tryappservice.azure.com/>`__ in Azure."
+" If you don't have an Azure account, you can `create a free trial "
+"<http://azure.microsoft.com/en-us/pricing/free-trial/>`__."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:177
+msgid ""
+"Next, configure the Web App in Azure to support `continuous deployment using"
+" Git <http://azure.microsoft.com/en-us/documentation/articles/web-sites-"
+"publish-source-control/>`__."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:179
+msgid "Note the Git URL for the Web App from the Azure portal:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:183
+msgid ""
+"In a Terminal window, add a remote named ``azure`` with the Git URL you "
+"noted previously, and then perform ``git push azure master`` to deploy. You "
+"should see output similar to the following:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:187
+msgid ""
+"Now you can browse to your Web App and you should see your newly deployed "
+"application."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:191
+msgid ""
+"At this point, you can make additional changes to the application, commit "
+"them, and whenever you're ready to deploy, simply perform another ``git push"
+" azure master`` from a Terminal prompt. To demonstrate, let's update the "
+"message being printed:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:206
+msgid ""
+"Save the changes. Commit them using the git viewlet. Run ``git push azure "
+"master`` from a Terminal prompt, once more. Then refresh your browser:"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:211
+msgid "Summary"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:213
+msgid ""
+"ASP.NET 5 and DNX support installation on Mac OS X. Developers can quickly "
+"install the necessary tools to get started, including Yeoman for app "
+"scaffolding and `Visual Studio Code <https://code.visualstudio.com>`__ for "
+"rapid lightweight editing with built-in support for debugging, Git "
+"integration, and IntelliSense."
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:216
+msgid "Additional Reading"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:218
+msgid "`Visual Studio Code <https://code.visualstudio.com>`__"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:219
+msgid ":doc:`/client-side/yeoman`"
+msgstr ""
+
+#: ..\..\tutorials\your-first-mac-aspnet.rst:220
+msgid ":doc:`ASP.NET Fundamentals </fundamentals/index>`"
+msgstr ""

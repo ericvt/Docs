@@ -1,0 +1,82 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\index.rst:9
+msgid "ASP.NET 5 Documentation"
+msgstr ""
+
+#: ..\..\index.rst:11
+msgid ""
+"ASP.NET 5 beta8 is now available! Please see the :doc:`Getting Started "
+"<getting-started/index>` instructions for installing the latest version."
+msgstr ""
+
+#: ..\..\..\common\stub-overview.txt:4
+msgid ""
+"This documentation is a work in progress. Topics marked with a |stub-icon| "
+"are placeholders that have not been written yet. You can track the status of"
+" these topics through our public documentation `issue tracker "
+"<https://github.com/aspnet/docs/issues>`_. Learn how you can `contribute "
+"<https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md>`_ on GitHub. "
+"Help shape the scope and focus of the ASP.NET content by taking the `ASP.NET"
+" 5 Documentation Survey <https://docs.asp.net/en/latest/contribute/docs-"
+"survey.html>`_."
+msgstr ""
+
+#: ..\..\index.rst:16
+msgid "Frameworks"
+msgstr ""
+
+#: ..\..\index.rst:18
+msgid ":ref:`MVC <mvc:index>`"
+msgstr ""
+
+#: ..\..\index.rst:21
+msgid "Topics"
+msgstr ""
+
+#: ..\..\index.rst:43
+msgid "Related Resources"
+msgstr ""
+
+#: ..\..\index.rst:45
+msgid ":ref:`.NET Core Documentation <dotnet:index>`"
+msgstr ""
+
+#: ..\..\index.rst:46
+msgid "`Entity Framework <http://ef.readthedocs.org>`_"
+msgstr ""
+
+#: ..\..\index.rst:49
+msgid "Contribute"
+msgstr ""
+
+#: ..\..\index.rst:51
+msgid ""
+"The documentation on this site is the handiwork of our many `contributors "
+"<https://github.com/aspnet/docs/contributors>`_."
+msgstr ""
+
+#: ..\..\index.rst:53
+msgid ""
+"**We accept pull requests!** But you're more likely to have yours accepted "
+"if you follow these guidelines:"
+msgstr ""
+
+#: ..\..\index.rst:55
+msgid "Read https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md"
+msgstr ""
+
+#: ..\..\index.rst:56
+msgid "Follow the :ref:`ASP.NET Docs Style Guide <style-guide>`"
+msgstr ""

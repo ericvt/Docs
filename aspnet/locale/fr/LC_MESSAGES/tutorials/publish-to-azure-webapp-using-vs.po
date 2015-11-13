@@ -1,0 +1,90 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:2
+msgid "Publish to an Azure Web App using Visual Studio"
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:4
+msgid "By `Erik Reitan`_"
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:6
+msgid ""
+"This article describes how to publish an ASP.NET web app to Azure using "
+"Visual Studio."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:8
+msgid ""
+"**Note:** To complete this tutorial, you need a Microsoft Azure account. If "
+"you don't have an account, you can `activate your MSDN subscriber benefits`_"
+" or `sign up for a free trial`_."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:15
+msgid ""
+"Start by either creating a new ASP.NET web app or opening an existing "
+"ASP.NET web app."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:17
+msgid ""
+"In **Solution Explorer** of Visual Studio, right-click on the project and "
+"select **Publish**."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:21
+msgid ""
+"In the **Publish Web** dialog box, click on **Microsoft Azure Web Apps** and"
+" log into your Azure subscription."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:25
+msgid ""
+"Click **New** in the **Select Existing Web App** dialog box to create a new "
+"Web app in Azure."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:29
+msgid ""
+"Enter a site name and region. You can optionally create a new database "
+"server, however if you've created a database server in the past, use that. "
+"When you're ready to continue, click **Create**."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:33
+msgid ""
+"Database servers are a precious resource. For test and development it's best"
+" to use an existing server. There is **no** validation on the database "
+"password, so if you enter an incorrect value, you won't get an error until "
+"your web app attempts to access the database."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:35
+msgid ""
+"On the **Connection** tab of the **Publish Web** dialog box, click "
+"**Publish**."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:39
+msgid ""
+"You can view the publishing progress in the **Web Publish Activity** window "
+"within Visual Studio."
+msgstr ""
+
+#: ..\..\tutorials\publish-to-azure-webapp-using-vs.rst:43
+msgid ""
+"When publishing to Azure is complete, your web app will be displayed in a "
+"browser running on Azure."
+msgstr ""

@@ -1,0 +1,141 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\getting-started\installing-on-mac.rst:2
+msgid "Installing ASP.NET 5 On Mac OS X"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:4
+msgid "By `Steve Smith`_, `Daniel Roth`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:6
+msgid ""
+"ASP.NET 5 runs on the .NET Execution Environment (DNX), which is available "
+"on multiple platforms, including OS X. This article describes how to install"
+" DNX, and therefore ASP.NET 5, on OS X using .NET Core and Mono."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:10
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:9
+msgid "`Install the .NET Version Manager (DNVM)`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:10
+msgid "`Install the .NET Execution Environment (DNX)`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:13
+msgid "Install the .NET Version Manager (DNVM)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:15
+msgid ""
+"Use the .NET Version Manager (DNVM) to install different versions of the "
+".NET Execution Environment (DNX) on OS X."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:17
+msgid "To install DNVM run the following::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:21
+msgid ""
+"Once this step is complete you should be able to run ``dnvm`` and see some "
+"help text."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:24
+msgid "Install the .NET Execution Environment (DNX)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:26
+msgid ""
+"The .NET Execution Environment (DNX) is used to build and run .NET projects."
+" Use DNVM to install DNX for `Mono <http://mono-project.com>`_ or .NET Core "
+"(see :doc:`choosing-the-right-dotnet`)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:28
+msgid "**To install DNX for .NET Core:**"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:30
+msgid "Install the DNX prerequisites using `Homebrew <http://brew.sh/>`__::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:35
+msgid "Use DNVM to install DNX for .NET Core::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:39
+msgid ""
+".NET Core on OS X is still in early preview. Please refer to the latest "
+"`Release Notes <https://github.com/aspnet/home/releases>`__ for known issues"
+" and limitations."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:41
+msgid "**To install DNX for Mono:**"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:43
+msgid ""
+"Install `Mono <http://www.mono-project.com/docs/getting-"
+"started/install/mac/>`__ for OS X. Alternatively you can install Mono via "
+"`Homebrew <http://brew.sh/>`__."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:45
+msgid "Use DNVM to install DNX for Mono::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:49
+msgid "By default DNVM will install DNX for Mono if no runtime is specified."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:51
+msgid ""
+"Restoring packages using DNX on Mono may fail with multiple canceled "
+"requests. You may be able to work around this issue by setting "
+"``MONO_THREADS_PER_CPU`` to a larger number (ex. 2000)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:54
+msgid "Summary"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:56
+msgid ""
+"ASP.NET 5 is built on the cross-platform .NET Execution Environment (DNX), "
+"which can be installed on OS X as well as :doc:`Linux <installing-on-linux>`"
+" and :doc:`Windows <installing-on-windows>`. Installing DNX and ASP.NET 5 on"
+" OS X takes just a few minutes, using a few simple commands. You're now  "
+"ready to build :doc:`your first ASP.NET application </tutorials/your-first-"
+"mac-aspnet>`!"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:59
+msgid "Related Resources"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:61
+msgid ":doc:`/tutorials/your-first-mac-aspnet`"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-mac.rst:62
+msgid ":doc:`/fundamentals/index`"
+msgstr ""

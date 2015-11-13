@@ -1,0 +1,31 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\contribute\docs-survey.rst:2
+msgid "ASP.NET 5 Documentation Survey"
+msgstr ""
+
+#: ..\..\contribute\docs-survey.rst:4
+msgid ""
+"Please take a moment to complete the ASP.NET documentation survey. Your "
+"feedback will be used to improve the ASP.NET 5 documentation set. All "
+"questions apply to the `docs.asp.net <http://docs.asp.net>`_ site."
+msgstr ""
+
+#: ..\..\contribute\docs-survey.rst:6
+msgid "Click the link below:"
+msgstr ""
+
+#: ..\..\contribute\docs-survey.rst:8
+msgid "`ASP.NET 5 Documentation Survey <http://www.instant.ly/s/dQC8Q>`_"
+msgstr ""

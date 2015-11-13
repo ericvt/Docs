@@ -1,0 +1,226 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\application-insights.rst:2
+msgid "Application Insights"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:6
+msgid ""
+"`Application Insights <http://azure.microsoft.com/services/application-"
+"insights/>`_ provides development teams with a 360 |deg| view across their "
+"live application's performance, availability, and usage. It can also `detect"
+" and diagnose issues and exceptions "
+"<http://azure.microsoft.com/documentation/articles/app-insights-detect-"
+"triage-diagnose/>`_ in these applications. Telemetry data may be collected "
+"from web servers and web clients, as well as desktop  and mobile "
+"applications."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:13
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:12
+msgid "`Getting started`_"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:13
+msgid "`Viewing activity`_"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:15
+msgid ""
+"`View or download sample on GitHub "
+"<https://github.com/aspnet/Docs/tree/master/docs/fundamentals/application-"
+"insights/sample>`_."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:18
+msgid "Getting started"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:20
+msgid "*Application Insights, like ASP.NET 5, is in preview.*"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:22
+msgid ""
+"To get started with Application Insights, you will need a subscription to "
+"Microsoft Azure. If your team or organization already has a subscription, "
+"you can ask the owner to add you to it using your Microsoft account."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:24
+msgid ""
+"Sign in to the `Azure portal <http://portal.azure.com/>`_ with your account "
+"and create a new Application Insights resource."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:28
+msgid ""
+"Choose ASP.NET as the application type. Note the *Instrumentation Key* "
+"(under Settings, Properties) associated with the Application Insights "
+"resource you've created (`see detailed instructions with more screenshots "
+"here <http://azure.microsoft.com/documentation/articles/app-insights-start-"
+"monitoring-app-health-usage/>`_). You will need the instrumentation key in a"
+" few moments when you configure your ASP.NET 5 application to use "
+"Application Insights."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:30
+msgid ""
+"Next, update ``project.json`` to add a new reference to "
+"``Microsoft.ApplicationInsights.AspNet`` in your ``dependencies`` section, "
+"as shown:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:39
+msgid ""
+"Saving the ``project.json`` file will download and install the required "
+"packages."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:41
+msgid ""
+"Next, edit (or create) the ``config.json`` file, adding the instrumentation "
+"key you noted above from your Application Insights resource in Windows "
+"Azure. Specify an \"ApplicationInsights\" section with a key named "
+"\"InstrumentationKey\". Set its value to the instrumentation key."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:48
+msgid ""
+"Next, in ``Startup.cs`` you need to configure Application Insights in a few "
+"places. In the constructor, where you configure ``Configuration``, add a "
+"block to configure Application Insights for development:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:57
+msgid ""
+"Setting AppInsights in developerMode "
+"(``configuration.AddApplicationInsightsSettings(developerMode: true)``) will"
+" expedite your telemetry through the pipeline so that you can see results "
+"immediately (`learn more <http://azure.microsoft.com/documentation/articles"
+"/app-insights-api-custom-events-metrics/#debug>`_)."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:59
+msgid ""
+"Add the Application Insights telemetry services in your "
+"``ConfigureServices()`` method:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:68
+msgid ""
+"Then, in the ``Configure()`` method add middleware to allow Application "
+"Insights to track exceptions and log information about individual requests. "
+"Note that the request tracking middleware should be as the first middleware "
+"in the pipeline, while the exception middleware should follow the "
+"configuration of error pages or other error handling middleware."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:70
+msgid ""
+"An edited ``Startup.cs`` is shown below, highlighting the necessary "
+"Application Insights code (`view full Startup.cs "
+"<https://github.com/aspnet/Docs/tree/master/docs/fundamentals/application-"
+"insights/sample/AppInsightsDemo/src/AppInsightsDemo/Startup.cs>`_):"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:79
+msgid ""
+"Now add the Application Insights scripts to your views. Add the following to"
+" the very top of the ``_ViewImports.cshtml`` file:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:85
+msgid ""
+"Then, add the following line of code in your ``_Layouts.cshtml`` file at the"
+" end of the ``<head>`` section (before any other JavaScript blocks specified"
+" there):"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:95
+msgid "Viewing activity"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:97
+msgid ""
+"You can view the activity from your site once it's been configured and "
+"you've made some requests to it by navigating to the Azure portal. There, "
+"you will find the Application Insights resource you configured previously, "
+"and you will be able to view charts showing performance and activity data:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:101
+msgid ""
+"In addition to tracking activity and performance data on every page, you can"
+" also track specific events. For instance, if you want to know any time a "
+"user completes a certain transaction, you can create and track such events "
+"individually. To do so, you should inject the TelemetryClient into the "
+"controller in question, and call its ``TrackEvent`` method. In the included "
+"sample, we've added event tracking for user registration and successful and "
+"failed login attempts. You can see the required code in the excerpt from "
+"AccountController.cs shown below:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:109
+msgid ""
+"With this in place, testing the application's registration and login feature"
+" results in the following activity available for analysis:"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:113
+msgid ""
+"Application Insights is still in development. To view the latest release "
+"notes and configuration instructions, please `refer to the project wiki "
+"<https://github.com/Microsoft/ApplicationInsights-aspnet5/wiki/Getting-"
+"Started>`_."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:116
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:118
+msgid ""
+"Application Insights allows you to easily add application activity and "
+"performance tracking to any ASP.NET 5 app. With Application Insights in "
+"place, you can view live reports showing information about the users of your"
+" application and how it is performing, including both client and server "
+"performance information. In addition, you can track custom events, allowing "
+"to you capture user activities unique to your application."
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:121
+msgid "Additional Resources"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:123
+msgid ""
+"`Application Insights API for custom events and metrics "
+"<http://azure.microsoft.com/documentation/articles/app-insights-api-custom-"
+"events-metrics/>`_"
+msgstr ""
+
+#: ..\..\fundamentals\application-insights.rst:124
+msgid ""
+"`Application Insights for ASP.NET 5 "
+"<http://blogs.msdn.com/b/webdev/archive/2015/05/19/application-insights-for-"
+"asp-net-5-you-re-in-control.aspx>`_"
+msgstr ""

@@ -1,0 +1,556 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\owin.rst:2
+msgid "OWIN"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:6
+msgid ""
+"ASP.NET 5 supports OWIN, the Open Web Interface for .NET, which allows web "
+"applications to be decoupled from web servers. In addition, OWIN defines a "
+"standard way for middleware to be used in a pipeline to handle individual "
+"requests and associated responses. ASP.NET 5 applications and middleware can"
+" interoperate with OWIN-based applications, servers, and middleware."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:12
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:9
+msgid "`Running OWIN middleware in the ASP.NET pipeline`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:10
+msgid "`Using ASP.NET Hosting on an OWIN-based server`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:11
+msgid ""
+"`Run ASP.NET 5 on an OWIN-based server and use its WebSockets support`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:12
+msgid "`OWIN keys`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:14
+msgid ""
+"`Browse or download samples on GitHub "
+"<https://github.com/aspnet/Docs/tree/master/docs/fundamentals/owin/sample>`_."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:17
+msgid "Running OWIN middleware in the ASP.NET pipeline"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:19
+msgid ""
+"ASP.NET 5's OWIN support is deployed as part of the `Microsoft.AspNet.Owin "
+"<https://www.nuget.org/packages/Microsoft.AspNet.Owin/1.0.0-beta5>`_ "
+"package, and the source is in the `HttpAbstractions repository "
+"<https://github.com/aspnet/HttpAbstractions/tree/1.0.0-beta5/src/Microsoft.AspNet.Owin>`_."
+" You can import OWIN support into your project by adding this package as a "
+"dependency in your ``project.json`` file, as shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:26
+msgid ""
+"OWIN middleware conform to the `OWIN specification "
+"<http://owin.org/spec/spec/owin-1.0.0.html>`_, which defines a Properties "
+"``IDictionary<string, object>`` interface that must be used, and also "
+"requires certain keys be set (such as ``owin.ResponseBody``). We can "
+"construct a very simple example of middleware that follows the OWIN "
+"specification to display \"Hello World\", as shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:33
+msgid ""
+"In the above example, notice that the method returns a ``Task`` and accepts "
+"an ``IDictionary<string, object>`` as required by OWIN. Within the method, "
+"this parameter is used to retrieve the ``owin.ResponseBody`` and "
+"``owin.ResponseHeaders`` objects from the environment dictionary. Once the "
+"headers are set appropriately for the content being returned, a task "
+"representing the asynchronous write to the response stream is returned."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:35
+msgid ""
+"Adding OWIN middleware to the ASP.NET pipeline is most easily done using the"
+" ``UseOwin`` extension method. Given the ``OwinHello`` method shown above, "
+"adding it to the pipeline is a simple matter:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:42
+msgid ""
+"You can of course configure other actions to take place within the OWIN "
+"pipeline. Remember that response headers should only be modified prior to "
+"the first write to the response stream, so configure your pipeline "
+"accordingly."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:44
+msgid ""
+"Multiple calls to ``UseOwin`` is discouraged for performance reasons. OWIN "
+"components will operate best if grouped together."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:58
+msgid ""
+"The OWIN support in ASP.NET 5 is an evolution of the work that was done for "
+"the `Katana project <http://katanaproject.codeplex.com/>`_. Katana's "
+"``IAppBuilder`` component has been replaced by ``IApplicationBuilder``, but "
+"if you have existing Katana-based middleware, you can use it within your "
+"ASP.NET 5 application through the use of a bridge, as shown in the "
+"`Owin.IAppBuilderBridge example on GitHub "
+"<https://github.com/aspnet/Entropy/tree/dev/samples/Owin.IAppBuilderBridge>`_."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:61
+msgid "Using ASP.NET Hosting on an OWIN-based server"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:63
+msgid ""
+"OWIN-based servers can host ASP.NET applications, since ASP.NET conforms to "
+"the OWIN specification. One such server is `Nowin "
+"<https://github.com/Bobris/Nowin>`_, a .NET OWIN web server. In the sample "
+"for this article, I've included a very simple project that references Nowin "
+"and uses it to create a simple server capable of self-hosting ASP.NET 5."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:70
+msgid ""
+"`IServerFactory "
+"<https://github.com/aspnet/Hosting/blob/1.0.0-beta5/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerFactory.cs>`_"
+" is an ASP.NET interface that requires an Initialize and a Start method. "
+"Initialize must return an instance of `IServerInformation "
+"<https://github.com/aspnet/Hosting/blob/1.0.0-beta5/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerInformation.cs>`_,"
+" which simply includes the server's name (but the specific implementation "
+"may provide additional functionality). In this example, the "
+"``NowinServerInformation`` class is defined as a private class within the "
+"factory, and is returned by ``Initialize`` as required."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:72
+msgid ""
+"``Initialize`` is responsible for configuring the server, which in this case"
+" is done through a series of fluent API calls that hard code the server to "
+"listen for requests (to any IP address) on port 5000. Note that the final "
+"line of the fluent configuration of the ``builder`` variable specifies that "
+"requests will be handled by the private method ``HandleRequest``."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:74
+msgid ""
+"``Start`` is called after ``Initialize`` and accepts the the "
+"``IServerInformation`` created by ``Initialize``, and a callback of type "
+"``Func<IFeatureCollection, Task>``. This callback is assigned to a local "
+"field and is ultimately called on each request from within the private "
+"``HandleRequest`` method (which was wired up in ``Initialize``)."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:76
+msgid ""
+"With this in place, all that's required to run an ASP.NET application using "
+"this custom server is the following command in ``project.json``:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:84
+msgid ""
+"When run, this command (equivalent to running ``dnx web`` from a command "
+"line) will search for a package called \"NowinSample\" that contains an "
+"implementation of ``IServerFactory``. If it finds one, it will initialize "
+"and start the server as detailed above. Learn more about the built-in "
+"ASP.NET :doc:`/fundamentals/servers`."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:87
+msgid "Run ASP.NET 5 on an OWIN-based server and use its WebSockets support"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:89
+msgid ""
+"Another example of how OWIN-based servers' features can be leveraged by "
+"ASP.NET 5 is access to features like WebSockets. The .NET OWIN web server "
+"used in the previous example has support for Web Sockets built in, which can"
+" be leveraged by an ASP.NET 5 application. The example below shows a simple "
+"web application that supports Web Sockets and simply echos back anything "
+"sent to the server via WebSockets."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:97
+msgid ""
+"This sample (`available on GitHub "
+"<https://github.com/aspnet/Docs/tree/master/docs/fundamentals/owin/sample>`_)"
+" is configured using the same ``NowinServerFactory`` as the previous one - "
+"the only difference is in how the application is configured in its "
+"``Configure`` method. A simple test using `a simple websocket client "
+"<https://chrome.google.com/webstore/detail/simple-websocket-"
+"client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en>`_ demonstrates that the "
+"application works as expected:"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:103
+msgid "OWIN keys"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:105
+msgid ""
+"OWIN depends heavily on an ``IDictionary<string,object>`` used to "
+"communicate information throughout an HTTP Request/Response exchange. "
+"ASP.NET 5 implements all of the required and optional keys outlined in the "
+"OWIN specification, as well as some of its own. Note that any keys not "
+"required in the OWIN specification are optional and may only be used in some"
+" scenarios. When working with OWIN keys, it's a good idea to review the list"
+" of `OWIN Key Guidelines and Common Keys "
+"<http://owin.org/spec/spec/CommonKeys.html>`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:108
+msgid "Request Data (OWIN v1.0.0)"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:113 ..\..\fundamentals\owin.rst:147
+#: ..\..\fundamentals\owin.rst:160 ..\..\fundamentals\owin.rst:182
+#: ..\..\fundamentals\owin.rst:198 ..\..\fundamentals\owin.rst:232
+#: ..\..\fundamentals\owin.rst:246 ..\..\fundamentals\owin.rst:268
+msgid "Key"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:114 ..\..\fundamentals\owin.rst:148
+#: ..\..\fundamentals\owin.rst:161 ..\..\fundamentals\owin.rst:183
+#: ..\..\fundamentals\owin.rst:199 ..\..\fundamentals\owin.rst:233
+#: ..\..\fundamentals\owin.rst:247 ..\..\fundamentals\owin.rst:269
+msgid "Value (type)"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:115 ..\..\fundamentals\owin.rst:149
+#: ..\..\fundamentals\owin.rst:162 ..\..\fundamentals\owin.rst:184
+#: ..\..\fundamentals\owin.rst:200 ..\..\fundamentals\owin.rst:234
+#: ..\..\fundamentals\owin.rst:248 ..\..\fundamentals\owin.rst:270
+msgid "Description"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:116
+msgid "owin.RequestScheme"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:117 ..\..\fundamentals\owin.rst:120
+#: ..\..\fundamentals\owin.rst:123 ..\..\fundamentals\owin.rst:126
+#: ..\..\fundamentals\owin.rst:129 ..\..\fundamentals\owin.rst:132
+#: ..\..\fundamentals\owin.rst:151 ..\..\fundamentals\owin.rst:167
+#: ..\..\fundamentals\owin.rst:189 ..\..\fundamentals\owin.rst:208
+#: ..\..\fundamentals\owin.rst:211 ..\..\fundamentals\owin.rst:214
+#: ..\..\fundamentals\owin.rst:217 ..\..\fundamentals\owin.rst:250
+#: ..\..\fundamentals\owin.rst:272 ..\..\fundamentals\owin.rst:281
+#: ..\..\fundamentals\owin.rst:299
+msgid "``String``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:119
+msgid "owin.RequestMethod"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:122
+msgid "owin.RequestPathBase"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:125
+msgid "owin.RequestPath"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:128
+msgid "owin.RequestQueryString"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:131
+msgid "owin.RequestProtocol"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:134
+msgid "owin.RequestHeaders"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:135 ..\..\fundamentals\owin.rst:170
+msgid "``IDictionary<string,string[]>``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:137
+msgid "owin.RequestBody"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:138 ..\..\fundamentals\owin.rst:173
+#: ..\..\fundamentals\owin.rst:256
+msgid "``Stream``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:142
+msgid "Request Data (OWIN v1.1.0)"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:150
+msgid "owin.RequestId"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:152 ..\..\fundamentals\owin.rst:165
+#: ..\..\fundamentals\owin.rst:168 ..\..\fundamentals\owin.rst:297
+#: ..\..\fundamentals\owin.rst:300
+msgid "Optional"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:155
+msgid "Response Data (OWIN v1.0.0)"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:163
+msgid "owin.ResponseStatusCode"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:164 ..\..\fundamentals\owin.rst:296
+msgid "``int``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:166
+msgid "owin.ResponseReasonPhrase"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:169
+msgid "owin.ResponseHeaders"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:172
+msgid "owin.ResponseBody"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:177
+msgid "Other Data (OWIN v1.0.0)"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:185
+msgid "owin.CallCancelled"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:186 ..\..\fundamentals\owin.rst:259
+#: ..\..\fundamentals\owin.rst:293
+msgid "``CancellationToken``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:188
+msgid "owin.Version"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:193
+msgid "Common Keys"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:201
+msgid "ssl.ClientCertificate"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:202
+msgid "``X509Certificate``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:204
+msgid "ssl.LoadClientCertAsync"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:205
+msgid "``Func<Task>``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:207
+msgid "server.RemoteIpAddress"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:210
+msgid "server.RemotePort"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:213
+msgid "server.LocalIpAddress"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:216
+msgid "server.LocalPort"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:219
+msgid "server.IsLocal"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:220
+msgid "``bool``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:222
+msgid "server.OnSendingHeaders"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:223
+msgid "``Action<Action<object>,object>``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:227
+msgid "SendFiles v0.3.0"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:235
+msgid "sendfile.SendAsync"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:236
+msgid ""
+"See `delegate signature <http://owin.org/spec/extensions/owin-SendFile-"
+"Extension-v0.3.0.htm>`_"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:237
+msgid "Per Request"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:240
+msgid "Opaque v0.3.0"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:249
+msgid "opaque.Version"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:252
+msgid "opaque.Upgrade"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:253
+msgid "``OpaqueUpgrade``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:254
+msgid ""
+"See `delegate signature <http://owin.org/spec/extensions/owin-OpaqueStream-"
+"Extension-v0.3.0.htm>`__"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:255
+msgid "opaque.Stream"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:258
+msgid "opaque.CallCancelled"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:263
+msgid "WebSocket v0.3.0"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:271
+msgid "websocket.Version"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:274
+msgid "websocket.Accept"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:275
+msgid "``WebSocketAccept``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:276 ..\..\fundamentals\owin.rst:285
+#: ..\..\fundamentals\owin.rst:288 ..\..\fundamentals\owin.rst:291
+msgid ""
+"See `delegate signature <http://owin.org/spec/extensions/owin-WebSocket-"
+"Extension-v0.4.0.htm>`__."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:277
+msgid "websocket.AcceptAlt"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:279
+msgid "Non-spec"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:280
+msgid "websocket.SubProtocol"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:282
+msgid ""
+"See `RFC6455 Section 4.2.2 "
+"<https://tools.ietf.org/html/rfc6455#section-4.2.2>`_ Step 5.5"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:283
+msgid "websocket.SendAsync"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:284
+msgid "``WebSocketSendAsync``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:286
+msgid "websocket.ReceiveAsync"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:287
+msgid "``WebSocketReceiveAsync``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:289
+msgid "websocket.CloseAsync"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:290
+msgid "``WebSocketCloseAsync``"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:292
+msgid "websocket.CallCancelled"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:295
+msgid "websocket.ClientCloseStatus"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:298
+msgid "websocket.ClientCloseDescription"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:303
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:305
+msgid ""
+"ASP.NET 5 has built-in support for the OWIN specification, providing "
+"compatibility to run ASP.NET 5 applications within OWIN-based servers as "
+"well as supporting OWIN-based middleware within ASP.NET 5 servers."
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:308
+msgid "Additional Resources"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:310
+msgid ":doc:`middleware`"
+msgstr ""
+
+#: ..\..\fundamentals\owin.rst:311
+msgid ":doc:`servers`"
+msgstr ""

@@ -1,0 +1,360 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\client-side\yeoman.rst:2
+msgid "Building Projects with Yeoman"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:3
+msgid "By `Noel Rice`_, `Scott Addie`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:5
+msgid ""
+"`Yeoman <http://yeoman.io/>`_ generates complete, running projects for a "
+"given set of client-tools. You may be overwhelmed by \"feature-shock\" for "
+"the latest glut of client-tools (NPM, Gulp, Angular, etc.) or have simply "
+"run out of time to work through each feature set, much less the details, of "
+"every client tool. Yeoman generates everything you need to get over your "
+"first hurdle, the \"hello world\" that demonstrates that a group of "
+"technologies function together."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:7
+msgid ""
+"Yeoman is an open-source tool that works like a Visual Studio project "
+"template, but targets a wide developer audience that ranges from Ruby, "
+"browser extensions, PhoneGap, Facebook React, jQuery Mobile, and Microsoft "
+"technologies like ASP.NET."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:9
+msgid ""
+"Yeoman is opinionated; it prescribes tools and best practices for your "
+"target technologies so you don't have to decide \"Use version X or Y?\" or "
+"\"What directory structure should I use?\" Yeoman gets you started with a "
+"known-good project that runs."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:11
+msgid ""
+"The Yeoman command line tool **yo** works alongside a Yeoman generator. "
+"Generators define the technologies that go into a project. Here are a few "
+"sample `generators <http://yeoman.io/generators/>`_:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:13
+msgid ""
+"`AngularJS Generator <https://github.com/yeoman/generator-angular>`_ creates"
+" a starting point for a new Angular single page application."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:14
+msgid ""
+"`JQuery Generator <https://github.com/yeoman/generator-jquery>`_ creates the"
+" shell code for a jQuery plugin."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:15
+msgid ""
+"`Chrome App Generator <https://github.com/yeoman/generator-chromeapp>`_ "
+"generates everything you need to create an extension for the Chrome browser."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:16
+msgid ""
+"The `Flux-React generator <https://github.com/banderson/generator-flux-"
+"react>`_ creates an application based on Facebook's Flux/React architecture."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:17
+msgid ""
+"`ASP.NET generator <https://www.npmjs.com/package/generator-aspnet>`_ "
+"creates ASP.NET 5 DNX projects."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:18
+msgid ""
+"You can even `generate your own Yeoman generator <https://github.com/yeoman"
+"/generator-generator>`_."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:25
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:21
+msgid "`Getting Started`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:22
+msgid "`Building and Running from Visual Studio`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:23
+msgid "`Client-Side Build Support`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:24
+msgid "`Restoring, Building, and Hosting from the Command Line`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:25
+msgid "`Adding to Your Project with Sub Generators`_"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:28
+msgid "Getting Started"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:29
+msgid ""
+"The `ASP.NET generator <https://www.npmjs.com/package/generator-aspnet>`_ "
+"creates ASP.NET 5 DNX projects that can be loaded into Visual Studio 2015 or"
+" run from the command line. The generator creates the following project "
+"types:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:32
+msgid ""
+"**Empty Application**: An empty Web application with minimal dependencies."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:33
+msgid "**Console Application**: A DNX-based console application."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:34
+msgid ""
+"**Web Application**: A complete MVC web application with a simple home page "
+"and examples for managing accounts and login."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:35
+msgid ""
+"**Web Application Basic**: A simpler MVC web application lacking membership "
+"and authorization, among other advanced features which are found only in the"
+" **Web Application** generator."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:36
+msgid "**Web API Application**: A Web API built with MVC."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:37
+msgid ""
+"**Nancy ASP.NET Application**: A lightweight HTTP service with one module "
+"built using `Nancy <http://nancyfx.org/>`_."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:38
+msgid "**Class Library**: A DNX-based class library."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:39
+msgid ""
+"**Unit Test project**: A simple `XUnit <http://xunit.github.io/>`_ test "
+"project."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:41
+msgid ""
+"This walkthrough demonstrates how to use Yeoman to generate an ASP.NET 5 web"
+" application."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:43
+msgid ""
+"Follow the instructions on http://yeoman.io/learning/ to install **yo** and "
+"other required tools."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:45
+msgid "On the command line, install the ASP.NET generator:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:51
+msgid ""
+"The ``–g`` flag installs the generator globally, so that it can be used from"
+" any path on your system."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:53
+msgid "Create the new directory in which the project will be generated:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:59
+msgid "On the command line, make the new directory the current directory:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:65
+msgid ""
+"Run the ``yo`` command, providing the ``aspnet`` alias for the ASP.NET "
+"generator:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:71
+msgid ""
+"The generator displays a menu. Arrow down to the **Web Application** project"
+" type and press ``Enter`` to select it:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:75
+msgid "Provide an application name of \"MyWebApp\" and press ``Enter``:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:79
+msgid ""
+"Yeoman will scaffold the project and its supporting files. Suggested next "
+"steps are also provided in the form of commands."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:84
+msgid "Client-Side Build Support"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:86
+msgid ""
+"The `ASP.NET generator <https://www.npmjs.com/package/generator-aspnet>`_ "
+"creates supporting files to configure client-side build tools. A `Grunt or a"
+" Gulp task runner <http://docs.asp.net/en/latest/client-side/grunt-"
+"gulp.html>`_ file is added to your project to automate build tasks for Web "
+"Application projects. By default, the generator creates **gulpfile.js** to "
+"run tasks. Running the generator with the ``--grunt`` argument generates "
+"**Gruntfile.js** instead:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:92
+msgid ""
+"The generator also configures **package.json** to load Grunt or Gulp "
+"dependencies and adds bower.json and .bowerrc files to restore client-side "
+"packages using the `Bower client-side package manager "
+"<http://docs.asp.net/en/latest/client-side/bower.html>`_."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:95
+msgid "Building and Running from Visual Studio"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:97
+msgid ""
+"You can load your generated ASP.NET 5 web project directly into Visual "
+"Studio 2015, then build and run your project from there."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:99
+msgid ""
+"Open Visual Studio 2015. From the File menu, select :menuselection:`Open -->"
+" Project/Solution`."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:101
+msgid ""
+"In the Open Project dialog, navigate to the ``project.json`` file, select "
+"it, and click the **Open** button. In the Solution Explorer, the project "
+"should look something like the screenshot below."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:105
+msgid ""
+"Yeoman scaffolds a MVC web application, complete with both server- and "
+"client-side build support. Server-side dependencies are listed under the "
+"**References** node, and client-side dependencies in the **Dependencies** "
+"node of Solution Explorer. Dependencies are restored automatically when the "
+"project is loaded."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:109
+msgid ""
+"When all the dependencies are restored, press **F5** to run the project. The"
+" default home page displays in the browser."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:114
+msgid "Restoring, Building, and Hosting from the Command Line"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:116
+msgid ""
+"You can prepare and host your web application using commands **dnu** "
+"(Microsoft .NET Development Utility) and **dnx** (Micorosft .NET Execution "
+"Environment)."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:119
+msgid "For more information on DNX, see :doc:`/dnx/overview`"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:121
+msgid ""
+"From the command line, change the current directory to the folder containing"
+" the project (that is, the folder containing the `project.json` file):"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:127
+msgid ""
+"From the command line, restore the project's NuGet package dependencies:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:133
+msgid "Also from the command line, build the project assemblies:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:139
+msgid "To run the development web server, use this **dnx** command:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:145
+msgid ""
+"This will execute the corresponding ``web`` command in the ``commands`` "
+"section of the project.json file:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:156
+msgid ""
+"The cross-platform Kestrel web server will begin listening on port 5000:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:160
+msgid "Open a web browser, and navigate to http://localhost:5000."
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:165
+msgid "Adding to Your Project with Sub Generators"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:166
+msgid ""
+"You can add new generated files using Yeoman even after the project is "
+"created. Use `sub generators <https://www.npmjs.com/package/generator-aspnet"
+"#sub-generators>`_ to add any of the file types that make up your project. "
+"For example, to add a new class to your project, enter the ``yo "
+"aspnet:Class`` command followed by the name of the class. Execute the "
+"following command from the directory in which the file should be created:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:174
+msgid "The result is a file named Person.cs with a class named ``Person``:"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:194
+msgid "Summary"
+msgstr ""
+
+#: ..\..\client-side\yeoman.rst:195
+msgid ""
+"Yeoman generates complete running projects for a wide range of technology "
+"combinations. The generated files can be loaded into Visual Studio. Task "
+"Runner Explorer and other Visual Studio tooling help configure and automate "
+"unfamiliar technologies in a familiar environment."
+msgstr ""

@@ -1,0 +1,404 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\publishing\docker.rst:2
+msgid "Publish to a Docker Image"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:4
+msgid ""
+"`Docker <https://www.docker.com/whatisdocker/>`_ is a lightweight container "
+"engine, similar in some ways to a virtual machine, which you can use to host"
+" applications and services."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:6
+msgid ""
+"This example shows you how to use the Visual Studio 2015 RC Tools for Docker"
+" extension to publish an ASP.NET 5 app to an Ubuntu Linux virtual machine "
+"(referred to here as a Docker host) on Azure with the Docker extension "
+"installed along with an ASP.NET 5 web application. You can publish the app "
+"to a new Docker host hosted on Azure, or to an on-premise server, Hyper-V, "
+"or Boot2Docker host by using the **Custom Host** setting. After publishing "
+"your app to a Docker host, you can use Docker command-line tools to interact"
+" with the container your app has been published to."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:9
+msgid "Create and publish a new Docker container"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:11
+msgid ""
+"In these procedures, you create a new ASP.NET 5 web application project, "
+"publish a Docker container to Azure, and then publish the web app project to"
+" the Docker container."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:14
+msgid "Add an ASP.NET 5 web application project"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:16
+msgid ""
+"Create a new ASP.NET web application project. On the main menu, choose "
+"**File, New Project**. Under **C#, Web**, choose **ASP.NET Web "
+"Application**."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:19
+msgid ""
+"In the list of **ASP.NET 5 Preview Templates**, choose **Web Site** and then"
+" choose the **OK** button."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:24
+msgid "Publish the project"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:26
+msgid "On the ASP.NET project's context menu, choose **Publish**."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:28
+msgid ""
+"In the **Select a publish target** section of the **Publish Web** dialog "
+"box, choose the **Docker Containers** button."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:30
+msgid ""
+"If you don't see a Docker Containers option, make sure you have installed "
+"the `Visual Studio 2015 RC Tools for Docker "
+"<https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0>`_"
+" and that you selected an ASP.NET 5 Web Site template in the previous step."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:34
+msgid ""
+"The **Select Docker Virtual Machine** dialog box appears. This lets you "
+"specify the Docker host in which you want to publish the project. You can "
+"choose to create a new Docker host or choose an existing VM hosted on Azure "
+"or elsewhere. For this example, we'll use an Azure Docker host."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:36
+msgid ""
+"If you're already logged into Azure, skip to step 5. If you're not logged "
+"in, choose the **Manage subscriptions** link."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:38
+msgid ""
+"In the **Manage Microsoft Azure Subscriptions** dialog box and choose an "
+"existing Azure account. If you aren't logged into Azure, choose the **Add an"
+" account** link, sign in to Azure, and then click the **Close** button."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:42
+msgid ""
+"Choose an existing Docker host or create a new one. If you're using an "
+"existing Docker host, choose it in the **Existing Azure Docker Virtual "
+"Machines** list, choose the **OK** button, and then go to step 7. Otherwise,"
+" choose the **New** button and continue to the next step."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:46
+msgid ""
+"As an alternative, you can choose to publish to a custom Docker host. See "
+"`Provide a custom Docker host`_ later in this topic for more information."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:48
+msgid ""
+"Enter the following information in the **Create a virtual machine on "
+"Microsoft Azure** dialog box. When you're done, choose the **OK** button. "
+"This creates a Linux virtual machine with a configured Docker extension."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:55
+msgid "Property Name"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:55
+msgid "Setting"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:57
+msgid "DNS Name"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:57
+msgid ""
+"Enter a unique name for the virtual machine. If the name is accepted by "
+"Azure, a green circle with a white checkmark appears to the right. If the "
+"name isn't accepted, a red circle with a white x appears. In that case, "
+"enter a new unique name."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:58
+msgid "Image"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:58
+msgid ""
+"Enter an OS image to use in the Docker host, if any. For this example, leave"
+" this setting at **Ubuntu Server 14.04 LTS**."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:59
+msgid "Username"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:59
+msgid "Enter a unique user name for the virtual machine."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:60
+msgid "Password"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:60
+msgid "Enter a password for the local user and then confirm it."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:61
+msgid "Location"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:61
+msgid "Change this setting to the region closest to your location."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:62
+msgid "Auto-generate Docker certificates"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:62
+msgid ""
+"Check this box if you want certificates and keys to be automatically "
+"generated for you. Clear this box if you want to provide existing "
+"certificates and keys."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:65
+msgid "After you choose **OK**, the virtual machine will begin to be created."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:67
+msgid ""
+"You'll get a message that the virtual machine is being created in Azure. You"
+" can check on the progress of this operation in the **Output** window."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:69
+msgid ""
+"After the Docker host is fully provisioned in Azure, you can check your "
+"account on the Azure portal. The virtual machine will appear under the "
+"**Virtual Machine** category on the Azure portal."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:71
+msgid ""
+"Now that the Docker host is ready, go back and publish the web app project. "
+"On the context menu for the web application project node in **Solution "
+"Explorer** choose **Publish**."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:73
+msgid ""
+"On the **Connection** tab in the **Publish Web** dialog box, choose the "
+"**Validate Connection** box to make sure the Docker host is ready. If the "
+"connection is good, choose the **Publish** button to publish the web app."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:75
+msgid ""
+"The first time you publish an app to a Docker host, it will take time to "
+"download any of the base images that are referenced in your Dockerfile (such"
+" as **FROM** *imagename* in the Dockerfile)."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:78
+msgid "Provide a custom Docker host"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:80
+msgid ""
+"The previous procedure had you create a Docker virtual machine hosted on "
+"Azure. However, if you already have an existing Docker host elsewhere, you "
+"can choose to publish to it instead of Azure."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:83
+msgid "How to provide a custom Docker host"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:85
+msgid ""
+"In the **Select Docker Virtual Machine** dialog box, select the **Custom "
+"Docker Host** check box."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:89
+msgid "Choose the **OK** button."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:91
+msgid ""
+"In the **Publish Web** dialog box, add values to the settings in the "
+"**CustomDockerHost** section, such as: the server URL, image name, "
+"Dockerfile location, and host and container port numbers."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:93
+msgid ""
+"In the **Docker Advanced Options** section, you can view or change the Auth "
+"options and Docker command line."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:97
+msgid ""
+"After you've entered in all the required values, choose the **Validate "
+"Connection** button to ensure the connection to the Docker host works "
+"properly."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:99
+msgid ""
+"If the connection works properly, choose the **Next** button to see a list "
+"of the components that will be published, or choose the **Publish** button "
+"to immediately publish the project."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:102
+msgid "Test the Docker host"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:104
+msgid ""
+"Now that the project has been published to a Docker host on Azure, let's "
+"test it by checking its settings. Because the Docker command line tools "
+"install with the Visual Studio extension, you can issue commands to Docker "
+"from a Windows command prompt."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:106
+msgid ""
+"The procedure below is for communicating with a Docker host that's been "
+"deployed to Azure."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:109
+msgid "How to test the Docker host"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:111
+msgid "Open a Windows command prompt."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:113
+msgid ""
+"Assign the Docker host to an environment variable. To do this, enter the "
+"following command (Substitute the name of your Docker host for "
+"<NameofAzureVM>)::"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:117
+msgid ""
+"Invoking this command prevents you from having to add ``–H (Host) "
+"tcp://<NameofAzureVM>.cloudapp.net:2376`` to every command you issue."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:119
+msgid ""
+"If you want, you can issue commands like these to test that the Docker host "
+"is present and functioning."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:122
+msgid "Command line"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:122
+msgid "Description"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:124
+msgid "``docker --tls info``"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:124
+msgid "Get Docker version info."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:125
+msgid "``docker --tls ps``"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:125
+msgid "Get a list of running  containers."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:126
+msgid "``docker --tls ps –a``"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:126
+msgid "Get a list of containers, including ones that are stopped."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:127
+msgid "``docker --tls logs <Docker container name>``"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:127
+msgid "Get a log for the specified container."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:128
+msgid "``docker --tls images``"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:128
+msgid "Get a list of images."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:131
+msgid ""
+"For a full list of Docker commands, simply enter the command docker in the "
+"command prompt. For more information, see `Docker Command Line "
+"<https://docs.docker.com/reference/commandline/cli/>`_."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:134
+msgid "Next steps"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:136
+msgid ""
+"Now that you have a Docker host, you can issue Docker commands to it. To "
+"learn more about Docker, see the `Docker documentation "
+"<https://docs.docker.com/>`_ and the `Docker online tutorial "
+"<https://www.docker.com/tryit/>`_."
+msgstr ""
+
+#: ..\..\publishing\docker.rst:139
+msgid "See also"
+msgstr ""
+
+#: ..\..\publishing\docker.rst:141
+msgid ""
+"`Troubleshooting Docker Errors <https://msdn.microsoft.com/en-"
+"US/library/azure/mt125442.aspx>`_"
+msgstr ""

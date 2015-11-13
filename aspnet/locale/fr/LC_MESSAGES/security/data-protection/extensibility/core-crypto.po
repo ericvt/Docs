@@ -1,0 +1,244 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:4
+msgid "Core cryptography extensibility"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\thread-safety-included.txt:2
+msgid ""
+"Types that implement any of the following interfaces should be thread-safe "
+"for multiple callers."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:11
+msgid "IAuthenticatedEncryptor"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:13
+msgid ""
+"The **IAuthenticatedEncryptor** interface is the basic building block of the"
+" cryptographic subsystem. There is generally one IAuthenticatedEncryptor per"
+" key, and the IAuthenticatedEncryptor instance wraps all cryptographic key "
+"material and algorithmic information necessary to perform cryptographic "
+"operations."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:15
+msgid ""
+"As its name suggests, the type is responsible for providing authenticated "
+"encryption and decryption services. It exposes the following two APIs."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:17
+msgid ""
+"Decrypt(ArraySegment<byte> ciphertext, ArraySegment<byte> "
+"additionalAuthenticatedData) : byte[]"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:18
+msgid ""
+"Encrypt(ArraySegment<byte> plaintext, ArraySegment<byte> "
+"additionalAuthenticatedData) : byte[]"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:20
+msgid ""
+"The Encrypt method returns a blob that includes the enciphered plaintext and"
+" an authentication tag. The authentication tag must encompass the additional"
+" authenticated data (AAD), though the AAD itself need not be recoverable "
+"from the final payload. The Decrypt method validates the authentication tag "
+"and returns the deciphered payload. All failures (except "
+"ArgumentNullException and similar) should be homogenized to "
+"CryptographicException."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:23
+msgid ""
+"The IAuthenticatedEncryptor instance itself doesn't actually need to contain"
+" the key material. For example, the implementation could delegate to an HSM "
+"for all operations."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:28
+msgid "IAuthenticatedEncryptorDescriptor"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:30
+msgid ""
+"The **IAuthenticatedEncryptorDescriptor** interface represents a type that "
+"knows how to create an :ref:`IAuthenticatedEncryptor <data-protection-"
+"extensibility-core-crypto-iauthenticatedencryptor>` instance. Its API is as "
+"follows."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:32
+msgid "CreateEncryptorInstance() : IAuthenticatedEncryptor"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:33
+msgid "ExportToXml() : XmlSerializedDescriptorInfo"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:35
+msgid ""
+"Like IAuthenticatedEncryptor, an instance of "
+"IAuthenticatedEncryptorDescriptor is assumed to wrap one specific key. This "
+"means that for any given IAuthenticatedEncryptorDescriptor instance, any "
+"authenticated encryptors created by its CreateEncryptorInstance method "
+"should be considered equivalent, as in the below code sample."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:56
+msgid "XML Serialization"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:58
+msgid ""
+"The primary difference between IAuthenticatedEncryptor and "
+"IAuthenticatedEncryptorDescriptor is that the descriptor knows how to create"
+" the encryptor and supply it with valid arguments. Consider an "
+"IAuthenticatedEncryptor whose implementation relies on SymmetricAlgorithm "
+"and KeyedHashAlgorithm. The encryptor's job is to consume these types, but "
+"it doesn't necessarily know where these types came from, so it can't really "
+"write out a proper description of how to recreate itself if the application "
+"restarts. The descriptor acts as a higher level on top of this. Since the "
+"descriptor knows how to create the encryptor instance (e.g., it knows how to"
+" create the required algorithms), it can serialize that knowledge in XML "
+"form so that the encryptor instance can be recreated after an application "
+"reset."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:62
+msgid ""
+"The descriptor can be serialized via its ExportToXml routine. This routine "
+"returns an XmlSerializedDescriptorInfo which contains two properties: the "
+"XElement representation of the descriptor and the Type which represents an "
+":ref:`IAuthenticatedEncryptorDescriptorDeserializer <data-protection-"
+"extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer>` "
+"which can be used to resurrect this descriptor given the corresponding "
+"XElement."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:64
+msgid ""
+"The serialized descriptor may contain sensitive information such as "
+"cryptographic key material. The data protection system has built-in support "
+"for encrypting information before it's persisted to storage. To take "
+"advantage of this, the descriptor should mark the element which contains "
+"sensitive information with the attribute name \"requiresEncryption\" (xmlns "
+"\"http://schemas.asp.net/2015/03/dataProtection\"), value \"true\"."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:67
+msgid ""
+"There's a helper API for setting this attribute. Call the extension method "
+"XElement.MarkAsRequiresEncryption() located in namespace "
+"Microsoft.AspNet.DataProtection.AuthenticatedEncryption.ConfigurationModel."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:69
+msgid ""
+"There can also be cases where the serialized descriptor doesn't contain "
+"sensitive information. Consider again the case of a cryptographic key stored"
+" in an HSM. The descriptor cannot write out the key material when "
+"serializing itself since the HSM will not expose the material in plaintext "
+"form. Instead, the descriptor might write out the key-wrapped version of the"
+" key (if the HSM allows export in this fashion) or the HSM's own unique "
+"identifier for the key."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:74
+msgid "IAuthenticatedEncryptorDescriptorDeserializer"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:76
+msgid ""
+"The **IAuthenticatedEncryptorDescriptorDeserializer** interface represents a"
+" type that knows how to deserialize an IAuthenticatedEncryptorDescriptor "
+"instance from an XElement. It exposes a single method:"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:78
+msgid "ImportFromXml(XElement element) : IAuthenticatedEncryptorDescriptor"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:80
+msgid ""
+"The ImportFromXml method takes the XElement that was returned by "
+":ref:`IAuthenticatedEncryptorDescriptor.ExportToXml <data-protection-"
+"extensibility-core-crypto-exporttoxml>` and creates an equivalent of the "
+"original IAuthenticatedEncryptorDescriptor."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:82
+msgid ""
+"Types which implement IAuthenticatedEncryptorDescriptorDeserializer should "
+"have one of the following two public constructors:"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:84
+msgid ".ctor(IServiceProvider)"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:85
+msgid ".ctor()"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:88
+msgid "The IServiceProvider passed to the constructor may be null."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:91
+msgid "IAuthenticatedEncryptorConfiguration"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:93
+msgid ""
+"The **IAuthenticatedEncryptorConfiguration** interface represents a type "
+"which knows how to create :ref:`IAuthenticatedEncryptorDescriptor <data-"
+"protection-extensibility-core-crypto-iauthenticatedencryptordescriptor>` "
+"instances. It exposes a single API."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:95
+msgid "CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:97
+msgid ""
+"Think of IAuthenticatedEncryptorConfiguration as the top-level factory. The "
+"configuration serves as a template. It wraps algorithmic information (e.g., "
+"this configuration produces descriptors with an AES-128-GCM master key), but"
+" it is not yet associated with a specific key."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:99
+msgid ""
+"When CreateNewDescriptor is called, fresh key material is created solely for"
+" this call, and a new IAuthenticatedEncryptorDescriptor is produced which "
+"wraps this key material and the algorithmic information required to consume "
+"the material. The key material could be created in software (and held in "
+"memory), it could be created and held within an HSM, and so on. The crucial "
+"point is that any two calls to CreateNewDescriptor should never create "
+"equivalent IAuthenticatedEncryptorDescriptor instances."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\core-crypto.rst:101
+msgid ""
+"The IAuthenticatedEncryptorConfiguration type serves as the entry point for "
+"key creation routines such as :ref:`automatic key rolling <data-protection-"
+"implementation-key-management>`. To change the implementation for all future"
+" keys, register a singleton IAuthenticatedEncryptorConfiguration in the "
+"service container."
+msgstr ""

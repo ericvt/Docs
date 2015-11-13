@@ -1,0 +1,439 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\static-files.rst:2
+msgid "Working with Static Files"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:3
+msgid "By `Tom Archer`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:5
+msgid ""
+"Static files, which include HTML files, CSS files, image files, and "
+"JavaScript files, are assets that the app will serve directly to clients. In"
+" this article, we'll cover the following topics as they relate to ASP.NET 5 "
+"and static files."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:14
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:8
+msgid "`Serving static files`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:9
+msgid "`Enabling directory browsing`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:10
+msgid "`Serving default files`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:11
+msgid "`Using the UseFileServer method`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:12
+msgid "`Working with content types`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:13
+msgid "`IIS Considerations`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:14
+msgid "`Best practices`_"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:17
+msgid "Serving static files"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:19
+msgid ""
+"By default, static files are stored in the `webroot` of your project. The "
+"location of the webroot is defined in the project's ``project.json`` file "
+"where the default is `wwwroot`."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:25
+msgid ""
+"Static files can be stored in any folder under the webroot and accessed with"
+" a relative path to that root. For example, when you create a default Web "
+"application project using Visual Studio, there are several folders created "
+"within the webroot folder - ``css``, ``images``, and ``js``. In order to "
+"directly access an image in the ``images`` subfolder, the URL would look "
+"like the following:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:27
+msgid "http://<yourApp>/images/<imageFileName>"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:29
+msgid ""
+"In order for static files to be served, you must configure the "
+":doc:`middleware` to add static files to the pipeline. This is accomplished "
+"by calling the ``UseStaticFiles`` extension method from  "
+"``Startup.Configure`` as follows:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:41
+msgid ""
+"Now, let's say that you have a project hierarchy where the static files you "
+"wish to serve are outside the webroot. For example,let's take a simple "
+"layout like the following:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:43
+#: ..\..\fundamentals\static-files.rst:92
+#: ..\..\fundamentals\static-files.rst:178
+#: ..\..\fundamentals\static-files.rst:214
+msgid "wwwroot"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:45
+#: ..\..\fundamentals\static-files.rst:94
+#: ..\..\fundamentals\static-files.rst:180
+#: ..\..\fundamentals\static-files.rst:216
+msgid "css"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:46
+#: ..\..\fundamentals\static-files.rst:95
+#: ..\..\fundamentals\static-files.rst:181
+#: ..\..\fundamentals\static-files.rst:217
+msgid "images"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:47
+#: ..\..\fundamentals\static-files.rst:96
+#: ..\..\fundamentals\static-files.rst:182
+#: ..\..\fundamentals\static-files.rst:221
+msgid "..."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:49
+#: ..\..\fundamentals\static-files.rst:98
+#: ..\..\fundamentals\static-files.rst:184
+msgid "MyStaticFiles"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:51
+#: ..\..\fundamentals\static-files.rst:186
+msgid "test.png"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:53
+msgid ""
+"In order for the user to access test.png, you can configure the static files"
+" middleware as follows:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:69
+msgid ""
+"At this point, if the user enters an address of "
+"``http://<yourApp>/StaticFiles/test.png``, the ``test.png`` image will be "
+"served."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:72
+msgid "Enabling directory browsing"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:74
+msgid ""
+"Directory browsing allows the user of your Web app to see a list of "
+"directories and files within a specified directory (including the root). By "
+"default, this functionality is not available such that if the user attempts "
+"to display a directory within an ASP.NET Web app, the browser displays an "
+"error. To enable directory browsing for your Web app, call the "
+"``UseDirectoryBrowser`` extension method from  ``Startup.Configure`` as "
+"follows:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:86
+msgid ""
+"The following figure illustrates the results of browsing to the Web app's "
+"``images`` folder with directory browsing turned on:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:90
+msgid ""
+"Now, let's say that you have a project hierarchy where you want the user to "
+"be able to browse a directory that is not in the webroot. For example, let's"
+" take a simple layout like the following:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:100
+msgid ""
+"In order for the user to browse the ``MyStaticFiles`` directory, you can "
+"configure the static files middleware as follows:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:116
+msgid ""
+"At this point, if the user enters an address of "
+"``http://<yourApp>/StaticFiles``, the browser will display the files in the "
+"``MyStaticFiles`` directory."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:119
+msgid "Serving default files"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:121
+msgid ""
+"In order for your Web app to serve a default page without the user having to"
+" fully qualify the URI, call the ``UseDefaultFiles`` extension method from "
+"``Startup.Configure`` as follows. Note that you must still call "
+"``UseStaticFiles`` as well. This is because ``UseDefaultFiles`` is a `URL "
+"re-writer` that doesn't actually serve the file. You must still specify "
+"middleware (``UseStaticFiles``, in this case) to serve the file."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:134
+msgid ""
+"If you call the ``'UseDefaultFiles`` extension method and the user enters a "
+"URI of a folder, the middleware will search (in order) for one of the "
+"following files. If one of these files is found, that file will be used as "
+"if the user had entered the fully qualified URI (although the browser URL "
+"will continue to show the URI entered by the user)."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:136
+msgid "default.htm"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:137
+#: ..\..\fundamentals\static-files.rst:187
+msgid "default.html"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:138
+msgid "index.htm"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:139
+msgid "index.html"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:141
+msgid ""
+"To specify a different default file from the ones listed above, instantiate "
+"a ``DefaultFilesOptions`` object and set its ``DefaultFileNames`` string "
+"list to a list of names appropriate for your app. Then, call one of the "
+"overloaded ``UseDefaultFiles`` methods passing it the "
+"``DefaultFilesOptions`` object. The following example code removes all of "
+"the default files from the ``DefaultFileNames`` list and adds  "
+"``mydefault.html`` as the only default file for which to search."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:157
+msgid ""
+"Now, if the user browses to a directory in the webroot with a file named "
+"``mydefault.htm``, that file will be served as though the user typed in the "
+"fully qualified URI."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:159
+msgid ""
+"But, what if you want to serve a default page from a directory that is "
+"outside the webroot directory? You could call both the ``UseStaticFiles`` "
+"and ``UseDefaultFiles`` methods passing in identical values for each "
+"method's parameters. However, it's much more convenient and recommended to "
+"call the ``UseFileServer`` method, which is covered in the next section."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:162
+msgid "Using the UseFileServer method"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:164
+msgid ""
+"In addition to the ``UseStaticFiles``, ``UseDefaultFiles``, and "
+"``UseDirectoryBrowser`` extensions methods, there is also a single method - "
+"``UseFileServer`` - that combines the functionality of all three methods. "
+"The following example code shows some common ways to use this method:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:176
+msgid ""
+"As with the ``UseStaticFiles``, ``UseDefaultFiles``, and "
+"``UseDirectoryBrowser`` methods, if you wish to serve files that exist "
+"outside the webroot, you instantiate and configure an \"options\" object "
+"that you pass as a parameter to ``UseFileServer``. For example, let's say "
+"you have the following directory hierarchy in your Web app:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:189
+msgid ""
+"Using the hierarchy example above, you might want to enable static files, "
+"default files, and browsing for the ``MyStaticFiles`` directory. In the "
+"following code snippet, that is accomplished with a single call to "
+"``UseFileServer``."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:202
+msgid ""
+"Using the example hierarchy and code snippet from above, here's what happens"
+" if the user browses to various URIs:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:204
+msgid ""
+"``http://<yourApp>/StaticFiles/test.png`` - The ``MyStaticFiles/test.png`` "
+"file will be served to and presented by the browser."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:205
+msgid ""
+"``http://<yourApp>/StaticFiles`` - Since a default file is present "
+"(``MyStaticFiles/default.html``), that file will be served. If that file "
+"didn't exist, the browser would present a list of files in the "
+"``MyStaticFiles`` directory (because the "
+"``FileServerOptions.EnableDirectoryBrowsing`` property is set to ``true``)."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:208
+msgid "Working with content types"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:210
+msgid ""
+"The ASP.NET static files middleware defines `almost 400 known file content "
+"types "
+"<https://github.com/aspnet/StaticFiles/blob/1.0.0-beta6/src/Microsoft.AspNet.StaticFiles/FileExtensionContentTypeProvider.cs>`_."
+" If the user attempts to reach a file of an unknown file type, the ASP.NET "
+"middleware will not attempt to serve the file."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:212
+msgid ""
+"Let's take the following directory/file hierarchy example to illustrate:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:219
+msgid "test.image"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:223
+msgid ""
+"Using this hierarchy, you could enable static file serving and directory "
+"browsing with the following:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:235
+msgid ""
+"If the user browses to ``http://<yourApp>/images``, a directory listing will"
+" be displayed by the browser that includes the ``test.image`` file. However,"
+" if the user clicks on that file, they will see a 404 error - even though "
+"the file obviously exists. In order to allow the serving of unknown file "
+"types, you could set the ``StaticFileOptions.ServeUnknownFileTypes`` "
+"property to ``true`` and specify a default content type via "
+"``StaticFileOptions.DefaultContentType``. (Refer to this `list of common "
+"MIME content types <http://www.freeformatter.com/mime-types-list.html>`_.)"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:251
+msgid ""
+"At this point, if the user browses to a file whose content type is unknown, "
+"the browser will treat it as an image and render it accordingly."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:253
+msgid ""
+"So far, you've seen how to specify a default content type for any file type "
+"that ASP.NET doesn't recognize. However, what if you have multiple file "
+"types that are unknown to ASP.NET? That's where the "
+"``FileExtensionContentTypeProvider`` class comes in."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:255
+msgid ""
+"The ``FileExtensionContentTypeProvider`` class contains an internal "
+"collection that maps file extensions to MIME content types. To specify "
+"custom content types, simply instantiate a "
+"``FileExtensionContentTypeProvider`` object and add a mapping to the "
+"``FileExtensionContentTypeProvider.Mappings`` dictionary for each needed "
+"file extension/content type. In the following example, the code adds a "
+"mapping of the file extension ``.myapp`` to the MIME content type "
+"``application/x-msdownload``."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:276
+msgid ""
+"Now, if the user attempts to browse to any file with an extension of "
+"``.myapp``, the user will be prompted to download the file (or it will "
+"happen automatically depending on the browser)."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:279
+msgid "IIS Considerations"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:281
+msgid ""
+"IIS (Internet Information Server) has a native static file module that is "
+"independent of the ASP.NET static file middleware components that you've "
+"learned about in this article. As the ASP.NET modules are run before the IIS"
+" native module, they take precedence over the IIS native module. As of "
+"`ASP.NET Beta 7 <https://github.com/aspnet/Announcements#54>`_, the IIS host"
+" has changed so that requests that are not handled by ASP.NET will return "
+"empty 404 responses instead of allowing the IIS native modules to run. To "
+"opt into running the IIS native modules, add the following call to the end "
+"of ``Startup.Configure``."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:298
+msgid "Best practices"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:300
+msgid ""
+"This section includes a list of best practices for working with static "
+"files:"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:302
+msgid ""
+"Code files (including C# and Razor files) should be placed outside of the "
+"app project's webroot. This creates a clean separation between your app's "
+"static (non-compilable) content and source code."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:305
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:306
+msgid ""
+"In this article, you learned how the static files middleware component in "
+"ASP.NET 5 allows you to serve static files, enable directory browsing, and "
+"serve default files. You also saw how to work with content types that "
+"ASP.NET doesn't recognize. Finally, the article explained some IIS "
+"considerations and presented some best practices for working with static "
+"files."
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:309
+msgid "Additional Resources"
+msgstr ""
+
+#: ..\..\fundamentals\static-files.rst:311
+msgid ":doc:`middleware`"
+msgstr ""

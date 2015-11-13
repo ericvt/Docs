@@ -1,0 +1,462 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\servers.rst:2
+msgid "Servers"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:6
+msgid ""
+"ASP.NET 5 is completely decoupled from the web server environment that hosts"
+" the application. As released, ASP.NET 5 supports IIS and IIS Express, "
+"WebListener, and Kestrel web servers, which run on a variety of platforms. "
+"Developers and third party software vendors can create their own custom "
+"servers as well within which to host their ASP.NET 5 applications."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:15
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:9
+msgid "`Servers and commands`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:10
+msgid "`Supported features by server`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:11
+msgid "`IIS and IIS Express`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:12
+msgid "`WebListener`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:13
+msgid "`Kestrel`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:14
+msgid "`Choosing a server`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:15
+msgid "`Custom Servers`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:17
+msgid ""
+"`Browse or download samples on GitHub "
+"<https://github.com/aspnet/Docs/tree/master/docs/fundamentals/servers/sample>`_."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:20
+msgid "Servers and commands"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:22
+msgid ""
+"ASP.NET 5 is designed to decouple web applications from the underlying web "
+"server that hosts them. Traditionally, ASP.NET applications have been "
+"windows-only (unless `hosted via mono <http://www.mono-"
+"project.com/docs/web/aspnet/>`_) and hosted on the built-in web server for "
+"windows, Internet Information Server (IIS) (or a development server, like "
+"`IIS Express <http://www.iis.net/learn/extensions/introduction-to-iis-"
+"express/iis-express-overview>`_ or earlier development web servers). While "
+"IIS is still the recommended way to host production ASP.NET applications on "
+"Windows, the cross-platform nature of ASP.NET allows it to be hosted in any "
+"number of different web servers, on multiple operating systems."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:24
+msgid "ASP.NET 5 ships with support for 3 different servers:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:26
+msgid "Microsoft.AspNet.Server.IIS"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:27
+msgid "Microsoft.AspNet.Server.WebListener (WebListener)"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:28
+msgid "Microsoft.AspNet.Server.Kestrel (Kestrel)"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:30
+msgid ""
+"ASP.NET 5 does not directly listen for requests, but instead relies on the "
+"HTTP server implementation to surface the request to the application as a "
+"set of :doc:`feature interfaces <request-features>` composed into an "
+"HttpContext. Both IIS and WebListener are Windows-only; Kestrel is designed "
+"to run cross-platform. You can configure your application to be hosted by "
+"any or all of these servers by specifying commands in your ``project.json`` "
+"file. You can even specify an application entry point for your application, "
+"and run it as an executable (using ``dnx run``) rather than hosting it in a "
+"separate process."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:32
+msgid ""
+"The default web host for ASP.NET applications developed using Visual Studio "
+"2015 is IIS / IIS Express. The \"Microsoft.AspNet.Server.IIS\" dependency is"
+" included in ``project.json`` by default, even with the Empty web site "
+"template. Visual Studio provides support for multiple profiles, associated "
+"with IIS Express and any other ``commands`` defined in ``project.json``. You"
+" can manage these profiles and their settings in the Debug tab of your web "
+"application project's Properties menu."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:36
+msgid ""
+"IIS doesn't support commands; Visual Studio launches IIS Express and loads "
+"your application into it when you choose its profile."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:38
+msgid ""
+"I've configured the sample project for this article to support each of the "
+"different server options in its ``project.json`` file:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:0
+msgid "project.json (truncated)"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:47
+msgid ""
+"The ``run`` command will execute the application via its ``void main()`` "
+"method defined in ``program.cs``. In this case, this has been set up to "
+"configure and start an instance of ``WebListener``. This is not a typical "
+"means of launching a server, but is shown to demonstrate the possibility "
+"(the `Music Store sample application "
+"<https://github.com/aspnet/MusicStore>`_ also demonstrates this option)."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:0
+msgid "program.cs"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:57
+msgid "Supported Features by Server"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:59
+msgid ""
+"ASP.NET defines a number of :doc:`request-features` which may be supported "
+"on different server implementations. The following table lists the different"
+" features and the servers supporting them."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:64
+msgid "Feature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:65
+msgid "IIS"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:66 ..\..\fundamentals\servers.rst:161
+msgid "WebListener"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:67 ..\..\fundamentals\servers.rst:174
+msgid "Kestrel"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:68
+msgid "IHttpRequestFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:69 ..\..\fundamentals\servers.rst:70
+#: ..\..\fundamentals\servers.rst:71 ..\..\fundamentals\servers.rst:73
+#: ..\..\fundamentals\servers.rst:74 ..\..\fundamentals\servers.rst:75
+#: ..\..\fundamentals\servers.rst:77 ..\..\fundamentals\servers.rst:78
+#: ..\..\fundamentals\servers.rst:83 ..\..\fundamentals\servers.rst:85
+#: ..\..\fundamentals\servers.rst:86 ..\..\fundamentals\servers.rst:89
+#: ..\..\fundamentals\servers.rst:90 ..\..\fundamentals\servers.rst:93
+#: ..\..\fundamentals\servers.rst:94 ..\..\fundamentals\servers.rst:97
+#: ..\..\fundamentals\servers.rst:98 ..\..\fundamentals\servers.rst:101
+#: ..\..\fundamentals\servers.rst:102 ..\..\fundamentals\servers.rst:105
+#: ..\..\fundamentals\servers.rst:106 ..\..\fundamentals\servers.rst:109
+#: ..\..\fundamentals\servers.rst:110 ..\..\fundamentals\servers.rst:113
+#: ..\..\fundamentals\servers.rst:114
+msgid "Yes"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:72
+msgid "IHttpResponseFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:76
+msgid "IHttpAuthenticationFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:79 ..\..\fundamentals\servers.rst:81
+#: ..\..\fundamentals\servers.rst:87 ..\..\fundamentals\servers.rst:91
+#: ..\..\fundamentals\servers.rst:95 ..\..\fundamentals\servers.rst:99
+#: ..\..\fundamentals\servers.rst:107 ..\..\fundamentals\servers.rst:111
+#: ..\..\fundamentals\servers.rst:115
+msgid "No"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:80
+msgid "IHttpUpgradeFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:82
+msgid "Yes (with limits)"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:84
+msgid "IHttpBufferingFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:88
+msgid "IHttpConnectionFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:92
+msgid "IHttpRequestLifetimeFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:96
+msgid "IHttpSendFileFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:100
+msgid "IHttpWebSocketFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:103
+msgid "No*"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:104
+msgid "IRequestIdentifierFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:108
+msgid "ITlsConnectionFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:112
+msgid "ITlsTokenBindingFeature"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:117
+msgid ""
+"To add support for web sockets in Kestrel, use the `WebSocketMiddleware "
+"<https://github.com/aspnet/WebSockets/blob/c86b157ad3cd00e8848c4895fe29de2f9d81a0b4/src/Microsoft.AspNet.WebSockets.Server/WebSocketMiddleware.cs>`_"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:120
+msgid "Configuration options"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:122
+msgid ""
+"When launching a server, you can provide it with some configuration options."
+" This can be done directly using command line parameters, or a configuration"
+" file containing the settings can be specified. The "
+"``Microsoft.AspNet.Hosting`` command supports parameters for the server to "
+"use (such as ``Kestrel`` or ``WebListener``) as well as a ``server.urls`` "
+"configuration key, which should contain a semicolon-separated list of URL "
+"prefixes the server should handle."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:124
+msgid ""
+"The ``project.json`` file shown above demonstrates how to pass the "
+"``server.urls`` parameter directly:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:130
+msgid "Alternately, a configuration file can be referenced, instead:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:136
+msgid ""
+"Then, ``hosting.ini`` can include the settings the server will use "
+"(including the server parameter, as well):"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:144
+msgid "Programmatic configuration"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:146
+msgid ""
+"In addition to specifying configuration options, the server hosting the "
+"application can be referenced programmatically via the `IApplicationBuilder "
+"interface "
+"<https://github.com/aspnet/HttpAbstractions/blob/ed339a35d2a0ae6137c12e9bc8e8b037ed429bc1/src/Microsoft.AspNet.Http.Abstractions/IApplicationBuilder.cs>`_,"
+" available in the ``Configure`` method in ``Startup``. "
+"``IApplicationBuilder`` exposes a Server property of type `ServerInformation"
+" "
+"<https://github.com/aspnet/Hosting/blob/62e534977386ebb02bfc351ec4a6bbea9ea7f635/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerInformation.cs>`_."
+" ``IServerInformation`` only exposes a ``Name`` property, but different "
+"server implementations may expose additional functionality. For instance, "
+"WebListener exposes a ``Listener`` property that can be used to configure "
+"the server's authentication:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:156
+msgid "IIS and IIS Express"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:158
+msgid ""
+"Working with IIS as your server for your ASP.NET application is the default "
+"option, and should be familiar to ASP.NET developers who have worked with "
+"previous versions of the framework. IIS currently provides support for the "
+"largest number of features, and includes IIS management functionality and "
+"access to other IIS modules. Hosting ASP.NET 5 on IIS bypasses the legacy "
+"``System.Web`` infrastructure used by prior versions of ASP.NET, providing a"
+" substantial performance gain. Most production ASP.NET web applications "
+"being deployed to Windows servers will run on IIS."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:163
+msgid ""
+"WebListener is a Windows-only server that allows ASP.NET applications to be "
+"hosted outside of IIS. It runs directly on the `Http.Sys kernel driver "
+"<http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-"
+"iis-architecture>`_, and has very little overhead. It supports the same "
+"feature interfaces as IIS; in fact, you can think of WebListener as a "
+"library version of IIS."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:165
+msgid ""
+"You can add support for WebListener to your ASP.NET application by adding "
+"the \"Microsoft.AspNet.Server.WebListener\" dependency in project.json and "
+"the following command:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:176
+msgid ""
+"Kestrel is a cross-platform web server based on `libuv "
+"<https://github.com/libuv/libuv>`_, a cross-platform asynchronous I/O "
+"library. Kestrel is open-source, and you can `view the Kestrel source on "
+"GitHub <https://github.com/aspnet/KestrelHttpServer>`_. Kestrel is a great "
+"option to at least include support for in your ASP.NET 5 projects so that "
+"your project can be easily run by developers on any of the supported "
+"platforms. You add support for Kestrel by including \"Kestrel\" in your "
+"project's dependencies listed in ``project.json``."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:178
+msgid ""
+"Learn more about working with Kestrel to create :doc:`/tutorials/your-first-"
+"mac-aspnet`."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:181
+msgid "Choosing a server"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:183
+msgid ""
+"If you intend to deploy your application on a Windows server, you should "
+"prefer the Windows optimized servers (IIS and WebListener). IIS remains the "
+"best choice for typical web application deployments on Windows servers, and "
+"provides the richest set of features. Choose WebListener instead of IIS only"
+" if you need to host your application within your own process or service. "
+"Use Kestrel if you intend to develop on or deploy to non-Windows "
+"environments."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:187
+msgid "Custom Servers"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:189
+msgid ""
+"In addition to the options listed above, you can create your own server in "
+"which to host your ASP.NET application, or use other open source servers. "
+"Forking and modifying the KestrelHttpServer is one way to quickly create "
+"your own custom server, and at the time of this writing the "
+"KestrelHttpServer repository on GitHub has been forked 55 times. When "
+"implementing your own server, you're free to implement just the feature "
+"interfaces your application needs, though at a minimum you must support "
+"``IHttpRequestFeature`` and ``IHttpResponseFeature``."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:191
+msgid ""
+"Since Kestrel is open source, it makes an excellent starting point if you "
+"need to implement your own custom server. In fact, like all of ASP.NET 5, "
+"you're welcome to `contribute "
+"<https://github.com/aspnet/KestrelHttpServer/blob/dev/CONTRIBUTING.md>`_ any"
+" improvements you make back to the project."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:193
+msgid ""
+"Kestrel currently supports a limited number of feature interfaces, including"
+" ``IHttpRequestFeature``, ``IHttpResponseFeature``, and "
+"``IHttpUpgradeFeature``, but additional features will be added in the "
+"future. You can see how these interfaces are implemented and supported by "
+"Kestrel in its `ServerRequest class "
+"<https://github.com/aspnet/KestrelHttpServer/blob/dev/src/Kestrel/ServerRequest.cs>`_,"
+" a portion of which is shown below."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:0
+msgid "Kestrel ServerRequest.cs class snippet"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:218
+msgid ""
+"The ``IHttpUpgradeFeature`` interface consists of only one property and one "
+"method. Kestrel's implementation of this interface is shown here for "
+"reference:"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:0
+msgid "Kestrel ServerRequest.cs IHttpUpgradeFeature implementation"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:255
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:257
+msgid ""
+"Because ASP.NET 5 has completely decoupled ASP.NET applications from IIS or "
+"any other web server, it's now possible to host ASP.NET applications on any "
+"number of different servers. ASP.NET supports three: IIS, WebListener, and "
+"Kestrel, which provide two great options for Windows environments and a "
+"third, open-source option that can be used on several different operating "
+"systems."
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:260
+msgid "Additional Reading"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:262
+msgid ":doc:`request-features`"
+msgstr ""
+
+#: ..\..\fundamentals\servers.rst:263
+msgid ":doc:`hosting`"
+msgstr ""

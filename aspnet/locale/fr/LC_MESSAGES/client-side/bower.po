@@ -1,0 +1,284 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\client-side\bower.rst:2
+msgid "Manage Client-Side Packages with Bower"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:4
+msgid "By `Noel Rice`_, `Scott Addie`_"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:6
+msgid ""
+"Bower is a \"package manager for the web.\" Bower lets you install and "
+"restore client-side packages, including JavaScript and CSS libraries. For "
+"example, with Bower you can install CSS files, fonts, client frameworks, and"
+" JavaScript libraries from external sources. Bower resolves dependencies and"
+" will automatically download and install all the packages you need. For "
+"example, if you configure Bower to load the Bootstrap package, the necessary"
+" jQuery package will automatically come along for the ride. For server-side "
+"libraries like the MVC 6 framework, you will still use NuGet Package "
+"Manager."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:8
+msgid ""
+"Visual Studio developers are already familiar with NuGet, so why not use "
+"NuGet instead of Bower? Mainly because Bower already has a rich ecosystem "
+"with over 33,000 packages in play; and, it integrates well with the Gulp and"
+" Grunt task runners."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:11
+msgid "Getting Started with Bower"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:13
+msgid ""
+"The ASP.NET 5 Starter Web MVC project pre-constructs the client build "
+"process for you. The ubiquitous jQuery and Bootstrap packages are installed,"
+" and the plumbing for NPM, Gulp, and Bower is already in place. The "
+"following screenshot depicts the initial project in Solution Explorer."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:18
+msgid ""
+"Client-side packages are listed in the bower.json file. The ASP.NET 5 "
+"Starter Web project pre-configures bower.json with jQuery, jQuery "
+"validation, Bootstrap, and `Hammer.js <http://hammerjs.github.io/>`_."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:20
+msgid ""
+"Let’s add support for photo albums by installing the `Fotorama "
+"<http://fotorama.io/>`_ jQuery plugin."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:22
+msgid ""
+"At the end of the ``dependencies`` section in bower.json, add a comma and "
+"type \"fotorama\". Notice as you type that you get IntelliSense with a list "
+"of available packages. Select \"fotorama\" from the list."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:27
+msgid ""
+"Add a colon and then select the latest stable version of the package from "
+"the drop down list. The double quotes will be added automatically."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:32 ..\..\client-side\bower.rst:119
+msgid "Save the bower.json file."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:34
+msgid ""
+"Visual Studio watches the bower.json file for changes. Upon saving, the "
+"`bower install` command is executed. See the Output window's \"Bower/npm\" "
+"view for the exact command which was executed."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:36
+msgid ""
+"Expand the twisty to the left of bower.json, and locate the .bowerrc file. "
+"Open it, and notice that the ``directory`` property is set to "
+"\"wwwroot/lib\". This setting indicates the location at which Bower will "
+"install the package assets."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:44
+msgid ""
+"In Solution Explorer, expand the *wwwroot* node. The *lib* directory should "
+"now contain all of the packages, including the fotorama package."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:49
+msgid ""
+"Next, let's add an HTML page to the project. In Solution Explorer, right-"
+"click *wwwroot* node and select **Add** > **New Item** > **HTML Page**. Name"
+" the page Index.html. Replace the contents of the file with the following:"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:72
+msgid ""
+"This example uses images currently available inside *wwwroot/images*, but "
+"you can add any images on hand."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:74
+msgid ""
+"Press ``Ctrl+Shift+W`` to display the page in the browser. The control "
+"displays the images and allows navigation by clicking the thumbnail list "
+"below the main image. This quick test shows that Bower installed the correct"
+" packages and dependencies."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:79
+msgid "Exploring the Client Build Process"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:81
+msgid ""
+"The **ASP.NET 5 Starter Web** project has everything you need for Bower "
+"already setup. This next walkthrough starts with the **Empty** project "
+"template and adds each piece manually, so you can get a feel for how Bower "
+"is used in a project. See what happens to the project structure and the "
+"runtime output as each configuration change is made to the project."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:83
+msgid "The general steps to use the client-side build process with Bower are:"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:85
+msgid "Define and download packages used in your project."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:86
+msgid "Reference packages from your web pages."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:89
+msgid "Define Packages"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:91
+msgid ""
+"The first step is to define the packages your application needs and to "
+"download them. This example uses Bower to load jQuery and Bootstrap in the "
+"desired location."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:93
+msgid "In Visual Studio 2015, create a new ASP.NET Web Application."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:94
+msgid ""
+"In the **New ASP.NET Project** dialog, select the **ASP.NET 5 Empty** "
+"template and click **OK**."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:95
+msgid ""
+"In Solution Explorer, the *src* directory includes a project.json file, and "
+"*wwwroot* and *Dependencies* nodes. The project directory will look like the"
+" screenshot below."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:100
+msgid ""
+"In Solution Explorer, right-click the project and add the following item:"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:102
+msgid "Bower Configuration File – bower.json"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:104
+msgid "The Bower Configuration File item template also adds a .bowerrc file."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:106
+msgid ""
+"Open bower.json, and add jquery and bootstrap to the ``dependencies`` "
+"section. The resulting bower.json file should look like the example here. "
+"The versions will change over time, so use the latest stable build version "
+"from the drop-down list."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:121
+msgid ""
+"The project should now include *bootstrap* and *jQuery* directories in two "
+"locations: *Dependencies/Bower* and *wwwroot/lib*. It's the .bowerrc file "
+"which instructed Bower to install the assets within *wwwroot/lib*."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:128
+msgid "Reference Packages"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:130
+msgid ""
+"Now that Bower has copied the client support packages needed by the "
+"application, you can test that an HTML page can use the deployed jQuery and "
+"Bootstrap functionality."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:132
+msgid ""
+"Right-click *wwwroot* and select **Add** > **New Item** > **HTML Page**. "
+"Name the page Index.html."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:133
+msgid "Add the CSS and JavaScript references."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:135
+msgid ""
+"In Solution Explorer, expand *wwwroot/lib/bootstrap* and locate "
+"bootstrap.css. Drag this file into the ``head`` element of the HTML page."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:136
+msgid "Drag jquery.js and bootstrap.js to the end of the ``body`` element."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:138
+msgid ""
+"Make sure bootstrap.js follows jquery.js, so that jQuery is loaded first."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:158
+msgid "Use the Installed Packages"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:160
+msgid ""
+"Add jQuery and Bootstrap components to the page to verify that the web "
+"application is configured correctly."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:162
+msgid ""
+"Inside the ``body`` tag, above the ``script`` references, add a ``div`` "
+"element with the Bootstrap **jumbotron** class and an anchor tag."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:172
+msgid ""
+"Add the following code after the jQuery and Bootstrap ``script`` references."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:188
+msgid ""
+"Validate that the ``Configure`` method of the Startup.cs file contains a "
+"call to the ``UseStaticFiles`` extension method. This middleware adds files,"
+" found within the web root, to the request pipeline. This line of code will "
+"look as follows:"
+msgstr ""
+
+#: ..\..\client-side\bower.rst:194
+msgid ""
+"Be sure to install the ``Microsoft.AspNet.StaticFiles`` NuGet package. "
+"Without it, the ``UseStaticFiles`` extension method will not resolve."
+msgstr ""
+
+#: ..\..\client-side\bower.rst:196
+msgid ""
+"Press ``Ctrl+Shift+W`` to view the Index.html page in the browser. Verify "
+"that the jumbotron styling is applied, the jQuery code responds when the "
+"button is clicked, and that the Bootstrap button changes state."
+msgstr ""

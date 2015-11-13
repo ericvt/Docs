@@ -1,0 +1,477 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\dnx\commands.rst:2
+msgid "Using Commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:4
+msgid ""
+"DNX projects are used to build and run .NET applications for Windows, Mac "
+"and Linux. DNX provides a host process, CLR hosting logic and managed entry "
+"point discovery. You can use DNX to execute commands from a command prompt."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:7
+msgid "What is a command?"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:9
+msgid ""
+"A command is a named execution of a .NET entry point with specific "
+"arguments. Commands can be defined locally in your project or installed "
+"globally on your machine. The *project.json* file in your project allows you"
+" to define commands for your project. Commands that you define for your "
+"projects are understood by Visual Studio Code (VS Code) as well as Visual "
+"Studio. Global commands, which are not project specific, can be installed on"
+" a machine and run from a command prompt."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:12
+msgid "Using commands in your project"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:14
+msgid ""
+"In the ``commands`` section of the below *project.json* example, four "
+"commands are listed:"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:42
+msgid ""
+"A command can include a set of arguments that will be passed to the DNX. In "
+"the above example, the first part of a command statement is an assembly with"
+" an entry point that the DNX will try to execute. Notice that in the "
+"``commands`` section shown above, the ``ef`` command is implemented by the "
+"``EntityFramework.Commands`` assembly. This command doesn't require any "
+"extra argument, all that is needed to define the command is the name of the "
+"assembly. For the ``web`` command and the ``kestrel`` command, the arguments"
+" are contained in the referenced *hosting.ini* file. In the *hosting.ini* "
+"file you will see the ``server`` agrument and the the ``server.urls`` "
+"argument. The ``kestrel`` command, as well as the ``web`` command, will "
+"check the ``Microsoft.AspNet.Hosting`` assembly for an entry point, then it "
+"will pass the ``server`` and ``server.urls`` arguments to the entry point. "
+"Specifically, the arguments for each command are passed to the entry point "
+"throught the ``args`` argument of the ``main`` method."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:44
+msgid ""
+"The assembly listed in the ``commands`` section should be pulled in by a "
+"package that your application depends on."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:46
+msgid ""
+"You can add a command package and its dependencies to your project using the"
+" `Package Manager Console <http://docs.nuget.org/consume/package-manager-"
+"console>`_. For example, to install the `SecretManager "
+"<http://www.nuget.org/packages/Microsoft.Framework.SecretManager>`_ package "
+"from the **Package Manager Console**, enter the following::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:50
+msgid ""
+"The global *NuGet.config* file is used to find the correct NuGet feed when "
+"installing global command NuGet packages. Use ``Install-Package -?`` from "
+"the **Package Manager Console** to view help information related to the "
+"``Install-Package`` command."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:53
+msgid "Running commands using dnx.exe"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:55
+msgid ""
+"You can use DNX to run the commands defined by your project by entering the "
+"following in the command prompt from your project's directory::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:59
+msgid ""
+"You can also run commands from VS Code or Visual Studio. From VS Code, open "
+"the **Command Palette** (Ctrl+Shift+P) and enter the name of the command you"
+" want to run. From Visual Studio, open the **Command Window** (Ctrl+Alt+A) "
+"and enter the name of the command you want to run."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:61
+msgid ""
+"For example, the following command is used to run a web application using "
+"the Kestrel web server::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:65
+msgid "To run a console app, you can use the following command::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:69
+msgid ""
+"Note that running a command is short-hand for specifying the command "
+"assembly and it's arguments directly to DNX. For example, ``dnx web`` is a "
+"short-hand alias for ``dnx Microsoft.AspNet.Hosting hosting.ini``, where the"
+" *hosting.ini* file contains the command parameters."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:72
+msgid "Global commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:73
+msgid ""
+"Global commands are DNX console applications (in a NuGet package) that are "
+"installed globally and runnable from your command line. The difference "
+"between global commands and commands that your add in the ``commands`` "
+"section of the *project.json* file of a project is that global commands are "
+"made available to everything that runs under a user profile. You can "
+"install, run, uninstall, build, and publish global commands."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:75
+msgid ""
+"The ``dnu commands install`` command will use the NuGet sources contained in"
+" the local XML *NuGet.Config* file to determine where it looks for NuGet "
+"packages. The main sections for this file are ``packageRestore``, "
+"``packageSources``, ``disabledPackageSources``, and ``activePackageSource``."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:78
+msgid "Installing global commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:80
+msgid ""
+"To add a global command (and package), you can use the .NET Development "
+"Utility (DNU) to download a NuGet package and install it."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:82
+msgid "For example, enter the following from the command prompt::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:86
+msgid ""
+"You can use the ``--overwrite`` option to overwrite conflicting commands. "
+"Use ``dnu commands install -?`` from the command prompt to view help "
+"information related to the ``install`` command."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:89
+msgid "Running global commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:91
+msgid ""
+"You can run global commands from the command prompt after installing the "
+"related package. For example, if you have installed the SecretManager and "
+"have set the user secret for the application, from the application directory"
+" you can issue the following command to retrive all of the user secrets for "
+"your application::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:95
+msgid ""
+"To see a list of the available DNX runtimes, including the **active** DNX "
+"runtime, you can enter ``dnvm list`` from the command prompt. If you need to"
+" change the active DNX runtime, use ``dnvm use [version] -p``. For example, "
+"``dnvm use 1.0.0-beta7 –p``. Global commands always run with the active DNX "
+"runtime."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:98
+msgid "Uninstalling global commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:100
+msgid "To uninstall global commands you can use the following DNU command::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:104
+msgid "The [arguments] is the name of the command to uninstall. For example::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:108
+msgid ""
+"For additional details about the uninstall command, enter ``dnu commands "
+"uninstall -?`` from the command prompt."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:111
+msgid "Built-in global commands"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:113
+msgid "The following built-in global commands are available:"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:115
+msgid "user-secret"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:116
+msgid "sqlservercache"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:118
+msgid ""
+"These commands have specific NuGet packages that are installed. When you "
+"install a global command, the related NuGet package is also installed."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:121
+msgid "Building and publishing global command"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:123
+msgid ""
+"You can use the .NET Development Utility (DNU) to build, package and publish"
+" a global command. A global command is contained as a console app project. "
+"Building a project produces the binary outputs for the project. Packaging "
+"produces a NuGet package that can be uploaded to a package feed (such as "
+"http://nuget.org)) and then consumed. Publishing collects all required "
+"runtime artifacts (the required DNX and packages) into a single folder so "
+"that it can be deployed as an application."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:125
+msgid ""
+"When you generate a console app using the console app template, it includes "
+"a *program.cs* file containing a ``Main`` entry point to the app. After you "
+"create a console app, you can build and run the app by issuing the following"
+" DNX command::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:129
+msgid ""
+"In the console app, the *project.json* file contains the ``run`` command in "
+"the ``commands`` section. The ``dnx`` command is used to execute a managed "
+"entry point (a ``Program.Main`` function) in the assembly. When you issue "
+"the above ``dnx run`` command, DNX finds the command based on the name used "
+"for the project, then finds the ``Main`` entry point that you see in the "
+"*program.cs* file."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:131
+msgid ""
+"For details about creating a console app with DNX, see :doc:`Creating a "
+"Cross-Platform Console App with DNX </dnx/console>`."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:133
+msgid ""
+"The ``dnx run`` command is a shorthand for executing the entry point in the "
+"current project. It is equivalent to ``dnx [project_name]``."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:135
+msgid ""
+"When you are ready to build your console app containing your global command,"
+" use the following command to produce assemblies for the project in the "
+"given directory::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:139
+msgid ""
+"Once the console app has been built, you can package it using the following "
+"command to create NuGet packages for the project in the given directory::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:143
+msgid "To publish the NuGet packages you can use the following command::"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:147
+msgid ""
+"The ``publish`` command will package your application into a self-contained "
+"directory that can be launched. It will create the following directory "
+"structure:"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:149
+msgid "output/"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:150
+msgid "output/packages"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:151
+msgid "output/appName"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:152
+msgid "output/commandName.cmd"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:154
+msgid ""
+"The packages directory contains all the packages your command needs to run. "
+"The *appName* directory will contain all of your applications code. If you "
+"have project references, they will appear as their own directory with code "
+"at this level as well."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:156
+msgid ""
+"There are 3 commands that are skipped for global install, those are ``run``,"
+" ``test`` and ``web``. You can build a NuGet package with those commands, "
+"but they cannot be installed globally. So, for the default console "
+"application template, you must rename the ``run`` command to something else,"
+" such as ``my-cmd``, if you want to make the command globally installable."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:158
+msgid ""
+"Also, the following command names cannot be used: ``dnx``, ``dnvm``, "
+"``nuget``, ``dnu``. You will get a build error if you use those names."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:161
+msgid "Global commands details"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:163
+msgid ""
+"Global commands are DNX console applications (in a NuGet package) that are "
+"installed globally and runnable from your command line."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:165
+msgid ""
+"If you are using Visual Studio, then  both ``SecretManager`` and "
+"``SqlConfig`` should already be installed for you. If you not using Visual "
+"Studio, first install the DNX, then run ``dnu commands install "
+"[namespace.command]``. When a command is finished installing, the output "
+"will specifically show the name of the commands that have been installed."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:168
+msgid "SecretManager"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:169
+msgid ""
+"This ASP.NET package contains commands to manage application secrets. When "
+"developing modern web applications developers often want to leverage "
+"authentication systems such as OAuth. One of the defining features of these "
+"authentication schemes is shared secrets that your application and the "
+"authenticating server must know."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:171
+msgid "**Assembly**: ``Microsoft.Framework``"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:173
+msgid "**Usage**: ``user-secret [command] [options]``"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:175
+msgid "**Options**:"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:178 ..\..\dnx\commands.rst:212
+msgid "Option"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:178 ..\..\dnx\commands.rst:188
+#: ..\..\dnx\commands.rst:212 ..\..\dnx\commands.rst:222
+msgid "Description"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:180 ..\..\dnx\commands.rst:214
+msgid "-?|-h|--help"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:180 ..\..\dnx\commands.rst:192
+#: ..\..\dnx\commands.rst:214 ..\..\dnx\commands.rst:226
+msgid "Show help information."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:182 ..\..\dnx\commands.rst:216
+msgid "-v|--verbose"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:182 ..\..\dnx\commands.rst:216
+msgid "Verbose output."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:185 ..\..\dnx\commands.rst:219
+msgid "**Commands**:"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:188 ..\..\dnx\commands.rst:222
+msgid "Command"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:190 ..\..\dnx\commands.rst:224
+msgid "set"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:190 ..\..\dnx\commands.rst:224
+msgid "Sets the user secret to the specified value."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:192 ..\..\dnx\commands.rst:226
+msgid "help"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:194 ..\..\dnx\commands.rst:228
+msgid "remove"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:194 ..\..\dnx\commands.rst:228
+msgid "Removes the specified user secret."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:196 ..\..\dnx\commands.rst:230
+msgid "list"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:196 ..\..\dnx\commands.rst:230
+msgid "Lists all the application secrets."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:198 ..\..\dnx\commands.rst:232
+msgid "clear"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:198 ..\..\dnx\commands.rst:232
+msgid "Deletes all the application secrets."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:201 ..\..\dnx\commands.rst:235
+msgid ""
+"For more information about a command, use ``user-secret [command] --help`` "
+"from the command prompt."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:204
+msgid "SqlConfig"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:205
+msgid ""
+"The ``Microsoft.Framework.Caching.SqlConfig`` package contains commands for "
+"creating table and indexes in Microsoft SQL Server database to be used for "
+"ASP.NET 5 distributed caching."
+msgstr ""
+
+#: ..\..\dnx\commands.rst:207
+msgid "**Assembly**: ``Microsoft.Framework.Caching``"
+msgstr ""
+
+#: ..\..\dnx\commands.rst:209
+msgid "**Usage**: ``sqlservercache [options] [command]``"
+msgstr ""

@@ -1,0 +1,61 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:4
+msgid "Miscellaneous APIs"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\thread-safety-included.txt:2
+msgid ""
+"Types that implement any of the following interfaces should be thread-safe "
+"for multiple callers."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:9
+msgid "ISecret"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:11
+msgid ""
+"The ISecret interface represents a secret value, such as cryptographic key "
+"material. It contains the following API surface."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:13
+msgid "Length : int"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:14
+msgid "Dispose() : void"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:15
+msgid "WriteSecretIntoBuffer(ArraySegment<byte> buffer) : void"
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:17
+msgid ""
+"The WriteSecretIntoBuffer method populates the supplied buffer with the raw "
+"secret value. The reason this API takes the buffer as a parameter rather "
+"than returning a byte[] directly is that this gives the caller the "
+"opportunity to pin the buffer object, limiting secret exposure to the "
+"managed garbage collector."
+msgstr ""
+
+#: ..\..\security\data-protection\extensibility\misc-apis.rst:19
+msgid ""
+"The Secret type is a concrete implementation of ISecret where the secret "
+"value is stored in in-process memory. On Windows platforms, the secret value"
+" is encrypted via `CryptProtectMemory <https://msdn.microsoft.com/en-"
+"us/library/windows/desktop/aa380262(v=vs.85).aspx>`_."
+msgstr ""

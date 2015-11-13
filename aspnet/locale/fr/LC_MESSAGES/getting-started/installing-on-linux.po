@@ -1,0 +1,283 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\getting-started\installing-on-linux.rst:2
+msgid "Installing ASP.NET 5 On Linux"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:4
+msgid "By `Daniel Roth`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:6
+msgid ""
+"ASP.NET 5 runs on the .NET Execution Environment (DNX), which is available "
+"on multiple platforms, including Linux. This article describes how to "
+"install DNX, and therefore ASP.NET 5, on Linux using .NET Core and Mono."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:11
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:9
+msgid "`Installing on Debian, Ubuntu and derivatives`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:10
+msgid "`Installing on CentOS, Fedora and derivatives`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:11
+msgid "`Using Docker`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:14
+msgid "Installing on Debian, Ubuntu and derivatives"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:16
+msgid "The following instructions were tested using Ubuntu 14.04."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:19
+#: ..\..\getting-started\installing-on-linux.rst:91
+msgid "Install the .NET Version Manager (DNVM)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:21
+#: ..\..\getting-started\installing-on-linux.rst:93
+msgid ""
+"Use the .NET Version Manager (DNVM) to install different versions of the "
+".NET Execution Environment (DNX) on Linux."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:23
+msgid "Install ``unzip`` and ``curl`` if you don't already have them::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:27
+#: ..\..\getting-started\installing-on-linux.rst:99
+msgid "Download and install DNVM::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:31
+#: ..\..\getting-started\installing-on-linux.rst:103
+msgid ""
+"Once this step is complete you should be able to run ``dnvm`` and see some "
+"help text."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:34
+#: ..\..\getting-started\installing-on-linux.rst:106
+msgid "Install the .NET Execution Environment (DNX)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:36
+msgid ""
+"The .NET Execution Environment (DNX) is used to build and run .NET projects."
+" Use DNVM to install DNX for `Mono <http://mono-project.com>`_ or .NET Core "
+"(see :doc:`choosing-the-right-dotnet`)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:38
+msgid "**To install DNX for .NET Core:**"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:40
+msgid "Install the DNX prerequisites::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:44
+msgid "Use DNVM to install DNX for .NET Core::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:48
+msgid ""
+".NET Core on Linux is still in early preview. Please refer to the latest "
+"`Release Notes <https://github.com/aspnet/home/releases>`__ for known issues"
+" and limitations."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:50
+#: ..\..\getting-started\installing-on-linux.rst:112
+msgid "**To install DNX for Mono:**"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:52
+msgid ""
+"Install `Mono <http://www.mono-project.com/docs/getting-"
+"started/install/linux/#debian-ubuntu-and-derivatives>`__ via the ``mono-"
+"complete`` package."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:54
+#: ..\..\getting-started\installing-on-linux.rst:116
+msgid ""
+"Ensure that the ``ca-certificates-mono`` package is also installed as `noted"
+" <http://www.mono-project.com/docs/getting-started/install/linux/#notes>`__ "
+"in the Mono installation instructions."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:56
+#: ..\..\getting-started\installing-on-linux.rst:118
+msgid "Use DNVM to install DNX for Mono::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:60
+#: ..\..\getting-started\installing-on-linux.rst:122
+msgid "By default DNVM will install DNX for Mono if no runtime is specified."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:62
+#: ..\..\getting-started\installing-on-linux.rst:124
+msgid ""
+"Restoring packages using DNX on Mono may fail with multiple canceled "
+"requests. You may be able to work around this issue by setting "
+"``MONO_THREADS_PER_CPU`` to a larger number (ex. 2000)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:65
+msgid "Install libuv"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:67
+#: ..\..\getting-started\installing-on-linux.rst:129
+msgid ""
+"`Libuv <https://github.com/libuv/libuv>`_ is a multi-platform asynchronous "
+"IO library that is used by :ref:`kestrel`, a cross-platform HTTP server for "
+"hosting ASP.NET 5 web applications."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:69
+#: ..\..\getting-started\installing-on-linux.rst:131
+msgid "To build libuv you should do the following::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:83
+msgid ""
+"``make install`` puts ``libuv.so.1`` in ``/usr/local/lib``, in the above "
+"commands ```ldconfig`` is used to update ``ld.so.cache`` so that ``dlopen`` "
+"(see ``man dlopen``) can load it. If you are getting libuv some other way or"
+" not running ``make install`` then you need to ensure that dlopen is capable"
+" of loading ``libuv.so.1``."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:86
+msgid "Installing on CentOS, Fedora and derivatives"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:88
+msgid "The following instructions were tested using CentOS 7."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:95
+msgid "Install ``unzip`` if you don't already have it::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:108
+msgid ""
+"The .NET Execution Environment (DNX) is used to build and run .NET projects."
+" Use DNVM to install DNX for `Mono <http://mono-project.com>`_ (see :doc"
+":`choosing-the-right-dotnet`)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:110
+msgid ""
+"DNX support for .NET Core is not available for CentOS, Fedora and derivative"
+" in this release, but will be enabled in a future release."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:114
+msgid ""
+"Install `Mono <http://www.mono-project.com/docs/getting-"
+"started/install/linux/#centos-fedora-and-derivatives>`__ via the ``mono-"
+"complete`` package."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:127
+msgid "Install Libuv"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:146
+msgid "Using Docker"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:148
+msgid ""
+"The following instructions were tested with Docker 1.8.3 and Ubuntu 14.04."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:151
+msgid "Install Docker"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:153
+msgid ""
+"Instructions on how to install Docker can be found in the `Docker "
+"Documentation <https://docs.docker.com/installation/>`_."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:156
+msgid "Create a Container"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:158
+msgid ""
+"Inside your application folder, you create a ``Dockerfile`` which should "
+"looks something like this::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:173
+msgid ""
+"You also have a choice to use CoreCLR or Mono. At this time the "
+"``microsoft/aspnet:latest`` repository is based on Mono. You can use the "
+"`Microsoft Docker Hub <https://hub.docker.com/r/microsoft/aspnet/>`_ to pick"
+" a different base running either an older version or CoreCLR."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:176
+msgid "Run a Container"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:178
+msgid ""
+"When you have an application, you can build and run your container using the"
+" following commands::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:184
+msgid "Summary"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:186
+msgid ""
+"ASP.NET 5 is built on the cross-platform .NET Execution Environment (DNX), "
+"which can be installed on Linux as well as :doc:`Mac <installing-on-mac>` "
+"and :doc:`Windows <installing-on-windows>`. Installing DNX and ASP.NET 5 on "
+"Linux takes just a few minutes, using a few simple commands. You're now  "
+"ready to build :doc:`your first ASP.NET application </tutorials/your-first-"
+"mac-aspnet>`!"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:189
+msgid "Related Resources"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:191
+msgid ":doc:`/tutorials/your-first-mac-aspnet`"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-linux.rst:192
+msgid ":doc:`/fundamentals/index`"
+msgstr ""

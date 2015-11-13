@@ -1,0 +1,163 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:2
+msgid "Sharing cookies between applications."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:4
+msgid ""
+"Web sites commonly consist of many individual web applications, all working "
+"together harmoniously. If an application developer wants to provide a good "
+"single-sign-on experience, he'll often need all of the different web "
+"applications within the site to share authentication tickets between each "
+"other."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:6
+msgid ""
+"To support this scenario, the data protection stack allows sharing Katana "
+"cookie authentication and ASP.NET 5 cookie authentication tickets."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:9
+msgid "Sharing authentication cookies between ASP.NET 5 applications."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:11
+msgid ""
+"To share authentication cookies between two different ASP.NET 5 "
+"applications, configure each application that should share cookies as "
+"follows."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:13
+msgid ""
+"Install the package `Microsoft.AspNet.Authentication.Cookies.Shareable "
+"<https://github.com/GrabYourPitchforks/aspnet5-samples/tree/dev/CookieSharing>`_"
+" into each of your ASP.NET 5 applications."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:14
+msgid ""
+"In Startup.cs, locate the call to UseIdentity, which will generally look "
+"like the following."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:21
+msgid ""
+"Remove the call to UseIdentity, replacing it with four separate calls to "
+"UseCookieAuthentication. (UseIdentity calls these four methods under the "
+"covers.) In the call to UseCookieAuthentication that sets up the application"
+" cookie, provide an instance of a DataProtectionProvider that has been "
+"initialized to a key storage location."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:36
+msgid ""
+"Caution: When used in this manner, the DirectoryInfo should point to a key "
+"storage location specifically set aside for authentication cookies. The "
+"application name is ignored (intentionally so, since you're trying to get "
+"multiple applications to share payloads). You should consider configuring "
+"the DataProtectionProvider such that keys are encrypted at rest, as in the "
+"below example."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:48
+msgid ""
+"The cookie authentication middleware will use the explicitly provided "
+"implementation of the DataProtectionProvider, which due to taking an "
+"explicit directory in its constructor is isolated from the data protection "
+"system used by other parts of the application."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:51
+msgid ""
+"Sharing authentication cookies between ASP.NET 4.x and ASP.NET 5 "
+"applications."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:53
+msgid ""
+"ASP.NET 4.x applications which use Katana cookie authentication middleware "
+"can be configured to generate authentication cookies which are compatible "
+"with the ASP.NET 5 cookie authentication middleware. This allows upgrading a"
+" large site's individual applications piecemeal while still providing a "
+"smooth single sign on experience across the site."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:55
+msgid ""
+"Tip: You can tell if your existing application uses Katana cookie "
+"authentication middleware by the existence of a call to "
+"UseCookieAuthentication in your project's Startup.Auth.cs. ASP.NET 4.x web "
+"application projects created with Visual Studio 2013 and later use the "
+"Katana cookie authentication middleware by default."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:58
+msgid ""
+"Your ASP.NET 4.x application must target .NET Framework 4.5.1 or higher, "
+"otherwise the necessary NuGet packages will fail to install."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:60
+msgid ""
+"To share authentication cookies between your ASP.NET 4.x applications and "
+"your ASP.NET 5 applications, configure the ASP.NET 5 application as stated "
+"above, then configure your ASP.NET 4.x applications by following the steps "
+"below."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:62
+msgid ""
+"Install the package `Microsoft.Owin.Security.Cookies.Shareable "
+"<https://github.com/GrabYourPitchforks/aspnet5-samples/tree/dev/CookieSharing>`_"
+" into each of your ASP.NET 4.x applications."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:64
+msgid ""
+"In Startup.Auth.cs, locate the call to UseCookieAuthentication, which will "
+"generally look like the following."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:73
+msgid ""
+"Modify the call to UseCookieAuthentication as follows, changing the "
+"AuthenticationType and CookieName to match those of the ASP.NET 5 cookie "
+"authentication middleware, and providing an instance of a "
+"DataProtectionProvider that has been initialized to a key storage location."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:89
+msgid ""
+"In IdentityModels.cs, change the call to "
+"ApplicationUserManager.CreateIdentity to use the same authentication type as"
+" in the cookie middleware."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:100
+msgid ""
+"The ASP.NET 4.x and ASP.NET 5 applications are now configured to share "
+"authentication cookies."
+msgstr ""
+
+#: ..\..\security\data-protection\compatibility\cookie-sharing.rst:103
+msgid ""
+"You'll need to make sure that the ASP.NET Identity system for each "
+"application is pointed at the same user database. Otherwise the identity "
+"system will produce failures at runtime when it tries to match the "
+"information in the authentication cookie against the information in its "
+"database."
+msgstr ""
