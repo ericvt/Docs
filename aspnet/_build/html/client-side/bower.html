@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manage Client-Side Packages with Bower &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Client-Side Development" href="index.html"/>
+        <link rel="next" title="Building Beautiful, Responsive Sites with Bootstrap" href="bootstrap.html"/>
+        <link rel="prev" title="Using Grunt" href="using-grunt.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Client-Side Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using-gulp.html">Using Gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-grunt.html">Using Grunt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Manage Client-Side Packages with Bower</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Building Beautiful, Responsive Sites with Bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knockout.html">Knockout.js MVVM Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html">Using Angular for Single Page Applications (SPAs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="less-sass-fa.html">Styling Applications with Less, Sass, and Font Awesome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bundling-and-minification.html">|stub-icon| Bundling and Minification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdn.html">|stub-icon| Working with a Content Delivery Network (CDN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="responsive-design.html">|stub-icon| Responsive Design for the Mobile Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript.html">|stub-icon| Introducing TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yeoman.html">Building Projects with Yeoman</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Client-Side Development</a> &raquo;</li>
+      
+    <li>Manage Client-Side Packages with Bower</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client-side/bower.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="manage-client-side-packages-with-bower">
+<h1>Manage Client-Side Packages with Bower<a class="headerlink" href="#manage-client-side-packages-with-bower" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/noel-rice/">Noel Rice</a>, <a class="reference external" href="http://scottaddie.com">Scott Addie</a></p>
+<p>Bower is a &#8220;package manager for the web.&#8221; Bower lets you install and restore client-side packages, including JavaScript and CSS libraries. For example, with Bower you can install CSS files, fonts, client frameworks, and JavaScript libraries from external sources. Bower resolves dependencies and will automatically download and install all the packages you need. For example, if you configure Bower to load the Bootstrap package, the necessary jQuery package will automatically come along for the ride. For server-side libraries like the MVC 6 framework, you will still use NuGet Package Manager.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Visual Studio developers are already familiar with NuGet, so why not use NuGet instead of Bower? Mainly because Bower already has a rich ecosystem with over 33,000 packages in play; and, it integrates well with the Gulp and Grunt task runners.</p>
+</div>
+<div class="section" id="getting-started-with-bower">
+<h2>Getting Started with Bower<a class="headerlink" href="#getting-started-with-bower" title="Permalink to this headline">¶</a></h2>
+<p>The ASP.NET 5 Starter Web MVC project pre-constructs the client build process for you. The ubiquitous jQuery and Bootstrap packages are installed, and the plumbing for NPM, Gulp, and Bower is already in place. The following screenshot depicts the initial project in Solution Explorer.</p>
+<a class="reference internal image-reference" href="../_images/mvc-project.png"><img alt="../_images/mvc-project.png" src="../_images/mvc-project.png" style="width: 300px;" /></a>
+<p>Client-side packages are listed in the bower.json file. The ASP.NET 5 Starter Web project pre-configures bower.json with jQuery, jQuery validation, Bootstrap, and <a class="reference external" href="http://hammerjs.github.io/">Hammer.js</a>.</p>
+<p>Let’s add support for photo albums by installing the <a class="reference external" href="http://fotorama.io/">Fotorama</a> jQuery plugin.</p>
+<ol class="arabic">
+<li><p class="first">At the end of the <code class="docutils literal"><span class="pre">dependencies</span></code> section in bower.json, add a comma and type &#8220;fotorama&#8221;. Notice as you type that you get IntelliSense with a list of available packages. Select &#8220;fotorama&#8221; from the list.</p>
+<a class="reference internal image-reference" href="../_images/add-package.png"><img alt="../_images/add-package.png" src="../_images/add-package.png" style="width: 150px;" /></a>
+</li>
+<li><p class="first">Add a colon and then select the latest stable version of the package from the drop down list. The double quotes will be added automatically.</p>
+<a class="reference internal image-reference" href="../_images/version-intellisense.png"><img alt="../_images/version-intellisense.png" src="../_images/version-intellisense.png" style="width: 200px;" /></a>
+</li>
+<li><p class="first">Save the bower.json file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Visual Studio watches the bower.json file for changes. Upon saving, the <cite>bower install</cite> command is executed. See the Output window&#8217;s &#8220;Bower/npm&#8221; view for the exact command which was executed.</p>
+</div>
+</li>
+<li><p class="first">Expand the twisty to the left of bower.json, and locate the .bowerrc file. Open it, and notice that the <code class="docutils literal"><span class="pre">directory</span></code> property is set to &#8220;wwwroot/lib&#8221;. This setting indicates the location at which Bower will install the package assets.</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre>{
+        &quot;directory&quot;: &quot;wwwroot/lib&quot;
+}
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In Solution Explorer, expand the <em>wwwroot</em> node. The <em>lib</em> directory should now contain all of the packages, including the fotorama package.</p>
+<a class="reference internal image-reference" href="../_images/package-lib.png"><img alt="../_images/package-lib.png" src="../_images/package-lib.png" style="width: 300px;" /></a>
+</li>
+</ol>
+<p>Next, let&#8217;s add an HTML page to the project. In Solution Explorer, right-click <em>wwwroot</em> node and select <strong>Add</strong> &gt; <strong>New Item</strong> &gt; <strong>HTML Page</strong>. Name the page Index.html. Replace the contents of the file with the following:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Bower and Fotorama<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;lib/fotorama/fotorama.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fotorama&quot;</span> <span class="na">data-nav=</span><span class="s">&quot;thumbs&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/asp-net-banners-01.png&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/asp-net-banners-02.png&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/banner-01-azure.png&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;images/banner-02-vs.png&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;lib/jquery/dist/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;lib/fotorama/fotorama.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>This example uses images currently available inside <em>wwwroot/images</em>, but you can add any images on hand.</p>
+<p>Press <code class="docutils literal"><span class="pre">Ctrl+Shift+W</span></code> to display the page in the browser. The control displays the images and allows navigation by clicking the thumbnail list below the main image. This quick test shows that Bower installed the correct packages and dependencies.</p>
+<img alt="../_images/photo-gallery.png" src="../_images/photo-gallery.png" />
+</div>
+<div class="section" id="exploring-the-client-build-process">
+<h2>Exploring the Client Build Process<a class="headerlink" href="#exploring-the-client-build-process" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>ASP.NET 5 Starter Web</strong> project has everything you need for Bower already setup. This next walkthrough starts with the <strong>Empty</strong> project template and adds each piece manually, so you can get a feel for how Bower is used in a project. See what happens to the project structure and the runtime output as each configuration change is made to the project.</p>
+<p>The general steps to use the client-side build process with Bower are:</p>
+<ul class="simple">
+<li>Define and download packages used in your project.</li>
+<li>Reference packages from your web pages.</li>
+</ul>
+<div class="section" id="define-packages">
+<h3>Define Packages<a class="headerlink" href="#define-packages" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to define the packages your application needs and to download them. This example uses Bower to load jQuery and Bootstrap in the desired location.</p>
+<ol class="arabic">
+<li><p class="first">In Visual Studio 2015, create a new ASP.NET Web Application.</p>
+</li>
+<li><p class="first">In the <strong>New ASP.NET Project</strong> dialog, select the <strong>ASP.NET 5 Empty</strong> template and click <strong>OK</strong>.</p>
+</li>
+<li><p class="first">In Solution Explorer, the <em>src</em> directory includes a project.json file, and <em>wwwroot</em> and <em>Dependencies</em> nodes. The project directory will look like the screenshot below.</p>
+<a class="reference internal image-reference" href="../_images/empty-project.png"><img alt="../_images/empty-project.png" src="../_images/empty-project.png" style="width: 300px;" /></a>
+</li>
+<li><p class="first">In Solution Explorer, right-click the project and add the following item:</p>
+<ul class="simple">
+<li>Bower Configuration File – bower.json</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Bower Configuration File item template also adds a .bowerrc file.</p>
+</div>
+</li>
+<li><p class="first">Open bower.json, and add jquery and bootstrap to the <code class="docutils literal"><span class="pre">dependencies</span></code> section. The resulting bower.json file should look like the example here. The versions will change over time, so use the latest stable build version from the drop-down list.</p>
+<div class="highlight-none"><div class="highlight"><pre>{
+        &quot;name&quot;: &quot;ASP.NET&quot;,
+        &quot;private&quot;: true,
+        &quot;dependencies&quot;: {
+                &quot;jquery&quot;: &quot;2.1.4&quot;,
+                &quot;bootstrap&quot;: &quot;3.3.5&quot;
+        }
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Save the bower.json file.</p>
+</li>
+</ol>
+<p>The project should now include <em>bootstrap</em> and <em>jQuery</em> directories in two locations: <em>Dependencies/Bower</em> and <em>wwwroot/lib</em>. It&#8217;s the .bowerrc file which instructed Bower to install the assets within <em>wwwroot/lib</em>.</p>
+<a class="reference internal image-reference" href="../_images/bower-dependencies.png"><img alt="../_images/bower-dependencies.png" src="../_images/bower-dependencies.png" style="width: 300px;" /></a>
+</div>
+<div class="section" id="reference-packages">
+<h3>Reference Packages<a class="headerlink" href="#reference-packages" title="Permalink to this headline">¶</a></h3>
+<p>Now that Bower has copied the client support packages needed by the application, you can test that an HTML page can use the deployed jQuery and Bootstrap functionality.</p>
+<ol class="arabic simple">
+<li>Right-click <em>wwwroot</em> and select <strong>Add</strong> &gt; <strong>New Item</strong> &gt; <strong>HTML Page</strong>. Name the page Index.html.</li>
+<li>Add the CSS and JavaScript references.<ul>
+<li>In Solution Explorer, expand <em>wwwroot/lib/bootstrap</em> and locate bootstrap.css. Drag this file into the <code class="docutils literal"><span class="pre">head</span></code> element of the HTML page.</li>
+<li>Drag jquery.js and bootstrap.js to the end of the <code class="docutils literal"><span class="pre">body</span></code> element.</li>
+</ul>
+</li>
+</ol>
+<p>Make sure bootstrap.js follows jquery.js, so that jQuery is loaded first.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Bower Example<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;lib/bootstrap/dist/css/bootstrap.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;lib/jquery/dist/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;lib/bootstrap/dist/js/bootstrap.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-the-installed-packages">
+<h3>Use the Installed Packages<a class="headerlink" href="#use-the-installed-packages" title="Permalink to this headline">¶</a></h3>
+<p>Add jQuery and Bootstrap components to the page to verify that the web application is configured correctly.</p>
+<ol class="arabic">
+<li><p class="first">Inside the <code class="docutils literal"><span class="pre">body</span></code> tag, above the <code class="docutils literal"><span class="pre">script</span></code> references, add a <code class="docutils literal"><span class="pre">div</span></code> element with the Bootstrap <strong>jumbotron</strong> class and an anchor tag.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;jumbotron&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Using the jumbotron style<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>
+           Stateful button<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the following code after the jQuery and Bootstrap <code class="docutils literal"><span class="pre">script</span></code> references.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.btn&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">queue</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">);</span>
+                                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dequeue</span><span class="p">();</span>
+                        <span class="p">});</span>
+                <span class="p">}</span>
+        <span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Validate that the <code class="docutils literal"><span class="pre">Configure</span></code> method of the Startup.cs file contains a call to the <code class="docutils literal"><span class="pre">UseStaticFiles</span></code> extension method. This middleware adds files, found within the web root, to the request pipeline. This line of code will look as follows:</p>
+<blockquote>
+<div><div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to install the <code class="docutils literal"><span class="pre">Microsoft.AspNet.StaticFiles</span></code> NuGet package. Without it, the <code class="docutils literal"><span class="pre">UseStaticFiles</span></code> extension method will not resolve.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Press <code class="docutils literal"><span class="pre">Ctrl+Shift+W</span></code> to view the Index.html page in the browser. Verify that the jumbotron styling is applied, the jQuery code responds when the button is clicked, and that the Bootstrap button changes state.</p>
+<img alt="../_images/jumbotron1.png" src="../_images/jumbotron1.png" />
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bootstrap.html" class="btn btn-neutral float-right" title="Building Beautiful, Responsive Sites with Bootstrap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using-grunt.html" class="btn btn-neutral" title="Using Grunt" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

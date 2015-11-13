@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authenticated encryption details. &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Implementation" href="index.html"/>
+        <link rel="next" title="Subkey Derivation and Authenticated Encryption" href="subkeyderivation.html"/>
+        <link rel="prev" title="Implementation" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Implementation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Authenticated encryption details.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subkeyderivation.html">Subkey Derivation and Authenticated Encryption</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context-headers.html">Context headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-management.html">Key Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-providers.html">Key Storage Providers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-encryption-at-rest.html">Key Encryption At Rest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-immutability.html">Key Immutability and Changing Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-format.html">Key Storage Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-ephemeral.html">Ephemeral data protection providers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Implementation</a> &raquo;</li>
+      
+    <li>Authenticated encryption details.</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/implementation/authenticated-encryption-details.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="authenticated-encryption-details">
+<span id="data-protection-implementation-authenticated-encryption-details"></span><h1>Authenticated encryption details.<a class="headerlink" href="#authenticated-encryption-details" title="Permalink to this headline">¶</a></h1>
+<p>Calls to IDataProtector.Protect are authenticated encryption operations. The Protect method offers both confidentiality and authenticity, and it is tied to the purpose chain that was used to derive this particular IDataProtector instance from its root IDataProtectionProvider.</p>
+<p>IDataProtector.Protect takes a byte[] plaintext parameter and produces a byte[] protected payload, whose format is described below. (There is also an extension method overload which takes a string plaintext parameter and returns a string protected payload. If this API is used the protected payload format will still have the below structure, but it will be <a class="reference external" href="https://tools.ietf.org/html/rfc4648#section-5">base64url-encoded</a>.)</p>
+<div class="section" id="protected-payload-format">
+<h2>Protected payload format<a class="headerlink" href="#protected-payload-format" title="Permalink to this headline">¶</a></h2>
+<p>The protected payload format consists of three primary components:</p>
+<ul class="simple">
+<li>A 32-bit magic header that identifies the version of the data protection system.</li>
+<li>A 128-bit key id that identifies the key used to protect this particular payload.</li>
+<li>The remainder of the protected payload is <a class="reference internal" href="subkeyderivation.html#data-protection-implementation-subkey-derivation"><span>specific to the encryptor encapsulated by this key</span></a>. In the example below the key represents an AES-256-CBC + HMACSHA256 encryptor, and the payload is further subdivided as follows:
+* A 128-bit key modifier.
+* A 128-bit initialization vector.
+* 48 bytes of AES-256-CBC output.
+* An HMACSHA256 authentication tag.</li>
+</ul>
+<p>A sample protected payload is illustrated below.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>09 F0 C9 F0 80 9C 81 0C 19 66 19 40 95 36 53 F8
+AA FF EE 57 57 2F 40 4C 3F 7F CC 9D CC D9 32 3E
+84 17 99 16 EC BA 1F 4A A1 18 45 1F 2D 13 7A 28
+79 6B 86 9C F8 B7 84 F9 26 31 FC B1 86 0A F1 56
+61 CF 14 58 D3 51 6F CF 36 50 85 82 08 2D 3F 73
+5F B0 AD 9E 1A B2 AE 13 57 90 C8 F5 7C 95 4E 6A
+8A AA 06 EF 43 CA 19 62 84 7C 11 B2 C8 71 9D AA
+52 19 2E 5B 4C 1E 54 F0 55 BE 88 92 12 C1 4B 5E
+52 C9 74 A0
+</pre></div>
+</td></tr></table></div>
+<p>From the payload format above the first 32 bits, or 4 bytes are the magic header identifying the version (09 F0 C9 F0)</p>
+<p>The next 128 bits, or 16 bytes is the key identifier (80 9C 81 0C 19 66 19 40 95 36 53 F8 AA FF EE 57)</p>
+<p>The remainder contains the payload and is specific to the format used.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All payloads protected to a given key will begin with the same 20-byte (magic value, key id) header. Administrators can use this fact for diagnostic purposes to approximate when a payload was generated. For example, the payload above corresponds to key {0c819c80-6619-4019-9536-53f8aaffee57}. If after checking the key repository you find that this specific key&#8217;s activation date was 2015-01-01 and its expiration date was 2015-03-01, then it is reasonable to assume that the payload (if not tampered with) was generated within that window, give or take a small fudge factor on either side.</p>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="subkeyderivation.html" class="btn btn-neutral float-right" title="Subkey Derivation and Authenticated Encryption" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Implementation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\client-side\knockout.rst:2
+msgid "Knockout.js MVVM Framework"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:6
+msgid "Knockout is a popular JavaScript library that simplifies the creation of complex data-based user interfaces. It can be used alone or with other libraries, such as jQuery. Its primary purpose is to bind UI elements to an underlying data model defined as a JavaScript object, such that when changes are made to the UI, the model is updated, and vice versa. Knockout facilitates the use of a Model-View-ViewModel (MVVM) pattern in a web application's client-side behavior. The two main concepts one must learn when working with Knockout's MVVM implementation are Observables and Bindings."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:14
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:9
+msgid "`Getting Started with Knockout in ASP.NET 5`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:10
+msgid "`Observables, ViewModels, and Simple Binding`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:11
+msgid "`Control Flow`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:12
+msgid "`Templates`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:13
+msgid "`Components`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:14
+msgid "`Communicating with APIs`_"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:17
+msgid "Getting Started with Knockout in ASP.NET 5"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:19
+msgid "Knockout is deployed as a single JavaScript file, so installing and using it is very straightforward. In Visual Studio 2015, you can simply add knockout as a dependency and Visual Studio will use bower to retrieve it. Assuming you already have bower and gulp configured (the ASP.NET 5 Starter Template comes with them already set up), open bower.json in your ASP.NET 5 project, and add the knockout dependency as shown here:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:34
+msgid "With this in place, you can then manually run bower by opening the Task Runner Explorer (under :menuselection:`View --> Other Windows --> Task Runner Explorer`) and then under Tasks, right-click on bower and select Run. The result should appear similar to this:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:38
+msgid "Now if you look in your project's ``wwwroot`` folder, you should see knockout installed under the lib folder."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:42
+msgid "It's recommended that in your production environment you reference knockout via a Content Delivery Network, or CDN, as this increases the likelihood that your users will already have a cached copy of the file and thus will not need to download it at all. Knockout is available on several CDNs, including the Microsoft Ajax CDN, here:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:44
+msgid "http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:46
+msgid "To include Knockout on a page that will use it, simply add a ``<script>`` element referencing the file from wherever you will be hosting it (with your application, or via a CDN):"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:53
+msgid "Observables, ViewModels, and Simple Binding"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:55
+msgid "You may already be familiar with using JavaScript to manipulate elements on a web page, either via direct access to the DOM or using a library like jQuery. Typically this kind of behavior is achieved by writing code to directly set element values in response to certain user actions. With Knockout, a declarative approach is taken instead, through which elements on the page are bound to properties on an object. Instead of writing code to manipulate DOM elements, user actions simply interact with the ViewModel object, and Knockout takes care of ensuring the page elements are synchronized."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:57
+msgid "As a simple example, consider the page list below. It includes a ``<span>`` element with a ``data-bind`` attribute indicating that the text content should be bound to authorName. Next, in a JavaScript block a variable viewModel is defined with a single property, ``authorName``, set to some value. Finally, a call to ``ko.applyBindings`` is made, passing in this viewModel variable."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:81
+msgid "When viewed in the browser, the content of the <span> element is replaced with the value in the viewModel variable:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:85
+msgid "We now have simple one-way binding working. Notice that nowhere in the code did we write JavaScript to assign a value to the span's contents. If we want to manipulate the ViewModel, we can take this a step further and add an HTML input textbox, and bind to its value, like so:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:93
+msgid "Reloading the page, we see that this value is indeed bound to the input box:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:97
+msgid "However, if we change the value in the textbox, the corresponding value in the ``<span>`` element doesn't change. Why not?"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:99
+msgid "The issue is that nothing notified the ``<span>`` that it needed to be updated. Simply updating the ViewModel isn't by itself sufficient, unless the ViewModel's properties are wrapped in a special type. We need to use **observables** in the ViewModel for any properties that need to have changes automatically updated as they occur. By changing the ViewModel to use ``ko.observable(\"value\")`` instead of just \"value\", the ViewModel will update any HTML elements that are bound to its value whenever a change occurs. Note that input boxes don't update their value until they lose focus, so you won't see changes to bound elements as you type."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:101
+msgid "Adding support for live updating after each keypress is simply a matter of adding ``valueUpdate: \"afterkeydown\"`` to the ``data-bind`` attribute's contents."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:103
+msgid "Our viewModel, after updating it to use ko.observable:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:113
+msgid "Knockout supports a number of different kinds of bindings. So far we've seen how to bind to ``text`` and to ``value``. You can also bind to any given attribute. For instance, to create a hyperlink with an anchor tag, the ``src`` attribute can be bound to the viewModel. Knockout also supports binding to functions. To demonstrate this, let's update the viewModel to include the author's twitter handle, and display the twitter handle as a link to the author's twitter page. We'll do this in three stages."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:115
+msgid "First, add the HTML to display the hyperlink, which we'll show in parentheses after the author's name:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:126
+msgid "Next, update the viewModel to include the twitterUrl and twitterAlias properties:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:140
+msgid "Notice that at this point we haven't yet updated the twitterUrl to go to the correct URL for this twitter alias – it's just pointing at twitter.com. Also notice that we're using a new Knockout function, ``computed``, for twitterUrl. This is an observable function that will notify any UI elements if it changes. However, for it to have access to other properties in the viewModel, we need to change how we are creating the viewModel, so that each property is its own statement."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:142
+msgid "The revised viewModel declaration is shown below. It is now declared as a function. Notice that each property is its own statement now, ending with a semicolon. Also notice that to access the twitterAlias property value, we need to execute it, so its reference includes ()."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:157
+msgid "The result works as expected in the browser:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:161
+msgid "Knockout also supports binding to certain UI element events, such as the click event. This allows you to easily and declaratively bind UI elements to functions within the application's viewModel. As a simple example, we can add a button that, when clicked, modifies the author's twitterAlias to be all caps."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:163
+msgid "First, we add the button, binding to the button's click event, and referencing the function name we're going to add to the viewModel:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:172
+msgid "Then, add the function to the viewModel, and wire it up to modify the viewModel's state. Notice that to set a new value to the twitterAlias property, we call it as a method and pass in the new value."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:192
+msgid "Running the code and clicking the button modifies the displayed link as expected:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:197
+msgid "Control Flow"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:199
+msgid "Knockout includes bindings that can perform conditional and looping operations. Looping operations are especially useful for binding lists of data to UI lists, menus, and grids or tables. The foreach binding will iterate over an array. When used with an observable array, it will automatically update the UI elements when items are added or removed from the array, without re-creating every element in the UI tree. The following example uses a new viewModel which includes an observable array of game results. It is bound to a simple table with two columns using a ``foreach`` binding on the ``<tbody>`` element. Each ``<tr>`` element within ``<tbody>`` will be bound to an element of the gameResults collection."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:241
+msgid "Notice that this time we're using ViewModel with a capital “V\" because we expect to construct it using “new\" (in the applyBindings call). When executed, the page results in the following output:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:245
+msgid "To demonstrate that the observable collection is working, let's add a bit more functionality. We can include the ability to record the results of another game to the ViewModel, and then add a button and some UI to work with this new function.  First, let's create the addResult method:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:254
+msgid "Bind this method to a button using the ``click`` binding:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:260
+msgid "Open the page in the browser and click the button a couple of times, resulting in a new table row with each click:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:264
+msgid "There are a few ways to support adding new records in the UI, typically either inline or in a separate form. We can easily modify the table to use textboxes and dropdownlists so that the whole thing is editable. Just change the ``<tr>`` element as shown:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:276
+msgid "Note that ``$root`` refers to the root ViewModel, which is where the possible choices are exposed. ``$data`` refers to whatever the current model is within a given context - in this case it refers to an individual element of the resultChoices array, each of which is a simple string."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:278
+msgid "With this change, the entire grid becomes editable:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:282
+msgid "If we weren't using Knockout, we could achieve all of this using jQuery, but most likely it would not be nearly as efficient. Knockout tracks which bound data items in the ViewModel correspond to which UI elements, and only updates those elements that need to be added, removed, or updated. It would take significant effort to achieve this ourselves using jQuery or direct DOM manipulation, and even then if we then wanted to display aggregate results (such as a win-loss record) based on the table's data, we would need to once more loop through it and parse the HTML elements.  With Knockout, displaying the win-loss record is trivial. We can perform the calculations within the ViewModel itself, and then display it with a simple text binding and a ``<span>``."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:284
+msgid "To build the win-loss record string, we can use a computed observable. Note that references to observable properties within the ViewModel must be function calls, otherwise they will not retrieve the value of the observable (i.e. ``gameResults()`` not ``gameResults`` in the code shown):"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:295
+msgid "Bind this function to a span within the ``<h1>`` element at the top of the page:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:301
+msgid "The result:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:305
+msgid "Adding rows or modifying the selected element in any row's Result column will update the record shown at the top of the window."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:307
+msgid "In addition to binding to values, you can also use almost any legal JavaScript expression within a binding. For example, if a UI element should only appear under certain conditions, such as when a value exceeds a certain threshold, you can specify this logically within the binding expression:"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:313
+msgid "This ``<div>`` will only be visible when the customerValue is over 100."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:316
+msgid "Templates"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:318
+msgid "Knockout has support for templates, so that you can easily separate your UI from your behavior, or incrementally load UI elements into a large application on demand. We can update our previous example to make each row its own template by simply pulling the HTML out into a template and specifying the template by name in the data-bind call on ``<tbody>``."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:333
+msgid "Knockout also supports other templating engines, such as the jQuery.tmpl library and Underscore.js's templating engine."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:336
+msgid "Components"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:338
+msgid "Components allow you to organize and reuse UI code, usually along with the ViewModel data on which the UI code depends. To create a component, you simply need to specify its template and its viewModel, and give it a name. This is done by calling ``ko.components.register()``. In addition to defining the templates and viewmodel inline, they can be loaded from external files using a library like require.js, resulting in very clean and efficient code."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:341
+msgid "Communicating with APIs"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:343
+msgid "Knockout can work with any data in JSON format. A common way to retrieve and save data using Knockout is with jQuery, which supports the ``$.getJSON()`` function to retrieve data, and the ``$.post()`` method to send data from the browser to an API endpoint. Of course, if you prefer a different way to send and receive JSON data, Knockout will work with it as well."
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:346
+msgid "Summary"
+msgstr ""
+
+#: ..\..\client-side\knockout.rst:348
+msgid "Knockout provides a simple, elegant way to bind UI elements to the current state of the client application, defined in a ViewModel. Knockout's binding syntax uses the data-bind attribute, applied to HTML elements that are to be processed. Knockout is able to efficiently render and update large data sets by tracking UI elements and only processing changes to affected elements. Large applications can break up UI logic using templates and components, which can be loaded on demand from external files. Currently version 3, Knockout is a stable JavaScript library that can improve web applications that require rich client interactivity."
+msgstr ""
+

@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diagnostics &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="Application Insights" href="application-insights.html"/>
+        <link rel="prev" title="|stub-icon| Dependency Injection" href="dependency-injection.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Diagnostics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Diagnostics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/diagnostics.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="diagnostics">
+<h1>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 includes a number of new features that can assist with diagnosing problems. Configuring different handlers for application errors or to display additional information about the application can easily be achieved in the application&#8217;s startup class.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#configuring-an-error-handling-page">Configuring an error handling page</a></li>
+<li><a class="reference internal" href="#using-the-error-page-during-development">Using the error page during development</a></li>
+<li><a class="reference internal" href="#http-500-errors-on-azure">HTTP 500 errors on Azure</a></li>
+<li><a class="reference internal" href="#the-runtime-info-page">The runtime info page</a></li>
+<li><a class="reference internal" href="#the-welcome-page">The welcome page</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/Docs/tree/master/aspnet/fundamentals/diagnostics/sample">Browse or download samples on GitHub</a>.</p>
+<div class="section" id="configuring-an-error-handling-page">
+<span id="configure-error-page"></span><h2>Configuring an error handling page<a class="headerlink" href="#configuring-an-error-handling-page" title="Permalink to this headline">¶</a></h2>
+<p>In ASP.NET 5, you configure the pipeline for each request in the <code class="docutils literal"><span class="pre">Startup</span></code> class&#8217;s <code class="docutils literal"><span class="pre">Configure()</span></code> method (learn more about <a class="reference internal" href="configuration.html"><em>Configuration</em></a>). You can add a simple error page, meant only for use during development, very easily. All that&#8217;s required is to add a dependency on <code class="docutils literal"><span class="pre">Microsoft.AspNet.Diagnostics</span></code> to the project (and a <code class="docutils literal"><span class="pre">using</span></code> statement to <code class="docutils literal"><span class="pre">Startup.cs</span></code>), and then add one line to <code class="docutils literal"><span class="pre">Configure()</span></code> in <code class="docutils literal"><span class="pre">Startup.cs</span></code>:</p>
+<div class="highlight-csharp" id="diag-startup"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.AspNet.Builder</span><span class="p">;</span>
+<span class="hll"><span class="k">using</span> <span class="nn">Microsoft.AspNet.Diagnostics</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="nn">Microsoft.AspNet.Hosting</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Framework.DependencyInjection</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">DiagDemo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
+    <span class="p">{</span>
+        <span class="c1">// For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">EnvironmentName</span><span class="p">,</span> <span class="s">&quot;Development&quot;</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">))</span>
+            <span class="p">{</span>
+<span class="hll">                <span class="n">app</span><span class="p">.</span><span class="n">UseErrorPage</span><span class="p">();</span>
+</span>
+                <span class="n">app</span><span class="p">.</span><span class="n">UseRuntimeInfoPage</span><span class="p">();</span> <span class="c1">// default path is /runtimeinfo</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// specify production behavior for error handling, for example:</span>
+                <span class="c1">// app.UseErrorHandler(&quot;/Home/Error&quot;);</span>
+                <span class="c1">// if nothing is set here, web server error page will be displayed</span>
+            <span class="p">}</span>
+
+            <span class="n">app</span><span class="p">.</span><span class="n">UseWelcomePage</span><span class="p">(</span><span class="s">&quot;/welcome&quot;</span><span class="p">);</span>
+
+            <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Query</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;throw&quot;</span><span class="p">))</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Exception triggered!&quot;</span><span class="p">);</span>
+                <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&quot;text/html&quot;</span><span class="p">;</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;html&gt;&lt;body&gt;Hello World!&quot;</span><span class="p">);</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;ul&gt;&quot;</span><span class="p">);</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;li&gt;&lt;a href=\&quot;/welcome\&quot;&gt;Welcome Page&lt;/a&gt;&lt;/li&gt;&quot;</span><span class="p">);</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;li&gt;&lt;a href=\&quot;/?throw=true\&quot;&gt;Throw Exception&lt;/a&gt;&lt;/li&gt;&quot;</span><span class="p">);</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;/ul&gt;&quot;</span><span class="p">);</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The above code, which is built from the ASP.NET 5 Empty template, includes a simple mechanism for creating an exception on line 36. If a request includes a non-empty querystring parameter for the variable <code class="docutils literal"><span class="pre">throw</span></code> (e.g. a path of <code class="docutils literal"><span class="pre">/?throw=true</span></code>), an exception will be thrown. Line 21 makes the call to <code class="docutils literal"><span class="pre">UseErrorPage()</span></code> to enable the error page middleware.</p>
+<p>Notice that the call to <code class="docutils literal"><span class="pre">UseErrorPage()</span></code> is wrapped inside an <code class="docutils literal"><span class="pre">if</span></code> condition that checks the current <code class="docutils literal"><span class="pre">EnvironmentName</span></code>. This is a good practice, since you typically do not want to share detailed diagnostic information about your application publicly once it is in production. This check uses the <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> environment variable. If you are using Visual Studio 2015, you can customize the environment variables used when the application runs in the web application project&#8217;s properties, under the Debug tab, as shown here:</p>
+<img alt="../_images/project-properties-env-vars.png" src="../_images/project-properties-env-vars.png" />
+<p>Setting the <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> variable to anything other than Development (e.g. Production) will cause the application not to call <code class="docutils literal"><span class="pre">UseErrorPage()</span></code>, and thus any exceptions will be handled by the underlying web server package(in this case, <code class="docutils literal"><span class="pre">Microsoft.AspNet.Server.IIS</span></code>) as shown here:</p>
+<img alt="../_images/oops-500.png" src="../_images/oops-500.png" />
+<p>We will cover the features provided by the error page in the next section (ensure <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> is reset to Development if you are following along).</p>
+</div>
+<div class="section" id="using-the-error-page-during-development">
+<h2>Using the error page during development<a class="headerlink" href="#using-the-error-page-during-development" title="Permalink to this headline">¶</a></h2>
+<p>The default error page will display some useful diagnostics information when an unhandled exception occurs within the web processing pipeline. The error page includes several tabs with information about the exception that was triggered and the request that was made. The first tab shows the stack trace:</p>
+<img alt="../_images/errorpage-stack.png" src="../_images/errorpage-stack.png" />
+<p>The next tab shows the contents of the Querystring collection, if any:</p>
+<img alt="../_images/errorpage-query.png" src="../_images/errorpage-query.png" />
+<p>In this case, you can see the value of the <code class="docutils literal"><span class="pre">throw</span></code> parameter that was passed to this request. This request didn&#8217;t have any cookies, but if it did, they would appear on the Cookies tab. You can see the headers that were passed, here:</p>
+<img alt="../_images/errorpage-headers.png" src="../_images/errorpage-headers.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the current pre-release build, the Cookies section of ErrorPage is not yet enabled. <a class="reference external" href="https://github.com/aspnet/Diagnostics/blob/dev/src/Microsoft.AspNet.Diagnostics/Views/ErrorPage.cshtml">View ErrorPage Source</a>.</p>
+</div>
+</div>
+<div class="section" id="http-500-errors-on-azure">
+<h2>HTTP 500 errors on Azure<a class="headerlink" href="#http-500-errors-on-azure" title="Permalink to this headline">¶</a></h2>
+<p>If your app throws an exception before the <code class="docutils literal"><span class="pre">Configure</span></code> method in <em>Startup.cs</em> completes, the error page won&#8217;t be configured. For local development using IIS Express, you&#8217;ll still get a call stack showing where the exception occurred. The same app deployed to Azure (or another production server) will return an HTTP 500 error with no message details. ASP.NET 5 uses a new configuration model that is not based on <em>web.config</em>, and when you create a new web app with Visual Studio 2015, the project no longer contains a <em>web.config</em> file. (See <a class="reference external" href="http://docs.asp.net/en/latest/conceptual-overview/understanding-aspnet5-apps.html">Understanding ASP.NET 5 Web Apps</a>.)</p>
+<p>The publish wizard in Visual Studio 2015 creates a <em>web.config</em> file if you don&#8217;t have one. If you have a <em>web.config</em> file in the <em>wwwroot</em> folder, deploy inserts the markup into the the <em>web.config</em> file it generates.</p>
+<p>To get detailed error messages on Azure, add the following <em>web.config</em> file to the <em>wwwroot</em> folder.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Security warning: Enabling detailed error message can leak critical information from your app. You should never enable detailed error messages on a production app.</p>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;configuration&gt;</span>
+   <span class="nt">&lt;system.web&gt;</span>
+          <span class="nt">&lt;customErrors</span> <span class="na">mode=</span><span class="s">&quot;Off&quot;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/system.web&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-runtime-info-page">
+<h2>The runtime info page<a class="headerlink" href="#the-runtime-info-page" title="Permalink to this headline">¶</a></h2>
+<p>In addition to <a class="reference internal" href="#configure-error-page"><span>configuring and displaying an error page</span></a>, you can also add a runtime info page by simply calling an extension method in <code class="docutils literal"><span class="pre">Startup.cs</span></code>. The following line, is used to enable this feature:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseRuntimeInfoPage</span><span class="p">();</span> <span class="c1">// default path is /runtimeinfo</span>
+</pre></div>
+</div>
+<p>Once this is added to your ASP.NET application, you can browse to the specified path (<code class="docutils literal"><span class="pre">/runtimeinfo</span></code>) to see information about the runtime that is being used and the packages that are included in the application, as shown below:</p>
+<img alt="../_images/runtimeinfo-page.png" src="../_images/runtimeinfo-page.png" />
+<p>The path for this page can be optionally specified in the call to <code class="docutils literal"><span class="pre">UseRuntimeInfoPage()</span></code>. It accepts a <a class="reference external" href="https://github.com/aspnet/Diagnostics/blob/dev/src/Microsoft.AspNet.Diagnostics/RuntimeInfoPageOptions.cs">RuntimeInfoPageOptions</a> instance as a parameter, which has a <code class="docutils literal"><span class="pre">Path</span></code> property. For example, to specify a path of <code class="docutils literal"><span class="pre">/info</span></code> you would call <code class="docutils literal"><span class="pre">UseRuntimeInfoPage()</span></code> as shown here:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseRuntimeInfoPage</span><span class="p">(</span><span class="s">&quot;/info&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>As with <code class="docutils literal"><span class="pre">UseErrorPage()</span></code>, it is a good idea to limit public access to diagnostic information about your application. As such, in our sample we are only implementing <code class="docutils literal"><span class="pre">UseRuntimeInfoPage()</span></code> when the EnvironmentName is set to Development.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that the <code class="docutils literal"><span class="pre">Configure()</span></code> method in <code class="docutils literal"><span class="pre">Startup.cs</span></code> is defining the pipeline that will be used by all requests to your application, which means the order is important. If for example you move the call to <code class="docutils literal"><span class="pre">UseRuntimeInfoPage()</span></code> after the call to <code class="docutils literal"><span class="pre">app.Run()</span></code> in the examples shown here, it will never be called because <code class="docutils literal"><span class="pre">app.Run()</span></code> will handle the request before it reaches the call to <code class="docutils literal"><span class="pre">UseRuntimeInfoPage</span></code>.</p>
+</div>
+</div>
+<div class="section" id="the-welcome-page">
+<h2>The welcome page<a class="headerlink" href="#the-welcome-page" title="Permalink to this headline">¶</a></h2>
+<p>Another extension method you may find useful, especially when you&#8217;re first spinning up a new ASP.NET 5 application, is the <code class="docutils literal"><span class="pre">UseWelcomePage()</span></code> method. Add it to <code class="docutils literal"><span class="pre">Configure()</span></code> like so:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseWelcomePage</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Once included, this will handle all requests (by default) with a cool hello world page that uses embedded images and fonts to display a rich view, as shown here:</p>
+<img alt="../_images/welcome-page.png" src="../_images/welcome-page.png" />
+<p>You can optionally configure the welcome page to only respond to certain paths. The code shown below will configure the page to only be displayed for the <code class="docutils literal"><span class="pre">/welcome</span></code> path (other paths will be ignored, and will fall through to other handlers):</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseWelcomePage</span><span class="p">(</span><span class="s">&quot;/welcome&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Configured in this manner, the <a class="reference internal" href="#diag-startup"><span>startup.cs</span></a> shown above will respond to requests as follows:</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Requests</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Path</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/runtimeinfo</td>
+<td><code class="docutils literal"><span class="pre">UseRuntimeInfoPage</span></code> will handle and display runtime info page</td>
+</tr>
+<tr class="row-odd"><td>/welcome</td>
+<td><code class="docutils literal"><span class="pre">UseWelcomePage</span></code> will handle and display welcome page</td>
+</tr>
+<tr class="row-even"><td>paths without <code class="docutils literal"><span class="pre">?throw=</span></code></td>
+<td><code class="docutils literal"><span class="pre">app.Run()</span></code> will respond with &#8220;Hello World!&#8221;</td>
+</tr>
+<tr class="row-odd"><td>paths with <code class="docutils literal"><span class="pre">?throw=</span></code></td>
+<td><code class="docutils literal"><span class="pre">app.Run()</span></code> throws an exception; <code class="docutils literal"><span class="pre">UseErrorPage</span></code> handles, displays an error page</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In ASP.NET 5, you can easily add error pages, view diagnostic information, or respond to requests with a simple welcome page by adding just one line to your app&#8217;s <code class="docutils literal"><span class="pre">Startup.cs</span></code> class.</p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="application-insights.html"><em>Using Application Insights</em></a> - Collect detailed usage and diagnostic data for your application.</li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="application-insights.html" class="btn btn-neutral float-right" title="Application Insights" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dependency-injection.html" class="btn btn-neutral" title="|stub-icon| Dependency Injection" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

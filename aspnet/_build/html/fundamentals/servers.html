@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Servers &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="OWIN" href="owin.html"/>
+        <link rel="prev" title="Request Features" href="request-features.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Servers</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Servers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/servers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="servers">
+<h1>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 is completely decoupled from the web server environment that hosts the application. As released, ASP.NET 5 supports IIS and IIS Express, WebListener, and Kestrel web servers, which run on a variety of platforms. Developers and third party software vendors can create their own custom servers as well within which to host their ASP.NET 5 applications.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#servers-and-commands">Servers and commands</a></li>
+<li><a class="reference internal" href="#supported-features-by-server">Supported features by server</a></li>
+<li><a class="reference internal" href="#iis-and-iis-express">IIS and IIS Express</a></li>
+<li><a class="reference internal" href="#weblistener">WebListener</a></li>
+<li><a class="reference internal" href="#kestrel">Kestrel</a></li>
+<li><a class="reference internal" href="#choosing-a-server">Choosing a server</a></li>
+<li><a class="reference internal" href="#custom-servers">Custom Servers</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/Docs/tree/master/docs/fundamentals/servers/sample">Browse or download samples on GitHub</a>.</p>
+<div class="section" id="servers-and-commands">
+<h2>Servers and commands<a class="headerlink" href="#servers-and-commands" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 is designed to decouple web applications from the underlying web server that hosts them. Traditionally, ASP.NET applications have been windows-only (unless <a class="reference external" href="http://www.mono-project.com/docs/web/aspnet/">hosted via mono</a>) and hosted on the built-in web server for windows, Internet Information Server (IIS) (or a development server, like <a class="reference external" href="http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview">IIS Express</a> or earlier development web servers). While IIS is still the recommended way to host production ASP.NET applications on Windows, the cross-platform nature of ASP.NET allows it to be hosted in any number of different web servers, on multiple operating systems.</p>
+<p>ASP.NET 5 ships with support for 3 different servers:</p>
+<ul class="simple">
+<li>Microsoft.AspNet.Server.IIS</li>
+<li>Microsoft.AspNet.Server.WebListener (WebListener)</li>
+<li>Microsoft.AspNet.Server.Kestrel (Kestrel)</li>
+</ul>
+<p>ASP.NET 5 does not directly listen for requests, but instead relies on the HTTP server implementation to surface the request to the application as a set of <a class="reference internal" href="request-features.html"><em>feature interfaces</em></a> composed into an HttpContext. Both IIS and WebListener are Windows-only; Kestrel is designed to run cross-platform. You can configure your application to be hosted by any or all of these servers by specifying commands in your <code class="docutils literal"><span class="pre">project.json</span></code> file. You can even specify an application entry point for your application, and run it as an executable (using <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">run</span></code>) rather than hosting it in a separate process.</p>
+<p>The default web host for ASP.NET applications developed using Visual Studio 2015 is IIS / IIS Express. The &#8220;Microsoft.AspNet.Server.IIS&#8221; dependency is included in <code class="docutils literal"><span class="pre">project.json</span></code> by default, even with the Empty web site template. Visual Studio provides support for multiple profiles, associated with IIS Express and any other <code class="docutils literal"><span class="pre">commands</span></code> defined in <code class="docutils literal"><span class="pre">project.json</span></code>. You can manage these profiles and their settings in the Debug tab of your web application project&#8217;s Properties menu.</p>
+<img alt="../_images/serverdemo-properties.png" src="../_images/serverdemo-properties.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IIS doesn&#8217;t support commands; Visual Studio launches IIS Express and loads your application into it when you choose its profile.</p>
+</div>
+<p>I&#8217;ve configured the sample project for this article to support each of the different server options in its <code class="docutils literal"><span class="pre">project.json</span></code> file:</p>
+<div class="literal-block-wrapper container" id="project-json-truncated">
+<div class="code-block-caption"><span class="caption-text">project.json (truncated)</span><a class="headerlink" href="#project-json-truncated" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;webroot&quot;</span><span class="o">:</span> <span class="s2">&quot;wwwroot&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-*&quot;</span><span class="p">,</span>
+
+  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Microsoft.AspNet.Server.IIS&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Kestrel&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta6&quot;</span>
+  <span class="p">},</span>
+
+  <span class="s2">&quot;commands&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">    <span class="s2">&quot;kestrel&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="s2">&quot;run&quot;</span><span class="o">:</span> <span class="s2">&quot;run server.urls=http://localhost:5003&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="s2">&quot;web&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000&quot;</span>
+</span>  <span class="p">},</span>
+
+  <span class="s2">&quot;frameworks&quot;</span><span class="o">:</span> <span class="p">{</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">run</span></code> command will execute the application via its <code class="docutils literal"><span class="pre">void</span> <span class="pre">main()</span></code> method defined in <code class="docutils literal"><span class="pre">program.cs</span></code>. In this case, this has been set up to configure and start an instance of <code class="docutils literal"><span class="pre">WebListener</span></code>. This is not a typical means of launching a server, but is shown to demonstrate the possibility (the <a class="reference external" href="https://github.com/aspnet/MusicStore">Music Store sample application</a> also demonstrates this option).</p>
+<div class="literal-block-wrapper container" id="program-cs">
+<div class="code-block-caption"><span class="caption-text">program.cs</span><a class="headerlink" href="#program-cs" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Hosting</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Framework.Configuration</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">ServersDemo</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// This demonstrates how the application can be launched in a console application. </span>
+    <span class="c1">/// Executing the &quot;dnx run&quot; command in the application folder will run this app.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">IServiceProvider</span> <span class="n">_serviceProvider</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">Program</span><span class="p">(</span><span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_serviceProvider</span> <span class="p">=</span> <span class="n">serviceProvider</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">//Add command line configuration source to read command line parameters.</span>
+            <span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConfigurationBuilder</span><span class="p">();</span>
+            <span class="n">builder</span><span class="p">.</span><span class="n">AddCommandLine</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">config</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+
+<span class="hll">            <span class="k">using</span> <span class="p">(</span><span class="k">new</span> <span class="n">WebHostBuilder</span><span class="p">(</span><span class="n">_serviceProvider</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+</span><span class="hll">                <span class="p">.</span><span class="n">UseServer</span><span class="p">(</span><span class="s">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="p">)</span>
+</span><span class="hll">                <span class="p">.</span><span class="n">Build</span><span class="p">()</span>
+</span><span class="hll">                <span class="p">.</span><span class="n">Start</span><span class="p">())</span>
+</span><span class="hll">            <span class="p">{</span>
+</span><span class="hll">                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Started the server..&quot;</span><span class="p">);</span>
+</span><span class="hll">                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Press any key to stop the server&quot;</span><span class="p">);</span>
+</span><span class="hll">                <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</span><span class="hll">            <span class="p">}</span>
+</span>            <span class="k">return</span> <span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="supported-features-by-server">
+<h2>Supported Features by Server<a class="headerlink" href="#supported-features-by-server" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET defines a number of <a class="reference internal" href="request-features.html"><em>Request Features</em></a> which may be supported on different server implementations. The following table lists the different features and the servers supporting them.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Feature</th>
+<th class="head">IIS</th>
+<th class="head">WebListener</th>
+<th class="head">Kestrel</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IHttpRequestFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>IHttpResponseFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>IHttpAuthenticationFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>IHttpUpgradeFeature</td>
+<td>No</td>
+<td>Yes (with limits)</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>IHttpBufferingFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>IHttpConnectionFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>IHttpRequestLifetimeFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>IHttpSendFileFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>IHttpWebSocketFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No*</td>
+</tr>
+<tr class="row-odd"><td>IRequestIdentifierFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>ITlsConnectionFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>ITlsTokenBindingFeature</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>To add support for web sockets in Kestrel, use the <a class="reference external" href="https://github.com/aspnet/WebSockets/blob/c86b157ad3cd00e8848c4895fe29de2f9d81a0b4/src/Microsoft.AspNet.WebSockets.Server/WebSocketMiddleware.cs">WebSocketMiddleware</a></p>
+<div class="section" id="configuration-options">
+<h3>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h3>
+<p>When launching a server, you can provide it with some configuration options. This can be done directly using command line parameters, or a configuration file containing the settings can be specified. The <code class="docutils literal"><span class="pre">Microsoft.AspNet.Hosting</span></code> command supports parameters for the server to use (such as <code class="docutils literal"><span class="pre">Kestrel</span></code> or <code class="docutils literal"><span class="pre">WebListener</span></code>) as well as a <code class="docutils literal"><span class="pre">server.urls</span></code> configuration key, which should contain a semicolon-separated list of URL prefixes the server should handle.</p>
+<p>The <code class="docutils literal"><span class="pre">project.json</span></code> file shown above demonstrates how to pass the <code class="docutils literal"><span class="pre">server.urls</span></code> parameter directly:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;kestrel&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004&quot;</span>
+</pre></div>
+</div>
+<p>Alternately, a configuration file can be referenced, instead:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;kestrel&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --config hosting.ini&quot;</span>
+</pre></div>
+</div>
+<p>Then, <code class="docutils literal"><span class="pre">hosting.ini</span></code> can include the settings the server will use (including the server parameter, as well):</p>
+<div class="highlight-text"><div class="highlight"><pre>server=Kestrel
+server.urls=http://localhost:5004
+</pre></div>
+</div>
+</div>
+<div class="section" id="programmatic-configuration">
+<h3>Programmatic configuration<a class="headerlink" href="#programmatic-configuration" title="Permalink to this headline">¶</a></h3>
+<p>In addition to specifying configuration options, the server hosting the application can be referenced programmatically via the <a class="reference external" href="https://github.com/aspnet/HttpAbstractions/blob/ed339a35d2a0ae6137c12e9bc8e8b037ed429bc1/src/Microsoft.AspNet.Http.Abstractions/IApplicationBuilder.cs">IApplicationBuilder interface</a>, available in the <code class="docutils literal"><span class="pre">Configure</span></code> method in <code class="docutils literal"><span class="pre">Startup</span></code>. <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> exposes a Server property of type <a class="reference external" href="https://github.com/aspnet/Hosting/blob/62e534977386ebb02bfc351ec4a6bbea9ea7f635/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerInformation.cs">ServerInformation</a>. <code class="docutils literal"><span class="pre">IServerInformation</span></code> only exposes a <code class="docutils literal"><span class="pre">Name</span></code> property, but different server implementations may expose additional functionality. For instance, WebListener exposes a <code class="docutils literal"><span class="pre">Listener</span></code> property that can be used to configure the server&#8217;s authentication:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="kt">var</span> <span class="n">webListenerInfo</span> <span class="p">=</span> <span class="n">app</span><span class="p">.</span><span class="n">Server</span> <span class="k">as</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AspNet</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">WebListener</span><span class="p">.</span><span class="n">ServerInformation</span><span class="p">;</span>
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">webListenerInfo</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">webListenerInfo</span><span class="p">.</span><span class="n">Listener</span><span class="p">.</span><span class="n">AuthenticationManager</span><span class="p">.</span><span class="n">AuthenticationSchemes</span> <span class="p">=</span>
+</span><span class="hll">            <span class="n">AuthenticationSchemes</span><span class="p">.</span><span class="n">AllowAnonymous</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">message</span> <span class="p">=</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&quot;Hello World from {0}&quot;</span><span class="p">,</span>
+<span class="hll">                                <span class="p">((</span><span class="n">IServerInformation</span><span class="p">)</span><span class="n">app</span><span class="p">.</span><span class="n">Server</span><span class="p">).</span><span class="n">Name</span><span class="p">);</span>
+</span>        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="iis-and-iis-express">
+<h2>IIS and IIS Express<a class="headerlink" href="#iis-and-iis-express" title="Permalink to this headline">¶</a></h2>
+<p>Working with IIS as your server for your ASP.NET application is the default option, and should be familiar to ASP.NET developers who have worked with previous versions of the framework. IIS currently provides support for the largest number of features, and includes IIS management functionality and access to other IIS modules. Hosting ASP.NET 5 on IIS bypasses the legacy <code class="docutils literal"><span class="pre">System.Web</span></code> infrastructure used by prior versions of ASP.NET, providing a substantial performance gain. Most production ASP.NET web applications being deployed to Windows servers will run on IIS.</p>
+</div>
+<div class="section" id="weblistener">
+<h2>WebListener<a class="headerlink" href="#weblistener" title="Permalink to this headline">¶</a></h2>
+<p>WebListener is a Windows-only server that allows ASP.NET applications to be hosted outside of IIS. It runs directly on the <a class="reference external" href="http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture">Http.Sys kernel driver</a>, and has very little overhead. It supports the same feature interfaces as IIS; in fact, you can think of WebListener as a library version of IIS.</p>
+<p>You can add support for WebListener to your ASP.NET application by adding the &#8220;Microsoft.AspNet.Server.WebListener&#8221; dependency in project.json and the following command:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;web&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kestrel">
+<span id="id1"></span><h2>Kestrel<a class="headerlink" href="#kestrel" title="Permalink to this headline">¶</a></h2>
+<p>Kestrel is a cross-platform web server based on <a class="reference external" href="https://github.com/libuv/libuv">libuv</a>, a cross-platform asynchronous I/O library. Kestrel is open-source, and you can <a class="reference external" href="https://github.com/aspnet/KestrelHttpServer">view the Kestrel source on GitHub</a>. Kestrel is a great option to at least include support for in your ASP.NET 5 projects so that your project can be easily run by developers on any of the supported platforms. You add support for Kestrel by including &#8220;Kestrel&#8221; in your project&#8217;s dependencies listed in <code class="docutils literal"><span class="pre">project.json</span></code>.</p>
+<p>Learn more about working with Kestrel to create <a class="reference internal" href="../tutorials/your-first-mac-aspnet.html"><em>Your First ASP.NET 5 Application on a Mac</em></a>.</p>
+</div>
+<div class="section" id="choosing-a-server">
+<h2>Choosing a server<a class="headerlink" href="#choosing-a-server" title="Permalink to this headline">¶</a></h2>
+<p>If you intend to deploy your application on a Windows server, you should prefer the Windows optimized servers (IIS and WebListener). IIS remains the best choice for typical web application deployments on Windows servers, and provides the richest set of features. Choose WebListener instead of IIS only if you need to host your application within your own process or service. Use Kestrel if you intend to develop on or deploy to non-Windows environments.</p>
+</div>
+<div class="section" id="custom-servers">
+<h2>Custom Servers<a class="headerlink" href="#custom-servers" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the options listed above, you can create your own server in which to host your ASP.NET application, or use other open source servers. Forking and modifying the KestrelHttpServer is one way to quickly create your own custom server, and at the time of this writing the KestrelHttpServer repository on GitHub has been forked 55 times. When implementing your own server, you&#8217;re free to implement just the feature interfaces your application needs, though at a minimum you must support <code class="docutils literal"><span class="pre">IHttpRequestFeature</span></code> and <code class="docutils literal"><span class="pre">IHttpResponseFeature</span></code>.</p>
+<p>Since Kestrel is open source, it makes an excellent starting point if you need to implement your own custom server. In fact, like all of ASP.NET 5, you&#8217;re welcome to <a class="reference external" href="https://github.com/aspnet/KestrelHttpServer/blob/dev/CONTRIBUTING.md">contribute</a> any improvements you make back to the project.</p>
+<p>Kestrel currently supports a limited number of feature interfaces, including <code class="docutils literal"><span class="pre">IHttpRequestFeature</span></code>, <code class="docutils literal"><span class="pre">IHttpResponseFeature</span></code>, and <code class="docutils literal"><span class="pre">IHttpUpgradeFeature</span></code>, but additional features will be added in the future. You can see how these interfaces are implemented and supported by Kestrel in its <a class="reference external" href="https://github.com/aspnet/KestrelHttpServer/blob/dev/src/Kestrel/ServerRequest.cs">ServerRequest class</a>, a portion of which is shown below.</p>
+<div class="literal-block-wrapper container" id="kestrel-serverrequest-cs-class-snippet">
+<div class="code-block-caption"><span class="caption-text">Kestrel ServerRequest.cs class snippet</span><a class="headerlink" href="#kestrel-serverrequest-cs-class-snippet" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.AspNet.FeatureModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Http.Features</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Kestrel</span>
+<span class="p">{</span>
+        <span class="k">public</span> <span class="k">class</span> <span class="nc">ServerRequest</span> <span class="p">:</span> <span class="n">IHttpRequestFeature</span><span class="p">,</span>
+                                         <span class="n">IHttpResponseFeature</span><span class="p">,</span>
+                                         <span class="n">IHttpUpgradeFeature</span>
+        <span class="p">{</span>
+                <span class="k">private</span> <span class="n">FeatureCollection</span> <span class="n">_features</span><span class="p">;</span>
+
+                <span class="k">private</span> <span class="k">void</span> <span class="nf">PopulateFeatures</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">_features</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IHttpRequestFeature</span><span class="p">),</span> <span class="k">this</span><span class="p">);</span>
+                        <span class="n">_features</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IHttpResponseFeature</span><span class="p">),</span> <span class="k">this</span><span class="p">);</span>
+                        <span class="n">_features</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IHttpUpgradeFeature</span><span class="p">),</span> <span class="k">this</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">IHttpUpgradeFeature</span></code> interface consists of only one property and one method. Kestrel&#8217;s implementation of this interface is shown here for reference:</p>
+<div class="literal-block-wrapper container" id="kestrel-serverrequest-cs-ihttpupgradefeature-implementation">
+<div class="code-block-caption"><span class="caption-text">Kestrel ServerRequest.cs IHttpUpgradeFeature implementation</span><a class="headerlink" href="#kestrel-serverrequest-cs-ihttpupgradefeature-implementation" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">IHttpUpgradeFeature</span><span class="p">.</span><span class="n">IsUpgradableRequest</span>
+<span class="p">{</span>
+        <span class="k">get</span>
+        <span class="p">{</span>
+                <span class="kt">string</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_frame</span><span class="p">.</span><span class="n">RequestHeaders</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="s">&quot;Connection&quot;</span><span class="p">,</span> <span class="k">out</span> <span class="n">values</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">values</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="k">value</span> <span class="p">=&gt;</span> <span class="k">value</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s">&quot;upgrade&quot;</span><span class="p">,</span>
+                                <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">)</span> <span class="p">!=</span> <span class="p">-</span><span class="m">1</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">Stream</span><span class="p">&gt;</span> <span class="n">IHttpUpgradeFeature</span><span class="p">.</span><span class="n">UpgradeAsync</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="n">_frame</span><span class="p">.</span><span class="n">StatusCode</span> <span class="p">=</span> <span class="m">101</span><span class="p">;</span>
+        <span class="n">_frame</span><span class="p">.</span><span class="n">ReasonPhrase</span> <span class="p">=</span> <span class="s">&quot;Switching Protocols&quot;</span><span class="p">;</span>
+        <span class="n">_frame</span><span class="p">.</span><span class="n">ResponseHeaders</span><span class="p">[</span><span class="s">&quot;Connection&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&quot;Upgrade&quot;</span> <span class="p">};</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">_frame</span><span class="p">.</span><span class="n">ResponseHeaders</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;Upgrade&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="kt">string</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_frame</span><span class="p">.</span><span class="n">RequestHeaders</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="s">&quot;Upgrade&quot;</span><span class="p">,</span> <span class="k">out</span> <span class="n">values</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="n">_frame</span><span class="p">.</span><span class="n">ResponseHeaders</span><span class="p">[</span><span class="s">&quot;Upgrade&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="n">values</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">_frame</span><span class="p">.</span><span class="n">ProduceStart</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">_frame</span><span class="p">.</span><span class="n">DuplexStream</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Because ASP.NET 5 has completely decoupled ASP.NET applications from IIS or any other web server, it&#8217;s now possible to host ASP.NET applications on any number of different servers. ASP.NET supports three: IIS, WebListener, and Kestrel, which provide two great options for Windows environments and a third, open-source option that can be used on several different operating systems.</p>
+</div>
+<div class="section" id="additional-reading">
+<h2>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="request-features.html"><em>Request Features</em></a></li>
+<li><a class="reference internal" href="hosting.html"><em>|stub-icon| Hosting</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="owin.html" class="btn btn-neutral float-right" title="OWIN" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="request-features.html" class="btn btn-neutral" title="Request Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

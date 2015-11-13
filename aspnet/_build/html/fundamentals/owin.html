@@ -1,0 +1,929 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OWIN &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="|stub-icon| Hosting" href="hosting.html"/>
+        <link rel="prev" title="Servers" href="servers.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">OWIN</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>OWIN</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/owin.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="owin">
+<h1>OWIN<a class="headerlink" href="#owin" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 supports OWIN, the Open Web Interface for .NET, which allows web applications to be decoupled from web servers. In addition, OWIN defines a standard way for middleware to be used in a pipeline to handle individual requests and associated responses. ASP.NET 5 applications and middleware can interoperate with OWIN-based applications, servers, and middleware.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#running-owin-middleware-in-the-asp-net-pipeline">Running OWIN middleware in the ASP.NET pipeline</a></li>
+<li><a class="reference internal" href="#using-asp-net-hosting-on-an-owin-based-server">Using ASP.NET Hosting on an OWIN-based server</a></li>
+<li><a class="reference internal" href="#run-asp-net-5-on-an-owin-based-server-and-use-its-websockets-support">Run ASP.NET 5 on an OWIN-based server and use its WebSockets support</a></li>
+<li><a class="reference internal" href="#owin-keys">OWIN keys</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/Docs/tree/master/docs/fundamentals/owin/sample">Browse or download samples on GitHub</a>.</p>
+<div class="section" id="running-owin-middleware-in-the-asp-net-pipeline">
+<h2>Running OWIN middleware in the ASP.NET pipeline<a class="headerlink" href="#running-owin-middleware-in-the-asp-net-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5&#8217;s OWIN support is deployed as part of the <a class="reference external" href="https://www.nuget.org/packages/Microsoft.AspNet.Owin/1.0.0-beta5">Microsoft.AspNet.Owin</a> package, and the source is in the <a class="reference external" href="https://github.com/aspnet/HttpAbstractions/tree/1.0.0-beta5/src/Microsoft.AspNet.Owin">HttpAbstractions repository</a>. You can import OWIN support into your project by adding this package as a dependency in your <code class="docutils literal"><span class="pre">project.json</span></code> file, as shown here:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Microsoft.AspNet.Hosting&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="s2">&quot;Microsoft.AspNet.Owin&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+</span>    <span class="s2">&quot;Microsoft.AspNet.Server.IIS&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span>
+  <span class="p">},</span>
+</pre></div>
+</div>
+<p>OWIN middleware conform to the <a class="reference external" href="http://owin.org/spec/spec/owin-1.0.0.html">OWIN specification</a>, which defines a Properties <code class="docutils literal"><span class="pre">IDictionary&lt;string,</span> <span class="pre">object&gt;</span></code> interface that must be used, and also requires certain keys be set (such as <code class="docutils literal"><span class="pre">owin.ResponseBody</span></code>). We can construct a very simple example of middleware that follows the OWIN specification to display &#8220;Hello World&#8221;, as shown here:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="n">Task</span> <span class="nf">OwinHello</span><span class="p">(</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">environment</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">responseText</span> <span class="p">=</span> <span class="s">&quot;Hello World via OWIN&quot;</span><span class="p">;</span>
+    <span class="kt">byte</span><span class="p">[]</span> <span class="n">responseBytes</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">responseText</span><span class="p">);</span>
+
+    <span class="c1">// OWIN Environment Keys: http://owin.org/spec/owin-1.0.0.html</span>
+    <span class="kt">var</span> <span class="n">responseStream</span> <span class="p">=</span> <span class="p">(</span><span class="n">Stream</span><span class="p">)</span><span class="n">environment</span><span class="p">[</span><span class="s">&quot;owin.ResponseBody&quot;</span><span class="p">];</span>
+    <span class="kt">var</span> <span class="n">responseHeaders</span> <span class="p">=</span> <span class="p">(</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]&gt;)</span><span class="n">environment</span><span class="p">[</span><span class="s">&quot;owin.ResponseHeaders&quot;</span><span class="p">];</span>
+
+    <span class="n">responseHeaders</span><span class="p">[</span><span class="s">&quot;Content-Length&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span> <span class="n">responseBytes</span><span class="p">.</span><span class="n">Length</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">)</span> <span class="p">};</span>
+    <span class="n">responseHeaders</span><span class="p">[</span><span class="s">&quot;Content-Type&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&quot;text/plain&quot;</span> <span class="p">};</span>
+
+    <span class="k">return</span> <span class="n">responseStream</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="n">responseBytes</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">responseBytes</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example, notice that the method returns a <code class="docutils literal"><span class="pre">Task</span></code> and accepts an <code class="docutils literal"><span class="pre">IDictionary&lt;string,</span> <span class="pre">object&gt;</span></code> as required by OWIN. Within the method, this parameter is used to retrieve the <code class="docutils literal"><span class="pre">owin.ResponseBody</span></code> and <code class="docutils literal"><span class="pre">owin.ResponseHeaders</span></code> objects from the environment dictionary. Once the headers are set appropriately for the content being returned, a task representing the asynchronous write to the response stream is returned.</p>
+<p>Adding OWIN middleware to the ASP.NET pipeline is most easily done using the <code class="docutils literal"><span class="pre">UseOwin</span></code> extension method. Given the <code class="docutils literal"><span class="pre">OwinHello</span></code> method shown above, adding it to the pipeline is a simple matter:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseOwin</span><span class="p">(</span><span class="n">pipeline</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">pipeline</span><span class="p">(</span><span class="n">next</span> <span class="p">=&gt;</span> <span class="n">OwinHello</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can of course configure other actions to take place within the OWIN pipeline. Remember that response headers should only be modified prior to the first write to the response stream, so configure your pipeline accordingly.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Multiple calls to <code class="docutils literal"><span class="pre">UseOwin</span></code> is discouraged for performance reasons. OWIN components will operate best if grouped together.</p>
+</div>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseOwin</span><span class="p">(</span><span class="n">pipeline</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">pipeline</span><span class="p">(</span><span class="n">next</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="c1">// do something before</span>
+            <span class="k">return</span> <span class="n">OwinHello</span><span class="p">;</span>
+            <span class="c1">// do something after</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The OWIN support in ASP.NET 5 is an evolution of the work that was done for the <a class="reference external" href="http://katanaproject.codeplex.com/">Katana project</a>. Katana&#8217;s <code class="docutils literal"><span class="pre">IAppBuilder</span></code> component has been replaced by <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code>, but if you have existing Katana-based middleware, you can use it within your ASP.NET 5 application through the use of a bridge, as shown in the <a class="reference external" href="https://github.com/aspnet/Entropy/tree/dev/samples/Owin.IAppBuilderBridge">Owin.IAppBuilderBridge example on GitHub</a>.</p>
+</div>
+</div>
+<div class="section" id="using-asp-net-hosting-on-an-owin-based-server">
+<h2>Using ASP.NET Hosting on an OWIN-based server<a class="headerlink" href="#using-asp-net-hosting-on-an-owin-based-server" title="Permalink to this headline">¶</a></h2>
+<p>OWIN-based servers can host ASP.NET applications, since ASP.NET conforms to the OWIN specification. One such server is <a class="reference external" href="https://github.com/Bobris/Nowin">Nowin</a>, a .NET OWIN web server. In the sample for this article, I&#8217;ve included a very simple project that references Nowin and uses it to create a simple server capable of self-hosting ASP.NET 5.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.FeatureModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Hosting.Server</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Owin</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Framework.Configuration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Nowin</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">NowinSample</span>
+<span class="p">{</span>
+<span class="hll">    <span class="k">public</span> <span class="k">class</span> <span class="nc">NowinServerFactory</span> <span class="p">:</span> <span class="n">IServerFactory</span>
+</span>    <span class="p">{</span>
+        <span class="k">private</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">IFeatureCollection</span><span class="p">,</span> <span class="n">Task</span><span class="p">&gt;</span> <span class="n">_callback</span><span class="p">;</span>
+
+        <span class="k">private</span> <span class="n">Task</span> <span class="nf">HandleRequest</span><span class="p">(</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">env</span><span class="p">)</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="k">return</span> <span class="nf">_callback</span><span class="p">(</span><span class="k">new</span> <span class="n">OwinFeatureCollection</span><span class="p">(</span><span class="n">env</span><span class="p">));</span>
+</span>        <span class="p">}</span>
+
+<span class="hll">        <span class="k">public</span> <span class="n">IServerInformation</span> <span class="nf">Initialize</span><span class="p">(</span><span class="n">IConfiguration</span> <span class="n">configuration</span><span class="p">)</span>
+</span>        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="n">ServerBuilder</span><span class="p">.</span><span class="n">New</span><span class="p">()</span>
+                        <span class="p">.</span><span class="n">SetAddress</span><span class="p">(</span><span class="n">IPAddress</span><span class="p">.</span><span class="n">Any</span><span class="p">)</span>
+                        <span class="p">.</span><span class="n">SetPort</span><span class="p">(</span><span class="m">5000</span><span class="p">)</span>
+<span class="hll">                        <span class="p">.</span><span class="n">SetOwinApp</span><span class="p">(</span><span class="n">OwinWebSocketAcceptAdapter</span><span class="p">.</span><span class="n">AdaptWebSockets</span><span class="p">(</span><span class="n">HandleRequest</span><span class="p">));</span>
+</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">NowinServerInformation</span><span class="p">(</span><span class="n">builder</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">IDisposable</span> <span class="nf">Start</span><span class="p">(</span><span class="n">IServerInformation</span> <span class="n">serverInformation</span><span class="p">,</span> 
+            <span class="n">Func</span><span class="p">&lt;</span><span class="n">IFeatureCollection</span><span class="p">,</span> <span class="n">Task</span><span class="p">&gt;</span> <span class="n">application</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">information</span> <span class="p">=</span> <span class="p">(</span><span class="n">NowinServerInformation</span><span class="p">)</span><span class="n">serverInformation</span><span class="p">;</span>
+            <span class="n">_callback</span> <span class="p">=</span> <span class="n">application</span><span class="p">;</span>
+            <span class="n">INowinServer</span> <span class="n">server</span> <span class="p">=</span> <span class="n">information</span><span class="p">.</span><span class="n">Builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+            <span class="n">server</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="hll">            <span class="k">return</span> <span class="n">server</span><span class="p">;</span>
+</span>        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">class</span> <span class="nc">NowinServerInformation</span> <span class="p">:</span> <span class="n">IServerInformation</span>
+        <span class="p">{</span>
+            <span class="k">public</span> <span class="nf">NowinServerInformation</span><span class="p">(</span><span class="n">ServerBuilder</span> <span class="n">builder</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Builder</span> <span class="p">=</span> <span class="n">builder</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">public</span> <span class="n">ServerBuilder</span> <span class="n">Builder</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+            <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span>
+            <span class="p">{</span>
+                <span class="k">get</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="s">&quot;Nowin&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/aspnet/Hosting/blob/1.0.0-beta5/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerFactory.cs">IServerFactory</a> is an ASP.NET interface that requires an Initialize and a Start method. Initialize must return an instance of <a class="reference external" href="https://github.com/aspnet/Hosting/blob/1.0.0-beta5/src/Microsoft.AspNet.Hosting.Server.Abstractions/IServerInformation.cs">IServerInformation</a>, which simply includes the server&#8217;s name (but the specific implementation may provide additional functionality). In this example, the <code class="docutils literal"><span class="pre">NowinServerInformation</span></code> class is defined as a private class within the factory, and is returned by <code class="docutils literal"><span class="pre">Initialize</span></code> as required.</p>
+<p><code class="docutils literal"><span class="pre">Initialize</span></code> is responsible for configuring the server, which in this case is done through a series of fluent API calls that hard code the server to listen for requests (to any IP address) on port 5000. Note that the final line of the fluent configuration of the <code class="docutils literal"><span class="pre">builder</span></code> variable specifies that requests will be handled by the private method <code class="docutils literal"><span class="pre">HandleRequest</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Start</span></code> is called after <code class="docutils literal"><span class="pre">Initialize</span></code> and accepts the the <code class="docutils literal"><span class="pre">IServerInformation</span></code> created by <code class="docutils literal"><span class="pre">Initialize</span></code>, and a callback of type <code class="docutils literal"><span class="pre">Func&lt;IFeatureCollection,</span> <span class="pre">Task&gt;</span></code>. This callback is assigned to a local field and is ultimately called on each request from within the private <code class="docutils literal"><span class="pre">HandleRequest</span></code> method (which was wired up in <code class="docutils literal"><span class="pre">Initialize</span></code>).</p>
+<p>With this in place, all that&#8217;s required to run an ASP.NET application using this custom server is the following command in <code class="docutils literal"><span class="pre">project.json</span></code>:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;webroot&quot;</span><span class="o">:</span> <span class="s2">&quot;wwwroot&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-*&quot;</span><span class="p">,</span>
+
+  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Microsoft.AspNet.Hosting&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.Owin&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.Http&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nowin&quot;</span><span class="o">:</span> <span class="s2">&quot;0.17.0&quot;</span>
+
+  <span class="p">},</span>
+
+  <span class="s2">&quot;commands&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">      <span class="s2">&quot;web&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server NowinSample&quot;</span>
+</span>  <span class="p">},</span>
+</pre></div>
+</td></tr></table></div>
+<p>When run, this command (equivalent to running <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">web</span></code> from a command line) will search for a package called &#8220;NowinSample&#8221; that contains an implementation of <code class="docutils literal"><span class="pre">IServerFactory</span></code>. If it finds one, it will initialize and start the server as detailed above. Learn more about the built-in ASP.NET <a class="reference internal" href="servers.html"><em>Servers</em></a>.</p>
+</div>
+<div class="section" id="run-asp-net-5-on-an-owin-based-server-and-use-its-websockets-support">
+<h2>Run ASP.NET 5 on an OWIN-based server and use its WebSockets support<a class="headerlink" href="#run-asp-net-5-on-an-owin-based-server-and-use-its-websockets-support" title="Permalink to this headline">¶</a></h2>
+<p>Another example of how OWIN-based servers&#8217; features can be leveraged by ASP.NET 5 is access to features like WebSockets. The .NET OWIN web server used in the previous example has support for Web Sockets built in, which can be leveraged by an ASP.NET 5 application. The example below shows a simple web application that supports Web Sockets and simply echos back anything sent to the server via WebSockets.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">app</span><span class="p">.</span><span class="n">Use</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+<span class="hll">                <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">WebSockets</span><span class="p">.</span><span class="n">IsWebSocketRequest</span><span class="p">)</span>
+</span>                <span class="p">{</span>
+<span class="hll">                    <span class="n">WebSocket</span> <span class="n">webSocket</span> <span class="p">=</span> <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">WebSockets</span><span class="p">.</span><span class="n">AcceptWebSocketAsync</span><span class="p">();</span>
+</span><span class="hll">                    <span class="k">await</span> <span class="nf">EchoWebSocket</span><span class="p">(</span><span class="n">webSocket</span><span class="p">);</span>
+</span>                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="k">await</span> <span class="nf">next</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+
+            <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="n">context</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">EchoWebSocket</span><span class="p">(</span><span class="n">WebSocket</span> <span class="n">webSocket</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">byte</span><span class="p">[]</span> <span class="n">buffer</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="p">[</span><span class="m">1024</span><span class="p">];</span>
+            <span class="n">WebSocketReceiveResult</span> <span class="n">received</span> <span class="p">=</span> <span class="k">await</span> <span class="n">webSocket</span><span class="p">.</span><span class="n">ReceiveAsync</span><span class="p">(</span>
+                <span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">buffer</span><span class="p">),</span> <span class="n">CancellationToken</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+
+            <span class="k">while</span> <span class="p">(!</span><span class="n">webSocket</span><span class="p">.</span><span class="n">CloseStatus</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// Echo anything we receive</span>
+                <span class="k">await</span> <span class="n">webSocket</span><span class="p">.</span><span class="n">SendAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">buffer</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">received</span><span class="p">.</span><span class="n">Count</span><span class="p">),</span> 
+                    <span class="n">received</span><span class="p">.</span><span class="n">MessageType</span><span class="p">,</span> <span class="n">received</span><span class="p">.</span><span class="n">EndOfMessage</span><span class="p">,</span> <span class="n">CancellationToken</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+
+                <span class="n">received</span> <span class="p">=</span> <span class="k">await</span> <span class="n">webSocket</span><span class="p">.</span><span class="n">ReceiveAsync</span><span class="p">(</span><span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">buffer</span><span class="p">),</span> 
+                    <span class="n">CancellationToken</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">await</span> <span class="n">webSocket</span><span class="p">.</span><span class="n">CloseAsync</span><span class="p">(</span><span class="n">webSocket</span><span class="p">.</span><span class="n">CloseStatus</span><span class="p">.</span><span class="n">Value</span><span class="p">,</span> 
+                <span class="n">webSocket</span><span class="p">.</span><span class="n">CloseStatusDescription</span><span class="p">,</span> <span class="n">CancellationToken</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This sample (<a class="reference external" href="https://github.com/aspnet/Docs/tree/master/docs/fundamentals/owin/sample">available on GitHub</a>) is configured using the same <code class="docutils literal"><span class="pre">NowinServerFactory</span></code> as the previous one - the only difference is in how the application is configured in its <code class="docutils literal"><span class="pre">Configure</span></code> method. A simple test using <a class="reference external" href="https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en">a simple websocket client</a> demonstrates that the application works as expected:</p>
+<img alt="../_images/websocket-test.png" src="../_images/websocket-test.png" />
+</div>
+<div class="section" id="owin-keys">
+<h2>OWIN keys<a class="headerlink" href="#owin-keys" title="Permalink to this headline">¶</a></h2>
+<p>OWIN depends heavily on an <code class="docutils literal"><span class="pre">IDictionary&lt;string,object&gt;</span></code> used to communicate information throughout an HTTP Request/Response exchange. ASP.NET 5 implements all of the required and optional keys outlined in the OWIN specification, as well as some of its own. Note that any keys not required in the OWIN specification are optional and may only be used in some scenarios. When working with OWIN keys, it&#8217;s a good idea to review the list of <a class="reference external" href="http://owin.org/spec/spec/CommonKeys.html">OWIN Key Guidelines and Common Keys</a></p>
+<div class="section" id="request-data-owin-v1-0-0">
+<h3>Request Data (OWIN v1.0.0)<a class="headerlink" href="#request-data-owin-v1-0-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>owin.RequestScheme</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.RequestMethod</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>owin.RequestPathBase</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.RequestPath</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>owin.RequestQueryString</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.RequestProtocol</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>owin.RequestHeaders</td>
+<td><code class="docutils literal"><span class="pre">IDictionary&lt;string,string[]&gt;</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.RequestBody</td>
+<td><code class="docutils literal"><span class="pre">Stream</span></code></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="request-data-owin-v1-1-0">
+<h3>Request Data (OWIN v1.1.0)<a class="headerlink" href="#request-data-owin-v1-1-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>owin.RequestId</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="response-data-owin-v1-0-0">
+<h3>Response Data (OWIN v1.0.0)<a class="headerlink" href="#response-data-owin-v1-0-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>owin.ResponseStatusCode</td>
+<td><code class="docutils literal"><span class="pre">int</span></code></td>
+<td>Optional</td>
+</tr>
+<tr class="row-odd"><td>owin.ResponseReasonPhrase</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>Optional</td>
+</tr>
+<tr class="row-even"><td>owin.ResponseHeaders</td>
+<td><code class="docutils literal"><span class="pre">IDictionary&lt;string,string[]&gt;</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.ResponseBody</td>
+<td><code class="docutils literal"><span class="pre">Stream</span></code></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other-data-owin-v1-0-0">
+<h3>Other Data (OWIN v1.0.0)<a class="headerlink" href="#other-data-owin-v1-0-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>owin.CallCancelled</td>
+<td><code class="docutils literal"><span class="pre">CancellationToken</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>owin.Version</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="common-keys">
+<h3>Common Keys<a class="headerlink" href="#common-keys" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ssl.ClientCertificate</td>
+<td><code class="docutils literal"><span class="pre">X509Certificate</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ssl.LoadClientCertAsync</td>
+<td><code class="docutils literal"><span class="pre">Func&lt;Task&gt;</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>server.RemoteIpAddress</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>server.RemotePort</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>server.LocalIpAddress</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>server.LocalPort</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>server.IsLocal</td>
+<td><code class="docutils literal"><span class="pre">bool</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>server.OnSendingHeaders</td>
+<td><code class="docutils literal"><span class="pre">Action&lt;Action&lt;object&gt;,object&gt;</span></code></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sendfiles-v0-3-0">
+<h3>SendFiles v0.3.0<a class="headerlink" href="#sendfiles-v0-3-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sendfile.SendAsync</td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm">delegate signature</a></td>
+<td>Per Request</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="opaque-v0-3-0">
+<h3>Opaque v0.3.0<a class="headerlink" href="#opaque-v0-3-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>opaque.Version</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>opaque.Upgrade</td>
+<td><code class="docutils literal"><span class="pre">OpaqueUpgrade</span></code></td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-OpaqueStream-Extension-v0.3.0.htm">delegate signature</a></td>
+</tr>
+<tr class="row-even"><td>opaque.Stream</td>
+<td><code class="docutils literal"><span class="pre">Stream</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>opaque.CallCancelled</td>
+<td><code class="docutils literal"><span class="pre">CancellationToken</span></code></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="websocket-v0-3-0">
+<h3>WebSocket v0.3.0<a class="headerlink" href="#websocket-v0-3-0" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value (type)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>websocket.Version</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>websocket.Accept</td>
+<td><code class="docutils literal"><span class="pre">WebSocketAccept</span></code></td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-WebSocket-Extension-v0.4.0.htm">delegate signature</a>.</td>
+</tr>
+<tr class="row-even"><td>websocket.AcceptAlt</td>
+<td>&nbsp;</td>
+<td>Non-spec</td>
+</tr>
+<tr class="row-odd"><td>websocket.SubProtocol</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>See <a class="reference external" href="https://tools.ietf.org/html/rfc6455#section-4.2.2">RFC6455 Section 4.2.2</a> Step 5.5</td>
+</tr>
+<tr class="row-even"><td>websocket.SendAsync</td>
+<td><code class="docutils literal"><span class="pre">WebSocketSendAsync</span></code></td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-WebSocket-Extension-v0.4.0.htm">delegate signature</a>.</td>
+</tr>
+<tr class="row-odd"><td>websocket.ReceiveAsync</td>
+<td><code class="docutils literal"><span class="pre">WebSocketReceiveAsync</span></code></td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-WebSocket-Extension-v0.4.0.htm">delegate signature</a>.</td>
+</tr>
+<tr class="row-even"><td>websocket.CloseAsync</td>
+<td><code class="docutils literal"><span class="pre">WebSocketCloseAsync</span></code></td>
+<td>See <a class="reference external" href="http://owin.org/spec/extensions/owin-WebSocket-Extension-v0.4.0.htm">delegate signature</a>.</td>
+</tr>
+<tr class="row-odd"><td>websocket.CallCancelled</td>
+<td><code class="docutils literal"><span class="pre">CancellationToken</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>websocket.ClientCloseStatus</td>
+<td><code class="docutils literal"><span class="pre">int</span></code></td>
+<td>Optional</td>
+</tr>
+<tr class="row-odd"><td>websocket.ClientCloseDescription</td>
+<td><code class="docutils literal"><span class="pre">String</span></code></td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 has built-in support for the OWIN specification, providing compatibility to run ASP.NET 5 applications within OWIN-based servers as well as supporting OWIN-based middleware within ASP.NET 5 servers.</p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="middleware.html"><em>Middleware</em></a></li>
+<li><a class="reference internal" href="servers.html"><em>Servers</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hosting.html" class="btn btn-neutral float-right" title="|stub-icon| Hosting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="servers.html" class="btn btn-neutral" title="Servers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

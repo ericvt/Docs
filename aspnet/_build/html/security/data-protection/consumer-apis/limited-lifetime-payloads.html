@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Limiting the lifetime of protected payloads &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Consumer APIs" href="index.html"/>
+        <link rel="next" title="Unprotecting payloads whose keys have been revoked" href="dangerous-unprotect.html"/>
+        <link rel="prev" title="Password Hashing" href="password-hashing.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Consumer APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Consumer APIs Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purpose-strings.html">Purpose Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purpose-strings-multitenancy.html">Purpose hierarchy and multi-tenancy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="password-hashing.html">Password Hashing</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Limiting the lifetime of protected payloads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dangerous-unprotect.html">Unprotecting payloads whose keys have been revoked</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Consumer APIs</a> &raquo;</li>
+      
+    <li>Limiting the lifetime of protected payloads</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/consumer-apis/limited-lifetime-payloads.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="limiting-the-lifetime-of-protected-payloads">
+<h1>Limiting the lifetime of protected payloads<a class="headerlink" href="#limiting-the-lifetime-of-protected-payloads" title="Permalink to this headline">¶</a></h1>
+<p>There are scenarios where the application developer wants to create a protected payload that expires after a set period of time. For instance, the protected payload might represent a password reset token that should only be valid for one hour. It is certainly possible for the developer to create his own payload format that contains an embedded expiration date, and advanced developers may wish to do this anyway, but for the majority of developers managing these expirations can grow tedious.</p>
+<p>To make this easier for our developer audience, the package Microsoft.AspNet.DataProtection.Extensions contains utility APIs for creating payloads that automatically expire after a set period of time. These APIs hang off of the ITimeLimitedDataProtector type.</p>
+<div class="section" id="api-usage">
+<h2>API usage<a class="headerlink" href="#api-usage" title="Permalink to this headline">¶</a></h2>
+<p>The ITimeLimitedDataProtector interface is the core interface for protecting and unprotecting time-limited / self-expiring payloads. To create an instance of an ITimeLimitedDataProtector, you&#8217;ll first need an instance of a regular <a class="reference internal" href="overview.html"><em>IDataProtector</em></a> constructed with a specific purpose. Once the IDataProtector instance is available, call the IDataProtector.ToTimeLimitedDataProtector extension method to get back a protector with built-in expiration capabilities.</p>
+<p>ITimeLimitedDataProtector exposes the following API surface and extension methods:</p>
+<ul class="simple">
+<li>CreateProtector(string purpose) : ITimeLimitedDataProtector
+This API is similar to the existing IDataProtectionProvider.CreateProtector in that it can be used to create <a class="reference internal" href="purpose-strings.html"><em>purpose chains</em></a> from a root time-limited protector.</li>
+<li>Protect(byte[] plaintext, DateTimeOffset expiration) : byte[]</li>
+<li>Protect(byte[] plaintext, TimeSpan lifetime) : byte[]</li>
+<li>Protect(byte[] plaintext) : byte[]</li>
+<li>Protect(string plaintext, DateTimeOffset expiration) : string</li>
+<li>Protect(string plaintext, TimeSpan lifetime) : string</li>
+<li>Protect(string plaintext) : string</li>
+</ul>
+<p>In addition to the core Protect methods which take only the plaintext, there are new overloads which allow specifying the payload&#8217;s expiration date. The expiration date can be specified as an absolute date (via a DateTimeOffset) or as a relative time (from the current system time, via a TimeSpan). If an overload which doesn&#8217;t take an expiration is called, the payload is assumed never to expire.</p>
+<ul class="simple">
+<li>Unprotect(byte[] protectedData, out DateTimeOffset expiration) : byte[]</li>
+<li>Unprotect(byte[] protectedData) : byte[]</li>
+<li>Unprotect(string protectedData, out DateTimeOffset expiration) : string</li>
+<li>Unprotect(string protectedData) : string</li>
+</ul>
+<p>The Unprotect methods return the original unprotected data. If the payload hasn&#8217;t yet expired, the absolute expiration is returned as an optional out parameter along with the original unprotected data. If the payload is expired, all overloads of the Unprotect method will throw CryptographicException.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is not advised to use these APIs to protect payloads which require long-term or indefinite persistence. &#8220;Can I afford for the protected payloads to be permanently unrecoverable after a month?&#8221; can serve as a good rule of thumb; if the answer is no then developers should consider alternative APIs.</p>
+</div>
+<p>The sample below uses the <a class="reference internal" href="../configuration/non-di-scenarios.html"><em>non-DI code paths</em></a> for instantiating the data protection system. To run this sample, ensure that you have first added a reference to the Microsoft.AspNet.DataProtection.Extensions package.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre>using System;
+using System.IO;
+using System.Threading;
+using Microsoft.AspNet.DataProtection;
+ 
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // create a protector for my application
+ 
+        var provider = new DataProtectionProvider(new DirectoryInfo(@&quot;c:\myapp-keys\&quot;));
+        var baseProtector = provider.CreateProtector(&quot;Contoso.TimeLimitedSample&quot;);
+ 
+        // convert the normal protector into a time-limited protector
+        var timeLimitedProtector = baseProtector.ToTimeLimitedDataProtector();
+ 
+        // get some input and protect it for five seconds
+        Console.Write(&quot;Enter input: &quot;);
+        string input = Console.ReadLine();
+        string protectedData = timeLimitedProtector.Protect(input, lifetime: TimeSpan.FromSeconds(5));
+        Console.WriteLine($&quot;Protected data: {protectedData}&quot;);
+ 
+        // unprotect it to demonstrate that round-tripping works properly
+        string roundtripped = timeLimitedProtector.Unprotect(protectedData);
+        Console.WriteLine($&quot;Round-tripped data: {roundtripped}&quot;);
+ 
+        // wait 6 seconds and perform another unprotect, demonstrating that the payload self-expires
+        Console.WriteLine(&quot;Waiting 6 seconds...&quot;);
+        Thread.Sleep(6000);
+        timeLimitedProtector.Unprotect(protectedData);
+    }
+}
+ 
+/*
+ * SAMPLE OUTPUT
+ *
+ * Enter input: Hello!
+ * Protected data: CfDJ8Hu5z0zwxn...nLk7Ok
+ * Round-tripped data: Hello!
+ * Waiting 6 seconds...
+ * &lt;&lt;throws CryptographicException with message &#39;The payload expired at ...&#39;&gt;&gt;
+
+ */
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dangerous-unprotect.html" class="btn btn-neutral float-right" title="Unprotecting payloads whose keys have been revoked" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="password-hashing.html" class="btn btn-neutral" title="Password Hashing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enabling Cross-Origin Requests (CORS) &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Security" href="index.html"/>
+        <link rel="next" title="Performance" href="../performance/index.html"/>
+        <link rel="prev" title="|stub-icon| Preventing Cross-Site Scripting" href="cross-site-scripting.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization/index.html">Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-protection/index.html">Data Protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Enabling Cross-Origin Requests (CORS)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Security</a> &raquo;</li>
+      
+    <li>Enabling Cross-Origin Requests (CORS)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/security/cors.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="enabling-cross-origin-requests-cors">
+<h1>Enabling Cross-Origin Requests (CORS)<a class="headerlink" href="#enabling-cross-origin-requests-cors" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/mikewasson">Mike Wasson</a></p>
+<p>Browser security prevents a web page from making AJAX requests to another domain. This restriction is called the <em>same-origin policy</em>, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites make cross-origin requests to your web app.</p>
+<p><a class="reference external" href="http://www.w3.org/TR/cors/">Cross Origin Resource Sharing</a> (CORS) is a W3C standard that allows a server to relax the same-origin policy. Using CORS, a server can explicitly allow some cross-origin requests while rejecting others. CORS is safer and more flexible than earlier techniques such as <a class="reference external" href="http://en.wikipedia.org/wiki/JSONP">JSONP</a>. This topic shows how to enable CORS in your ASP.NET 5 application.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#what-is-same-origin">What is &#8220;same origin&#8221;?</a></li>
+<li><a class="reference internal" href="#add-the-cors-package">Add the CORS package</a></li>
+<li><a class="reference internal" href="#configure-cors-in-your-app">Configure CORS in your app</a></li>
+<li><a class="reference internal" href="#id1">CORS policy options</a></li>
+<li><a class="reference internal" href="#how-cors-works">How CORS works</a></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This topic covers general ASP.NET 5 apps. For information about CORS support in ASP.NET MVC 6, see <a class="reference external" href="http://docs.asp.net/projects/mvc/en/latest/security/cors-policy.html#cors-policy" title="(in ASP.NET MVC v0.0.1)"><span class="xref std std-ref">Specifying a CORS Policy</span></a>.</p>
+</div>
+<div class="section" id="what-is-same-origin">
+<h2>What is &#8220;same origin&#8221;?<a class="headerlink" href="#what-is-same-origin" title="Permalink to this headline">¶</a></h2>
+<p>Two URLs have the same origin if they have identical schemes, hosts, and ports. (<a class="reference external" href="http://tools.ietf.org/html/rfc6454">RFC 6454</a>)</p>
+<p>These two URLs have the same origin:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://example.com/foo.html">http://example.com/foo.html</a></li>
+<li><a class="reference external" href="http://example.com/bar.html">http://example.com/bar.html</a></li>
+</ul>
+<p>These URLs have different origins than the previous two:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://example.net">http://example.net</a> - Different domain</li>
+<li><a class="reference external" href="http://example.com:9000/foo.html">http://example.com:9000/foo.html</a> - Different port</li>
+<li><a class="reference external" href="https://example.com/foo.html">https://example.com/foo.html</a> - Different scheme</li>
+<li><a class="reference external" href="http://www.example.com/foo.html">http://www.example.com/foo.html</a> - Different subdomain</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Internet Explorer does not consider the port when comparing origins.</p>
+</div>
+</div>
+<div class="section" id="add-the-cors-package">
+<h2>Add the CORS package<a class="headerlink" href="#add-the-cors-package" title="Permalink to this headline">¶</a></h2>
+<p>In your project.json file, add the following:</p>
+<div class="highlight-json"><div class="highlight"><pre>  &quot;dependencies&quot;: {
+<span class="hll">    &quot;Microsoft.AspNet.Cors&quot;: &quot;1.0.0-beta6&quot;
+</span>  },
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-cors-in-your-app">
+<h2>Configure CORS in your app<a class="headerlink" href="#configure-cors-in-your-app" title="Permalink to this headline">¶</a></h2>
+<p>This section shows how to configure CORS. First, add the CORS service. In Startup.cs:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddCors</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, configure a cross-origin policy, using the <code class="docutils literal"><span class="pre">CorsPolicyBuilder</span></code> class. There are two ways to do this. The first is to call UseCors with a lambda:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseCors</span><span class="p">(</span><span class="n">builder</span> <span class="p">=&gt;</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The lambda takes a CorsPolicyBuilder object. I’ll describe all of the configuration options later in this topic. In this example, the policy allows cross-origin requests from &#8220;<a class="reference external" href="http://example.com">http://example.com</a>&#8221; and no other origins.</p>
+<p>Note that CorsPolicyBuilder has a fluent API, so you can chain method calls:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseCors</span><span class="p">(</span><span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+<span class="hll">           <span class="p">.</span><span class="n">AllowAnyHeader</span><span class="p">()</span>
+</span>    <span class="p">);</span>
+</pre></div>
+</div>
+<p>The second approach is to define one or more named CORS policies, and then select the policy by name at run time.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddCors</span><span class="p">();</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">ConfigureCors</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowSpecificOrigin&quot;</span><span class="p">,</span>
+            <span class="n">builder</span> <span class="p">=&gt;</span> <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseCors</span><span class="p">(</span><span class="s">&quot;AllowSpecificOrigin&quot;</span><span class="p">);</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This example adds a CORS policy named &#8220;AllowSpecificOrigin&#8221;. To select the policy, pass the name to UseCors.</p>
+</div>
+<div class="section" id="cors-policy-options">
+<span id="id1"></span><h2>CORS policy options<a class="headerlink" href="#cors-policy-options" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the various options that you can set in a CORS policy.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#set-the-allowed-origins">Set the allowed origins</a></li>
+<li><a class="reference internal" href="#set-the-allowed-http-methods">Set the allowed HTTP methods</a></li>
+<li><a class="reference internal" href="#set-the-allowed-request-headers">Set the allowed request headers</a></li>
+<li><a class="reference internal" href="#set-the-exposed-response-headers">Set the exposed response headers</a></li>
+<li><a class="reference internal" href="#credentials-in-cross-origin-requests">Credentials in cross-origin requests</a></li>
+<li><a class="reference internal" href="#set-the-preflight-expiration-time">Set the preflight expiration time</a></li>
+</ul>
+</div></blockquote>
+<p>For some options it may be helpful to read <a class="reference internal" href="#how-cors-works">How CORS works</a> first.</p>
+<div class="section" id="set-the-allowed-origins">
+<h3>Set the allowed origins<a class="headerlink" href="#set-the-allowed-origins" title="Permalink to this headline">¶</a></h3>
+<p>To allow one or more specific origins:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowSpecificOrigins&quot;</span><span class="p">,</span>
+<span class="n">builder</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">,</span> <span class="s">&quot;http://www.contoso.com&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>To allow all origins:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowAllOrigins&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">AllowAnyOrigin</span><span class="p">();</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>Consider carefully before allowing requests from any origin. It means that literally any website can make AJAX calls to your app.</p>
+</div>
+<div class="section" id="set-the-allowed-http-methods">
+<h3>Set the allowed HTTP methods<a class="headerlink" href="#set-the-allowed-http-methods" title="Permalink to this headline">¶</a></h3>
+<p>To specify which HTTP methods are allowed to access the resource.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowSpecificMethods&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">WithMethods</span><span class="p">(</span><span class="s">&quot;GET&quot;</span><span class="p">,</span> <span class="s">&quot;POST&quot;</span><span class="p">,</span> <span class="s">&quot;HEAD&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>To allow all HTTP methods:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowAllMethods&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">AllowAnyMethod</span><span class="p">();</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>This affects pre-flight requests and Access-Control-Allow-Methods header.</p>
+</div>
+<div class="section" id="set-the-allowed-request-headers">
+<h3>Set the allowed request headers<a class="headerlink" href="#set-the-allowed-request-headers" title="Permalink to this headline">¶</a></h3>
+<p>A CORS preflight request might include an Access-Control-Request-Headers header, listing the HTTP headers set by the application (the so-called &#8220;author request headers&#8221;).</p>
+<p>To whitelist specific headers:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowHeaders&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">WithHeaders</span><span class="p">(</span><span class="s">&quot;accept&quot;</span><span class="p">,</span> <span class="s">&quot;content-type&quot;</span><span class="p">,</span> <span class="s">&quot;origin&quot;</span><span class="p">,</span> <span class="s">&quot;x-custom-header&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>To allow all author request headers:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowAllHeaders&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">AllowAnyHeader</span><span class="p">();</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>Browsers are not entirely consistent in how they set Access-Control-Request-Headers. If you set headers to anything other than &#8220;*&#8221;, you should include at least &#8220;accept&#8221;, &#8220;content-type&#8221;, and &#8220;origin&#8221;, plus any custom headers that you want to support.</p>
+</div>
+<div class="section" id="set-the-exposed-response-headers">
+<h3>Set the exposed response headers<a class="headerlink" href="#set-the-exposed-response-headers" title="Permalink to this headline">¶</a></h3>
+<p>By default, the browser does not expose all of the response headers to the application. (See <a class="reference external" href="http://www.w3.org/TR/cors/#simple-response-header">http://www.w3.org/TR/cors/#simple-response-header</a>.) The response headers that are available by default are:</p>
+<ul class="simple">
+<li>Cache-Control</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+<li>Expires</li>
+<li>Last-Modified</li>
+<li>Pragma</li>
+</ul>
+<p>The CORS spec calls these <em>simple response headers</em>. To make other headers available to the application:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;ExposeResponseHeaders&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">WithExposedHeaders</span><span class="p">(</span><span class="s">&quot;x-custom-header&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="credentials-in-cross-origin-requests">
+<h3>Credentials in cross-origin requests<a class="headerlink" href="#credentials-in-cross-origin-requests" title="Permalink to this headline">¶</a></h3>
+<p>Credentials require special handling in a CORS request. By default, the browser does not send any credentials with a cross-origin request. Credentials include cookies as well as HTTP authentication schemes. To send credentials with a cross-origin request, the client must set XMLHttpRequest.withCredentials to true.</p>
+<p>Using XMLHttpRequest directly:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;http://www.example.com/api/test&#39;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In jQuery:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.example.com/home&#39;</span><span class="p">,</span>
+    <span class="nx">xhrFields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>In addition, the server must allow the credentials. To allow cross-origin credentials:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;AllowCredentials&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">AllowCredentials</span><span class="p">();</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>Now the HTTP response will include an Access-Control-Allow-Credentials header, which tells the browser that the server allows credentials for a cross-origin request.</p>
+<p>If the browser sends credentials, but the response does not include a valid Access-Control-Allow-Credentials header, the browser will not expose the response to the application, and the AJAX request fails.</p>
+<p>Be very careful about allowing cross-origin credentials, because it means a website at another domain can send a logged-in user’s credentials to your app on the user’s behalf, without the user being aware. The CORS spec also states that setting origins to &#8220;*&#8221; (all origins) is invalid if the Access-Control-Allow-Credentials header is present.</p>
+</div>
+<div class="section" id="set-the-preflight-expiration-time">
+<h3>Set the preflight expiration time<a class="headerlink" href="#set-the-preflight-expiration-time" title="Permalink to this headline">¶</a></h3>
+<p>The Access-Control-Max-Age header specifies how long the response to the preflight request can be cached. To set this header:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span class="n">options</span><span class="p">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s">&quot;SetPreflightExpiration&quot;</span><span class="p">,</span>
+    <span class="n">builder</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">WithOrigins</span><span class="p">(</span><span class="s">&quot;http://example.com&quot;</span><span class="p">)</span>
+               <span class="p">.</span><span class="n">SetPreflightMaxAge</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="m">2520</span><span class="p">));</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-cors-works">
+<span id="cors-how-cors-works"></span><h2>How CORS works<a class="headerlink" href="#how-cors-works" title="Permalink to this headline">¶</a></h2>
+<p>This section describes what happens in a CORS request, at the level of the HTTP messages. It’s important to understand how CORS works, so that you can configure the your CORS policy correctly, and troubleshoot if things don’t work as you expect.</p>
+<p>The CORS specification introduces several new HTTP headers that enable cross-origin requests. If a browser supports CORS, it sets these headers automatically for cross-origin requests; you don’t need to do anything special in your JavaScript code.</p>
+<p>Here is an example of a cross-origin request. The &#8220;Origin&#8221; header gives the domain of the site that is making the request:</p>
+<div class="highlight-python"><div class="highlight"><pre>GET http://myservice.azurewebsites.net/api/test HTTP/1.1
+Referer: http://myclient.azurewebsites.net/
+Accept: */*
+Accept-Language: en-US
+Origin: http://myclient.azurewebsites.net
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)
+Host: myservice.azurewebsites.net
+</pre></div>
+</div>
+<p>If the server allows the request, it sets the Access-Control-Allow-Origin header. The value of this header either matches the Origin header, or is the wildcard value &#8220;*&#8221;, meaning that any origin is allowed.:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/plain; charset=utf-8
+Access-Control-Allow-Origin: http://myclient.azurewebsites.net
+Date: Wed, 20 May 2015 06:27:30 GMT
+Content-Length: 12
+
+Test message
+</pre></div>
+</div>
+<p>If the response does not include the Access-Control-Allow-Origin header, the AJAX request fails. Specifically, the browser disallows the request. Even if the server returns a successful response, the browser does not make the response available to the client application.</p>
+<div class="section" id="preflight-requests">
+<h3>Preflight Requests<a class="headerlink" href="#preflight-requests" title="Permalink to this headline">¶</a></h3>
+<p>For some CORS requests, the browser sends an additional request, called a &#8220;preflight request&#8221;, before it sends the actual request for the resource.
+The browser can skip the preflight request if the following conditions are true:</p>
+<ul>
+<li><p class="first">The request method is GET, HEAD, or POST, and</p>
+</li>
+<li><p class="first">The application does not set any request headers other than Accept, Accept-Language, Content-Language, Content-Type, or Last-Event-ID, and</p>
+</li>
+<li><p class="first">The Content-Type header (if set) is one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The rule about request headers applies to headers that the application sets by calling setRequestHeader on the XMLHttpRequest object. (The CORS specification calls these &#8220;author request headers&#8221;.) The rule does not apply to headers the browser can set, such as User-Agent, Host, or Content-Length.</p>
+<p>Here is an example of a preflight request:</p>
+<div class="highlight-python"><div class="highlight"><pre>OPTIONS http://myservice.azurewebsites.net/api/test HTTP/1.1
+Accept: */*
+Origin: http://myclient.azurewebsites.net
+Access-Control-Request-Method: PUT
+Access-Control-Request-Headers: accept, x-my-custom-header
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)
+Host: myservice.azurewebsites.net
+Content-Length: 0
+</pre></div>
+</div>
+<p>The pre-flight request uses the HTTP OPTIONS method. It includes two special headers:</p>
+<ul class="simple">
+<li>Access-Control-Request-Method: The HTTP method that will be used for the actual request.</li>
+<li>Access-Control-Request-Headers: A list of request headers that the application set on the actual request. (Again, this does not include headers that the browser sets.)</li>
+</ul>
+<p>Here is an example response, assuming that the server allows the request:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 0
+Access-Control-Allow-Origin: http://myclient.azurewebsites.net
+Access-Control-Allow-Headers: x-my-custom-header
+Access-Control-Allow-Methods: PUT
+Date: Wed, 20 May 2015 06:33:22 GMT
+</pre></div>
+</div>
+<p>The response includes an Access-Control-Allow-Methods header that lists the allowed methods, and optionally an Access-Control-Allow-Headers header, which lists the allowed headers. If the preflight request succeeds, the browser sends the actual request, as described earlier.</p>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../performance/index.html" class="btn btn-neutral float-right" title="Performance" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cross-site-scripting.html" class="btn btn-neutral" title="|stub-icon| Preventing Cross-Site Scripting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

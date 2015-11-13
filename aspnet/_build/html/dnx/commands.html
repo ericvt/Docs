@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Commands &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title=".NET Execution Environment (DNX)" href="index.html"/>
+        <link rel="next" title="|stub-icon| Servicing and Updates" href="servicing.html"/>
+        <link rel="prev" title="|stub-icon| Services" href="services.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">.NET Execution Environment (DNX)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">DNX Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Creating a Cross-Platform Console App with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Working with DNX Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compilation.html">|stub-icon| Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loaders.html">|stub-icon| Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">|stub-icon| Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Commands</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="servicing.html">|stub-icon| Servicing and Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-time-host.html">|stub-icon| Design Time Host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-project-dependency-issues.html">|stub-icon| Diagnosing Project Dependency Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-package.html">|stub-icon| Create a New NuGet Package with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-package.html">|stub-icon| Migrating an Existing NuGet Package Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global-json.html">|stub-icon| Global.json Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-json.html">|stub-icon| Project.json Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">.NET Execution Environment (DNX)</a> &raquo;</li>
+      
+    <li>Using Commands</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/dnx/commands.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="using-commands">
+<h1>Using Commands<a class="headerlink" href="#using-commands" title="Permalink to this headline">¶</a></h1>
+<p>DNX projects are used to build and run .NET applications for Windows, Mac and Linux. DNX provides a host process, CLR hosting logic and managed entry point discovery. You can use DNX to execute commands from a command prompt.</p>
+<div class="section" id="what-is-a-command">
+<h2>What is a command?<a class="headerlink" href="#what-is-a-command" title="Permalink to this headline">¶</a></h2>
+<p>A command is a named execution of a .NET entry point with specific arguments. Commands can be defined locally in your project or installed globally on your machine. The <em>project.json</em> file in your project allows you to define commands for your project. Commands that you define for your projects are understood by Visual Studio Code (VS Code) as well as Visual Studio. Global commands, which are not project specific, can be installed on a machine and run from a command prompt.</p>
+</div>
+<div class="section" id="using-commands-in-your-project">
+<h2>Using commands in your project<a class="headerlink" href="#using-commands-in-your-project" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal"><span class="pre">commands</span></code> section of the below <em>project.json</em> example, four commands are listed:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+      <span class="nt">&quot;webroot&quot;</span><span class="p">:</span> <span class="s2">&quot;wwwroot&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-*&quot;</span><span class="p">,</span>
+
+  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Kestrel&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Diagnostics&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Hosting&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Server.IIS&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.StaticFiles&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;web&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --config hosting.ini&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kestrel&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --config hosting.ini&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;gen&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.Framework.CodeGeneration&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ef&quot;</span><span class="p">:</span> <span class="s2">&quot;EntityFramework.Commands&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A command can include a set of arguments that will be passed to the DNX. In the above example, the first part of a command statement is an assembly with an entry point that the DNX will try to execute. Notice that in the <code class="docutils literal"><span class="pre">commands</span></code> section shown above, the <code class="docutils literal"><span class="pre">ef</span></code> command is implemented by the <code class="docutils literal"><span class="pre">EntityFramework.Commands</span></code> assembly. This command doesn&#8217;t require any extra argument, all that is needed to define the command is the name of the assembly. For the <code class="docutils literal"><span class="pre">web</span></code> command and the <code class="docutils literal"><span class="pre">kestrel</span></code> command, the arguments are contained in the referenced <em>hosting.ini</em> file. In the <em>hosting.ini</em> file you will see the <code class="docutils literal"><span class="pre">server</span></code> agrument and the the <code class="docutils literal"><span class="pre">server.urls</span></code> argument. The <code class="docutils literal"><span class="pre">kestrel</span></code> command, as well as the <code class="docutils literal"><span class="pre">web</span></code> command, will check the <code class="docutils literal"><span class="pre">Microsoft.AspNet.Hosting</span></code> assembly for an entry point, then it will pass the <code class="docutils literal"><span class="pre">server</span></code> and <code class="docutils literal"><span class="pre">server.urls</span></code> arguments to the entry point. Specifically, the arguments for each command are passed to the entry point throught the <code class="docutils literal"><span class="pre">args</span></code> argument of the <code class="docutils literal"><span class="pre">main</span></code> method.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The assembly listed in the <code class="docutils literal"><span class="pre">commands</span></code> section should be pulled in by a package that your application depends on.</p>
+</div>
+<p>You can add a command package and its dependencies to your project using the <a class="reference external" href="http://docs.nuget.org/consume/package-manager-console">Package Manager Console</a>. For example, to install the <a class="reference external" href="http://www.nuget.org/packages/Microsoft.Framework.SecretManager">SecretManager</a> package from the <strong>Package Manager Console</strong>, enter the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>Install-Package Microsoft.Framework.SecretManager -Pre
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The global <em>NuGet.config</em> file is used to find the correct NuGet feed when installing global command NuGet packages. Use <code class="docutils literal"><span class="pre">Install-Package</span> <span class="pre">-?</span></code> from the <strong>Package Manager Console</strong> to view help information related to the <code class="docutils literal"><span class="pre">Install-Package</span></code> command.</p>
+</div>
+</div>
+<div class="section" id="running-commands-using-dnx-exe">
+<h2>Running commands using dnx.exe<a class="headerlink" href="#running-commands-using-dnx-exe" title="Permalink to this headline">¶</a></h2>
+<p>You can use DNX to run the commands defined by your project by entering the following in the command prompt from your project&#8217;s directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">dnx</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also run commands from VS Code or Visual Studio. From VS Code, open the <strong>Command Palette</strong> (Ctrl+Shift+P) and enter the name of the command you want to run. From Visual Studio, open the <strong>Command Window</strong> (Ctrl+Alt+A) and enter the name of the command you want to run.</p>
+<p>For example, the following command is used to run a web application using the Kestrel web server:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx kestrel
+</pre></div>
+</div>
+<p>To run a console app, you can use the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx run
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that running a command is short-hand for specifying the command assembly and it&#8217;s arguments directly to DNX. For example, <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">web</span></code> is a short-hand alias for <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">Microsoft.AspNet.Hosting</span> <span class="pre">hosting.ini</span></code>, where the <em>hosting.ini</em> file contains the command parameters.</p>
+</div>
+</div>
+<div class="section" id="global-commands">
+<h2>Global commands<a class="headerlink" href="#global-commands" title="Permalink to this headline">¶</a></h2>
+<p>Global commands are DNX console applications (in a NuGet package) that are installed globally and runnable from your command line. The difference between global commands and commands that your add in the <code class="docutils literal"><span class="pre">commands</span></code> section of the <em>project.json</em> file of a project is that global commands are made available to everything that runs under a user profile. You can install, run, uninstall, build, and publish global commands.</p>
+<p>The <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">commands</span> <span class="pre">install</span></code> command will use the NuGet sources contained in the local XML <em>NuGet.Config</em> file to determine where it looks for NuGet packages. The main sections for this file are <code class="docutils literal"><span class="pre">packageRestore</span></code>, <code class="docutils literal"><span class="pre">packageSources</span></code>, <code class="docutils literal"><span class="pre">disabledPackageSources</span></code>, and <code class="docutils literal"><span class="pre">activePackageSource</span></code>.</p>
+<div class="section" id="installing-global-commands">
+<h3>Installing global commands<a class="headerlink" href="#installing-global-commands" title="Permalink to this headline">¶</a></h3>
+<p>To add a global command (and package), you can use the .NET Development Utility (DNU) to download a NuGet package and install it.</p>
+<p>For example, enter the following from the command prompt:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu commands install Microsoft.Framework.SecretManager
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use the <code class="docutils literal"><span class="pre">--overwrite</span></code> option to overwrite conflicting commands. Use <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">commands</span> <span class="pre">install</span> <span class="pre">-?</span></code> from the command prompt to view help information related to the <code class="docutils literal"><span class="pre">install</span></code> command.</p>
+</div>
+</div>
+<div class="section" id="running-global-commands">
+<h3>Running global commands<a class="headerlink" href="#running-global-commands" title="Permalink to this headline">¶</a></h3>
+<p>You can run global commands from the command prompt after installing the related package. For example, if you have installed the SecretManager and have set the user secret for the application, from the application directory you can issue the following command to retrive all of the user secrets for your application:</p>
+<div class="highlight-python"><div class="highlight"><pre>user-secret list
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To see a list of the available DNX runtimes, including the <strong>active</strong> DNX runtime, you can enter <code class="docutils literal"><span class="pre">dnvm</span> <span class="pre">list</span></code> from the command prompt. If you need to change the active DNX runtime, use <code class="docutils literal"><span class="pre">dnvm</span> <span class="pre">use</span> <span class="pre">[version]</span> <span class="pre">-p</span></code>. For example, <code class="docutils literal"><span class="pre">dnvm</span> <span class="pre">use</span> <span class="pre">1.0.0-beta7</span> <span class="pre">–p</span></code>. Global commands always run with the active DNX runtime.</p>
+</div>
+</div>
+<div class="section" id="uninstalling-global-commands">
+<h3>Uninstalling global commands<a class="headerlink" href="#uninstalling-global-commands" title="Permalink to this headline">¶</a></h3>
+<p>To uninstall global commands you can use the following DNU command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu commands uninstall [arguments] [options]
+</pre></div>
+</div>
+<p>The [arguments] is the name of the command to uninstall. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu commands uninstall user-secret
+</pre></div>
+</div>
+<p>For additional details about the uninstall command, enter <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">commands</span> <span class="pre">uninstall</span> <span class="pre">-?</span></code> from the command prompt.</p>
+</div>
+<div class="section" id="built-in-global-commands">
+<h3>Built-in global commands<a class="headerlink" href="#built-in-global-commands" title="Permalink to this headline">¶</a></h3>
+<p>The following built-in global commands are available:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>user-secret</li>
+<li>sqlservercache</li>
+</ol>
+</div></blockquote>
+<p>These commands have specific NuGet packages that are installed. When you install a global command, the related NuGet package is also installed.</p>
+</div>
+<div class="section" id="building-and-publishing-global-command">
+<h3>Building and publishing global command<a class="headerlink" href="#building-and-publishing-global-command" title="Permalink to this headline">¶</a></h3>
+<p>You can use the .NET Development Utility (DNU) to build, package and publish a global command. A global command is contained as a console app project. Building a project produces the binary outputs for the project. Packaging produces a NuGet package that can be uploaded to a package feed (such as <a class="reference external" href="http://nuget.org">http://nuget.org</a>)) and then consumed. Publishing collects all required runtime artifacts (the required DNX and packages) into a single folder so that it can be deployed as an application.</p>
+<p>When you generate a console app using the console app template, it includes a <em>program.cs</em> file containing a <code class="docutils literal"><span class="pre">Main</span></code> entry point to the app. After you create a console app, you can build and run the app by issuing the following DNX command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx run
+</pre></div>
+</div>
+<p>In the console app, the <em>project.json</em> file contains the <code class="docutils literal"><span class="pre">run</span></code> command in the <code class="docutils literal"><span class="pre">commands</span></code> section. The <code class="docutils literal"><span class="pre">dnx</span></code> command is used to execute a managed entry point (a <code class="docutils literal"><span class="pre">Program.Main</span></code> function) in the assembly. When you issue the above <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">run</span></code> command, DNX finds the command based on the name used for the project, then finds the <code class="docutils literal"><span class="pre">Main</span></code> entry point that you see in the <em>program.cs</em> file.</p>
+<p>For details about creating a console app with DNX, see <a class="reference internal" href="console.html"><em>Creating a Cross-Platform Console App with DNX</em></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">run</span></code> command is a shorthand for executing the entry point in the current project. It is equivalent to <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">[project_name]</span></code>.</p>
+</div>
+<p>When you are ready to build your console app containing your global command, use the following command to produce assemblies for the project in the given directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu build
+</pre></div>
+</div>
+<p>Once the console app has been built, you can package it using the following command to create NuGet packages for the project in the given directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu pack
+</pre></div>
+</div>
+<p>To publish the NuGet packages you can use the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu publish
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">publish</span></code> command will package your application into a self-contained directory that can be launched. It will create the following directory structure:</p>
+<blockquote>
+<div><ul class="simple">
+<li>output/</li>
+<li>output/packages</li>
+<li>output/appName</li>
+<li>output/commandName.cmd</li>
+</ul>
+</div></blockquote>
+<p>The packages directory contains all the packages your command needs to run. The <em>appName</em> directory will contain all of your applications code. If you have project references, they will appear as their own directory with code at this level as well.</p>
+<p>There are 3 commands that are skipped for global install, those are <code class="docutils literal"><span class="pre">run</span></code>, <code class="docutils literal"><span class="pre">test</span></code> and <code class="docutils literal"><span class="pre">web</span></code>. You can build a NuGet package with those commands, but they cannot be installed globally. So, for the default console application template, you must rename the <code class="docutils literal"><span class="pre">run</span></code> command to something else, such as <code class="docutils literal"><span class="pre">my-cmd</span></code>, if you want to make the command globally installable.</p>
+<p>Also, the following command names cannot be used: <code class="docutils literal"><span class="pre">dnx</span></code>, <code class="docutils literal"><span class="pre">dnvm</span></code>, <code class="docutils literal"><span class="pre">nuget</span></code>, <code class="docutils literal"><span class="pre">dnu</span></code>. You will get a build error if you use those names.</p>
+</div>
+</div>
+<div class="section" id="global-commands-details">
+<h2>Global commands details<a class="headerlink" href="#global-commands-details" title="Permalink to this headline">¶</a></h2>
+<p>Global commands are DNX console applications (in a NuGet package) that are installed globally and runnable from your command line.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using Visual Studio, then  both <code class="docutils literal"><span class="pre">SecretManager</span></code> and <code class="docutils literal"><span class="pre">SqlConfig</span></code> should already be installed for you. If you not using Visual Studio, first install the DNX, then run <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">commands</span> <span class="pre">install</span> <span class="pre">[namespace.command]</span></code>. When a command is finished installing, the output will specifically show the name of the commands that have been installed.</p>
+</div>
+<div class="section" id="id1">
+<h3>SecretManager<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This ASP.NET package contains commands to manage application secrets. When developing modern web applications developers often want to leverage authentication systems such as OAuth. One of the defining features of these authentication schemes is shared secrets that your application and the authenticating server must know.</p>
+<p><strong>Assembly</strong>: <code class="docutils literal"><span class="pre">Microsoft.Framework</span></code></p>
+<p><strong>Usage</strong>: <code class="docutils literal"><span class="pre">user-secret</span> <span class="pre">[command]</span> <span class="pre">[options]</span></code></p>
+<p><strong>Options</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-?|-h|&#8211;help</td>
+<td>Show help information.</td>
+</tr>
+<tr class="row-odd"><td>-v|&#8211;verbose</td>
+<td>Verbose output.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Commands</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>set</td>
+<td>Sets the user secret to the specified value.</td>
+</tr>
+<tr class="row-odd"><td>help</td>
+<td>Show help information.</td>
+</tr>
+<tr class="row-even"><td>remove</td>
+<td>Removes the specified user secret.</td>
+</tr>
+<tr class="row-odd"><td>list</td>
+<td>Lists all the application secrets.</td>
+</tr>
+<tr class="row-even"><td>clear</td>
+<td>Deletes all the application secrets.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about a command, use <code class="docutils literal"><span class="pre">user-secret</span> <span class="pre">[command]</span> <span class="pre">--help</span></code> from the command prompt.</p>
+</div>
+</div>
+<div class="section" id="sqlconfig">
+<h3>SqlConfig<a class="headerlink" href="#sqlconfig" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">Microsoft.Framework.Caching.SqlConfig</span></code> package contains commands for creating table and indexes in Microsoft SQL Server database to be used for ASP.NET 5 distributed caching.</p>
+<p><strong>Assembly</strong>: <code class="docutils literal"><span class="pre">Microsoft.Framework.Caching</span></code></p>
+<p><strong>Usage</strong>: <code class="docutils literal"><span class="pre">sqlservercache</span> <span class="pre">[options]</span> <span class="pre">[command]</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-?|-h|&#8211;help</td>
+<td>Show help information.</td>
+</tr>
+<tr class="row-odd"><td>-v|&#8211;verbose</td>
+<td>Verbose output.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Commands</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>set</td>
+<td>Sets the user secret to the specified value.</td>
+</tr>
+<tr class="row-odd"><td>help</td>
+<td>Show help information.</td>
+</tr>
+<tr class="row-even"><td>remove</td>
+<td>Removes the specified user secret.</td>
+</tr>
+<tr class="row-odd"><td>list</td>
+<td>Lists all the application secrets.</td>
+</tr>
+<tr class="row-even"><td>clear</td>
+<td>Deletes all the application secrets.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about a command, use <code class="docutils literal"><span class="pre">user-secret</span> <span class="pre">[command]</span> <span class="pre">--help</span></code> from the command prompt.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="servicing.html" class="btn btn-neutral float-right" title="|stub-icon| Servicing and Updates" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="services.html" class="btn btn-neutral" title="|stub-icon| Services" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

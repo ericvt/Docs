@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DNX Overview &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title=".NET Execution Environment (DNX)" href="index.html"/>
+        <link rel="next" title="Creating a Cross-Platform Console App with DNX" href="console.html"/>
+        <link rel="prev" title=".NET Execution Environment (DNX)" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">.NET Execution Environment (DNX)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">DNX Overview</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Creating a Cross-Platform Console App with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Working with DNX Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compilation.html">|stub-icon| Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loaders.html">|stub-icon| Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">|stub-icon| Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Using Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicing.html">|stub-icon| Servicing and Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-time-host.html">|stub-icon| Design Time Host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-project-dependency-issues.html">|stub-icon| Diagnosing Project Dependency Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-package.html">|stub-icon| Create a New NuGet Package with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-package.html">|stub-icon| Migrating an Existing NuGet Package Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global-json.html">|stub-icon| Global.json Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-json.html">|stub-icon| Project.json Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">.NET Execution Environment (DNX)</a> &raquo;</li>
+      
+    <li>DNX Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/dnx/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="dnx-overview">
+<span id="id1"></span><h1>DNX Overview<a class="headerlink" href="#dnx-overview" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/danroth27">Daniel Roth</a></p>
+<div class="section" id="what-is-the-net-execution-environment">
+<h2>What is the .NET Execution Environment?<a class="headerlink" href="#what-is-the-net-execution-environment" title="Permalink to this headline">¶</a></h2>
+<p>The .NET Execution Environment (DNX) is a software development kit (SDK) and runtime environment that has everything you need to build and run .NET applications for Windows, Mac and Linux. It provides a host process, CLR hosting logic and managed entry point discovery.  DNX was built for running cross-platform ASP.NET Web applications, but it can run other types of .NET applications, too, such as cross-platform console apps.</p>
+</div>
+<div class="section" id="why-build-dnx">
+<h2>Why build DNX?<a class="headerlink" href="#why-build-dnx" title="Permalink to this headline">¶</a></h2>
+<p><strong>Cross-platform .NET development</strong> DNX provides a consistent development and execution environment across multiple platforms (Windows, Mac and Linux) and across different .NET flavors (.NET Framework, .NET Core and Mono).
+With DNX you can develop your application on one platform and run it on a different platform as long as you have a compatible DNX installed on that platform. You can also contribute to DNX projects using your development platform and tools of choice.</p>
+<p><strong>Build for .NET Core</strong> DNX dramatically simplifies the work needed to develop cross-platform applications using .NET Core. It takes care of hosting the CLR, handling dependencies and bootstrapping your application. You can easily define projects and solutions using a lightweight JSON format (<em>project.json</em>), build your projects and publish them for distribution.</p>
+<p><strong>Package ecosystem</strong> Package managers have completely changed the face of modern software development and DNX makes it easy to create and consume packages. DNX provides tools for installing, creating and managing NuGet packages. DNX projects simplify building NuGet packages by cross-compiling for multiple target frameworks and can output NuGet packages directly. You can reference NuGet packages directly from your projects and transitive dependencies are handled for you. You can also build and install development tools as packages for your project and globally on a machine.</p>
+<p><strong>Open source friendly</strong> DNX makes it easy to work with open source projects. With DNX projects you can easily replace an existing dependency with its source code and let DNX compile it in-memory at runtime. You can then debug the source and modify it without having to modify the rest of your application.</p>
+</div>
+<div class="section" id="projects">
+<span id="dnx-concept-projects"></span><h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<p>A DNX project is a folder with a <em>project.json</em> file. The name of the project is the folder name. You use DNX projects to build NuGet packages. The <em>project.json</em> file defines your package metadata, your project dependencies and which frameworks you want to build for:</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;ClassLibrary1 Class Library&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;tarcher&quot;</span> <span class="p">],</span>
+  <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;&quot;</span> <span class="p">],</span>
+  <span class="nt">&quot;projectUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;licenseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Microsoft.CSharp&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.1-beta-23409&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;System.Collections&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.11-beta-23409&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;System.Linq&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.1-beta-23409&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;System.Runtime&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.21-beta-23409&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;System.Threading&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.11-beta-23409&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>All the files in the folder are by default part of the project unless explicitly excluded in <em>project.json</em>.</p>
+<p>You can also define commands as part of your project that can be executed (see <a class="reference internal" href="#dnx-concept-commands"><span>Commands</span></a>).</p>
+<p>You specify which frameworks you want to build for under the &#8220;frameworks&#8221; property. DNX will cross-compile for each specified framework and create the corresponding lib folder in the built NuGet package.</p>
+<p>You can use the .NET Development Utility (DNU) to build, package and publish DNX projects. Building a project produces the binary outputs for the project. Packaging produces a NuGet package that can be uploaded to a package feed (for example, <a class="reference external" href="http://nuget.org">http://nuget.org</a>) and then consumed. Publishing collects all required runtime artifacts (the required DNX and packages) into a single folder so that it can be deployed as an application.</p>
+<p>For more details on working with DNX projects see <a class="reference internal" href="projects.html"><em>Working with DNX Projects</em></a>.</p>
+</div>
+<div class="section" id="dependencies">
+<span id="dnx-concept-dependencies"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Dependencies in DNX consist of a name and a version number. Version numbers should follow <a class="reference external" href="http://semver.org">Semantic Versioning</a>. Typically dependencies refer to an installed NuGet package or to another DNX project. Project references are resolved using peer folders to the current project or  project paths specified using a <em>global.json</em> file at the solution level:</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;projects&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span> <span class="p">],</span>
+  <span class="nt">&quot;sdk&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <em>global.json</em> file also defines the minimum DNX version (&#8220;sdk&#8221; version) needed to build the project.</p>
+<p>Dependencies are transitive in that you only need to specify your top level dependencies. DNX will handle resolving the entire dependency graph for you using the installed NuGet packages. Project references are resolved at runtime by building the referenced project in memory. This means you have the full flexibility to deploy your DNX application as package binaries or as source code.</p>
+</div>
+<div class="section" id="packages-and-feeds">
+<span id="dnx-concept-packages-and-feeds"></span><h2>Packages and feeds<a class="headerlink" href="#packages-and-feeds" title="Permalink to this headline">¶</a></h2>
+<p>For package dependencies to resolve they must first be installed. You can use DNU to install a new package into an existing project or to restore all package dependencies for an existing project. The following command downloads and installs all packages that are listed in the <em>project.json</em> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu restore
+</pre></div>
+</div>
+<p>Packages are restored using the configured set of package feeds. You configure the available package feeds using <a class="reference external" href="http://docs.nuget.org/consume/nuget-config-file">NuGet configuration files (NuGet.config)</a>.</p>
+</div>
+<div class="section" id="commands">
+<span id="dnx-concept-commands"></span><h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<p>A command is a named execution of a .NET entry point with specific arguments. You can define commands in your <em>project.json</em> file:</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre>&quot;commands&quot;: {
+  &quot;web&quot;: &quot;Microsoft.AspNet.Server.Kestrel&quot;,
+  &quot;ef&quot;: &quot;EntityFramework.Commands&quot;
+},
+</pre></div>
+</td></tr></table></div>
+<p>You can then use DNX to execute the commands defined by your project, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx web
+</pre></div>
+</div>
+<p>Commands can  be built and distributed as NuGet packages. You can then use DNU to install commands globally on a machine:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu commands install MyCommand
+</pre></div>
+</div>
+<p>For more information on using and creating commands see <a class="reference internal" href="commands.html"><em>Using Commands</em></a>.</p>
+</div>
+<div class="section" id="application-host">
+<span id="dnx-concept-apphost"></span><h2>Application Host<a class="headerlink" href="#application-host" title="Permalink to this headline">¶</a></h2>
+<p>The DNX application host is typically the first managed entry point invoked by DNX and is responsible for handling dependency resolution, parsing <em>project.json</em>, providing additional services and invoking the application entry point.</p>
+<p>Alternatively, you can have DNX invoke your application&#8217;s entry point directly. Doing so requires that your application be fully built and all dependencies located in a single directory. Using DNX without using the DNX Application Host is not common.</p>
+<p>The DNX application host provides a set of services to applications through dependency injection (for example, <cite>IServiceProvider</cite>, <cite>IApplicationEnvironment</cite> and <cite>ILoggerFactory</cite>). Application host services can be injected in the constructor of the class for your <cite>Main</cite> entry point or as additional method parameters to your <cite>Main</cite> entry point.</p>
+</div>
+<div class="section" id="compile-modules">
+<span id="dnx-concept-compile-modules"></span><h2>Compile Modules<a class="headerlink" href="#compile-modules" title="Permalink to this headline">¶</a></h2>
+<p>Compile modules are an extensibility point that let you participate in the DNX compilation process. You implement a compile module by implementing the <a class="reference external" href="https://github.com/aspnet/dnx/blob/dev/src/Microsoft.Dnx.Compilation.CSharp.Abstractions/ICompileModule.cs">ICompileModule</a> interface and putting your compile module in a compiler/preprocess or compiler/postprocess in your project.</p>
+</div>
+<div class="section" id="dnx-version-manager">
+<h2>DNX Version Manager<a class="headerlink" href="#dnx-version-manager" title="Permalink to this headline">¶</a></h2>
+<p>You can install multiple DNX versions and flavors on your machine. To install and manage different DNX versions and flavors you use the .NET Version Manager (DNVM). DNVM lets you list the different DNX versions and flavors on your machine, install new ones and switch the active DNX.</p>
+<p>See <a class="reference internal" href="../getting-started/index.html"><em>Getting Started</em></a> for instructions on how to acquire and install DNVM for your platform.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="console.html" class="btn btn-neutral float-right" title="Creating a Cross-Platform Console App with DNX" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title=".NET Execution Environment (DNX)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

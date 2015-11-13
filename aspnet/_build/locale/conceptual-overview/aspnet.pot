@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\conceptual-overview\aspnet.rst:2
+msgid "Introduction to ASP.NET 5"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:4
+msgid "By `Daniel Roth`_"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:6
+msgid "ASP.NET 5 is a significant redesign of ASP.NET. This topic introduces the new concepts in ASP.NET 5 and explains how they help you develop modern web apps."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:9
+msgid "What is ASP.NET 5?"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:11
+msgid "ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based Web applications using .NET. We built it from the ground up to provide an optimized development framework for apps that are either deployed to the cloud or run on-premises. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions. You can develop and run your ASP.NET 5 applications cross-platform on Windows, Mac and Linux. ASP.NET 5 is fully open source on `GitHub <https://github.com/aspnet/home>`_."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:14
+msgid "Why build ASP.NET 5?"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:16
+msgid "The first preview release of ASP.NET 1.0 came out almost 15 years ago.  Since then millions of developers have used it to build and run great web applications, and over the years we have added and evolved many, many capabilities to it."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:18
+msgid "With ASP.NET 5 we are making a number of architectural changes that make the core web framework much leaner and more modular. ASP.NET 5 is no longer based on System.Web.dll, but is instead based on a set of granular and well factored NuGet packages allowing you to optimize your app to have just what you need. You can reduce the surface area of your application to improve security, reduce your servicing burden and also to improve performance in a true pay-for-what-you-use model."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:20
+msgid "ASP.NET 5 is built with the needs of modern Web applications in mind, including a unified story for building Web UI and Web APIs that integrate with today's modern client-side frameworks and development workflows. ASP.NET 5 is also built to be cloud-ready by introducing environment-based configuration and by providing built-in dependency injection support."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:22
+msgid "To appeal to a broader audience of developers, ASP.NET 5 supports cross-platform development on Windows, Mac and Linux. The entire ASP.NET 5 stack is open source and encourages community contributions and engagement. ASP.NET 5  comes with a new, agile project system in Visual Studio while also providing a complete command-line interface so that you can develop using the tools of your choice."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:24
+msgid "In summary, with ASP.NET 5 you gain the following foundational improvements:"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:26
+msgid "New light-weight and modular HTTP request pipeline"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:27
+msgid "Ability to host on IIS or self-host in your own process"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:28
+msgid "Built on .NET Core, which supports true side-by-side app versioning"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:29
+msgid "Ships entirely as NuGet packages"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:30
+msgid "Integrated support for creating and using NuGet packages"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:31
+msgid "Single aligned web stack for Web UI and Web APIs"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:32
+msgid "Cloud-ready environment-based configuration"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:33
+msgid "Built-in support for dependency injection"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:34
+msgid "New tooling that simplifies modern web development"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:35
+msgid "Build and run cross-platform ASP.NET apps on Windows, Mac and Linux"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:36
+msgid "Open source and community focused"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:39
+msgid "Application anatomy"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:41
+msgid "ASP.NET 5 applications are built and run using the new :doc:`.NET Execution Environment (DNX) </dnx/overview>`. Every ASP.NET 5 project is a :doc:`DNX project </dnx/projects>`. ASP.NET 5 integrates with DNX through the `ASP.NET Application Hosting <https://nuget.org/packages/Microsoft.AspNet.Hosting>`_ package."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:43
+msgid "ASP.NET 5 applications are defined using a public ``Startup`` class:"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:59
+msgid "The ``ConfigureServices`` method defines the services used by your application and the ``Configure`` method is used to define what middleware makes up your request pipeline. See :doc:`understanding-aspnet5-apps` for more details."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:62
+msgid "Services"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:64
+msgid "A service is a component that is intended for common consumption in an application. Services are made available through dependency injection. ASP.NET 5 includes a simple built-in inversion of control (IoC) container that supports constructor injection by default, but can be easily replaced with your IoC container of choice. See :doc:`/fundamentals/dependency-injection` for more details."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:66
+msgid "Services in ASP.NET 5 come in three varieties: singleton, scoped and transient. Transient services are created each time they’re requested from the container. Scoped services are created only if they don’t already exist in the current scope. For Web applications, a container scope is created for each request, so you can think of scoped services as per request. Singleton services are only ever created once."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:69
+msgid "Middleware"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:71
+msgid "In ASP.NET 5 you compose your request pipeline using :doc:`/fundamentals/middleware`. ASP.NET 5 middleware perform asynchronous logic on an ``HttpContext`` and then optionally  invoke the next middleware in the sequence or terminate the request directly. You generally \"Use\" middleware by invoking a corresponding extension method on the ``IApplicationBuilder`` in your ``Configure`` method."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:73
+msgid "ASP.NET 5 comes with a rich set of prebuilt middleware:"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:75
+msgid ":doc:`/fundamentals/static-files`"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:76
+msgid ":doc:`/fundamentals/routing`"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:77
+msgid ":doc:`/fundamentals/diagnostics`"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:78
+msgid ":doc:`Authentication </security/index>`"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:80
+msgid "You can also author your own :doc:`custom middleware </fundamentals/middleware>`."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:82
+msgid "You can use any `OWIN <http://owin.org>`_-based middleware with ASP.NET 5. See :doc:`/fundamentals/owin` for details."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:85
+msgid "Servers"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:87
+msgid "The ASP.NET Application Hosting model does not directly listen for requests, but instead relies on an HTTP server implementation to surface the request to the application as a set of feature interfaces that can be composed into an HttpContext."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:89
+msgid "ASP.NET 5 includes server support for running on IIS or self-hosting in your own process. On Windows you can host your application outside of IIS using the `WebListener <https://nuget.org/packages/Microsoft.AspNet.Server.WebListener>`_ server, which is based on HTTP.sys. You can also host your application on a non-Windows environment using the cross-platform `Kestrel <https://nuget.org/packages/Kestrel>`_ web server."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:92
+msgid "Web root"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:94
+msgid "The Web root of your application is the root location in your project from which HTTP requests are handled (ex. handling of static file requests). The Web root of an ASP.NET 5 application is configured using the \"webroot\" property in your project.json file."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:97
+msgid "Configuration"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:99
+msgid "ASP.NET 5 uses a new configuration model for handling of simple name-value pairs that is not based on System.Configuration or web.config. This new configuration model pulls from an ordered set of configuration providers. The built-in configuration providers support a variety of file formats (XML, JSON, INI) and also environment variables to enable environment-based configuration. You can also write your own custom configuration providers. Environments, like Development and Production, are a first-class notion in ASP.NET 5 and can also be set up using environment variables:"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:107
+msgid "See :doc:`/fundamentals/configuration` for more details on the new configuration system and :doc:`/fundamentals/environments` for details on how to work with environments in ASP.NET 5."
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:110
+msgid "Client-side development"
+msgstr ""
+
+#: ..\..\conceptual-overview\aspnet.rst:112
+msgid "ASP.NET 5 is designed to integrate seamlessly with a variety of client-side frameworks, including `AngularJS <https://angularjs.org/>`_, `KnockoutJS <http://knockoutjs.com>`_ and `Bootstrap <http://getbootstrap.com/>`_. See :doc:`/client-side/index` for more details."
+msgstr ""
+

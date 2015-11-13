@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Subkey Derivation and Authenticated Encryption &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Implementation" href="index.html"/>
+        <link rel="next" title="Context headers" href="context-headers.html"/>
+        <link rel="prev" title="Authenticated encryption details." href="authenticated-encryption-details.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Implementation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="authenticated-encryption-details.html">Authenticated encryption details.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Subkey Derivation and Authenticated Encryption</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context-headers.html">Context headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-management.html">Key Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-providers.html">Key Storage Providers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-encryption-at-rest.html">Key Encryption At Rest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-immutability.html">Key Immutability and Changing Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-format.html">Key Storage Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-ephemeral.html">Ephemeral data protection providers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Implementation</a> &raquo;</li>
+      
+    <li>Subkey Derivation and Authenticated Encryption</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/implementation/subkeyderivation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="subkey-derivation-and-authenticated-encryption">
+<span id="data-protection-implementation-subkey-derivation"></span><h1>Subkey Derivation and Authenticated Encryption<a class="headerlink" href="#subkey-derivation-and-authenticated-encryption" title="Permalink to this headline">¶</a></h1>
+<p>Most keys in the key ring will contain some form of entropy and will have algorithmic information stating &#8220;CBC-mode encryption + HMAC validation&#8221; or &#8220;GCM encryption + validation&#8221;. In these cases, we refer to the embedded entropy as the master keying material (or KM) for this key, and we perform a key derivation function to derive the keys that will be used for the actual cryptographic operations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Keys are abstract, and a custom implementation might not behave as below. If the key provides its own implementation of IAuthenticatedEncryptor rather than using one of our built-in factories, the mechanism described in this section no longer applies.</p>
+</div>
+<div class="section" id="additional-authenticated-data-and-subkey-derivation">
+<span id="data-protection-implementation-subkey-derivation-aad"></span><h2>Additional authenticated data and subkey derivation<a class="headerlink" href="#additional-authenticated-data-and-subkey-derivation" title="Permalink to this headline">¶</a></h2>
+<p>The IAuthenticatedEncryptor interface serves as the core interface for all authenticated encryption operations. Its Encrypt method takes two buffers: plaintext and additionalAuthenticatedData (AAD). The plaintext contents flow unchanged the call to IDataProtector.Protect, but the AAD is generated by the system and consists of three components:</p>
+<ol class="arabic simple">
+<li>The 32-bit magic header 09 F0 C9 F0 that identifies this version of the data protection system.</li>
+<li>The 128-bit key id.</li>
+<li>A variable-length string formed from the purpose chain that created the IDataProtector that is performing this operation.</li>
+</ol>
+<p>Because the AAD is unique for the tuple of all three components, we can use it to derive new keys from KM instead of using KM itself in all of our cryptographic operations. For every call to IAuthenticatedEncryptor.Encrypt, the following key derivation process takes place:</p>
+<p>( K<sub>E</sub>, K<sub>H</sub> ) = SP800_108_CTR_HMACSHA512(K<sub>M</sub>, AAD, contextHeader || keyModifier)</p>
+<p>Here, we&#8217;re calling the NIST SP800-108 KDF in Counter Mode (see <a class="reference external" href="http://csrc.nist.gov/publications/nistpubs/800-108/sp800-108.pdf">NIST SP800-108</a>, Sec. 5.1) with the following parameters:</p>
+<ul class="simple">
+<li>Key derivation key (KDK) = K<sub>M</sub></li>
+<li>PRF = HMACSHA512</li>
+<li>label = additionalAuthenticatedData</li>
+<li>context = contextHeader || keyModifier</li>
+</ul>
+<p>The context header is of variable length and essentially serves as a thumbprint of the algorithms for which we&#8217;re deriving K<sub>E</sub> and K<sub>H</sub>. The key modifier is a 128-bit string randomly generated for each call to Encrypt and serves to ensure with overwhelming probability that KE and KH are unique for this specific authentication encryption operation, even if all other input to the KDF is constant.</p>
+<p>For CBC-mode encryption + HMAC validation operations, | K<sub>E</sub> | is the length of the symmetric block cipher key, and | K<sub>H</sub> | is the digest size of the HMAC routine. For GCM encryption + validation operations, | K<sub>H</sub> | = 0.</p>
+</div>
+<div class="section" id="cbc-mode-encryption-hmac-validation">
+<h2>CBC-mode encryption + HMAC validation<a class="headerlink" href="#cbc-mode-encryption-hmac-validation" title="Permalink to this headline">¶</a></h2>
+<p>Once K<sub>E</sub> is generated via the above mechanism, we generate a random initialization vector and run the symmetric block cipher algorithm to encipher the plaintext. The initialization vector and ciphertext are then run through the HMAC routine initialized with the key K<sub>H</sub> to produce the MAC. This process and the return value is represented graphically below.</p>
+<div class="figure" id="id1">
+<img alt="CBC-mode process and return" src="../../../_images/cbcprocess.png" />
+<p class="caption"><span class="caption-text">output:= keyModifier || iv || E<sub>cbc</sub> (K<sub>E</sub>,iv,data) || HMAC(K<sub>H</sub>, iv || E<sub>cbc</sub> (K<sub>E</sub>,iv,data))</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IDataProtector.Protect implementation will <a class="reference internal" href="authenticated-encryption-details.html#data-protection-implementation-authenticated-encryption-details"><span>prepend the magic header and key id</span></a> to output before returning it to the caller. Because the magic header and key id are implicitly part of <a class="reference internal" href="#data-protection-implementation-subkey-derivation-aad"><span>AAD</span></a>, and because the key modifier is fed as input to the KDF, this means that every single byte of the final returned payload is authenticated by the MAC.</p>
+</div>
+</div>
+<div class="section" id="galois-counter-mode-encryption-validation">
+<h2>Galois/Counter Mode encryption + validation<a class="headerlink" href="#galois-counter-mode-encryption-validation" title="Permalink to this headline">¶</a></h2>
+<p>Once K<sub>E</sub> is generated via the above mechanism, we generate a random 96-bit nonce and run the symmetric block cipher algorithm to encipher the plaintext and produce the 128-bit authentication tag.</p>
+<div class="figure" id="id2">
+<img alt="GCM-mode process and return" src="../../../_images/galoisprocess.png" />
+<p class="caption"><span class="caption-text">output := keyModifier || nounce || E<sub>gcm</sub> (K<sub>E</sub>,nounce,data) || authTag</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Even though GCM natively supports the concept of AAD, we&#8217;re still feeding AAD only to the original KDF, opting to pass an empty string into GCM for its AAD parameter. The reason for this is two-fold. First, <a class="reference internal" href="context-headers.html#data-protection-implementation-context-headers"><span>to support agility</span></a> we never want to use K<sub>M</sub> directly as the encryption key. Additionally, GCM imposes very strict uniqueness requirements on its inputs. The probability that the GCM encryption routine is ever invoked on two or more distinct sets of input data with the same (key, nonce) pair must not exceed 2<sup>32</sup>. If we fix K<sub>E</sub> we cannot perform more than 2<sup>32</sup> encryption operations before we run afoul of the 2<sup>-32</sup> limit. This might seem like a very large number of operations, but a high-traffic web server can go through 4 billion requests in mere days, well within the normal lifetime for these keys. To stay compliant of the 2<sup>-32</sup> probability limit, we continue to use a 128-bit key modifier and 96-bit nonce, which radically extends the usable operation count for any given K<sub>M</sub>. For simplicity of design we share the KDF code path between CBC and GCM operations, and since AAD is already considered in the KDF there is no need to forward it to the GCM routine.</p>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context-headers.html" class="btn btn-neutral float-right" title="Context headers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authenticated-encryption-details.html" class="btn btn-neutral" title="Authenticated encryption details." accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

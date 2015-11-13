@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with DNX Projects &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title=".NET Execution Environment (DNX)" href="index.html"/>
+        <link rel="next" title="|stub-icon| Compilation" href="compilation.html"/>
+        <link rel="prev" title="Creating a Cross-Platform Console App with DNX" href="console.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">.NET Execution Environment (DNX)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">DNX Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="console.html">Creating a Cross-Platform Console App with DNX</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Working with DNX Projects</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compilation.html">|stub-icon| Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loaders.html">|stub-icon| Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">|stub-icon| Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Using Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicing.html">|stub-icon| Servicing and Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-time-host.html">|stub-icon| Design Time Host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnosing-project-dependency-issues.html">|stub-icon| Diagnosing Project Dependency Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create-package.html">|stub-icon| Create a New NuGet Package with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-package.html">|stub-icon| Migrating an Existing NuGet Package Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global-json.html">|stub-icon| Global.json Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-json.html">|stub-icon| Project.json Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">.NET Execution Environment (DNX)</a> &raquo;</li>
+      
+    <li>Working with DNX Projects</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/dnx/projects.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="working-with-dnx-projects">
+<h1>Working with DNX Projects<a class="headerlink" href="#working-with-dnx-projects" title="Permalink to this headline">¶</a></h1>
+<p>DNX projects are used to build and run .NET applications for Windows, Mac and Linux. This article describes how you can create, build, run and manage DNX projects</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#creating-a-new-project">Creating a new project</a></li>
+<li><a class="reference internal" href="#targeting-frameworks">Targeting frameworks</a></li>
+<li><a class="reference internal" href="#adding-dependencies">Adding dependencies</a></li>
+<li><a class="reference internal" href="#restoring-packages">Restoring packages</a></li>
+<li><a class="reference internal" href="#using-commands">Using commands</a></li>
+<li><a class="reference internal" href="#running-your-app">Running your app</a></li>
+<li><a class="reference internal" href="#building">Building</a></li>
+<li><a class="reference internal" href="#publishing">Publishing</a></li>
+<li><a class="reference internal" href="#scripts">Scripts</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="creating-a-new-project">
+<h2>Creating a new project<a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">¶</a></h2>
+<p>At its simplest form, a DNX project is a <strong>project.json</strong> file along with a code file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span><span class="n">MyApp</span> <span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+<span class="o">--</span><span class="n">project</span><span class="o">.</span><span class="n">json</span>
+<span class="o">--</span><span class="n">Program</span><span class="o">.</span><span class="n">cs</span>
+</pre></div>
+</div>
+<p>There are two mandatory conditions for a project. The <em>project.json</em> file must contain valid json, where brackets <em>{ }</em> are used inside the file, and that your <em>program.cs</em> file contains valid C#.</p>
+<p>The presence of a <em>project.json</em> file defines a DNX project. It is the <em>project.json</em> file that contains all the information that DNX needs to run and package your project. For additional details, including the <em>project.json</em> file schema, see <a class="reference external" href="https://github.com/aspnet/Home/wiki/Project.json-file">Project.json</a>.</p>
+<p>When using some editors there are other files that you&#8217;ll see. For instance, when using Visual Studio you may see a .xproj file. These other types of files are requirements of their specific tool, but are not a requirement of DNX. The .xproj file type, for example, is an MSBuild file that is used by Visual Studio and keeps information that is important to Visual Studio, but this type of file does not impact DNX.</p>
+</div>
+<div class="section" id="targeting-frameworks">
+<h2>Targeting frameworks<a class="headerlink" href="#targeting-frameworks" title="Permalink to this headline">¶</a></h2>
+<p>One of the sections you can add to the <em>project.json</em> is the <code class="docutils literal"><span class="pre">frameworks</span></code> section. The <code class="docutils literal"><span class="pre">frameworks</span></code> section looks like this:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each of the values in the <code class="docutils literal"><span class="pre">frameworks</span></code> section of the <em>project.json</em> file is a framework that your project will compile. The above snippet will build for the full .NET Framework (dnx451) and .NET Core (dnxcore50).</p>
+<p>If you pack this project, using <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">pack</span></code> then you will get a NuGet package that looks like the following:</p>
+<img alt="../_images/TargetPlatformNupkg.png" src="../_images/TargetPlatformNupkg.png" />
+<p>Notice that the <code class="docutils literal"><span class="pre">nupkg</span></code> has a folder for each of the frameworks you specified, allowing this NuGet package to work on any of the frameworks. You can also specify a .NET Portable profile by using the full name of that profile, for example:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:{},</span>
+    <span class="nt">&quot;.NETPortable,Version=v4.5,Profile=Profile7&quot;</span><span class="p">:{}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With the above <code class="docutils literal"><span class="pre">frameworks</span></code> section, you&#8217;ll generate a package with a <em>portable-net45+win</em> folder that will be used when running on platforms that match that portable profile.</p>
+</div>
+<div class="section" id="adding-dependencies">
+<h2>Adding dependencies<a class="headerlink" href="#adding-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>You manage the dependencies of your application with the <code class="docutils literal"><span class="pre">dependencies</span></code> section of your <em>project.json</em> file. The dependencies are defined by name and version, where the runtime loaders determine what should be loaded.</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;dependencies&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;Microsoft.AspNet.Mvc&quot;</span><span class="p">:</span> <span class="s2">&quot;6.0.0-beta4&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above <em>project.json</em> section tells DNX that you depend upon <code class="docutils literal"><span class="pre">Microsoft.AspNet.Mvc</span></code>, which means you also depend on everything that MVC depends on.</p>
+<p>The schema for dependency types adheres to following pattern:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+        <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span> <span class="p">],</span>
+                        <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+                                <span class="p">},</span>
+                                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                                        <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+                                        <span class="nt">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span> <span class="p">]</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For additional information about how dependency versions are chosen, see <a class="reference external" href="https://github.com/aspnet/Home/wiki/Dependency-Resolution">Dependency Resolution</a>.</p>
+<div class="section" id="package-dependencies">
+<h3>Package dependencies<a class="headerlink" href="#package-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The .NET Development Utility (DNU) is responsible for all operations involving packages in your application. You use the <strong>Install</strong> command to download a package based on the package id and add it to your application:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu install &lt;package id&gt;
+</pre></div>
+</div>
+<p>For a list of usage, arguments, and options of the <code class="docutils literal"><span class="pre">install</span></code> command, enter the following in the command windows:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu install --help
+</pre></div>
+</div>
+<p>For more information about <code class="docutils literal"><span class="pre">dnu</span></code> commands, see <a class="reference external" href="https://github.com/aspnet/Home/wiki/DNX-utility">.NET Development Utility (DNU)</a>.</p>
+<p>The more common way of installing packages is to just edit the <em>project.json</em> file. Editors like Visual Studio provide IntelliSense for all packages, making editing the file far easier than running <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">install</span></code>. However, you can use <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">install</span></code> if you prefer.</p>
+</div>
+<div class="section" id="assembly-references">
+<h3>Assembly references<a class="headerlink" href="#assembly-references" title="Permalink to this headline">¶</a></h3>
+<p>You can also specify a list of framework assemblies for some frameworks:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;frameworkAssemblies&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;System.Text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Generally, you use this frameworkAssemblies section when you want to depend on an assembly that is:
+- In the Global Assembly Cache (GAC)
+- Part of the framework you are targeting</p>
+<p>The <em>frameworkAssemblies</em> section is separate from the rest of the dependencies list to remove the possibility of accidentally depending on a NuGet package that happens to have the same name as a .NET Framework assembly.</p>
+</div>
+<div class="section" id="project-references">
+<h3>Project references<a class="headerlink" href="#project-references" title="Permalink to this headline">¶</a></h3>
+<p>The <em>global.json</em> file is used to configure all the projects within a directory. It includes just two default sections, the <code class="docutils literal"><span class="pre">projects</span></code> section and the <code class="docutils literal"><span class="pre">sdk</span></code> section.</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;projects&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span> <span class="p">],</span>
+  <span class="nt">&quot;sdk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta5&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;runtime&quot;</span><span class="p">:</span> <span class="s2">&quot;clr&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;architecture&quot;</span><span class="p">:</span> <span class="s2">&quot;x86&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">projects</span></code> property designates which folders contain source code for the solution. By default, the project structure places source files in a <em>src</em> folder, allowing build artifacts to be placed in a sibling folder, making it easier to exclude such things from source control.</p>
+</div>
+<div class="section" id="specifying-required-sdk-version">
+<h3>Specifying required SDK version<a class="headerlink" href="#specifying-required-sdk-version" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">sdk</span></code> property specifies the version of DNX (.NET Execution Environment) that Visual Studio will use when opening the solution. It’s set in the <em>global.json</em> file, rather than in <em>project.json</em> file, to avoid scenarios where different projects within a solution are targeting different versions of the SDK.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The SDK version of <em>global.json</em> does not determine DNX version used when run from the command line. You will still need to use DNVM to select the correct DNX version.</p>
+</div>
+</div>
+<div class="section" id="referencing-non-dnx-projects">
+<h3>Referencing non-DNX projects<a class="headerlink" href="#referencing-non-dnx-projects" title="Permalink to this headline">¶</a></h3>
+<p>You can use Visual Studio to add a reference to a non-DNX project by using the <strong>Add Reference</strong> dialog box. This will add a <em>project.json</em> file to your solution at the root folder which represents the referenced project.</p>
+</div>
+<div class="section" id="framework-specific-dependencies">
+<h3>Framework-specific dependencies<a class="headerlink" href="#framework-specific-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>You can also add dependencies for a particular framework like this:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;dependencies&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;System.Console&quot;</span><span class="p">:</span> <span class="s2">&quot;4.0.0.0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:{}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example, the <code class="docutils literal"><span class="pre">System.Console</span></code> dependency is only needed for the <em>dnxcore50</em> target, not <em>dnx451</em>. It is often the case that you will have extra dependencies on Core CLR, because there are packages that you need to depend on in Core CLR that are part of .NET 4.5.x.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">While it is technically true that you do not need the <code class="docutils literal"><span class="pre">System.Console</span></code> package on .NET 4.5.1, it also doesn&#8217;t matter if you add it as a top level dependency. Each of the <code class="docutils literal"><span class="pre">System.*</span></code> packages will work as a top level dependency. So, you don&#8217;t always have to have this separation. You could add <code class="docutils literal"><span class="pre">System.Console</span></code> as a top level dependency and it will not impact your application when on .NET 4.5.1.</p>
+</div>
+</div>
+</div>
+<div class="section" id="restoring-packages">
+<h2>Restoring packages<a class="headerlink" href="#restoring-packages" title="Permalink to this headline">¶</a></h2>
+<p>The .NET Development Utility (DNU) wraps the functionality of NuGet to do package restore, which means that it uses the <em>NuGet.config</em> file to determine where to download the package. If you want to get packages from somewhere other than NuGet.org, you can edit your NuGet.config.</p>
+<p>For instructions about how to get development builds of the latest ASP.NET and DNX packages, see <a class="reference external" href="https://github.com/aspnet/Home/wiki/Configuring-the-feed-used-by-dnu-to-restore-packages">Configuring the feed used by dnu to restore packages</a>.</p>
+<div class="section" id="using-dnu-restore">
+<h3>Using DNU Restore<a class="headerlink" href="#using-dnu-restore" title="Permalink to this headline">¶</a></h3>
+<p>The restore command will look at the dependencies listed in the <em>project.json</em> file and download them, adding them to your app&#8217;s packages directory. It downloads the entire graph of dependencies, even though you only explicitly declare the top level dependency that you directly require. It uses NuGet internally to download packages.</p>
+<p>The following is an example of using the <code class="docutils literal"><span class="pre">restore</span></code> command from the command window, where the command is executed from the folder containing the application (including the <em>project.json</em> file):</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu restore
+</pre></div>
+</div>
+</div>
+<div class="section" id="project-lock-file">
+<h3>Project lock file<a class="headerlink" href="#project-lock-file" title="Permalink to this headline">¶</a></h3>
+<p>When doing a package restore, DNU builds up a great deal of information about the dependencies of your application, this information is persisted to disk in the <em>project.lock.json</em> file.</p>
+<p>DNX reads the lock file when running your application instead of rebuilding all the information that the DNU already generated. To understand the reason for that, imagine what DNX has to do without the lock file:</p>
+<ol class="arabic simple">
+<li>Find each dependency listed in the <em>project.json</em> file.</li>
+<li>Open the nuspec of each package and get all of their dependencies.</li>
+<li>Repeat step 2 for each dependency until it has the entire graph.</li>
+<li>Load all the dependencies.</li>
+</ol>
+<p>By using the lock file, this process is reduced to:</p>
+<ol class="arabic simple">
+<li>Read the lock file.</li>
+<li>Load all the dependencies.</li>
+</ol>
+<p>There is significantly less disk IO involved in the second list.</p>
+<p>The lock file ensures that after you run <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span></code>, you have a fixed set of packages that you are referencing. When restoring, the DNU generates the lock file which specifies the exact versions that your project will use. This way, versions only get modified when you run <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span></code>, not during run-time. Restoring also ends up improving performance at run-time since DNX no longer has to probe the packages directory to find the right version to use, DNX just does what the lock file instructs DNX to do.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The primary advantage of the lock file is to prevent the application from be affected by someone else installing a package into your global install directory. For this reason, the lock file is mandatory to run. If you do not have a lock file, DNX will fail to load your application.</p>
+</div>
+<p>There is a field in the lock file, <code class="docutils literal"><span class="pre">locked</span></code>, which can be set to true either manually or via <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span> <span class="pre">—lock</span></code>. Setting this field to <code class="docutils literal"><span class="pre">true</span></code> specifies that <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span></code> will just download the versions specified in the lock file and will not do any dependency graph walking or version selection. You can run <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span> <span class="pre">—lock</span></code> to generate a locked lock file. Future restores will not change your installed version, unless you use <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span> <span class="pre">--unlock</span></code> to remove the lock. You could lock your lock file and check it in on a release branch to ensure that you always get the exact version you expect, but leave it unlocked ()and ignored by source control on development branch(es).</p>
+</div>
+<div class="section" id="specifying-an-alternative-package-locations">
+<h3>Specifying an alternative package locations<a class="headerlink" href="#specifying-an-alternative-package-locations" title="Permalink to this headline">¶</a></h3>
+<p>You can add <code class="docutils literal"><span class="pre">nupkg</span></code> (NuGet packages) and <code class="docutils literal"><span class="pre">source</span></code> packages (not on a NuGet feed) to a project. To specify the location of these packages you must include the path to the NuGet package or to a packages folder, such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu packages add newPackage.1.0.0.nupkg c:\packageStore
+</pre></div>
+</div>
+<p>For additional details, run the help command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu packages add --help
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-commands">
+<h2>Using commands<a class="headerlink" href="#using-commands" title="Permalink to this headline">¶</a></h2>
+<p>A command is an alias for a package to use as an entry point and also provides an initial set of arguments. You can define commands in your <em>project.json</em> file:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;webroot&quot;</span><span class="p">:</span> <span class="s2">&quot;wwwroot&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;exclude&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;wwwroot&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Kestrel&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Diagnostics&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Hosting&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Server.IIS&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Microsoft.AspNet.StaticFiles&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta4&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;web&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kestrel&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5001&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;gen&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.Framework.CodeGeneration&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ef&quot;</span><span class="p">:</span> <span class="s2">&quot;EntityFramework.Commands&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;frameworks&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dnx451&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
+    <span class="nt">&quot;dnxcore50&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The commands are a set of arguments that will be passed to DNX. The entry-point provided by a command should either be the name of a project within your solution, or an assembly provided by a package that your application depends on.</p>
+</div>
+<div class="section" id="running-your-app">
+<h2>Running your app<a class="headerlink" href="#running-your-app" title="Permalink to this headline">¶</a></h2>
+<p>By specifying a command as an argument that is passed to DNX, you can run your app locally. For instance, you can use the <code class="docutils literal"><span class="pre">kestrel</span></code> command (specified in the <code class="docutils literal"><span class="pre">commands</span></code> section of your project&#8217;s <em>project.json</em> file) to run a Web Application as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx kestrel
+</pre></div>
+</div>
+<p>To view the running web application, you can open a browser and navigate to the path specified in the <em>project.json</em> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost:5001
+</pre></div>
+</div>
+<p>To run a Console Application using the Command Window from the project directory, you can use the following statement:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx run
+</pre></div>
+</div>
+<p>To run a Web API application, you can use the following command from the Command Window:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx web
+</pre></div>
+</div>
+<p>In the case of the <em>web</em> command, the <code class="docutils literal"><span class="pre">Microsoft.AspNet.Hosting</span></code> assembly has a <code class="docutils literal"><span class="pre">Main</span></code> entry point method that is called whenever you run the web command. The rest of the values in the <em>web</em> command are used by the hosting assembly to host your web application.</p>
+<p>To run commands out of a different project, you can use the <code class="docutils literal"><span class="pre">--project</span></code> option. The short form of <code class="docutils literal"><span class="pre">--project</span></code> is <code class="docutils literal"><span class="pre">--p</span></code>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx -p tests\MyTestProject test
+</pre></div>
+</div>
+<p>For a Console Application, the entry point is the <code class="docutils literal"><span class="pre">Main</span></code> method of the <code class="docutils literal"><span class="pre">Program</span></code> class. For more information about the Web Application startup process, see <a class="reference internal" href="../fundamentals/startup.html"><em>Application Startup</em></a>.</p>
+<p>When you run your app, you can specify whether to compile in Debug mode or in Release mode. You can specify the <code class="docutils literal"><span class="pre">configuration</span></code> option as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnx --configuration Debug
+</pre></div>
+</div>
+<p>For more compilation related information, see <a class="reference internal" href="#dnx-projects-compiliationsettings"><span>Compilation settings</span></a>).</p>
+</div>
+<div class="section" id="building">
+<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>You use DNX projects to build NuGet packages. You can use the .NET Development Utility (DNU) to build, package, and publish DNX projects.</p>
+<div class="section" id="dnu-build">
+<h3>DNU build<a class="headerlink" href="#dnu-build" title="Permalink to this headline">¶</a></h3>
+<p>The <em>project.json</em> file defines your package metadata, your project dependencies, and which frameworks that you want to target your build.</p>
+<p>All the files in the folder are by default part of the project unless explicitly excluded in <em>project.json</em>. You specify which frameworks to target by using the &#8220;frameworks&#8221; property. DNX will cross-compile for each specified framework and create the corresponding <em>lib</em> folder in the built NuGet package.</p>
+<p>Building a project produces the binary outputs for the project.</p>
+</div>
+<div class="section" id="compilation-settings">
+<span id="dnx-projects-compiliationsettings"></span><h3>Compilation settings<a class="headerlink" href="#compilation-settings" title="Permalink to this headline">¶</a></h3>
+<p>Compilation settings allow you to pass options through to the compiler. The language version can be set in this section of the <em>project.json</em> file, as well as defines and other options.</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;compilationOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;define&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SOMETHING&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;allowUnsafe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;warningsAsErrors&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;languageVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;experimental&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Configurations are named groups of compilation settings. There are two default compilation settings, <strong>Debug</strong> and <strong>Release</strong>. You can override these (or add more) by modifying to the configurations section in the <em>project.json</em>.</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;configurations&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Debug&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;compilationOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;define&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="s2">&quot;TRACE&quot;</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;Release&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;compilationOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;define&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;RELEASE&quot;</span><span class="p">,</span> <span class="s2">&quot;TRACE&quot;</span><span class="p">],</span>
+        <span class="nt">&quot;optimize&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When building a DNX based application, such as by using <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">build</span></code> or via pack/publish with <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">pack</span></code> or <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">publish</span></code>, you can pass <code class="docutils literal"><span class="pre">--configuration</span> <span class="pre">&lt;configuration&gt;</span></code> to have DNX use the named configuration.</p>
+<p>For a list of usage, arguments, and options of the <code class="docutils literal"><span class="pre">build</span></code> command, enter the following in the command windows:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu build --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="including-excluding-files">
+<h3>Including/Excluding files<a class="headerlink" href="#including-excluding-files" title="Permalink to this headline">¶</a></h3>
+<p>By default all code files in a directory containing a <em>project.json</em> are included in the project. You can control this with the include/exclude sections of the <em>project.json</em>.</p>
+<p>The most common sections that you will see for including and excluding files are:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;compile&quot;</span><span class="p">:</span> <span class="s2">&quot;*.cs&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;exclude&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;node_modules&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bower_components&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;publishExclude&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;**.xproj&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;**.user&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;**.vspscc&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <em>compile</em> section specifies that only .cs files will be compiled.</li>
+<li>The <em>exclude</em> section excludes any files in the <code class="docutils literal"><span class="pre">node_modules</span></code> and <code class="docutils literal"><span class="pre">bower_components</span></code> directories. Even if sections have .cs extensions.</li>
+<li>The <em>publishExclude</em> section allows you to exclude files from the publish output of your project. In this example, all <em>.xproj</em>, <em>.user</em>, and <em>.vspscc</em> files from the output of the publish command.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Most sections of the <em>project.json</em> file that deal with files allow <a class="reference external" href="https://en.wikipedia.org/wiki/Glob_programming">glob patterns</a>, which are often called wildcards.</p>
+</div>
+</div>
+<div class="section" id="list-of-include-exclude-properties">
+<h3>List of include/exclude properties<a class="headerlink" href="#list-of-include-exclude-properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="40%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">default value</th>
+<th class="head">remark</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>compile</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>compileExclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>content</td>
+<td><code class="docutils literal"><span class="pre">**/*</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>contentExclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>preprocess</td>
+<td><code class="docutils literal"><span class="pre">compiler/preprocess/**/*.cs</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>preprocessExclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>resource</td>
+<td><code class="docutils literal"><span class="pre">compiler/preprocess/resources/**/*</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>resourceExclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>shared</td>
+<td><code class="docutils literal"><span class="pre">compiler/shared/**/*.cs</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>sharedExclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>publishExclude</td>
+<td><code class="docutils literal"><span class="pre">bin/**;obj/**;**/.*/**</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>exclude</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="advanced-properties">
+<h3>Advanced Properties<a class="headerlink" href="#advanced-properties" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the above table there are some extra properties that you will not use as often.</p>
+<ul class="simple">
+<li>The names ending in BuiltIn control the built in values of their associated key. E.g. <em>compile</em> always has the value of <em>compileBuiltIn</em> appended to it.</li>
+<li>The names ending in Files are ways to specify an individual file, without globbing. These are here so that you can do things like &#8220;exclude all files in folder x except this one file that I care about&#8221;.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="40%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">default value</th>
+<th class="head">remark</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>compileBuiltIn</td>
+<td><code class="docutils literal"><span class="pre">**/*.cs</span></code></td>
+<td>Concatenated to compile.</td>
+</tr>
+<tr class="row-odd"><td>excludeBuiltIn</td>
+<td><code class="docutils literal"><span class="pre">bin/**;obj/**;*.kproj</span></code></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>compileFiles</td>
+<td>&nbsp;</td>
+<td>Wildcard is not allowed</td>
+</tr>
+<tr class="row-odd"><td>contentFiles</td>
+<td>&nbsp;</td>
+<td>Wildcard is not allowed</td>
+</tr>
+<tr class="row-even"><td>preprocessFiles</td>
+<td>&nbsp;</td>
+<td>Wildcard is not allowed</td>
+</tr>
+<tr class="row-odd"><td>resourceFiles</td>
+<td>&nbsp;</td>
+<td>Wildecard is not allowed</td>
+</tr>
+<tr class="row-even"><td>sharedFiles</td>
+<td>&nbsp;</td>
+<td>Wildecard is not allowed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="precedence">
+<h3>Precedence<a class="headerlink" href="#precedence" title="Permalink to this headline">¶</a></h3>
+<p>The sequence of searching are:</p>
+<ol class="arabic simple">
+<li>Gather files from include patterns</li>
+<li>Exclude files from ignore patterns</li>
+<li>Exclude files from includes of mutually exclusive types (see below)</li>
+<li>Adding individually specified files</li>
+</ol>
+<p>The following describes the exact lists that are built up with the following notation:</p>
+<ul class="simple">
+<li>+ means included</li>
+<li>- means excluded</li>
+<li>glob() means the values are used in the globbing algorithm.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>CompileList =
+  +Glob( +compile +compileBuiltIn -compileExclude -exclude -excludeBuiltIn)
+  -SharedList
+  -PreprocessList
+  +compileFiles
+
+PreprocessList =
+  +Glob( +preprocess -preprocessExclude -exclude -excludeBuiltIn)
+  +preprocessFiles
+
+SharedList =
+  +Glob( +shared -sharedExclude -exclude -excludeBuiltIn)
+  +sharedFiles
+
+ResourceList =
+  +Glob( +resource -resourceExclude -exclude -excludeBuiltIn)
+  +resourceFiles
+
+ContentList =
+  +Glob( +content -contentExclude -exclude -excludeBuiltIn)
+  -CompileList
+  -PreprocessList
+  -SharedList
+  -ResourcesList
+  +contentFiles
+
+PublishExcludeList =
+  +Glob ( +publishExclude )
+</pre></div>
+</div>
+</div>
+<div class="section" id="sharing-files">
+<h3>Sharing files<a class="headerlink" href="#sharing-files" title="Permalink to this headline">¶</a></h3>
+<p>The <em>shared</em> section of the <em>project.json</em> is designed to allow you to create a project that shares its source with other projects, rather than being compiled to a binary.</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="s2">&quot;*.cs&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When you have shared source in your project it will generate a NuGet package with a directory called <em>shared</em> containing the shared files. Depending on this package will cause DNX to compile the code files that are in the shared directory as if they were part of your project.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Because you are adding to the source of a project that depends on your shared code, it is recommended that all the shared code be internal. Having public surface area in the types you are adding to another project is likely to cause problems in the future.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By convention shared project names should end in sources. <code class="docutils literal"><span class="pre">Microsoft.AspNet.Common.Sources</span></code>, <strong>not</strong> <code class="docutils literal"><span class="pre">Microsoft.AspNet.Common</span></code>.</p>
+</div>
+</div>
+<div class="section" id="per-framework-compilation">
+<h3>Per framework compilation<a class="headerlink" href="#per-framework-compilation" title="Permalink to this headline">¶</a></h3>
+<p>You can target a specific framework to build for your application by using the <code class="docutils literal"><span class="pre">--framework</span></code> option when using the <code class="docutils literal"><span class="pre">build</span></code> command. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu build --framework dnxcore50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="packaging">
+<h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
+<p>You use the <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">pack</span></code> command to build NuGet packages to a given directory for your project.</p>
+<div class="section" id="dnu-pack">
+<h3>DNU pack<a class="headerlink" href="#dnu-pack" title="Permalink to this headline">¶</a></h3>
+<p>You can pack a project by specifying the project or default to the current directory. In addition, you can specify the following as options:</p>
+<ul class="simple">
+<li>A list of target frameworks to build.</li>
+<li>A list of configurations to build.</li>
+<li>The output directory.</li>
+<li>An output of dependencies.</li>
+<li>Whether to show output such as the source or destination of the nupkgs.</li>
+<li>A output of help information.</li>
+</ul>
+<p>For example, you can pack the current project based on the current directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu pack --out c:\projectOutput
+</pre></div>
+</div>
+<p>For additional details, run the help command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu pack --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-package-metadata">
+<h3>Adding package metadata<a class="headerlink" href="#adding-package-metadata" title="Permalink to this headline">¶</a></h3>
+<p>Project metadata is information such as the version of your app, author, etc.</p>
+<p>To specify this in the <em>project.json</em> file you create a key for each of the metadata attributes you care about:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1-alpha&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John Doe&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A wonderful library that does nice stuff&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>version: The version of the NuGet package and assemblies generated if you pack/publish your application.</li>
+<li>authors: A JSON array of the authors and owners section of the NuGet packages nuspec</li>
+<li>description: A long description of the NuGet package.</li>
+</ul>
+<p>Additional optional metadata that can be put into the project.json file:</p>
+<ul class="simple">
+<li>copyright: Copyright details for the NuGet package.</li>
+<li>projectUrl: A URL for the home page of the NuGet package.</li>
+<li>licenseUrl: A link to the license that the NuGet package is under.</li>
+<li>requireLicenseAcceptance: A Boolean value that specifies whether the client needs to ensure that the package license (described by licenseUrl) is accepted before the NuGet package is installed.</li>
+<li>language: The locale ID for the NuGet package, such as en-us.</li>
+<li>tags: A JSON array of tags and keywords that describe the NuGet package.</li>
+<li>title: The human-friendly title of the NuGet package.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="publishing">
+<h2>Publishing<a class="headerlink" href="#publishing" title="Permalink to this headline">¶</a></h2>
+<p>You use the <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">publish</span></code> command to package your application into a self-contained directory that can be launched. It will create the following directory structure:
+- output/
+- output/packages
+- output/appName
+- output/commandName.cmd</p>
+<p>The packages directory contains all the packages your application needs to run.</p>
+<p>The appName directory will contain all of your applications code, if you have project references they will appear as their own directory with code at this level as well.</p>
+<p>The publish command will also hoist any commands from your <em>project.json</em> file into batch files. Running any of these commands is the same as running  <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">&lt;command&gt;</span></code>. For a list of usage, arguments, and options of the <code class="docutils literal"><span class="pre">publish</span></code> command, enter the following in the command windows:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnu publish --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
+<p>The scripts section of the <em>project.json</em> allows you to hook into events that happen as you work on your application:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;prebuild&quot;</span><span class="p">:</span> <span class="s2">&quot;executed before building&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postbuild&quot;</span><span class="p">:</span> <span class="s2">&quot;executed after building&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;prepack&quot;</span><span class="p">:</span> <span class="s2">&quot;executed before packing&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postpack&quot;</span><span class="p">:</span> <span class="s2">&quot;executed after packing&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;prepublish&quot;</span><span class="p">:</span> <span class="s2">&quot;executed before publish&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postpublish&quot;</span><span class="p">:</span> <span class="s2">&quot;executed after publish&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;prerestore&quot;</span><span class="p">:</span> <span class="s2">&quot;executed before restoring packages&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postrestore&quot;</span><span class="p">:</span> <span class="s2">&quot;executed after restoring packages&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;prepare&quot;</span><span class="p">:</span> <span class="s2">&quot;After postrestore but before prepublish&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Most of these are fairly self-explanatory and each matches an explicit command in the DNU. Except for <em>prepare</em>. <em>Prepare</em> runs both after a restore and before a publish and is intended to be used to make sure everything is ready for either development or publishing. For example, you often need to make sure that you run all of your gulp tasks after you restore packages, to make sure you get things like css copied from new bower packages, and you also want to make sure that gulp is run before you publish so that you are publishing the latest code generated from your tasks.</p>
+<p>The values of the scripts are commands that will be run in your environment as if you had opened a terminal and run them. For example, the following is scaffolded when creating a new application in Visual Studio:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;postrestore&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;npm install&quot;</span><span class="p">,</span> <span class="s2">&quot;bower install&quot;</span> <span class="p">],</span>
+    <span class="nt">&quot;prepare&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;gulp copy&quot;</span> <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="token-substitution">
+<h3>Token substitution<a class="headerlink" href="#token-substitution" title="Permalink to this headline">¶</a></h3>
+<p>There are also several tokens that will be replaced if they appear inside the scripts value:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Token</th>
+<th class="head">Replaced with</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>%project:Directory%</td>
+<td>The project directory</td>
+</tr>
+<tr class="row-odd"><td>%project:Name%</td>
+<td>The project name</td>
+</tr>
+<tr class="row-even"><td>%project:Version%</td>
+<td>The project version</td>
+</tr>
+</tbody>
+</table>
+<p>If any of the above tokens appear in the value of the script key they will be replaced with the associated value.</p>
+</div>
+</div>
+<div class="section" id="related-resources">
+<h2>Related Resources<a class="headerlink" href="#related-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="overview.html"><em>DNX Overview</em></a></li>
+<li><a class="reference external" href="https://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-app-using-vscode/">Create an ASP.NET 5 web app in Visual Studio Code</a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="compilation.html" class="btn btn-neutral float-right" title="|stub-icon| Compilation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="console.html" class="btn btn-neutral" title="Creating a Cross-Platform Console App with DNX" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

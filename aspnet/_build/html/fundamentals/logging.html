@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logging &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="|stub-icon| Managing Application State" href="app-state.html"/>
+        <link rel="prev" title="Application Insights" href="application-insights.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Logging</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Logging</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/logging.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 has built-in support for logging, and allows developers to easily leverage their preferred logging framework&#8217;s functionality as well. Implementing logging in your application requires a minimal amount of setup code. Once this is in place, logging can be added wherever it is desired.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#implementing-logging-in-your-application">Implementing Logging in your Application</a></li>
+<li><a class="reference internal" href="#configuring-logging-in-your-application">Configuring Logging in your Application</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/Docs/tree/1.0.0-beta7/aspnet/fundamentals/logging/sample">View or download sample from GitHub</a>.</p>
+<div class="section" id="implementing-logging-in-your-application">
+<h2>Implementing Logging in your Application<a class="headerlink" href="#implementing-logging-in-your-application" title="Permalink to this headline">¶</a></h2>
+<p>Adding logging to a component in your application is done by requesting either an <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> or an <code class="docutils literal"><span class="pre">ILogger&lt;T&gt;</span></code> via <a class="reference internal" href="dependency-injection.html"><em>|stub-icon| Dependency Injection</em></a>. If an <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> is requested, a logger must be created using its <code class="docutils literal"><span class="pre">CreateLogger</span></code> method. The following example shows how to do this within the <code class="docutils literal"><span class="pre">Configure</span></code> method in the <code class="docutils literal"><span class="pre">Startup</span></code> class:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span>
+    <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">,</span>
+<span class="hll">    <span class="n">ILoggerFactory</span> <span class="n">loggerFactory</span><span class="p">)</span>
+</span><span class="p">{</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">(</span><span class="n">minLevel</span><span class="p">:</span><span class="n">LogLevel</span><span class="p">.</span><span class="n">Verbose</span><span class="p">);</span>
+
+    <span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+
+    <span class="n">app</span><span class="p">.</span><span class="n">UseMvc</span><span class="p">();</span>
+
+    <span class="c1">// Create a catch-all response</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="kt">var</span> <span class="n">logger</span> <span class="p">=</span> <span class="n">loggerFactory</span><span class="p">.</span><span class="n">CreateLogger</span><span class="p">(</span><span class="s">&quot;Catchall Endpoint&quot;</span><span class="p">);</span>
+</span>        <span class="n">logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;No endpoint found for request {path}&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Path</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;No endpoint found - try /api/todo.&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>When a logger is created, a category name must be provided. The category name specifies the source of the logging events. By convention this string is hierarchical, with categories separated by dot (<code class="docutils literal"><span class="pre">.</span></code>) characters. Some logging providers have filtering support that leverages this convention, making it easier to locate logging output of interest. In the above example, the logging is configured to use the built-in <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.Console/ConsoleLogger.cs">ConsoleLogger</a> (see <a class="reference internal" href="#configuring-logging-in-your-application">Configuring Logging in your Application</a> below). To see the console logger in action, run the sample application using the <code class="docutils literal"><span class="pre">web</span></code> command, and make a request to configured URL (<code class="docutils literal"><span class="pre">localhost:5000</span></code>). You should see output similar to the following:</p>
+<img alt="../_images/console-logger-output.png" src="../_images/console-logger-output.png" />
+<p>You may see more than one log statement per web request you make in your browser, since most browsers will make multiple requests (i.e. for the favicon file) when attempting to load a page. Note that the console logger displayed the log level (<code class="docutils literal"><span class="pre">info</span></code> in the image above) followed by the category (<code class="docutils literal"><span class="pre">[Catchall</span> <span class="pre">Endpoint]</span></code>), and then the message that was logged.</p>
+<p>The call to the log method can utilize a format string with named placeholders (like <cite>{path}</cite>). These placeholders are populated in the order in which they appear by the args values passed into the method call. Some logging providers will store these names along with their mapped values in a dictionary that can later be queried. In the example below, the request path is passed in as a named placeholder:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">var</span> <span class="n">logger</span> <span class="p">=</span> <span class="n">loggerFactory</span><span class="p">.</span><span class="n">CreateLogger</span><span class="p">(</span><span class="s">&quot;Catchall Endpoint&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>In your real world applications, you will want to add logging based on application-level, not framework-level, events. For instance, if you have created a Web API application for managing To-Do Items (see <a class="reference external" href="http://docs.asp.net/projects/mvc/en/latest/getting-started/first-web-api.html">Building Your First Web API with MVC 6</a>), you might add logging around the various operations that can be performed on these items.</p>
+<p>The logic for the API is contained within the <cite>TodoController</cite>, which uses <a class="reference internal" href="dependency-injection.html"><em>|stub-icon| Dependency Injection</em></a> to request the services it requires via its constructor. Ideally, classes should follow this example and use their constructor to <a class="reference external" href="http://deviq.com/explicit-dependencies-principle/">define their dependencies explicitly</a> as parameters. Rather than requesting an <cite>ILoggerFactory</cite> and creating an instance of <cite>ILogger</cite> explicitly, <cite>TodoController</cite> demonstrates another way to work with loggers in your application - you can request an <cite>ILogger&lt;T&gt;</cite> (where <cite>T</cite> is the class requesting the logger).</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="na">[Route(&quot;api/[controller]</span><span class="s">&quot;)]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TodoController</span> <span class="p">:</span> <span class="n">Controller</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ITodoRepository</span> <span class="n">_todoRepository</span><span class="p">;</span>
+<span class="hll">    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ILogger</span><span class="p">&lt;</span><span class="n">TodoController</span><span class="p">&gt;</span> <span class="n">_logger</span><span class="p">;</span>
+</span>
+    <span class="k">public</span> <span class="nf">TodoController</span><span class="p">(</span><span class="n">ITodoRepository</span> <span class="n">todoRepository</span><span class="p">,</span> 
+<span class="hll">        <span class="n">ILogger</span><span class="p">&lt;</span><span class="n">TodoController</span><span class="p">&gt;</span> <span class="n">logger</span><span class="p">)</span>
+</span>    <span class="p">{</span>
+        <span class="n">_todoRepository</span> <span class="p">=</span> <span class="n">todoRepository</span><span class="p">;</span>
+<span class="hll">        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+
+<span class="na">    [HttpGet]</span>
+    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">TodoItem</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">()</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="n">LoggingEvents</span><span class="p">.</span><span class="n">LIST_ITEMS</span><span class="p">,</span> <span class="s">&quot;Listing all items&quot;</span><span class="p">);</span>
+</span>        <span class="n">EnsureItems</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">_todoRepository</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Within each controller action, logging is done through the use of the local field, <cite>_logger</cite>, as shown on line 17, above. This technique is not limited to controllers, but can be utilized by any of your application services that utilize <a class="reference internal" href="dependency-injection.html"><em>|stub-icon| Dependency Injection</em></a>.</p>
+<div class="section" id="working-with-ilogger-t">
+<h3>Working with ILogger&lt;T&gt;<a class="headerlink" href="#working-with-ilogger-t" title="Permalink to this headline">¶</a></h3>
+<p>As we have just seen, your application can request an instance of <code class="docutils literal"><span class="pre">ILogger&lt;T&gt;</span></code> as a dependency in a class&#8217;s constructor, where <code class="docutils literal"><span class="pre">T</span></code> is the type performing logging. The <code class="docutils literal"><span class="pre">TodoController</span></code> shows an example of this approach. When this technique is used, the logger will automatically use the type&#8217;s name as its category name. By requesting an instance of <code class="docutils literal"><span class="pre">ILogger&lt;T&gt;</span></code>, your class doesn&#8217;t need to create an instance of a logger via <code class="docutils literal"><span class="pre">ILoggerFactory</span></code>. You can use this approach anywhere you don&#8217;t need the additional functionality offered by <code class="docutils literal"><span class="pre">ILoggerFactory</span></code>.</p>
+</div>
+<div class="section" id="logging-verbosity-levels">
+<h3>Logging Verbosity Levels<a class="headerlink" href="#logging-verbosity-levels" title="Permalink to this headline">¶</a></h3>
+<p>When adding logging statements to your application, you must specify a <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.Abstractions/LogLevel.cs">LogLevel</a>. The LogLevel allows you to control the verbosity of the logging output from your application, as well as the ability to pipe different kinds of log messages to different loggers. For example, you may wish to log debug messages to a local file, but log errors to the machine&#8217;s event log or a database.</p>
+<p>ASP.NET 5 defines six levels of logging verbosity:</p>
+<dl class="docutils">
+<dt>Debug</dt>
+<dd>Used for the most detailed log messages, typically only valuable to a developer debugging an issue. These messages may contain sensitive application data and so should not be enabled in a production environment. <em>Disabled by default.</em> Example: <code class="docutils literal"><span class="pre">Credentials:</span> <span class="pre">{&quot;User&quot;:&quot;someuser&quot;,</span> <span class="pre">&quot;Password&quot;:&quot;P&#64;ssword&quot;}</span></code></dd>
+<dt>Verbose</dt>
+<dd>These messages have short-term usefulness during development. They contain information that may be useful for debugging, but have no long-term value. This is the default most verbose level of logging. Example: <code class="docutils literal"><span class="pre">Entering</span> <span class="pre">method</span> <span class="pre">Configure</span> <span class="pre">with</span> <span class="pre">flag</span> <span class="pre">set</span> <span class="pre">to</span> <span class="pre">true</span></code></dd>
+<dt>Information</dt>
+<dd>These messages are used to track the general flow of the application. These logs should have some long term value, as opposed to <code class="docutils literal"><span class="pre">Verbose</span></code> level messages, which do not. Example: <code class="docutils literal"><span class="pre">Request</span> <span class="pre">received</span> <span class="pre">for</span> <span class="pre">path</span> <span class="pre">/foo</span></code></dd>
+<dt>Warning</dt>
+<dd>The Warning level should be used for abnormal or unexpected events in the application flow. These may include errors or other conditions that do not cause the application to stop, but which may need to be investigated in the future. Handled exceptions are a common place to use the Warning log level. Examples: <code class="docutils literal"><span class="pre">Login</span> <span class="pre">failed</span> <span class="pre">for</span> <span class="pre">IP</span> <span class="pre">127.0.0.1</span></code> or <code class="docutils literal"><span class="pre">FileNotFoundException</span> <span class="pre">for</span> <span class="pre">file</span> <span class="pre">foo.txt</span></code></dd>
+<dt>Error</dt>
+<dd>An error should be logged when the current flow of the application must stop due to some failure, such as an exception that cannot be handled or recovered from. These messages should indicate a failure in the current activity or operation (such as the current HTTP request), not an application-wide failure. Example: <code class="docutils literal"><span class="pre">Cannot</span> <span class="pre">insert</span> <span class="pre">record</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">duplicate</span> <span class="pre">key</span> <span class="pre">violation</span></code></dd>
+<dt>Critical</dt>
+<dd>A critical log level should be reserved for unrecoverable application or system crashes, or catastrophic failure that requires immediate attention. Examples: data loss scenarios, stack overflows, out of disk space</dd>
+</dl>
+<p>The <code class="docutils literal"><span class="pre">Logging</span></code> package provides <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.Abstractions/LoggerExtensions.cs">helper extension methods</a> for each of these standard <code class="docutils literal"><span class="pre">LogLevel</span></code> values, allowing you to call <code class="docutils literal"><span class="pre">LogInformation</span></code> rather than the more verbose Log(LogLevel.Information, ...) method. Each of the <code class="docutils literal"><span class="pre">LogLevel</span></code>-specific extension methods has several overloads, allowing you to pass in some or all of the following parameters:</p>
+<dl class="docutils">
+<dt>string data</dt>
+<dd>The message to log.</dd>
+<dt>int eventId</dt>
+<dd>A numeric id to associate with the log, which can be used to associate a series of logged events with one another. Event IDs should be static and specific to a particular kind of event that is being logged. For instance, you might associate adding an item to a shopping cart as event id 1000 and completing a purchase as event id 1001. This allows intelligent filtering and processing of log statements.</dd>
+<dt>string format</dt>
+<dd>A format string for the log message.</dd>
+<dt>object[] args</dt>
+<dd>An array of objects to format.</dd>
+<dt>Exception error</dt>
+<dd>An exception instance to log.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some loggers, such as the built-in <code class="docutils literal"><span class="pre">ConsoleLogger</span></code> used in this article, will ignore the <code class="docutils literal"><span class="pre">eventId</span></code> parameter. If you need to display it, you can include it in the message string. This is done in the following sample so you can easily see the eventId associated with each message, but in practice you would not typically include it in the log message.</p>
+</div>
+<p>In the <code class="docutils literal"><span class="pre">TodoController</span></code> example, event id constants are defined for each event, and log statements are configured at the appropriate verbosity level based on the success of the operation. In this case, successful operations log as <code class="docutils literal"><span class="pre">Information</span></code> and not found results are logged as <code class="docutils literal"><span class="pre">Warning</span></code> (error handling is not shown).</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="na">    [HttpGet]</span>
+    <span class="k">public</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">TodoItem</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">()</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="n">LoggingEvents</span><span class="p">.</span><span class="n">LIST_ITEMS</span><span class="p">,</span> <span class="s">&quot;Listing all items&quot;</span><span class="p">);</span>
+</span>        <span class="n">EnsureItems</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">_todoRepository</span><span class="p">.</span><span class="n">GetAll</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="na">    [HttpGet(&quot;{id}&quot;, Name = &quot;GetTodo&quot;)]</span>
+    <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">GetById</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">)</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="n">LoggingEvents</span><span class="p">.</span><span class="n">GET_ITEM</span><span class="p">,</span> <span class="s">&quot;Getting item {0}&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+</span>        <span class="kt">var</span> <span class="n">item</span> <span class="p">=</span> <span class="n">_todoRepository</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="n">_logger</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="n">LoggingEvents</span><span class="p">.</span><span class="n">GET_ITEM_NOTFOUND</span><span class="p">,</span> <span class="s">&quot;GetById({0}) NOT FOUND&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+</span>            <span class="k">return</span> <span class="nf">HttpNotFound</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ObjectResult</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is recommended that you perform application logging at the level of your application and its APIs, not at the level of the framework. The framework already has logging built in which can be enabled simply by setting the appropriate logging verbosity level.</p>
+</div>
+<p>To see more detailed logging at the framework level, you can adjust the <cite>LogLevel</cite> specified to your logging provider to something more verbose (like <cite>Debug</cite> or <cite>Verbose</cite>). For example, if modify the <cite>AddConsole</cite> call in the <cite>Configure</cite> method to use <cite>LogLevel.Verbose</cite> and run the application, the result shows much framework-level detail about the request:</p>
+<img alt="../_images/console-logger-verbose-output.png" src="../_images/console-logger-verbose-output.png" />
+<p>The console logger prefixes verbose output with &#8220;verbose: &#8221; and uses a gray font to make it easier to distinguish it from other levels of log output.</p>
+</div>
+<div class="section" id="scopes">
+<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this headline">¶</a></h3>
+<p>In the course of logging information within your application, you can group a set of logical operations within a <em>scope</em>. A scope is an <code class="docutils literal"><span class="pre">IDisposable</span></code> type returned by calling the <code class="docutils literal"><span class="pre">BeginScopeImpl</span></code> method, which lasts from the moment it is created until it is disposed. Not all loggers support scopes. For example, the <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.Console/ConsoleLogger.cs#L114">ConsoleLogger simply returns null</a> from <code class="docutils literal"><span class="pre">BeginScopeImpl</span></code>. The built-in <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.TraceSource/TraceSourceLogger.cs#L66-L69">TraceSource logger</a> returns a scope instance that is responsible for starting and stopping tracing operations. Any logging state, such as a transaction id, is attached to the scope when it is created.</p>
+<p>Scopes are not required, and should be used sparingly, if at all. They&#8217;re best used for operations that have a distinct beginning and end, such as a transaction involving multiple resources.</p>
+</div>
+</div>
+<div class="section" id="configuring-logging-in-your-application">
+<h2>Configuring Logging in your Application<a class="headerlink" href="#configuring-logging-in-your-application" title="Permalink to this headline">¶</a></h2>
+<p>To configure logging in your ASP.NET application, you should resolve <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> in the <code class="docutils literal"><span class="pre">Configure</span></code> method in your <code class="docutils literal"><span class="pre">Startup</span></code> class. ASP.NET will automatically provide an instance of <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> using <a class="reference internal" href="dependency-injection.html"><em>|stub-icon| Dependency Injection</em></a> when you add a parameter of this type to the <code class="docutils literal"><span class="pre">Configure</span></code> method. Once you&#8217;ve added <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> as a parameter, you configure loggers within the <code class="docutils literal"><span class="pre">Configure</span></code> method by calling methods (or extension methods) on the logger factory. We have already seen an example of this configuration at the beginning of this article, when we added console logging by simply calling <code class="docutils literal"><span class="pre">loggerFactory.AddConsole</span></code>. In addition to adding loggers, you can also control the verbosity of the application&#8217;s logging by setting the <code class="docutils literal"><span class="pre">MinimumLevel</span></code> property on the logger factory. The default verbosity is <code class="docutils literal"><span class="pre">Verbose</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can specify the minimum logging level each logger provider will use as well. For example, the <code class="docutils literal"><span class="pre">AddConsole</span></code> extension method supports an optional parameter for setting its minimum <code class="docutils literal"><span class="pre">LogLevel</span></code>.</p>
+</div>
+<div class="section" id="configuring-tracesource-logging">
+<h3>Configuring TraceSource Logging<a class="headerlink" href="#configuring-tracesource-logging" title="Permalink to this headline">¶</a></h3>
+<p>The built-in <a class="reference external" href="https://github.com/aspnet/Logging/blob/1.0.0-beta7/src/Microsoft.Framework.Logging.TraceSource/TraceSourceLogger.cs">TraceSourceLogger</a> provides a simple way to configure log messages to use the existing <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.diagnostics.tracesource(v=vs.110).aspx">System.Diagnostics.TraceSource</a> libraries and providers, including easy access to the Windows event log. This proven means of routing messages to a variety of listeners is already in use by many organizations, and the <code class="docutils literal"><span class="pre">TraceSourceLogger</span></code> allows developers to continue leveraging this existing investment.</p>
+<p>First, be sure to add the <code class="docutils literal"><span class="pre">Microsoft.Framework.Logging.TraceSource</span></code> package to your project (in <code class="docutils literal"><span class="pre">project.json</span></code>):</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre>  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Microsoft.AspNet.Mvc&quot;</span><span class="o">:</span> <span class="s2">&quot;6.0.0-beta8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.Server.WebListener&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.AspNet.StaticFiles&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.Framework.Logging&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.Framework.Logging.Console&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Microsoft.Framework.Logging.TraceSource&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span>
+<span class="hll">  <span class="p">},</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>The following example demonstrates how to configure two separate <code class="docutils literal"><span class="pre">TraceSourceLogger</span></code> instances for an application, both logging only <code class="docutils literal"><span class="pre">Critical</span></code> messages. Each call to <code class="docutils literal"><span class="pre">AddTraceSource</span></code> takes a <code class="docutils literal"><span class="pre">TraceListener</span></code>. The first call configures a <code class="docutils literal"><span class="pre">ConsoleTraceListener</span></code>; the second one configures an <code class="docutils literal"><span class="pre">EventLogTraceListener</span></code> to write to the <code class="docutils literal"><span class="pre">Application</span></code> event log. These two listeners are not available in DNX Core, so their configuration is wrapped in a conditional compilation statement (<code class="docutils literal"><span class="pre">#if</span> <span class="pre">DNX451</span></code>).</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>            <span class="n">loggerFactory</span><span class="p">.</span><span class="n">MinimumLevel</span> <span class="p">=</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">;</span>
+<span class="cp">#if DNX451</span>
+            <span class="kt">var</span> <span class="n">sourceSwitch</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SourceSwitch</span><span class="p">(</span><span class="s">&quot;LoggingSample&quot;</span><span class="p">);</span>
+            <span class="n">sourceSwitch</span><span class="p">.</span><span class="n">Level</span> <span class="p">=</span> <span class="n">SourceLevels</span><span class="p">.</span><span class="n">Critical</span><span class="p">;</span>
+            <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddTraceSource</span><span class="p">(</span><span class="n">sourceSwitch</span><span class="p">,</span>
+                <span class="k">new</span> <span class="nf">ConsoleTraceListener</span><span class="p">(</span><span class="k">false</span><span class="p">));</span>
+            <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddTraceSource</span><span class="p">(</span><span class="n">sourceSwitch</span><span class="p">,</span>
+                <span class="k">new</span> <span class="nf">EventLogTraceListener</span><span class="p">(</span><span class="s">&quot;Application&quot;</span><span class="p">));</span>
+<span class="cp">#endif</span>
+</pre></div>
+</td></tr></table></div>
+<p>The sample above also demonstrates setting the <code class="docutils literal"><span class="pre">MinimumLevel</span></code> on the logger factory. However, this specified level is simply the default for new factories, but can still be overridden by individually configured loggers. In this case, the <code class="docutils literal"><span class="pre">sourceSwitch</span></code> is configured to use <code class="docutils literal"><span class="pre">SourceLevels.Critical</span></code>, so only <code class="docutils literal"><span class="pre">Critical</span></code> log messages are picked up by the two <code class="docutils literal"><span class="pre">TraceListener</span></code> instances.</p>
+<p>To test out this code, replace the catch-all response with the following <code class="docutils literal"><span class="pre">app.Run</span></code> block:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Path</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="s">&quot;boom&quot;</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(</span><span class="s">&quot;boom!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>With this change in place, when the application is run (on Windows), and a request is made to <code class="docutils literal"><span class="pre">http://localhost:5000/boom</span></code>, the following is shown in the console output:</p>
+<img alt="../_images/console-trace-boom.png" src="../_images/console-trace-boom.png" />
+<p>Examining the Application event log in the Windows Event Viewer, the following event has also been logged as a result of this request:</p>
+<img alt="../_images/eventlog.png" src="../_images/eventlog.png" />
+<p>In addition to working with <cite>TraceSourceLogger</cite>, you can also log directly to the event log using the <a class="reference external" href="https://www.nuget.org/packages/microsoft.framework.logging.eventlog">EventLog logging provider</a>. Support for logging using <cite>System.Diagnostics.Debug.WriteLine</cite> is also available using the <a class="reference external" href="https://www.nuget.org/packages/Microsoft.Framework.Logging.Debug">Debug logging provider</a>, the output of which can be seen in Visual Studio&#8217;s Output window.</p>
+</div>
+<div class="section" id="configuring-other-providers">
+<h3>Configuring Other Providers<a class="headerlink" href="#configuring-other-providers" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the built-in loggers, you can configure logging to use other providers. Add the appropriate package to your <code class="docutils literal"><span class="pre">project.json</span></code> file, and then configure it just like any other provider. Typically, these packages should include extension methods on <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> to make it easy to add them.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ASP.NET team is still working with third party logging providers to publish support for this logging model. Once these ship, we will include links to them here.</p>
+</div>
+<p>You can create your own custom providers as well, to support other logging frameworks or your own internal logging requirements.</p>
+</div>
+</div>
+<div class="section" id="logging-recommendations">
+<h2>Logging Recommendations<a class="headerlink" href="#logging-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>The following are some recommendations you may find helpful when implementing logging in your ASP.NET applications.</p>
+<ol class="arabic simple">
+<li>Log using the correct <code class="docutils literal"><span class="pre">LogLevel</span></code>. This will allow you to consume and route logging output appropriately based on the importance of the messages.</li>
+<li>Log information that will enable errors to be identified quickly. Avoid logging irrelevant or redundant information.</li>
+<li>Keep log messages concise without sacrificing important information.</li>
+<li>Although loggers will not log if disabled, consider adding code guards around logging methods to prevent extra method calls and log message setup overhead, especially within loops and performance critical methods.</li>
+<li>Name your loggers with a distinct prefix so they can easily be filtered or disabled. Remember the <code class="docutils literal"><span class="pre">Create&lt;T&gt;</span></code> extension will create loggers named with the full name of the class.</li>
+<li>Use Scopes sparingly, and only for actions with a bounded start and end. For example, the framework provides a scope around MVC actions. Avoid nesting many scopes within one another.</li>
+<li>Application logging code should be related to the business concerns of the application. Increase the logging verbosity to reveal additional framework-related concerns, rather than implementing yourself.</li>
+</ol>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET provides built-in support for logging, which can easily be configured within the <code class="docutils literal"><span class="pre">Startup</span></code> class and used throughout the application. Logging verbosity can be configured globally and per logging provider to ensure actionable information is logged appropriately. Built-in providers for console and trace source logging are included in the framework; other logging frameworks can easily be configured as well.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="app-state.html" class="btn btn-neutral float-right" title="|stub-icon| Managing Application State" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="application-insights.html" class="btn btn-neutral" title="Application Insights" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

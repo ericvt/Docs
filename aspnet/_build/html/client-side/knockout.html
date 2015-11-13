@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Knockout.js MVVM Framework &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Client-Side Development" href="index.html"/>
+        <link rel="next" title="Using Angular for Single Page Applications (SPAs)" href="angular.html"/>
+        <link rel="prev" title="Building Beautiful, Responsive Sites with Bootstrap" href="bootstrap.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Client-Side Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using-gulp.html">Using Gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-grunt.html">Using Grunt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bower.html">Manage Client-Side Packages with Bower</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Building Beautiful, Responsive Sites with Bootstrap</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Knockout.js MVVM Framework</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html">Using Angular for Single Page Applications (SPAs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="less-sass-fa.html">Styling Applications with Less, Sass, and Font Awesome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bundling-and-minification.html">|stub-icon| Bundling and Minification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdn.html">|stub-icon| Working with a Content Delivery Network (CDN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="responsive-design.html">|stub-icon| Responsive Design for the Mobile Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript.html">|stub-icon| Introducing TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yeoman.html">Building Projects with Yeoman</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Client-Side Development</a> &raquo;</li>
+      
+    <li>Knockout.js MVVM Framework</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client-side/knockout.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="knockout-js-mvvm-framework">
+<h1>Knockout.js MVVM Framework<a class="headerlink" href="#knockout-js-mvvm-framework" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>Knockout is a popular JavaScript library that simplifies the creation of complex data-based user interfaces. It can be used alone or with other libraries, such as jQuery. Its primary purpose is to bind UI elements to an underlying data model defined as a JavaScript object, such that when changes are made to the UI, the model is updated, and vice versa. Knockout facilitates the use of a Model-View-ViewModel (MVVM) pattern in a web application&#8217;s client-side behavior. The two main concepts one must learn when working with Knockout&#8217;s MVVM implementation are Observables and Bindings.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#getting-started-with-knockout-in-asp-net-5">Getting Started with Knockout in ASP.NET 5</a></li>
+<li><a class="reference internal" href="#observables-viewmodels-and-simple-binding">Observables, ViewModels, and Simple Binding</a></li>
+<li><a class="reference internal" href="#control-flow">Control Flow</a></li>
+<li><a class="reference internal" href="#templates">Templates</a></li>
+<li><a class="reference internal" href="#components">Components</a></li>
+<li><a class="reference internal" href="#communicating-with-apis">Communicating with APIs</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="getting-started-with-knockout-in-asp-net-5">
+<h2>Getting Started with Knockout in ASP.NET 5<a class="headerlink" href="#getting-started-with-knockout-in-asp-net-5" title="Permalink to this headline">¶</a></h2>
+<p>Knockout is deployed as a single JavaScript file, so installing and using it is very straightforward. In Visual Studio 2015, you can simply add knockout as a dependency and Visual Studio will use bower to retrieve it. Assuming you already have bower and gulp configured (the ASP.NET 5 Starter Template comes with them already set up), open bower.json in your ASP.NET 5 project, and add the knockout dependency as shown here:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="p">{</span>
+             <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;KnockoutDemo&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;private&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">                     <span class="s2">&quot;knockout&quot;</span> <span class="o">:</span> <span class="s2">&quot;^3.3.0&quot;</span>
+</span>             <span class="p">},</span>
+             <span class="s2">&quot;exportsOverride&quot;</span><span class="o">:</span> <span class="p">{</span>
+             <span class="p">}</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+<p>With this in place, you can then manually run bower by opening the Task Runner Explorer (under <span class="menuselection">View ‣ Other Windows ‣ Task Runner Explorer</span>) and then under Tasks, right-click on bower and select Run. The result should appear similar to this:</p>
+<img alt="../_images/bower-knockout.png" src="../_images/bower-knockout.png" />
+<p>Now if you look in your project&#8217;s <code class="docutils literal"><span class="pre">wwwroot</span></code> folder, you should see knockout installed under the lib folder.</p>
+<img alt="../_images/wwwroot-knockout.png" src="../_images/wwwroot-knockout.png" />
+<p>It&#8217;s recommended that in your production environment you reference knockout via a Content Delivery Network, or CDN, as this increases the likelihood that your users will already have a cached copy of the file and thus will not need to download it at all. Knockout is available on several CDNs, including the Microsoft Ajax CDN, here:</p>
+<p><a class="reference external" href="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js">http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js</a></p>
+<p>To include Knockout on a page that will use it, simply add a <code class="docutils literal"><span class="pre">&lt;script&gt;</span></code> element referencing the file from wherever you will be hosting it (with your application, or via a CDN):</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;knockout-3.3.0.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="observables-viewmodels-and-simple-binding">
+<h2>Observables, ViewModels, and Simple Binding<a class="headerlink" href="#observables-viewmodels-and-simple-binding" title="Permalink to this headline">¶</a></h2>
+<p>You may already be familiar with using JavaScript to manipulate elements on a web page, either via direct access to the DOM or using a library like jQuery. Typically this kind of behavior is achieved by writing code to directly set element values in response to certain user actions. With Knockout, a declarative approach is taken instead, through which elements on the page are bound to properties on an object. Instead of writing code to manipulate DOM elements, user actions simply interact with the ViewModel object, and Knockout takes care of ensuring the page elements are synchronized.</p>
+<p>As a simple example, consider the page list below. It includes a <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> element with a <code class="docutils literal"><span class="pre">data-bind</span></code> attribute indicating that the text content should be bound to authorName. Next, in a JavaScript block a variable viewModel is defined with a single property, <code class="docutils literal"><span class="pre">authorName</span></code>, set to some value. Finally, a call to <code class="docutils literal"><span class="pre">ko.applyBindings</span></code> is made, passing in this viewModel variable.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre>     <span class="nt">&lt;html&gt;</span>
+             <span class="nt">&lt;head&gt;</span>
+<span class="hll">                     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;lib/knockout/knockout.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span>             <span class="nt">&lt;/head&gt;</span>
+             <span class="nt">&lt;body&gt;</span>
+                     <span class="nt">&lt;h1&gt;</span>Some Article<span class="nt">&lt;/h1&gt;</span>
+                     <span class="nt">&lt;p&gt;</span>
+<span class="hll">                             By <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;text: authorName&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span>                     <span class="nt">&lt;/p&gt;</span>
+                     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="hll">                             <span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="hll">                                     <span class="nx">authorName</span><span class="o">:</span> <span class="s1">&#39;Steve Smith&#39;</span>
+</span><span class="hll">                             <span class="p">};</span>
+</span><span class="hll">                             <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</span>                     <span class="nt">&lt;/script&gt;</span>
+             <span class="nt">&lt;/body&gt;</span>
+     <span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>When viewed in the browser, the content of the &lt;span&gt; element is replaced with the value in the viewModel variable:</p>
+<img alt="../_images/simple-binding-screenshot.png" src="../_images/simple-binding-screenshot.png" />
+<p>We now have simple one-way binding working. Notice that nowhere in the code did we write JavaScript to assign a value to the span&#8217;s contents. If we want to manipulate the ViewModel, we can take this a step further and add an HTML input textbox, and bind to its value, like so:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>
+        Author Name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;value: authorName&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<p>Reloading the page, we see that this value is indeed bound to the input box:</p>
+<img alt="../_images/input-binding-screenshot.png" src="../_images/input-binding-screenshot.png" />
+<p>However, if we change the value in the textbox, the corresponding value in the <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> element doesn&#8217;t change. Why not?</p>
+<p>The issue is that nothing notified the <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> that it needed to be updated. Simply updating the ViewModel isn&#8217;t by itself sufficient, unless the ViewModel&#8217;s properties are wrapped in a special type. We need to use <strong>observables</strong> in the ViewModel for any properties that need to have changes automatically updated as they occur. By changing the ViewModel to use <code class="docutils literal"><span class="pre">ko.observable(&quot;value&quot;)</span></code> instead of just &#8220;value&#8221;, the ViewModel will update any HTML elements that are bound to its value whenever a change occurs. Note that input boxes don&#8217;t update their value until they lose focus, so you won&#8217;t see changes to bound elements as you type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adding support for live updating after each keypress is simply a matter of adding <code class="docutils literal"><span class="pre">valueUpdate:</span> <span class="pre">&quot;afterkeydown&quot;</span></code> to the <code class="docutils literal"><span class="pre">data-bind</span></code> attribute&#8217;s contents.</p>
+</div>
+<p>Our viewModel, after updating it to use ko.observable:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+<span class="hll">             <span class="nx">authorName</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;Steve Smith&#39;</span><span class="p">)</span>
+</span>     <span class="p">};</span>
+     <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Knockout supports a number of different kinds of bindings. So far we&#8217;ve seen how to bind to <code class="docutils literal"><span class="pre">text</span></code> and to <code class="docutils literal"><span class="pre">value</span></code>. You can also bind to any given attribute. For instance, to create a hyperlink with an anchor tag, the <code class="docutils literal"><span class="pre">src</span></code> attribute can be bound to the viewModel. Knockout also supports binding to functions. To demonstrate this, let&#8217;s update the viewModel to include the author&#8217;s twitter handle, and display the twitter handle as a link to the author&#8217;s twitter page. We&#8217;ll do this in three stages.</p>
+<p>First, add the HTML to display the hyperlink, which we&#8217;ll show in parentheses after the author&#8217;s name:</p>
+<div class="highlight-html"><div class="highlight"><pre>     <span class="nt">&lt;h1&gt;</span>Some Article<span class="nt">&lt;/h1&gt;</span>
+     <span class="nt">&lt;p&gt;</span>
+             By <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;text: authorName&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="hll">             (<span class="nt">&lt;a</span> <span class="na">data-bind=</span><span class="s">&quot;attr: { href: twitterUrl}, text: twitterAlias&quot;</span> <span class="nt">&gt;&lt;/a&gt;</span>)
+</span>     <span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<p>Next, update the viewModel to include the twitterUrl and twitterAlias properties:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+             <span class="nx">authorName</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;Steve Smith&#39;</span><span class="p">),</span>
+<span class="hll">             <span class="nx">twitterAlias</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;@ardalis&#39;</span><span class="p">),</span>
+</span><span class="hll">             <span class="nx">twitterUrl</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">computed</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hll">                     <span class="k">return</span> <span class="s2">&quot;https://twitter.com/&quot;</span><span class="p">;</span>
+</span><span class="hll">             <span class="p">},</span> <span class="k">this</span><span class="p">)</span>
+</span>     <span class="p">};</span>
+     <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Notice that at this point we haven&#8217;t yet updated the twitterUrl to go to the correct URL for this twitter alias – it&#8217;s just pointing at twitter.com. Also notice that we&#8217;re using a new Knockout function, <code class="docutils literal"><span class="pre">computed</span></code>, for twitterUrl. This is an observable function that will notify any UI elements if it changes. However, for it to have access to other properties in the viewModel, we need to change how we are creating the viewModel, so that each property is its own statement.</p>
+<p>The revised viewModel declaration is shown below. It is now declared as a function. Notice that each property is its own statement now, ending with a semicolon. Also notice that to access the twitterAlias property value, we need to execute it, so its reference includes ().</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="kd">function</span> <span class="nx">viewModel</span><span class="p">()</span> <span class="p">{</span>
+             <span class="k">this</span><span class="p">.</span><span class="nx">authorName</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;Steve Smith&#39;</span><span class="p">);</span>
+             <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;@ardalis&#39;</span><span class="p">);</span>
+
+             <span class="k">this</span><span class="p">.</span><span class="nx">twitterUrl</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">computed</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">                     <span class="k">return</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span>             <span class="p">},</span> <span class="k">this</span><span class="p">)</span>
+     <span class="p">};</span>
+     <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result works as expected in the browser:</p>
+<img alt="../_images/hyperlink-screenshot.png" src="../_images/hyperlink-screenshot.png" />
+<p>Knockout also supports binding to certain UI element events, such as the click event. This allows you to easily and declaratively bind UI elements to functions within the application&#8217;s viewModel. As a simple example, we can add a button that, when clicked, modifies the author&#8217;s twitterAlias to be all caps.</p>
+<p>First, we add the button, binding to the button&#8217;s click event, and referencing the function name we&#8217;re going to add to the viewModel:</p>
+<div class="highlight-html"><div class="highlight"><pre>     <span class="nt">&lt;p&gt;</span>
+             <span class="nt">&lt;button</span> <span class="na">data-bind=</span><span class="s">&quot;click: capitalizeTwitterAlias&quot;</span><span class="nt">&gt;</span>Capitalize<span class="nt">&lt;/button&gt;</span>
+     <span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<p>Then, add the function to the viewModel, and wire it up to modify the viewModel&#8217;s state. Notice that to set a new value to the twitterAlias property, we call it as a method and pass in the new value.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="kd">function</span> <span class="nx">viewModel</span><span class="p">()</span> <span class="p">{</span>
+             <span class="k">this</span><span class="p">.</span><span class="nx">authorName</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;Steve Smith&#39;</span><span class="p">);</span>
+             <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;@ardalis&#39;</span><span class="p">);</span>
+
+             <span class="k">this</span><span class="p">.</span><span class="nx">twitterUrl</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">computed</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">                     <span class="k">return</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span>             <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
+
+             <span class="k">this</span><span class="p">.</span><span class="nx">capitalizeTwitterAlias</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                     <span class="kd">var</span> <span class="nx">currentValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span><span class="p">();</span>
+                     <span class="k">this</span><span class="p">.</span><span class="nx">twitterAlias</span><span class="p">(</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+             <span class="p">}</span>
+     <span class="p">};</span>
+     <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Running the code and clicking the button modifies the displayed link as expected:</p>
+<img alt="../_images/hyperlink-caps-screenshot.png" src="../_images/hyperlink-caps-screenshot.png" />
+</div>
+<div class="section" id="control-flow">
+<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
+<p>Knockout includes bindings that can perform conditional and looping operations. Looping operations are especially useful for binding lists of data to UI lists, menus, and grids or tables. The foreach binding will iterate over an array. When used with an observable array, it will automatically update the UI elements when items are added or removed from the array, without re-creating every element in the UI tree. The following example uses a new viewModel which includes an observable array of game results. It is bound to a simple table with two columns using a <code class="docutils literal"><span class="pre">foreach</span></code> binding on the <code class="docutils literal"><span class="pre">&lt;tbody&gt;</span></code> element. Each <code class="docutils literal"><span class="pre">&lt;tr&gt;</span></code> element within <code class="docutils literal"><span class="pre">&lt;tbody&gt;</span></code> will be bound to an element of the gameResults collection.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Record<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;thead&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Opponent<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Result<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/thead&gt;</span>
+<span class="hll">        <span class="nt">&lt;tbody</span> <span class="na">data-bind=</span><span class="s">&quot;foreach: gameResults&quot;</span><span class="nt">&gt;</span>
+</span>                <span class="nt">&lt;tr&gt;</span>
+<span class="hll">                        <span class="nt">&lt;td</span> <span class="na">data-bind=</span><span class="s">&quot;text:opponent&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+</span><span class="hll">                        <span class="nt">&lt;td</span> <span class="na">data-bind=</span><span class="s">&quot;text:result&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+</span>                <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="hll">        <span class="kd">function</span> <span class="nx">GameResult</span><span class="p">(</span><span class="nx">opponent</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">                <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span><span class="hll">                <span class="nx">self</span><span class="p">.</span><span class="nx">opponent</span> <span class="o">=</span> <span class="nx">opponent</span><span class="p">;</span>
+</span><span class="hll">                <span class="nx">self</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="kd">function</span> <span class="nx">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hll">                <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">                <span class="nx">self</span><span class="p">.</span><span class="nx">resultChoices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Win&quot;</span><span class="p">,</span> <span class="s2">&quot;Loss&quot;</span><span class="p">,</span> <span class="s2">&quot;Tie&quot;</span><span class="p">];</span>
+</span><span class="hll">
+</span><span class="hll">                <span class="nx">self</span><span class="p">.</span><span class="nx">gameResults</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">([</span>
+</span><span class="hll">                        <span class="k">new</span> <span class="nx">GameResult</span><span class="p">(</span><span class="s2">&quot;Brendan&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">resultChoices</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+</span><span class="hll">                        <span class="k">new</span> <span class="nx">GameResult</span><span class="p">(</span><span class="s2">&quot;Brendan&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">resultChoices</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+</span><span class="hll">                        <span class="k">new</span> <span class="nx">GameResult</span><span class="p">(</span><span class="s2">&quot;Michelle&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">resultChoices</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span class="hll">                <span class="p">]);</span>
+</span><span class="hll">        <span class="p">};</span>
+</span><span class="hll">        <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="k">new</span> <span class="nx">ViewModel</span><span class="p">);</span>
+</span><span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Notice that this time we&#8217;re using ViewModel with a capital “V&#8221; because we expect to construct it using “new&#8221; (in the applyBindings call). When executed, the page results in the following output:</p>
+<img alt="../_images/record-screenshot.png" src="../_images/record-screenshot.png" />
+<p>To demonstrate that the observable collection is working, let&#8217;s add a bit more functionality. We can include the ability to record the results of another game to the ViewModel, and then add a button and some UI to work with this new function.  First, let&#8217;s create the addResult method:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// add this to ViewModel()</span>
+<span class="nx">self</span><span class="p">.</span><span class="nx">addResult</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">gameResults</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">GameResult</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">self</span><span class="p">.</span><span class="nx">resultChoices</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Bind this method to a button using the <code class="docutils literal"><span class="pre">click</span></code> binding:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">data-bind=</span><span class="s">&quot;click: addResult&quot;</span><span class="nt">&gt;</span>Add New Result<span class="nt">&lt;/button&gt;</span>
+</pre></div>
+</div>
+<p>Open the page in the browser and click the button a couple of times, resulting in a new table row with each click:</p>
+<img alt="../_images/record-addresult-screenshot.png" src="../_images/record-addresult-screenshot.png" />
+<p>There are a few ways to support adding new records in the UI, typically either inline or in a separate form. We can easily modify the table to use textboxes and dropdownlists so that the whole thing is editable. Just change the <code class="docutils literal"><span class="pre">&lt;tr&gt;</span></code> element as shown:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;tbody</span> <span class="na">data-bind=</span><span class="s">&quot;foreach: gameResults&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">data-bind=</span><span class="s">&quot;value:opponent&quot;</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;&lt;select</span> <span class="na">data-bind=</span><span class="s">&quot;options: $root.resultChoices,</span>
+<span class="s">                        value:result, optionsText: $data&quot;</span><span class="nt">&gt;&lt;/select&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/tbody&gt;</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal"><span class="pre">$root</span></code> refers to the root ViewModel, which is where the possible choices are exposed. <code class="docutils literal"><span class="pre">$data</span></code> refers to whatever the current model is within a given context - in this case it refers to an individual element of the resultChoices array, each of which is a simple string.</p>
+<p>With this change, the entire grid becomes editable:</p>
+<img alt="../_images/editable-grid-screenshot.png" src="../_images/editable-grid-screenshot.png" />
+<p>If we weren&#8217;t using Knockout, we could achieve all of this using jQuery, but most likely it would not be nearly as efficient. Knockout tracks which bound data items in the ViewModel correspond to which UI elements, and only updates those elements that need to be added, removed, or updated. It would take significant effort to achieve this ourselves using jQuery or direct DOM manipulation, and even then if we then wanted to display aggregate results (such as a win-loss record) based on the table&#8217;s data, we would need to once more loop through it and parse the HTML elements.  With Knockout, displaying the win-loss record is trivial. We can perform the calculations within the ViewModel itself, and then display it with a simple text binding and a <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code>.</p>
+<p>To build the win-loss record string, we can use a computed observable. Note that references to observable properties within the ViewModel must be function calls, otherwise they will not retrieve the value of the observable (i.e. <code class="docutils literal"><span class="pre">gameResults()</span></code> not <code class="docutils literal"><span class="pre">gameResults</span></code> in the code shown):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">self</span><span class="p">.</span><span class="nx">displayRecord</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">computed</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">wins</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">gameResults</span><span class="p">().</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">result</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Win&quot;</span><span class="p">;</span> <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">losses</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">gameResults</span><span class="p">().</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">result</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Loss&quot;</span><span class="p">;</span> <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">ties</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">gameResults</span><span class="p">().</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">result</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Tie&quot;</span><span class="p">;</span> <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">wins</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">losses</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">ties</span><span class="p">;</span>
+<span class="p">},</span> <span class="k">this</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bind this function to a span within the <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> element at the top of the page:</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Record <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;text: displayRecord&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/h1&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The result:</p>
+<img alt="../_images/record-winloss-screenshot.png" src="../_images/record-winloss-screenshot.png" />
+<p>Adding rows or modifying the selected element in any row&#8217;s Result column will update the record shown at the top of the window.</p>
+<p>In addition to binding to values, you can also use almost any legal JavaScript expression within a binding. For example, if a UI element should only appear under certain conditions, such as when a value exceeds a certain threshold, you can specify this logically within the binding expression:</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">&quot;visible: customerValue &gt; 100&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>This <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> will only be visible when the customerValue is over 100.</p>
+</div>
+<div class="section" id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>Knockout has support for templates, so that you can easily separate your UI from your behavior, or incrementally load UI elements into a large application on demand. We can update our previous example to make each row its own template by simply pulling the HTML out into a template and specifying the template by name in the data-bind call on <code class="docutils literal"><span class="pre">&lt;tbody&gt;</span></code>.</p>
+<blockquote>
+<div><div class="highlight-html"><div class="highlight"><pre><span class="hll">&lt;tbody data-bind=&quot;template: { name: &#39;rowTemplate&#39;, foreach: gameResults }&quot;&gt;
+</span>&lt;/tbody&gt;
+<span class="hll">&lt;script type=&quot;text/html&quot; id=&quot;rowTemplate&quot;&gt;
+</span>        &lt;tr&gt;
+                &lt;td&gt;&lt;input data-bind=&quot;value:opponent&quot; /&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;select data-bind=&quot;options: $root.resultChoices,
+                        value:result, optionsText: $data&quot;&gt;&lt;/select&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+&lt;/script&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>Knockout also supports other templating engines, such as the jQuery.tmpl library and Underscore.js&#8217;s templating engine.</p>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>Components allow you to organize and reuse UI code, usually along with the ViewModel data on which the UI code depends. To create a component, you simply need to specify its template and its viewModel, and give it a name. This is done by calling <code class="docutils literal"><span class="pre">ko.components.register()</span></code>. In addition to defining the templates and viewmodel inline, they can be loaded from external files using a library like require.js, resulting in very clean and efficient code.</p>
+</div>
+<div class="section" id="communicating-with-apis">
+<h2>Communicating with APIs<a class="headerlink" href="#communicating-with-apis" title="Permalink to this headline">¶</a></h2>
+<p>Knockout can work with any data in JSON format. A common way to retrieve and save data using Knockout is with jQuery, which supports the <code class="docutils literal"><span class="pre">$.getJSON()</span></code> function to retrieve data, and the <code class="docutils literal"><span class="pre">$.post()</span></code> method to send data from the browser to an API endpoint. Of course, if you prefer a different way to send and receive JSON data, Knockout will work with it as well.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Knockout provides a simple, elegant way to bind UI elements to the current state of the client application, defined in a ViewModel. Knockout&#8217;s binding syntax uses the data-bind attribute, applied to HTML elements that are to be processed. Knockout is able to efficiently render and update large data sets by tracking UI elements and only processing changes to affected elements. Large applications can break up UI logic using templates and components, which can be loaded on demand from external files. Currently version 3, Knockout is a stable JavaScript library that can improve web applications that require rich client interactivity.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="angular.html" class="btn btn-neutral float-right" title="Using Angular for Single Page Applications (SPAs)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bootstrap.html" class="btn btn-neutral" title="Building Beautiful, Responsive Sites with Bootstrap" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

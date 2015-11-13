@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introducing .NET Core &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Conceptual Overview" href="index.html"/>
+        <link rel="next" title="DNX Overview" href="../dnx/overview.html"/>
+        <link rel="prev" title="Introduction to ASP.NET 5" href="aspnet.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Conceptual Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aspnet.html">Introduction to ASP.NET 5</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Introducing .NET Core</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dnx/overview.html">DNX Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nuget.html">|stub-icon| Introduction to NuGet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-aspnet5-apps.html">Understanding ASP.NET 5 Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Conceptual Overview</a> &raquo;</li>
+      
+    <li>Introducing .NET Core</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/conceptual-overview/dotnetcore.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="introducing-net-core">
+<h1>Introducing .NET Core<a class="headerlink" href="#introducing-net-core" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>.NET Core is a small, optimized runtime that can be targeted by ASP.NET 5 applications. In fact, the new ASP.NET 5 project templates target .NET Core by default, in addition to the .NET Framework. Learn what targeting .NET Core means for your ASP.NET 5 application.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#what-is-net-core">What is .NET Core</a>?</li>
+<li><a class="reference internal" href="#motivation-behind-net-core">Motivation Behind .NET Core</a></li>
+<li><a class="reference internal" href="#building-applications-with-net-core">Building Applications with .NET Core</a></li>
+<li><a class="reference internal" href="#net-core-and-nuget">.NET Core and NuGet</a></li>
+<li><a class="reference internal" href="#additional-reading">Additional Reading</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="what-is-net-core">
+<h2>What is .NET Core<a class="headerlink" href="#what-is-net-core" title="Permalink to this headline">¶</a></h2>
+<p>.NET Core 5 is a modular runtime and library implementation that includes a subset of the .NET Framework. Currently it is feature complete on Windows, and in-progress builds exist for both Linux and OS X. .NET Core consists of a set of libraries, called &#8220;CoreFX&#8221;, and a small, optimized runtime, called &#8220;CoreCLR&#8221;. .NET Core is open-source, so you can follow progress on the project and contribute to it on GitHub:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/dotnet/corefx">.NET Core Libraries (CoreFX)</a></li>
+<li><a class="reference external" href="https://github.com/dotnet/coreCLR">.NET Core Common Language Runtime (CoreCLR)</a></li>
+</ul>
+</div></blockquote>
+<p>The CoreCLR runtime (Microsoft.CoreCLR) and CoreFX libraries are distributed via NuGet. The CoreFX libraries are factored as individual NuGet packages according to functionality, named &#8220;System.[module]&#8221; on <a class="reference external" href="http://www.nuget.org/">nuget.org</a>.</p>
+<p>One of the key benefits of .NET Core is its portability. You can package and deploy the CoreCLR with your application, eliminating your application&#8217;s dependency on an installed version of .NET (e.g. .NET Framework on Windows). You can host multiple applications side-by-side using different versions of the CoreCLR, and upgrade them individually, rather than being forced to upgrade all of them simultaneously.</p>
+<p>CoreFX has been built as a componentized set of libraries, each requiring the minimum set of library dependencies (e.g. System.Collections only depends on System.Runtime, not System.Xml). This approach enables minimal distributions  of CoreFX libraries (just the ones you need) within an application, alongside CoreCLR. CoreFX includes collections, console access, diagnostics, IO, LINQ, JSON, XML, and regular expression support, just to name a few libraries. Another benefit of CoreFX is that it allows developers to target a single common set of libraries that are supported by multiple platforms.</p>
+</div>
+<div class="section" id="motivation-behind-net-core">
+<h2>Motivation Behind .NET Core<a class="headerlink" href="#motivation-behind-net-core" title="Permalink to this headline">¶</a></h2>
+<p>When .NET first shipped in 2002, it was a single framework, but it didn&#8217;t take long before the .NET Compact Framework shipped, providing a smaller version of .NET designed for mobile devices. Over the years, this exercise was repeated multiple times, so that today there are different flavors of .NET specific to different platforms. Add to this the further platform reach provided by Mono and Xamarin, which target Linux, Mac, and native iOS and Android devices. For each platform, a separate vertical stack consisting of runtime, framework, and app model is required to develop .NET applications. One of the primary goals of .NET Core is to provide a single, modular, cross-platform version of .NET that works the same across all of these platforms. Since .NET Core is a fully open source project, the Mono community can benefit from CoreFX libraries. .NET Core will not replace Mono, but it will allow the Mono community to reference and share, rather than duplicate, certain common libraries, and to contribute directly to CoreFX, if desired.</p>
+<p>In addition to being able to target a variety of different device platforms, there was also pressure from the server side to reduce the overall footprint, and more importantly, surface area, of the .NET Framework. By factoring the CoreFX libraries and allowing individual applications to pull in only those parts of CoreFX they require (a so-called &#8220;pay-for-play&#8221; model), server-based applications built with ASP.NET 5 can minimize their dependencies. This, in turn, reduces the frequency with which patches and updates to the framework will impact these applications, since only changes made to the individual pieces of CoreFX leveraged by the application will impact the application. A smaller deployment size for the application is a side benefit, and one that makes more of a difference if many applications are deployed side-by-side on a given server.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The overall size of .NET Core doesn&#8217;t intend to be smaller than the .NET Framework over time, but since it is pay-for-play, most applications that utilize only parts of CoreFX will have a smaller deployment footprint.</p>
+</div>
+</div>
+<div class="section" id="building-applications-with-net-core">
+<h2>Building Applications with .NET Core<a class="headerlink" href="#building-applications-with-net-core" title="Permalink to this headline">¶</a></h2>
+<p>.NET Core can be used to build a variety of applications using different application models including Web applications, console applications and native mobile applications. The .NET Execution Environment (DNX) provides a cross-platform runtime host that you can use to build .NET Core based applications that can run on Windows, Mac and Linux and is the foundation for running ASP.NET applications on .NET Core. Applications running on DNX can target the .NET Framework or .NET Core. In fact, DNX projects can be cross-compiled, targeting both of these frameworks in a single project, and this is how the project templates ship with Visual Studio 2015. For example, the <code class="docutils literal"><span class="pre">frameworks</span></code> section of <em>project.json</em> in a new ASP.NET 5 web project will target <em>dnx451</em> and <em>dnxcore50</em> by default:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;frameworks&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;dnx451&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="p">},</span>
+        <span class="s2">&quot;dnxcore50&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">dnx451</span></code> represents the .NET Framework, while <code class="docutils literal"><span class="pre">dnxcore50</span></code> represents .NET Core 5 (5.0). You can use compiler directives (<code class="docutils literal"><span class="pre">#if</span></code>) to check for symbols that correspond to the two frameworks: <code class="docutils literal"><span class="pre">DNX451</span></code> and <code class="docutils literal"><span class="pre">DNXCORE50</span></code>. If for instance you have code that uses resources that are not available as part of .NET Core, you can surround them in a conditional compilation directive:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="cp">#if DNX451</span>
+        <span class="c1">// utilize resource only available with .NET Framework</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>The recommendation from the ASP.NET team is to target both frameworks with new applications. If you want to only target .NET Core, remove <em>dnx451</em>; or to only target .NET Framework, remove <em>dnxcore50</em> from the <em>frameworks</em> listed in <em>project.json</em>. Note that ASP.NET 4.6 and earlier target and require the .NET Framework, as they always have.</p>
+</div>
+<div class="section" id="net-core-and-nuget">
+<h2>.NET Core and NuGet<a class="headerlink" href="#net-core-and-nuget" title="Permalink to this headline">¶</a></h2>
+<p>Using NuGet allows for much more agile usage of the individual libraries that comprise .NET Core. It also means that an application can list a collection of NuGet packages (and associated version information) and this will comprise both system/framework as well as third-party dependencies required. Further, third-party dependencies can now also express their specific dependencies on framework features, making it much easier to ensure the proper packages and versions are pulled together during the development and build process.</p>
+<p>If, for example, you need to use immutable collections, you can install the System.Collections.Immutable package via NuGet. The NuGet version will also align with the assembly version, and will use <a class="reference external" href="http://semver.org">semantic versioning</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although CoreFX will be made available as a fairly large number of individual NuGet packages, it will continue to ship periodically as a full unit that Microsoft has tested as a whole. These distributions will most likely ship at a lower cadence than individual packages, allowing time to perform necessary testing, fixes, and the distribution process.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>.NET Core is a modular, streamlined subset of the .NET Framework and CLR. It is fully open-source and provides a common set of libraries that can be targeted across numerous platforms. Its factored approach allows applications to take dependencies only on those portions of the CoreFX that they use, and the smaller runtime is ideal for deployment to both small devices (though it doesn&#8217;t yet support any) as well as cloud-optimized environments that need to be able to run many small applications side-by-side. Support for targeting .NET Core is built into the ASP.NET 5 project templates that ship with Visual Studio 2015.</p>
+</div>
+<div class="section" id="additional-reading">
+<h2>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Learn more about .NET Core:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://blogs.msdn.com/b/dotnet/archive/2014/12/04/introducing-net-core.aspx">Immo Landwerth Explains .NET Core</a></li>
+<li><a class="reference external" href="http://blogs.msdn.com/b/cesardelatorre/archive/2014/11/18/what-is-net-core-5-and-asp-net-5-within-net-2015-preview.aspx">What is .NET Core 5 and ASP.NET 5</a></li>
+<li><a class="reference external" href="https://www.dotnetfoundation.org/netcore">.NET Core 5 on dotnetfoundation.org</a></li>
+<li><a class="reference external" href="http://blogs.msdn.com/b/dotnet/archive/2014/11/12/net-core-is-open-source.aspx">.NET Core is Open Source</a></li>
+<li><a class="reference external" href="https://github.com/dotnet/corefx">.NET Core on GitHub</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dnx/overview.html" class="btn btn-neutral float-right" title="DNX Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aspnet.html" class="btn btn-neutral" title="Introduction to ASP.NET 5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

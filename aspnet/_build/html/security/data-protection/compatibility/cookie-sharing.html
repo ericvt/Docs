@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sharing cookies between applications. &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Compatibility" href="index.html"/>
+        <link rel="next" title="Replacing &lt;machineKey&gt; in ASP.NET 4.5.1" href="replacing-machinekey.html"/>
+        <link rel="prev" title="Compatibility" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Compatibility</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Sharing cookies between applications.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replacing-machinekey.html">Replacing &lt;machineKey&gt; in ASP.NET 4.5.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Compatibility</a> &raquo;</li>
+      
+    <li>Sharing cookies between applications.</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/compatibility/cookie-sharing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="sharing-cookies-between-applications">
+<h1>Sharing cookies between applications.<a class="headerlink" href="#sharing-cookies-between-applications" title="Permalink to this headline">¶</a></h1>
+<p>Web sites commonly consist of many individual web applications, all working together harmoniously. If an application developer wants to provide a good single-sign-on experience, he&#8217;ll often need all of the different web applications within the site to share authentication tickets between each other.</p>
+<p>To support this scenario, the data protection stack allows sharing Katana cookie authentication and ASP.NET 5 cookie authentication tickets.</p>
+<div class="section" id="sharing-authentication-cookies-between-asp-net-5-applications">
+<h2>Sharing authentication cookies between ASP.NET 5 applications.<a class="headerlink" href="#sharing-authentication-cookies-between-asp-net-5-applications" title="Permalink to this headline">¶</a></h2>
+<p>To share authentication cookies between two different ASP.NET 5 applications, configure each application that should share cookies as follows.</p>
+<ol class="arabic simple">
+<li>Install the package <a class="reference external" href="https://github.com/GrabYourPitchforks/aspnet5-samples/tree/dev/CookieSharing">Microsoft.AspNet.Authentication.Cookies.Shareable</a> into each of your ASP.NET 5 applications.</li>
+<li>In Startup.cs, locate the call to UseIdentity, which will generally look like the following.</li>
+</ol>
+<div class="highlight-c#"><div class="highlight"><pre><span class="c1">// Add cookie-based authentication to the request pipeline.</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseIdentity</span><span class="p">();</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Remove the call to UseIdentity, replacing it with four separate calls to UseCookieAuthentication. (UseIdentity calls these four methods under the covers.) In the call to UseCookieAuthentication that sets up the application cookie, provide an instance of a DataProtectionProvider that has been initialized to a key storage location.</li>
+</ol>
+<div class="highlight-c#"><div class="highlight"><pre><span class="c1">// Add cookie-based authentication to the request pipeline.</span>
+<span class="c1">// NOTE: Need to decompose this into its constituent components</span>
+<span class="c1">// app.UseIdentity();</span>
+
+<span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">IdentityOptions</span><span class="p">.</span><span class="n">ExternalCookieAuthenticationScheme</span><span class="p">);</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">IdentityOptions</span><span class="p">.</span><span class="n">TwoFactorRememberMeCookieAuthenticationScheme</span><span class="p">);</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">IdentityOptions</span><span class="p">.</span><span class="n">TwoFactorUserIdCookieAuthenticationScheme</span><span class="p">);</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">IdentityOptions</span><span class="p">.</span><span class="n">ApplicationCookieAuthenticationScheme</span><span class="p">,</span>
+    <span class="n">dataProtectionProvider</span><span class="p">:</span> <span class="k">new</span> <span class="n">DataProtectionProvider</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nf">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;c:\shared-auth-ticket-keys\&quot;</span><span class="p">)));</span>
+</pre></div>
+</div>
+<p>Caution: When used in this manner, the DirectoryInfo should point to a key storage location specifically set aside for authentication cookies. The application name is ignored (intentionally so, since you&#8217;re trying to get multiple applications to share payloads). You should consider configuring the DataProtectionProvider such that keys are encrypted at rest, as in the below example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">IdentityOptions</span><span class="p">.</span><span class="n">ApplicationCookieAuthenticationScheme</span><span class="p">,</span>
+  <span class="n">dataProtectionProvider</span><span class="p">:</span> <span class="k">new</span> <span class="n">DataProtectionProvider</span><span class="p">(</span>
+      <span class="k">new</span> <span class="nf">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;c:\shared-auth-ticket-keys\&quot;</span><span class="p">),</span>
+      <span class="n">configure</span> <span class="p">=&gt;</span>
+      <span class="p">{</span>
+          <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithCertificate</span><span class="p">(</span><span class="s">&quot;thumbprint&quot;</span><span class="p">);</span>
+      <span class="p">}));</span>
+</pre></div>
+</div>
+<p>The cookie authentication middleware will use the explicitly provided implementation of the DataProtectionProvider, which due to taking an explicit directory in its constructor is isolated from the data protection system used by other parts of the application.</p>
+</div>
+<div class="section" id="sharing-authentication-cookies-between-asp-net-4-x-and-asp-net-5-applications">
+<h2>Sharing authentication cookies between ASP.NET 4.x and ASP.NET 5 applications.<a class="headerlink" href="#sharing-authentication-cookies-between-asp-net-4-x-and-asp-net-5-applications" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 4.x applications which use Katana cookie authentication middleware can be configured to generate authentication cookies which are compatible with the ASP.NET 5 cookie authentication middleware. This allows upgrading a large site&#8217;s individual applications piecemeal while still providing a smooth single sign on experience across the site.</p>
+<p>Tip: You can tell if your existing application uses Katana cookie authentication middleware by the existence of a call to UseCookieAuthentication in your project&#8217;s Startup.Auth.cs. ASP.NET 4.x web application projects created with Visual Studio 2013 and later use the Katana cookie authentication middleware by default.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Your ASP.NET 4.x application must target .NET Framework 4.5.1 or higher, otherwise the necessary NuGet packages will fail to install.</p>
+</div>
+<p>To share authentication cookies between your ASP.NET 4.x applications and your ASP.NET 5 applications, configure the ASP.NET 5 application as stated above, then configure your ASP.NET 4.x applications by following the steps below.</p>
+<ol class="arabic simple">
+<li>Install the package <a class="reference external" href="https://github.com/GrabYourPitchforks/aspnet5-samples/tree/dev/CookieSharing">Microsoft.Owin.Security.Cookies.Shareable</a> into each of your ASP.NET 4.x applications.</li>
+<li>In Startup.Auth.cs, locate the call to UseCookieAuthentication, which will generally look like the following.</li>
+</ol>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">new</span> <span class="n">CookieAuthenticationOptions</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Modify the call to UseCookieAuthentication as follows, changing the AuthenticationType and CookieName to match those of the ASP.NET 5 cookie authentication middleware, and providing an instance of a DataProtectionProvider that has been initialized to a key storage location.</li>
+</ol>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseCookieAuthentication</span><span class="p">(</span><span class="k">new</span> <span class="n">CookieAuthenticationOptions</span>
+<span class="p">{</span>
+    <span class="n">AuthenticationType</span> <span class="p">=</span> <span class="n">DefaultCompatibilityConstants</span><span class="p">.</span><span class="n">ApplicationCookieAuthenticationType</span><span class="p">,</span>
+    <span class="n">CookieName</span> <span class="p">=</span> <span class="n">DefaultCompatibilityConstants</span><span class="p">.</span><span class="n">CookieName</span><span class="p">,</span>
+    <span class="c1">// CookiePath = &quot;...&quot;, (if necessary)</span>
+    <span class="c1">// ...</span>
+<span class="p">},</span>
+<span class="n">dataProtectionProvider</span><span class="p">:</span> <span class="k">new</span> <span class="n">DataProtectionProvider</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nf">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;c:\shared-auth-ticket-keys\&quot;</span><span class="p">)));</span>
+
+<span class="n">The</span> <span class="n">DirectoryInfo</span> <span class="n">has</span> <span class="n">to</span> <span class="n">point</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">storage</span> <span class="n">location</span> <span class="n">that</span> <span class="n">you</span> <span class="n">pointed</span> <span class="n">your</span> <span class="n">ASP</span><span class="p">.</span><span class="n">NET</span> <span class="m">5</span> <span class="n">application</span> <span class="n">to</span> <span class="n">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">configured</span> <span class="k">using</span> <span class="nn">the</span> <span class="n">same</span> <span class="n">settings</span><span class="p">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>In IdentityModels.cs, change the call to ApplicationUserManager.CreateIdentity to use the same authentication type as in the cookie middleware.</li>
+</ol>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="n">ClaimsIdentity</span> <span class="nf">GenerateUserIdentity</span><span class="p">(</span><span class="n">ApplicationUserManager</span> <span class="n">manager</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType</span>
+    <span class="kt">var</span> <span class="n">userIdentity</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">CreateIdentity</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">DefaultCompatibilityConstants</span><span class="p">.</span><span class="n">ApplicationCookieAuthenticationType</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The ASP.NET 4.x and ASP.NET 5 applications are now configured to share authentication cookies.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You&#8217;ll need to make sure that the ASP.NET Identity system for each application is pointed at the same user database. Otherwise the identity system will produce failures at runtime when it tries to match the information in the authentication cookie against the information in its database.</p>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="replacing-machinekey.html" class="btn btn-neutral float-right" title="Replacing &lt;machineKey&gt; in ASP.NET 4.5.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Compatibility" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

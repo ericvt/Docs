@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\sociallogins.rst:2
+msgid "Enabling authentication using external providers"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:4
+msgid "By `Pranav Rastogi`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:6
+msgid "This tutorial shows you how to build an ASP.NET 5 Web application that enables users to log in using OAuth 2.0  with credentials from an external authentication provider, such as Facebook, Twitter, LinkedIn, Microsoft, or Google. For simplicity, this tutorial focuses on working with credentials from Facebook and Google."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:8
+msgid "Enabling these credentials in your web sites provides a significant advantage because millions of users already have accounts with these external providers. These users may be more inclined to sign up for your site if they do not have to create and remember a new set of credentials."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:20
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:12
+msgid "`Create a New ASP.NET 5 Project`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:13
+msgid "`Running the Application`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:14
+msgid "`Creating the app in Facebook`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:15
+msgid "`Use SecretManager to store Facebook AppId and AppSecret`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:16
+msgid "`Enable Facebook middleware`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:17
+msgid "`Login with Facebook`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:18
+msgid "`Optionally set password`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:19
+msgid "`Next steps`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:20
+msgid "`Summary`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:23
+msgid "Create a New ASP.NET 5 Project"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:25
+msgid "To get started, open Visual Studio 2015. Next, create a New Project (from the Start Page, or via File - New - Project).  On the left part of the New Project window, make sure the Visual C# templates are open and \"Web\" is selected, as shown:"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:29
+msgid "Next you should see another dialog, the New ASP.NET Project window:"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:33
+msgid "Select the ASP.NET 5 Web site template from the set of ASP.NET 5 templates. Make sure you have Individual Authentication selected for this template. After selecting, click OK."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:35
+msgid "At this point, the project is created. It may take a few moments to load, and you may notice Visual Studio's status bar indicates that Visual Studio is downloading some resources as part of this process.  Visual Studio ensures some required files are pulled into the project when a solution is opened (or a new project is created), and other files may be pulled in at compile time."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:39
+msgid "Running the Application"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:41
+msgid "Run the application and after a quick build step, you should see it open in your web browser."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:47
+msgid "Creating the app in Facebook"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:49
+msgid "For Facebook OAuth2 authentication, you need to copy to your project some settings from an application that you create in Facebook."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:51
+msgid "In your browser, navigate to https://developers.facebook.com/apps and log in by entering your Facebook credentials."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:52
+msgid "If you aren’t already registered as a Facebook developer, click  Register as a Developer and follow the directions to register."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:53
+msgid "On the Apps tab, click Create New App."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:57
+#: ..\..\security\sociallogins.rst:77
+msgid "Select Website from the platform choices."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:61
+msgid "Click **Skip and Create App ID**"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:65
+msgid "Set a display name and choose a Category."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:69
+msgid "Select **Settings** from the left menu bar."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:73
+msgid "On the **Basic** settings section of the page select Add Platform to specify that you are adding a website application."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:81
+msgid "Add your Site URL (http://localhost:port/)"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:83
+msgid "Make a note of your App ID and your App Secret so that you can add both into your ASP.NET 5 Web site later in this tutorial. Also, Add your Site URL (https://localhost:44300/) to test your application."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:88
+msgid "Use SecretManager to store Facebook AppId and AppSecret"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:90
+msgid "The project created has the following code in Startup which reads the configuration values from a secret store. As a best practice, it is not recommended to store the secrets in a configuration file in the application since they can be checked into source control which may be publicly accessible."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:92
+msgid "Follow these steps to add the Facebook AppId and AppSecret to the Secret Manager:"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:94
+msgid "Open a Command Prompt and navigate to the folder of project.json for your project."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:96
+msgid "Use DNVM (.NET Version Manager) to set a runtime version by running **dnvm use 1.0.0-beta5**"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:100
+msgid "Install the SecretManager tool using DNU (Microsoft .NET Development Utility) by running **dnu commands install SecretManager**"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:101
+msgid "Set the Facebook AppId by running **user-secret set Authentication:Facebook:AppId 862373430475128**"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:102
+msgid "Set the Facebook AppSecret by running **user-secret set Authentication:Facebook:AppSecret 862373430475128**"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:103
+msgid "The following code in the template reads the configuration values from the SecretManager. To learn more about SecretManager see `Secret Manager <https://github.com/aspnet/Home/wiki/DNX-Secret-Configuration>`_"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:120
+msgid "Enable Facebook middleware"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:122
+msgid "You can add the options for Facebook middleware such as Facebook AppId and AppSecret in the ConfigureServices method in Startup."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:133
+msgid "Add the Facebook middleware by adding it to the HTTP request pipeline by uncommenting the following line in the Configure method in Startup."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:141
+msgid "Login with Facebook"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:143
+msgid "Run your application and click Login. You will see an option for Facebook."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:147
+msgid "When you click on Facebook, you will be redirected to Facebook for authentication."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:151
+msgid "Once you enter your Facebook credentials, then you will be redirected back to the Web site where you can set your email."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:153
+msgid "You are now logged in using your Facebook credentials."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:158
+msgid "Optionally set password"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:160
+msgid "When you authenticate with External Login providers, then you do not have to set a password locally on the Web site. This is useful since you do not have to create an extra password that you have to remember and maintain. However sometimes you might want to create a password and login using your email that you set during the login process with external providers. To set the password once you have logged in with an external provider:"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:163
+msgid "Click the **Hello raspranav@gmail.com** at the top right corner to navigate to the Manage view."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:167
+msgid "Click **Create** next to the Password text."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:171
+msgid "Set a valid password and you can use this to login with your email."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:174
+msgid "Next steps"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:175
+msgid "This article showed how you can authenticate with Facebook. You can follow a similar approach to authenticate with Microsoft Account, Twitter, Google and other providers."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:176
+msgid "Once you publish your Web site to Azure Web App, you should reset the AppSecret in the Facebook developer portal."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:177
+msgid "Set the Facebook AppId and AppSecret as application setting in the Azure Web App portal. The configuration system is setup to read keys from environment variables."
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:180
+msgid "Summary"
+msgstr ""
+
+#: ..\..\security\sociallogins.rst:182
+msgid "ASP.NET Identity and Security middleware can be used to authenticate with external providers."
+msgstr ""
+

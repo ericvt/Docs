@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Gulp &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Client-Side Development" href="index.html"/>
+        <link rel="next" title="Using Grunt" href="using-grunt.html"/>
+        <link rel="prev" title="Client-Side Development" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Client-Side Development</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Gulp</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using-grunt.html">Using Grunt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bower.html">Manage Client-Side Packages with Bower</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Building Beautiful, Responsive Sites with Bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knockout.html">Knockout.js MVVM Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html">Using Angular for Single Page Applications (SPAs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="less-sass-fa.html">Styling Applications with Less, Sass, and Font Awesome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bundling-and-minification.html">|stub-icon| Bundling and Minification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdn.html">|stub-icon| Working with a Content Delivery Network (CDN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="responsive-design.html">|stub-icon| Responsive Design for the Mobile Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript.html">|stub-icon| Introducing TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yeoman.html">Building Projects with Yeoman</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Client-Side Development</a> &raquo;</li>
+      
+    <li>Using Gulp</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client-side/using-gulp.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="using-gulp">
+<h1>Using Gulp<a class="headerlink" href="#using-gulp" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/noel-rice/">Noel Rice</a> and <a class="reference external" href="https://github.com/mikewasson">Mike Wasson</a></p>
+<p>Modern web development has lots of moving parts. To build a typical web app, you might:</p>
+<ul class="simple">
+<li>Compile LESS or SASS files to CSS.</li>
+<li>Compile CoffeeScript or TypeScript files to JS.</li>
+<li>Bundle and minify your JS files.</li>
+<li>Run tools like JSHint.</li>
+</ul>
+<p>A <em>task runner</em> is an app that automates these routine development tasks. Visual Studio 2015 provides built-in support for two popular JavaScript-based task runners, <a class="reference external" href="http://gulpjs.com">Gulp</a> and <a class="reference external" href="http://gruntjs.com/">Grunt</a>.</p>
+<div class="section" id="id1">
+<h2>Using Gulp<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>This topic will cover the following typical steps in using Gulp in your ASP.NET project.</p>
+<ul class="simple">
+<li>Use NPM to add the Gulp.js package.</li>
+<li>Use NPM to add one or more <a class="reference external" href="http://gulpjs.com/plugins">Gulp plugins</a>. By itself, Gulp is just an engine for running tasks. Plugins are the modules that actually do the work.</li>
+<li>Define Gulp tasks.</li>
+<li>Run tasks in Task Runner Explorer.</li>
+<li>Bind tasks to build events.</li>
+</ul>
+</div>
+<div class="section" id="asp-net-project-templates">
+<h2>ASP.NET Project Templates<a class="headerlink" href="#asp-net-project-templates" title="Permalink to this headline">¶</a></h2>
+<p>New ASP.NET Web Applications created in Visual Studio 2015 start with the <em>Empty</em>, <em>Web API&#8221;, and *Web Site</em> templates. The <em>Web Site</em> template includes NPM and Gulp by default. NPM is preconfigured to add the Gulp.js package. Gulp is configured to copy Bootstrap, Hammer and jQuery client libraries to your web app directory.</p>
+</div>
+<div class="section" id="add-the-gulp-package">
+<h2>Add the Gulp package<a class="headerlink" href="#add-the-gulp-package" title="Permalink to this headline">¶</a></h2>
+<p>NPM (Node Package Manager) is a package manager that was originally created for Node.js. We&#8217;ll use NPM to install the Gulp.js package.
+Add an NPM configuration file.</p>
+<ol class="arabic simple">
+<li>In Solution Explorer, right-click the project.</li>
+<li>Select <strong>Add</strong> &gt; <strong>New Item</strong>.</li>
+<li>Select <strong>NPM configuration file</strong>.</li>
+<li>Leave the default name, &#8220;package.json&#8221;.</li>
+<li>Click <strong>Add</strong>.</li>
+</ol>
+<p>Open package.json. In the dependencies section, add an entry for &#8220;gulp&#8221;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="p">{</span>
+       <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;MyWebApp&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;private&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+       <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">         <span class="s2">&quot;gulp&quot;</span><span class="o">:</span> <span class="s2">&quot;3.9.0&quot;</span>
+</span>       <span class="p">}</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+<p>The packages are identified using the numbering scheme <strong>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</strong> according to the <a class="reference external" href="http://semver.org/">SemVer</a> (semantic versioning) standard.</p>
+<p>After typing the name of the package and a colon, Intellisense shows a simplified list of versions with the most common choices:</p>
+<img alt="../_images/semver.png" src="../_images/semver.png" />
+<ul class="simple">
+<li>The top item in the Intellisense list is considered the latest stable version of the package.</li>
+<li>The carat ^ symbol matches the most recent major version.</li>
+<li>The tilde ~ matches the most recent minor version.</li>
+</ul>
+</div>
+<div class="section" id="add-the-gulp-config-file">
+<h2>Add the Gulp config file<a class="headerlink" href="#add-the-gulp-config-file" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In Solution Explorer, right-click the project.</li>
+<li>Select Add &gt; New Item.</li>
+<li>Select <strong>Gulp Configuration file</strong>.</li>
+<li>Leave the default name, &#8220;gulpfile.js&#8221;.</li>
+<li>Click <strong>Add</strong>.</li>
+<li>Right-click <strong>Dependencies</strong> &gt; <strong>NPM</strong> and select <strong>Restore Packages</strong> from the context menu.</li>
+</ol>
+</div>
+<div class="section" id="define-a-hello-world-task">
+<h2>Define a &#8220;Hello World&#8221; task<a class="headerlink" href="#define-a-hello-world-task" title="Permalink to this headline">¶</a></h2>
+<p>Now you&#8217;re ready to define some Gulp tasks. Open gulpfile.js and add the following line.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+
+     <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="hll">         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello, world&#39;</span><span class="p">);</span>
+</span>     <span class="p">});</span>
+</pre></div>
+</div>
+<p>In Solution Explorer, right-click gulpfile.js and select Task Runner Explorer. This opens the Task Runner Explorer window.
+Task Runner Explorer shows the list of Gulp tasks. So far, we&#8217;ve only defined one (&#8216;default&#8217;).</p>
+<img alt="../_images/task-runner-1.png" src="../_images/task-runner-1.png" />
+<p>Right-click the default task and select <strong>Run</strong>.</p>
+<img alt="../_images/task-runner-2.png" src="../_images/task-runner-2.png" />
+<p>You will see the output from the task. In this case, the task just writes &#8220;hello, world&#8221; to the console.</p>
+<img alt="../_images/task-runner-3.png" src="../_images/task-runner-3.png" />
+</div>
+<div class="section" id="use-gulp-to-copy-files">
+<h2>Use Gulp to copy files<a class="headerlink" href="#use-gulp-to-copy-files" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of a more useful task.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;./Assets/**/*.js&quot;</span><span class="p">,</span>
+    <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;./wwwroot/js/&quot;</span>
+<span class="p">}</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">src</span><span class="p">)</span>         <span class="c1">// Returns a stream</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">dest</span><span class="p">))</span>   <span class="c1">// Pipes the stream somewhere</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>This task copies JS files from an <em>Assets</em> folder into <em>wwwroot/js</em>.</p>
+<ul class="simple">
+<li>The gulp.src method returns a stream of files. You can use <a class="reference external" href="https://github.com/isaacs/node-glob">file globbing</a> to match multiple files. In this case, we are matching every .js file under Assets.</li>
+<li>The gulp.dest method writes the streamed files to a destination folder.</li>
+<li>The pipe method pipes the files from src to dest.</li>
+</ul>
+<p>The real power of Gulp is that you can pipe a file through multiple plugins. The output from each stage becomes the input to the next. For example, your pipeline might have these stages:</p>
+<p>compile TypeScript &gt; run JSHint &gt; minify</p>
+</div>
+<div class="section" id="using-gulp-to-run-jshint">
+<h2>Using Gulp to run JSHint<a class="headerlink" href="#using-gulp-to-run-jshint" title="Permalink to this headline">¶</a></h2>
+<p>To do real work with Gulp, you&#8217;ll use <a class="reference external" href="http://gulpjs.com/plugins/">plugins</a>. This section shows an example of using the <em>JSHint</em> plugin to detect JavaScript problems. The example also demonstrates creating a &#8220;cleanup&#8221; task to remove files and directories.</p>
+<p>Open package.json and add entries for &#8220;gulp-jshint&#8221; and &#8220;del&#8221;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>     <span class="p">{</span>
+       <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot; MyWebApp&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;private&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+       <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;gulp&quot;</span><span class="o">:</span> <span class="s2">&quot;3.9.0&quot;</span><span class="p">,</span>
+<span class="hll">         <span class="s2">&quot;gulp-jshint&quot;</span><span class="o">:</span> <span class="s2">&quot;1.11.0&quot;</span><span class="p">,</span>
+</span><span class="hll">         <span class="s2">&quot;del&quot;</span><span class="o">:</span> <span class="s2">&quot;1.2.0&quot;</span>
+</span>       <span class="p">}</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+<p>In the Solution Explorer, right-click Dependencies &gt; NPM and choose <strong>Restore Packages</strong> from the context menu.</p>
+<p>Edit gulpfile.js:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">jshint</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-jshint&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">del</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;del&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;./Assets/**/*.js&quot;</span><span class="p">,</span>
+    <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;./wwwroot/js/&quot;</span>
+<span class="p">}</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;clean&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">del</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">dest</span> <span class="o">+</span> <span class="s1">&#39;**/*&#39;</span><span class="p">);</span>    <span class="c1">// Delete everything in &#39;wwwroot/js&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;clean&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">src</span><span class="p">)</span>         <span class="c1">// Returns a stream</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">dest</span><span class="p">))</span>   <span class="c1">// Pipes the stream somewhere</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Now the &#8216;default&#8217; task includes JSHint in the pipeline:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">())</span>
+<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In addition, &#8216;default&#8217; now includes the &#8216;clean&#8217; task as a dependency:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;clean&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>The &#8216;clean&#8217; task deletes everything under wwwooot/js, using the <a class="reference external" href="https://github.com/sindresorhus/del">del</a> module. (For more information, see <a class="reference external" href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md">https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md</a>) Now when you run the &#8216;default&#8217; task, Gulp will run &#8216;clean&#8217; first.</p>
+<p>In Task Runner Explorer, right-click the <strong>default</strong> task and select <strong>Run</strong>.</p>
+<img alt="../_images/running-default-task.png" src="../_images/running-default-task.png" />
+<p>Now the Task Runner Explorer first runs the &#8216;clean&#8217; task, then the &#8216;default&#8217; task.</p>
+</div>
+<div class="section" id="bind-tasks-to-build-events">
+<h2>Bind tasks to build events<a class="headerlink" href="#bind-tasks-to-build-events" title="Permalink to this headline">¶</a></h2>
+<p>Unless you want to manually start every task in Visual Studio, you can bind tasks to <strong>Before Build</strong>, <strong>After Build</strong>, <strong>Clean</strong>, and <strong>Project Open</strong> events.</p>
+<p>Let&#8217;s bind &#8216;default&#8217; so that it runs every time Visual Studio builds the project. In Task Runner Explorer, right-click the &#8216;default&#8217; task and select <strong>Bindings &gt; After Build</strong> from the context menu.</p>
+<img alt="../_images/task-binding.png" src="../_images/task-binding.png" />
+<p>In the Solution Explorer, right-click and <strong>Build</strong> the project. After the project build, the &#8216;default&#8217; task runs automatically.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="using-grunt.html"><em>Using Grunt</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using-grunt.html" class="btn btn-neutral float-right" title="Using Grunt" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Client-Side Development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

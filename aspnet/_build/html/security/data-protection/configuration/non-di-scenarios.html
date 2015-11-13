@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Non DI Aware Scenarios &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Configuration" href="index.html"/>
+        <link rel="next" title="Extensibility APIs" href="../extensibility/index.html"/>
+        <link rel="prev" title="Machine Wide Policy" href="machine-wide-policy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html">Configuring Data Protection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="default-settings.html">Default Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="machine-wide-policy.html">Machine Wide Policy</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Non DI Aware Scenarios</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Configuration</a> &raquo;</li>
+      
+    <li>Non DI Aware Scenarios</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/configuration/non-di-scenarios.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="non-di-aware-scenarios">
+<h1>Non DI Aware Scenarios<a class="headerlink" href="#non-di-aware-scenarios" title="Permalink to this headline">¶</a></h1>
+<p>The data protection system is normally designed <a class="reference internal" href="../consumer-apis/overview.html"><em>to be added to a service container</em></a> and to be provided to dependent components via a DI mechanism. However, there may be some cases where this is not feasible, especially when importing the system into an existing application.</p>
+<p>To support these scenarios the package Microsoft.AspNet.DataProtection.Extensions provides a concrete type DataProtectionProvider which offers a simple way to use the data protection system without going through DI-specific code paths. The type itself implements IDataProtectionProvider, and constructing it is as easy as providing a DirectoryInfo where this provider&#8217;s cryptographic keys should be stored.</p>
+<p>For example:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre>using System;
+using System.IO;
+using Microsoft.AspNet.DataProtection;
+ 
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // get the path to %LOCALAPPDATA%\myapp-keys
+        string destFolder = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            &quot;myapp-keys&quot;);
+ 
+        // instantiate the data protection system at this folder
+        var dataProtectionProvider = new DataProtectionProvider(
+            new DirectoryInfo(destFolder));
+ 
+        var protector = dataProtectionProvider.CreateProtector(&quot;Program.No-DI&quot;);
+        Console.Write(&quot;Enter input: &quot;);
+        string input = Console.ReadLine();
+ 
+        // protect the payload
+        string protectedPayload = protector.Protect(input);
+        Console.WriteLine($&quot;Protect returned: {protectedPayload}&quot;);
+ 
+        // unprotect the payload
+        string unprotectedPayload = protector.Unprotect(protectedPayload);
+        Console.WriteLine($&quot;Unprotect returned: {unprotectedPayload}&quot;);
+    }
+}
+ 
+/*
+ * SAMPLE OUTPUT
+ *
+ * Enter input: Hello world!
+ * Protect returned: CfDJ8FWbAn6...ch3hAPm1NJA
+ * Unprotect returned: Hello world!
+ */
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>By default the DataProtectionProvider concrete type does not encrypt raw key material before persisting it to the file system. This is to support scenarios where the developer points to a network share, in which case the data protection system cannot automatically deduce an appropriate at-rest key encryption mechanism.</p>
+<p class="last">Additionally, the DataProtectionProvider concrete type does not <a class="reference internal" href="overview.html#data-protection-configuration-per-app-isolation"><span>isolate applications</span></a> by default, so all applications pointed at the same key directory can share payloads as long as their purpose parameters match.</p>
+</div>
+<p>The application developer can address both of these if desired. The DataProtectionProvider constructor accepts an <a class="reference internal" href="overview.html#data-protection-configuration-callback"><span>optional configuration callback</span></a> which can be used to tweak the behaviors of the system. The sample below demonstrates restoring isolation via an explicit call to SetApplicationName, and it also demonstrates configuring the system to automatically encrypt persisted keys using Windows DPAPI. If the directory points to a UNC share, you may wish to distribute a shared certificate across all relevant machines and to configure the system to use certificate-based encryption instead via a call to <a class="reference internal" href="overview.html#configuring-x509-certificate"><span>ProtectKeysWithCertificate</span></a>.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre>using System;
+using System.IO;
+using Microsoft.AspNet.DataProtection;
+ 
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // get the path to %LOCALAPPDATA%\myapp-keys
+        string destFolder = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            &quot;myapp-keys&quot;);
+ 
+        // instantiate the data protection system at this folder
+        var dataProtectionProvider = new DataProtectionProvider(
+            new DirectoryInfo(destFolder),
+            configuration =&gt;
+            {
+                configuration.SetApplicationName(&quot;my app name&quot;);
+                configuration.ProtectKeysWithDpapi();
+            });
+ 
+        var protector = dataProtectionProvider.CreateProtector(&quot;Program.No-DI&quot;);
+        Console.Write(&quot;Enter input: &quot;);
+        string input = Console.ReadLine();
+ 
+        // protect the payload
+        string protectedPayload = protector.Protect(input);
+        Console.WriteLine($&quot;Protect returned: {protectedPayload}&quot;);
+ 
+        // unprotect the payload
+        string unprotectedPayload = protector.Unprotect(protectedPayload);
+        Console.WriteLine($&quot;Unprotect returned: {unprotectedPayload}&quot;);
+    }
+}
+</pre></div>
+</td></tr></table></div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Instances of the DataProtectionProvider concrete type are expensive to create. If an application maintains multiple instances of this type and if they&#8217;re all pointing at the same key storage directory, application performance may be degraded. The intended usage is that the application developer instantiate this type once then keep reusing this single reference as much as possible. The DataProtectionProvider type and all IDataProtector instances created from it are thread-safe for multiple callers.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extensibility/index.html" class="btn btn-neutral float-right" title="Extensibility APIs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="machine-wide-policy.html" class="btn btn-neutral" title="Machine Wide Policy" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

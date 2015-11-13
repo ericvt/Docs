@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:4
+msgid "Machine Wide Policy"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:5
+msgid "When running on Windows, the data protection system has limited support for setting default machine-wide policy for all applications which consume data protection. The general idea is that an administrator might wish to change some default setting (such as algorithms used or key lifetime) without needing to manually update every application on the machine."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:8
+msgid "The system administrator can set default policy, but he cannot enforce it. The application developer can always override any value with one of his own choosing. The default policy only affects applications where the developer has not specified an explicit value for some particular setting."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:11
+msgid "Setting default policy"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:13
+msgid "To set default policy, an administrator can set known values in the system registry under the following key."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:15
+msgid "Reg key: ``HKLM\\SOFTWARE\\Microsoft\\DotNetPackages\\Microsoft.AspNet.DataProtection``"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:17
+msgid "If you're on a 64-bit operating system and want to affect the behavior of 32-bit applications, remember also to configure the Wow6432Node equivalent of the above key."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:19
+msgid "The supported values are:"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:21
+msgid "EncryptionType [string] - specifies which algorithms should be used for data protection. This value must be \"CNG-CBC\", \"CNG-GCM\", or \"Managed\" and is described in more detail :ref:`below <data-protection-encryption-types>`."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:22
+msgid "DefaultKeyLifetime [DWORD] - specifies the lifetime for newly-generated keys. This value is specified in days and must be ≥ 7."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:23
+msgid "KeyEscrowSinks [string] - specifies the types which will be used for key escrow. This value is a semicolon-delimited list of key escrow sinks, where each element in the list is the assembly qualified name of a type which implements IKeyEscrowSink."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:28
+msgid "Encryption types"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:30
+msgid "If EncryptionType is \"CNG-CBC\", the system will be configured to use a CBC-mode symmetric block cipher for confidentiality and HMAC for authenticity with services provided by Windows CNG (see :ref:`Specifying custom Windows CNG algorithms <data-protection-changing-algorithms-cng>` for more details). The following additional values are supported, each of which corresponds to a property on the CngCbcAuthenticatedEncryptionOptions type:"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:32
+msgid "EncryptionAlgorithm [string] - the name of a symmetric block cipher algorithm understood by CNG. This algorithm will be opened in CBC mode."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:33
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:41
+msgid "EncryptionAlgorithmProvider [string] - the name of the CNG provider implementation which can produce the algorithm EncryptionAlgorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:34
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:42
+msgid "EncryptionAlgorithmKeySize [DWORD] - the length (in bits) of the key to derive for the symmetric block cipher algorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:35
+msgid "HashAlgorithm [string] - the name of a hash algorithm understood by CNG. This algorithm will be opened in HMAC mode."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:36
+msgid "HashAlgorithmProvider [string] - the name of the CNG provider implementation which can produce the algorithm HashAlgorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:38
+msgid "If EncryptionType is \"CNG-GCM\", the system will be configured to use a Galois/Counter Mode symmetric block cipher for confidentiality and authenticity with services provided by Windows CNG (see :ref:`Specifying custom Windows CNG algorithms <data-protection-changing-algorithms-cng>` for more details). The following additional values are supported, each of which corresponds to a property on the CngGcmAuthenticatedEncryptionOptions type:"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:40
+msgid "EncryptionAlgorithm [string] - the name of a symmetric block cipher algorithm understood by CNG. This algorithm will be opened in Galois/Counter Mode."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:44
+msgid "If EncryptionType is \"Managed\", the system will be configured to use a managed SymmetricAlgorithm for confidentiality and KeyedHashAlgorithm for authenticity (see :ref:`Specifying custom managed algorithms <data-protection-changing-algorithms-custom-managed>` for more details). The following additional values are supported, each of which corresponds to a property on the ManagedAuthenticatedEncryptionOptions type:"
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:46
+msgid "EncryptionAlgorithmType [string] - the assembly-qualified name of a type which implements SymmetricAlgorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:47
+msgid "EncryptionAlgorithmKeySize [DWORD] - the length (in bits) of the key to derive for the symmetric encryption algorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:48
+msgid "ValidationAlgorithmType [string] - the assembly-qualified name of a type which implements KeyedHashAlgorithm."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:50
+msgid "If EncryptionType has any other value (other than null / empty), the data protection system will throw an exception at startup."
+msgstr ""
+
+#: ..\..\security\data-protection\configuration\machine-wide-policy.rst:53
+msgid "When configuring a default policy setting that involves type names (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), the types must be available to the application. In practice, this means that for applications running on Desktop CLR, the assemblies which contain these types should be GACed. For ASP.NET 5 applications running on Core CLR, the packages which contain these types should be referenced in project.json."
+msgstr ""
+

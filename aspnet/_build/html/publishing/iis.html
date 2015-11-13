@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Publishing to IIS &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Publishing and Deployment" href="index.html"/>
+        <link rel="next" title="|stub-icon| Publishing to a Windows Virtual Machine on Azure" href="azure-windows-vm.html"/>
+        <link rel="prev" title="Publishing and Deployment" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Publishing and Deployment</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Publishing to IIS</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="azure-windows-vm.html">|stub-icon| Publishing to a Windows Virtual Machine on Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure-continuous-deployment.html">|stub-icon| Publishing to an Azure Web App with Continuous Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">Publish to a Docker Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-customize.html">|stub-icon| How to Customize Publishing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Publishing and Deployment</a> &raquo;</li>
+      
+    <li>Publishing to IIS</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/publishing/iis.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="publishing-to-iis">
+<h1>Publishing to IIS<a class="headerlink" href="#publishing-to-iis" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/rick-anderson">Rick Anderson</a> and <a class="reference external" href="https://github.com/GuardRex">Luke Latham</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#install-the-http-platform-handler">Install the HTTP Platform Handler</a></li>
+<li><a class="reference internal" href="#publish-from-visual-studio">Publish from Visual Studio</a></li>
+<li><a class="reference internal" href="#deploy-to-iis-server">Deploy to IIS server</a></li>
+<li><a class="reference internal" href="#iis-server-configuration">IIS server configuration</a></li>
+<li><a class="reference internal" href="#supported-operating-systems">Supported operating systems</a></li>
+<li><a class="reference internal" href="#common-errors">Common errors</a></li>
+<li><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="install-the-http-platform-handler">
+<h2>Install the HTTP Platform Handler<a class="headerlink" href="#install-the-http-platform-handler" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Install the HTTP Platform Handler version 1.2 or higher:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkID=690721">64 bit HTTP Platform Handler</a></li>
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=690722">32 bit HTTP Platform Handler</a></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>If you need to enable IIS, see <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</p>
+</div>
+<div class="section" id="publish-from-visual-studio">
+<h2>Publish from Visual Studio<a class="headerlink" href="#publish-from-visual-studio" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create an ASP.NET 5 app. In this sample, I&#8217;ll create an MVC 6 app using the <strong>Web Site</strong> template under <strong>ASP.NET 5 Preview Templates</strong>.</li>
+<li>In <strong>Solution Explorer</strong>, right-click the project and select <strong>Publish</strong>.</li>
+</ol>
+<img alt="../_images/p1.png" src="../_images/p1.png" />
+<ol class="arabic simple" start="3">
+<li>In the <strong>Publish Web</strong> dialog, on the <strong>Profile</strong> tab, select <strong>File System</strong>.</li>
+</ol>
+<img alt="../_images/fs.png" src="../_images/fs.png" />
+<ol class="arabic simple" start="4">
+<li>Enter a profile name. Click <strong>Next</strong>.</li>
+<li>On the <strong>Connection</strong> tab, you can change the publishing target path from the default <em>..\..\artifacts\bin\WebApp9\Release\Publish</em> folder. Click <strong>Next</strong>.</li>
+<li>On the <strong>Settings</strong> tab, you can select the configuration, target DNX version, and publish options. Click <strong>Next</strong>.</li>
+</ol>
+<p>The <strong>Preview</strong> tab shows you the publish path (by default, the same directory as the &#8221;.sln&#8221; solution file).</p>
+</div>
+<div class="section" id="deploy-to-iis-server">
+<h2>Deploy to IIS server<a class="headerlink" href="#deploy-to-iis-server" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to the publish folder (<em>..\..\artifacts\bin\WebApp9\Release\Publish folder</em> in this sample).</li>
+<li>Copy the <strong>approot</strong> and <strong>wwwroot</strong> directories to the target IIS server. Note: MSDeploy is the recommended mechanism for deployment, but you can use Xcopy, Robocopy or another approach.</li>
+<li>In IIS Manager, create a new web site and set the physical path to <strong>wwwroot</strong>. You can click on <strong>Browse *.80(http)</strong> to see your deployed app in the browser. Note: The HTTP Platform Handler currently requires <a class="reference external" href="https://github.com/aspnet/Hosting/issues/416">this work-around</a> to support apps. If you get an HTTP error, see <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</li>
+</ol>
+<img alt="../_images/b8.png" src="../_images/b8.png" />
+</div>
+<div class="section" id="iis-server-configuration">
+<h2>IIS server configuration<a class="headerlink" href="#iis-server-configuration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Enable the <strong>Web Server (IIS)</strong> server role. In client operating systems (Windows 7 through Windows 10) select <strong>Control Panel &gt; Programs &gt; Programs and Features &gt; Turn Windows features on or off</strong>, and then select <strong>Internet Information Services</strong>.</li>
+</ol>
+<img alt="../_images/rs.png" src="../_images/rs.png" />
+<ol class="arabic simple" start="2">
+<li>On the <strong>Role Services</strong> step, remove any items you don&#8217;t need. The defaults are shown below.</li>
+</ol>
+<img alt="../_images/role-services.png" src="../_images/role-services.png" />
+<ol class="arabic" start="3">
+<li><p class="first">Unlock the configuration section.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Launch IIS Manager and select the server in the <strong>Connections</strong> pane on the left (see image below).</li>
+<li>Double-click <strong>Connection Editor</strong>.</li>
+<li>In the <strong>Section</strong> drop-down, select <strong>system.webServer/handlers</strong>, and then click <strong>Unlock Section</strong>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<img alt="../_images/config-edit.png" src="../_images/config-edit.png" />
+<img alt="../_images/unlock.png" src="../_images/unlock.png" />
+<ul class="simple">
+<li>Set the application pool to <strong>No Managed Code</strong>. ASP.NET 5 runs in a separate process and manages the runtime.</li>
+</ul>
+<blockquote>
+<div><img alt="../_images/appPool.PNG" src="../_images/appPool.PNG" />
+</div></blockquote>
+</div>
+<div class="section" id="supported-operating-systems">
+<h2>Supported operating systems<a class="headerlink" href="#supported-operating-systems" title="Permalink to this headline">¶</a></h2>
+<p>The following operations systems are supported:</p>
+<ul class="simple">
+<li>Windows 7 and newer</li>
+<li>Windows 2008 R2 and newer</li>
+</ul>
+</div>
+<div class="section" id="common-errors">
+<h2>Common errors<a class="headerlink" href="#common-errors" title="Permalink to this headline">¶</a></h2>
+<p>The following is not a complete list of errors. Should you encounter an error not listed here, please leave a detailed error message in the DISQUS section below along with the reason for the error and how you fixed it.</p>
+<ul>
+<li><p class="first">HTTP 500.19 : ** This configuration section cannot be used at this path.**</p>
+<blockquote>
+<div><ul class="simple">
+<li>You haven&#8217;t enabled the proper roles. See <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">HTTP 500.19 : The requested page cannot be accessed because the related configuration data for the page is invalid.</p>
+<blockquote>
+<div><ul class="simple">
+<li>You haven&#8217;t installed the correct HTTP Platform Handler. See <a class="reference internal" href="#install-the-http-platform-handler">Install the HTTP Platform Handler</a></li>
+<li>The <em>wwwroot</em> folder doesn&#8217;t have the correct permissions. See <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The IIS 7.0 CoreWebEngine and W3SVC features must be installed to use the Microsoft HTTP Platform Handler 1.x.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Enable IIS; see <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">HTTP 502.3 Bad Gateway</p>
+<blockquote>
+<div><ul class="simple">
+<li>You haven&#8217;t installed the correct HTTP Platform Handler. See <a class="reference internal" href="#install-the-http-platform-handler">Install the HTTP Platform Handler</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">HTTP 500.21 Internal Server Error.</p>
+<blockquote>
+<div><ul class="simple">
+<li>No module installed. See <a class="reference internal" href="#iis-server-configuration">IIS server configuration</a>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.asp.net/en/latest/conceptual-overview/understanding-aspnet5-apps.html">Understanding ASP.NET 5 Web Apps</a></li>
+<li><a class="reference external" href="http://docs.asp.net/en/latest/conceptual-overview/dotnetcore.html">Introducing .NET Core</a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="azure-windows-vm.html" class="btn btn-neutral float-right" title="|stub-icon| Publishing to a Windows Virtual Machine on Azure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Publishing and Deployment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

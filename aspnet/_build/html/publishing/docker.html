@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Publish to a Docker Image &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Publishing and Deployment" href="index.html"/>
+        <link rel="next" title="|stub-icon| How to Customize Publishing" href="how-to-customize.html"/>
+        <link rel="prev" title="|stub-icon| Publishing to an Azure Web App with Continuous Deployment" href="azure-continuous-deployment.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Publishing and Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="iis.html">Publishing to IIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure-windows-vm.html">|stub-icon| Publishing to a Windows Virtual Machine on Azure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure-continuous-deployment.html">|stub-icon| Publishing to an Azure Web App with Continuous Deployment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Publish to a Docker Image</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-customize.html">|stub-icon| How to Customize Publishing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Publishing and Deployment</a> &raquo;</li>
+      
+    <li>Publish to a Docker Image</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/publishing/docker.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="publish-to-a-docker-image">
+<h1>Publish to a Docker Image<a class="headerlink" href="#publish-to-a-docker-image" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.docker.com/whatisdocker/">Docker</a> is a lightweight container engine, similar in some ways to a virtual machine, which you can use to host applications and services.</p>
+<p>This example shows you how to use the Visual Studio 2015 RC Tools for Docker extension to publish an ASP.NET 5 app to an Ubuntu Linux virtual machine (referred to here as a Docker host) on Azure with the Docker extension installed along with an ASP.NET 5 web application. You can publish the app to a new Docker host hosted on Azure, or to an on-premise server, Hyper-V, or Boot2Docker host by using the <strong>Custom Host</strong> setting. After publishing your app to a Docker host, you can use Docker command-line tools to interact with the container your app has been published to.</p>
+<div class="section" id="create-and-publish-a-new-docker-container">
+<h2>Create and publish a new Docker container<a class="headerlink" href="#create-and-publish-a-new-docker-container" title="Permalink to this headline">¶</a></h2>
+<p>In these procedures, you create a new ASP.NET 5 web application project, publish a Docker container to Azure, and then publish the web app project to the Docker container.</p>
+<div class="section" id="add-an-asp-net-5-web-application-project">
+<h3>Add an ASP.NET 5 web application project<a class="headerlink" href="#add-an-asp-net-5-web-application-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Create a new ASP.NET web application project. On the main menu, choose <strong>File, New Project</strong>. Under <strong>C#, Web</strong>, choose <strong>ASP.NET Web Application</strong>.</p>
+</li>
+<li><p class="first">In the list of <strong>ASP.NET 5 Preview Templates</strong>, choose <strong>Web Site</strong> and then choose the <strong>OK</strong> button.</p>
+<img alt="../_images/new-web-site.png" src="../_images/new-web-site.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="publish-the-project">
+<h3>Publish the project<a class="headerlink" href="#publish-the-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">On the ASP.NET project&#8217;s context menu, choose <strong>Publish</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Select a publish target</strong> section of the <strong>Publish Web</strong> dialog box, choose the <strong>Docker Containers</strong> button.</p>
+<p>If you don&#8217;t see a Docker Containers option, make sure you have installed the <a class="reference external" href="https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0">Visual Studio 2015 RC Tools for Docker</a> and that you selected an ASP.NET 5 Web Site template in the previous step.</p>
+<img alt="../_images/publish-dialog.png" src="../_images/publish-dialog.png" />
+<p>The <strong>Select Docker Virtual Machine</strong> dialog box appears. This lets you specify the Docker host in which you want to publish the project. You can choose to create a new Docker host or choose an existing VM hosted on Azure or elsewhere. For this example, we&#8217;ll use an Azure Docker host.</p>
+</li>
+<li><p class="first">If you&#8217;re already logged into Azure, skip to step 5. If you&#8217;re not logged in, choose the <strong>Manage subscriptions</strong> link.</p>
+</li>
+<li><p class="first">In the <strong>Manage Microsoft Azure Subscriptions</strong> dialog box and choose an existing Azure account. If you aren&#8217;t logged into Azure, choose the <strong>Add an account</strong> link, sign in to Azure, and then click the <strong>Close</strong> button.</p>
+<img alt="../_images/manage-azure-subscriptions.png" src="../_images/manage-azure-subscriptions.png" />
+</li>
+<li><p class="first">Choose an existing Docker host or create a new one. If you&#8217;re using an existing Docker host, choose it in the <strong>Existing Azure Docker Virtual Machines</strong> list, choose the <strong>OK</strong> button, and then go to step 7. Otherwise, choose the <strong>New</strong> button and continue to the next step.</p>
+<img alt="../_images/new-docker-vm.png" src="../_images/new-docker-vm.png" />
+<p>As an alternative, you can choose to publish to a custom Docker host. See <a class="reference internal" href="#provide-a-custom-docker-host">Provide a custom Docker host</a> later in this topic for more information.</p>
+</li>
+<li><p class="first">Enter the following information in the <strong>Create a virtual machine on Microsoft Azure</strong> dialog box. When you&#8217;re done, choose the <strong>OK</strong> button. This creates a Linux virtual machine with a configured Docker extension.</p>
+<img alt="../_images/create-azure-vm.png" src="../_images/create-azure-vm.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property Name</th>
+<th class="head">Setting</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DNS Name</td>
+<td>Enter a unique name for the virtual machine. If the name is accepted by Azure, a green circle with a white checkmark appears to the right. If the name isn&#8217;t accepted, a red circle with a white x appears. In that case, enter a new unique name.</td>
+</tr>
+<tr class="row-odd"><td>Image</td>
+<td>Enter an OS image to use in the Docker host, if any. For this example, leave this setting at <strong>Ubuntu Server 14.04 LTS</strong>.</td>
+</tr>
+<tr class="row-even"><td>Username</td>
+<td>Enter a unique user name for the virtual machine.</td>
+</tr>
+<tr class="row-odd"><td>Password</td>
+<td>Enter a password for the local user and then confirm it.</td>
+</tr>
+<tr class="row-even"><td>Location</td>
+<td>Change this setting to the region closest to your location.</td>
+</tr>
+<tr class="row-odd"><td>Auto-generate Docker certificates</td>
+<td>Check this box if you want certificates and keys to be automatically generated for you. Clear this box if you want to provide existing certificates and keys.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">After you choose <strong>OK</strong>, the virtual machine will begin to be created.</p>
+<p>You&#8217;ll get a message that the virtual machine is being created in Azure. You can check on the progress of this operation in the <strong>Output</strong> window.</p>
+</li>
+<li><p class="first">After the Docker host is fully provisioned in Azure, you can check your account on the Azure portal. The virtual machine will appear under the <strong>Virtual Machine</strong> category on the Azure portal.</p>
+</li>
+<li><p class="first">Now that the Docker host is ready, go back and publish the web app project. On the context menu for the web application project node in <strong>Solution Explorer</strong> choose <strong>Publish</strong>.</p>
+</li>
+<li><p class="first">On the <strong>Connection</strong> tab in the <strong>Publish Web</strong> dialog box, choose the <strong>Validate Connection</strong> box to make sure the Docker host is ready. If the connection is good, choose the <strong>Publish</strong> button to publish the web app.</p>
+<p>The first time you publish an app to a Docker host, it will take time to download any of the base images that are referenced in your Dockerfile (such as <strong>FROM</strong> <em>imagename</em> in the Dockerfile).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="provide-a-custom-docker-host">
+<h2>Provide a custom Docker host<a class="headerlink" href="#provide-a-custom-docker-host" title="Permalink to this headline">¶</a></h2>
+<p>The previous procedure had you create a Docker virtual machine hosted on Azure. However, if you already have an existing Docker host elsewhere, you can choose to publish to it instead of Azure.</p>
+<div class="section" id="how-to-provide-a-custom-docker-host">
+<h3>How to provide a custom Docker host<a class="headerlink" href="#how-to-provide-a-custom-docker-host" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">In the <strong>Select Docker Virtual Machine</strong> dialog box, select the <strong>Custom Docker Host</strong> check box.</p>
+<img alt="../_images/custom-docker-host-vm.png" src="../_images/custom-docker-host-vm.png" />
+</li>
+<li><p class="first">Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p class="first">In the <strong>Publish Web</strong> dialog box, add values to the settings in the <strong>CustomDockerHost</strong> section, such as: the server URL, image name, Dockerfile location, and host and container port numbers.</p>
+<p>In the <strong>Docker Advanced Options</strong> section, you can view or change the Auth options and Docker command line.</p>
+<img alt="../_images/docker-advanced-options.png" src="../_images/docker-advanced-options.png" />
+</li>
+<li><p class="first">After you&#8217;ve entered in all the required values, choose the <strong>Validate Connection</strong> button to ensure the connection to the Docker host works properly.</p>
+</li>
+<li><p class="first">If the connection works properly, choose the <strong>Next</strong> button to see a list of the components that will be published, or choose the <strong>Publish</strong> button to immediately publish the project.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="test-the-docker-host">
+<h2>Test the Docker host<a class="headerlink" href="#test-the-docker-host" title="Permalink to this headline">¶</a></h2>
+<p>Now that the project has been published to a Docker host on Azure, let&#8217;s test it by checking its settings. Because the Docker command line tools install with the Visual Studio extension, you can issue commands to Docker from a Windows command prompt.</p>
+<p>The procedure below is for communicating with a Docker host that&#8217;s been deployed to Azure.</p>
+<div class="section" id="how-to-test-the-docker-host">
+<h3>How to test the Docker host<a class="headerlink" href="#how-to-test-the-docker-host" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open a Windows command prompt.</p>
+</li>
+<li><p class="first">Assign the Docker host to an environment variable. To do this, enter the following command (Substitute the name of your Docker host for &lt;NameofAzureVM&gt;):</p>
+<div class="highlight-python"><div class="highlight"><pre>Set docker_host=tcp://&lt;NameofAzureVM&gt;.cloudapp.net:2376
+</pre></div>
+</div>
+<p>Invoking this command prevents you from having to add <code class="docutils literal"><span class="pre">–H</span> <span class="pre">(Host)</span> <span class="pre">tcp://&lt;NameofAzureVM&gt;.cloudapp.net:2376</span></code> to every command you issue.</p>
+</li>
+<li><p class="first">If you want, you can issue commands like these to test that the Docker host is present and functioning.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command line</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">docker</span> <span class="pre">--tls</span> <span class="pre">info</span></code></td>
+<td>Get Docker version info.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">docker</span> <span class="pre">--tls</span> <span class="pre">ps</span></code></td>
+<td>Get a list of running  containers.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">docker</span> <span class="pre">--tls</span> <span class="pre">ps</span> <span class="pre">–a</span></code></td>
+<td>Get a list of containers, including ones that are stopped.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">docker</span> <span class="pre">--tls</span> <span class="pre">logs</span> <span class="pre">&lt;Docker</span> <span class="pre">container</span> <span class="pre">name&gt;</span></code></td>
+<td>Get a log for the specified container.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">docker</span> <span class="pre">--tls</span> <span class="pre">images</span></code></td>
+<td>Get a list of images.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>For a full list of Docker commands, simply enter the command docker in the command prompt. For more information, see <a class="reference external" href="https://docs.docker.com/reference/commandline/cli/">Docker Command Line</a>.</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a Docker host, you can issue Docker commands to it. To learn more about Docker, see the <a class="reference external" href="https://docs.docker.com/">Docker documentation</a> and the <a class="reference external" href="https://www.docker.com/tryit/">Docker online tutorial</a>.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://msdn.microsoft.com/en-US/library/azure/mt125442.aspx">Troubleshooting Docker Errors</a></p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how-to-customize.html" class="btn btn-neutral float-right" title="|stub-icon| How to Customize Publishing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="azure-continuous-deployment.html" class="btn btn-neutral" title="|stub-icon| Publishing to an Azure Web App with Continuous Deployment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

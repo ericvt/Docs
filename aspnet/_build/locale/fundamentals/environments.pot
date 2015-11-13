@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\fundamentals\environments.rst:2
+msgid "Working with Multiple Environments"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:4
+msgid "By `Steve Smith`_"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:6
+msgid "ASP.NET 5 introduces improved support for controlling application behavior across multiple environments, such as development, staging, and production. Environment variables are used to indicate which environment the application is running in, allowing the app to be configured appropriately."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:11
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:9
+msgid "`Development, Staging, Production`_"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:10
+msgid "`Determining the environment at runtime`_"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:11
+msgid "`Startup conventions`_"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:13
+msgid "`Browse or download samples on GitHub <https://github.com/aspnet/Docs/tree/master/docs/fundamentals/environments/sample>`_."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:16
+msgid "Development, Staging, Production"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:18
+msgid "ASP.NET 5 references a particular `environment variable <https://github.com/aspnet/Home/wiki/Environment-Variables>`_, ``ASPNET_ENV``, to describe the environment the application is currently running in. This variable can be set to any value you like, but three values are used by convention: ``Development``, ``Staging``, and ``Production``. You will find these values used in the samples and templates provided with ASP.NET 5."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:20
+msgid "The current environment setting can be detected programmatically from within ASP.NET 5. In addition, ASP.NET MVC 6 introduces an `Environment Tag Helper <http://docs.asp.net/en/latest/mvc/views/tag-helpers/index.html>`_ that allows MVC Views to include certain sections based on the current application environment."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:22
+msgid "The specified environment name is case insensitive. Whether you set the variable to ``Development`` or ``development`` or ``DEVELOPMENT`` the results will be the same."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:25
+msgid "Development"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:27
+msgid "This should be the environment used when developing an application. When using Visual Studio 2015, this setting can be specified in your project's debug profiles, such as for IIS Express, shown here:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:31
+msgid "When you modify the default settings created with the project, your changes are persisted in *launchSettings.json* in the ``Properties`` folder. After modifying the ``ASPNET_ENV`` variable in the ``web`` profile to be set to ``Staging``, the ``launchSettings.js`` file in our sample project is shown below:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:0
+msgid "launchSettings.json"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:38
+msgid "Changes made to project profiles or to *launchSettings.json* directly will not take effect until the web server being used is restarted."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:41
+msgid "Staging"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:43
+msgid "By convention, a ``Staging`` environment is a pre-production environment used for final testing before deployment to production. Ideally, its physical characteristics should mirror that of production, so that any issues that may arise in production occur first in the staging environment, where they can be addressed without impact to users."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:46
+msgid "Production"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:48
+msgid "The ``Production`` environment is the environment in which the application runs when it is live and being used by end users. This environment should be configured to maximize security, performance, and application robustness. Some common settings that a production environment might have that would differ from development include:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:50
+msgid "Turn on caching"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:51
+msgid "Ensure all client-side resources are bundled, minified, and potentially served from a CDN"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:52
+msgid "Turn off diagnostic ErrorPages"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:53
+msgid "Turn on friendly error pages"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:54
+msgid "Enable production logging and monitoring (e.g. AppInsights)"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:56
+msgid "This is by no means meant to be a complete list. It's best to avoid scattering environment checks in many parts of your application. Instead, the recommended approach is to perform such checks within the application's ``Startup`` class(es) wherever possible"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:59
+msgid "Determining the environment at runtime"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:61
+msgid "The ``IHostingEnvironment`` service provides the core abstraction for working with environments. This service is provided by the ASP.NET hosting layer, and can be injected into your startup logic via :doc:`dependency-injection`. The ASP.NET 5 web site template in Visual Studio uses this approach to load environment-specific configuration files (if present) and to customize the app's error handling settings. In both cases, this behavior is achieved by referring to the currently specified environment by calling ``EnvironmentName`` or ``IsEnvironment`` on the instance of ``IHostingEnvironment`` passed into the appropriate method."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:63
+msgid "If you need to check whether the application is running in a particular environment, use ``env.IsEnvironment(\"environmentname\")`` since it will correctly ignore case (instead of checking if ``env.EnvironmentName == \"Development\"`` for example)."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:65
+msgid "For example, you can use the following code in you Configure method to setup environment specific error handling:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:73
+msgid "If the app is running in a ``Development`` environment, then it enables BrowserLink and error pages (which typically should not be run in production). Otherwise, if the app is not running in a development environment, a standard error handling page is configured to be displayed in response to any unhandled exceptions."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:76
+msgid "Startup conventions"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:78
+msgid "ASP.NET 5 supports a convention-based approach to configuring an application's startup based on the current environment. You can also programmatically control how your application behaves according to which environment it is in, allowing you to create and manage your own conventions."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:80
+msgid "When an ASP.NET 5 application starts, the ``Startup`` class is used to bootstrap the application, load its configuration settings, etc. (:doc:`learn more about ASP.NET startup <startup>`). However, if a class exists named ``Startup{EnvironmentName}``, e.g. ``StartupDevelopment``, and the ``ASPNET_ENV`` environment variable matches that name, then that ``Startup`` class is used instead. Thus, you could configure ``Startup`` for development, but have a separate ``StartupProduction`` that would be used when the app is run in production. Or vice versa."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:82
+msgid "The following ``StartupDevelopment`` file from this article's sample project is run when the application is set to run in a Development environment:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:0
+msgid "StartupDevelopment.cs"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:90
+msgid "Run the application in development, and a welcome screen is displayed. The sample also includes a ``StartupStaging`` class:"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:0
+msgid "StartupStaging.cs"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:98
+msgid "When the application is run with ``ASPNET_ENV`` set to ``Staging``, this ``Startup`` class is used, and the application will simply display a string stating it's running in a staging environment. The application's default ``Startup`` class will only run when the environment is not set to either ``Development`` or ``Staging`` (presumably, this would be when it is set to ``Production``, but you're not limited to only these three options. Also note that if no environment is set, the default ``Startup`` will run)."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:100
+msgid "In addition to using an entirely separate ``Startup`` class based on the current environment, you can also make adjustments to how the application is configured within a ``Startup`` class. The ``Configure()`` and ``ConfigureServices()`` methods support environment-specific versions similar to the ``Startup`` class itself, of the form ``Configure[Environment]()`` and ``Configure[Environment]Services()``. If you define a method ``ConfigureDevelopment()`` it will be called instead of ``Configure()`` when the environment is set to development. Likewise, ``ConfigureDevelopmentServices()`` would be called instead of ``ConfigureServices()`` in the same environment."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:104
+msgid "Summary"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:106
+msgid "ASP.NET 5 provides a number of features and conventions that allow developers to easily control how their applications behave in different environments. When publishing an application from development to staging to production, environment variables set appropriately for the environment allow for optimization of the application for debugging, testing, or production use, as appropriate."
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:109
+msgid "Additional Resources"
+msgstr ""
+
+#: ..\..\fundamentals\environments.rst:111
+msgid ":doc:`configuration`"
+msgstr ""
+

@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Middleware &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="Working with Static Files" href="static-files.html"/>
+        <link rel="prev" title="|stub-icon| HTTP Abstractions" href="http-abstractions.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Middleware</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Middleware</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/middleware.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="middleware">
+<h1>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>Small application components that can be incorporated into an HTTP request pipeline are known collectively as middleware. ASP.NET 5 has integrated support for middleware, which are wired up in an application&#8217;s <code class="docutils literal"><span class="pre">Configure</span></code> method during <a class="reference internal" href="startup.html"><em>Application Startup</em></a>.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#what-is-middleware">What is middleware</a></li>
+<li><a class="reference internal" href="#creating-a-middleware-pipeline-with-iapplicationbuilder">Creating a middleware pipeline with IApplicationBuilder</a></li>
+<li><a class="reference internal" href="#built-in-middleware">Built-in middleware</a></li>
+<li><a class="reference internal" href="#writing-middleware">Writing middleware</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/docs/aspnet/fundamentals/middleware/_static/sample">Download sample from GitHub</a>.</p>
+<div class="section" id="what-is-middleware">
+<h2>What is middleware<a class="headerlink" href="#what-is-middleware" title="Permalink to this headline">¶</a></h2>
+<p>Middleware are components that are assembled into an application pipeline to handle requests and responses. Each component can choose whether to pass the request on to the next component in the pipeline, and can perform certain actions before and after the next component in the pipeline. Request delegates are used to build this request pipeline, which are then used to handle each incoming HTTP request to your application.</p>
+<p>Request delegates are configured using <code class="docutils literal"><span class="pre">Run</span></code>, <code class="docutils literal"><span class="pre">Map</span></code>, and <code class="docutils literal"><span class="pre">Use</span></code> extension methods on the <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> type that is passed into the <code class="docutils literal"><span class="pre">Configure</span></code> method in the <code class="docutils literal"><span class="pre">Startup</span></code> class. An individual request delegate can be specified in-line as an anonymous method, or it can be defined in a reusable class. These reusable classes  are <cite>middleware</cite>, or <cite>middleware components</cite>. Each middleware component in the request pipeline is responsible for invoking the next component in the chain, or choosing to short-circuit the chain if appropriate.</p>
+</div>
+<div class="section" id="creating-a-middleware-pipeline-with-iapplicationbuilder">
+<h2>Creating a middleware pipeline with IApplicationBuilder<a class="headerlink" href="#creating-a-middleware-pipeline-with-iapplicationbuilder" title="Permalink to this headline">¶</a></h2>
+<p>The ASP.NET request pipeline consists of a sequence of request delegates, called one after the next, as this diagram shows (the thread of execution follows the black arrows):</p>
+<img alt="../_images/request-delegate-pipeline.png" src="../_images/request-delegate-pipeline.png" />
+<p>Each delegate has the opportunity to perform operations before and after the next delegate. Any delegate can choose to stop passing the request on to the next delegate, and instead handle the request itself. This is referred to as short-circuiting the request pipeline, and is desirable because it allows unnecessary work to be avoided. For example, an authorization middleware function might only call the next delegate in the pipeline if the request is authenticated, otherwise it could short-circuit the pipeline and simply return some form of &#8220;Not Authorized&#8221; response. Exception handling delegates need to be called early on in the pipeline, so they are able to catch exceptions that occur in later calls within the call chain.</p>
+<p>You can see an example of setting up a request pipeline, using a variety of request delegates, in the default web site template that ships with Visual Studio 2015. Its <code class="docutils literal"><span class="pre">Configure</span></code> method, shown below, first wires up error pages (in development) or the site&#8217;s production error handler, then builds out the pipeline with support for static files, ASP.NET Identity authentication, and finally, ASP.NET MVC.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">,</span> <span class="n">ILoggerFactory</span> <span class="n">loggerFactory</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">MinimumLevel</span> <span class="p">=</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Information</span><span class="p">;</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">();</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddDebug</span><span class="p">();</span>
+
+    <span class="c1">// Configure the HTTP request pipeline.</span>
+
+    <span class="c1">// Add the following to the request pipeline only in development environment.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseBrowserLink</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseDatabaseErrorPage</span><span class="p">(</span><span class="n">DatabaseErrorPageOptions</span><span class="p">.</span><span class="n">ShowAll</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// Add Error handling middleware which catches all application specific errors and</span>
+        <span class="c1">// sends the request to the following path or controller action.</span>
+<span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">&quot;/Home/Error&quot;</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+
+    <span class="c1">// Add the platform handler to the request pipeline.</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseIISPlatformHandler</span><span class="p">();</span>
+
+    <span class="c1">// Add static files to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+</span>
+    <span class="c1">// Add cookie-based authentication to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseIdentity</span><span class="p">();</span>
+</span>
+    <span class="c1">// Add MVC to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseMvc</span><span class="p">(</span><span class="n">routes</span> <span class="p">=&gt;</span>
+</span>    <span class="p">{</span>
+        <span class="n">routes</span><span class="p">.</span><span class="n">MapRoute</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="s">&quot;default&quot;</span><span class="p">,</span>
+            <span class="n">template</span><span class="p">:</span> <span class="s">&quot;{controller=Home}/{action=Index}/{id?}&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Uncomment the following line to add a route for porting Web API 2 controllers.</span>
+        <span class="c1">// routes.MapWebApiRoute(&quot;DefaultApi&quot;, &quot;api/{controller}/{id?}&quot;);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Because of the order in which this pipeline was constructed, the middleware configured by the <code class="docutils literal"><span class="pre">UseErrorHandler</span></code> method will catch any exceptions that occur in later calls (in non-development environments). Also, in this example a design decision has been made that static files will not be protected by any authentication. This is a tradeoff that improves performance when handling static files since no other middleware (such as authentication middleware) needs to be called when handling these requests (ASP.NET 5 uses a specific <code class="docutils literal"><span class="pre">wwwroot</span></code> folder for all files that should be accessible by default, so there is typically no need to perform authentication before sending these files). If the request is not for a static file, it will flow to the next piece of middleware defined in the pipeline (in this case, Identity). Learn more about <a class="reference internal" href="static-files.html"><em>Working with Static Files</em></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Remember:</strong> the order in which you arrange your <code class="docutils literal"><span class="pre">Use[Middleware]</span></code> statements in your application&#8217;s <code class="docutils literal"><span class="pre">Configure</span></code> method is very important. Be sure you have a good understanding of how your application&#8217;s request pipeline will behave in various scenarios.</p>
+</div>
+<p>The simplest possible ASP.NET application sets up a single request delegate that handles all requests. In this case, there isn&#8217;t really a request &#8220;pipeline&#8221;, so much as a single anonymous function that is called in response to every HTTP request.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>It&#8217;s important to realize that request delegate, as written here, will terminate the pipeline, regardless of other calls to <code class="docutils literal"><span class="pre">App.Run</span></code> that you may include. In the following example, only the first delegate (&#8220;Hello, World!&#8221;) will be executed and displayed.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+</span>    <span class="p">});</span>
+
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello, World, Again!&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>You chain multiple request delegates together making a different call, with a <code class="docutils literal"><span class="pre">next</span></code> parameter representing the next delegate in the pipeline. Note that just because you&#8217;re calling it &#8220;next&#8221; doesn&#8217;t mean you can&#8217;t perform actions both before and after the next delegate, as this example demonstrates:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureLogInline</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">ILoggerFactory</span> <span class="n">loggerfactory</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">loggerfactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">(</span><span class="n">minLevel</span><span class="p">:</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">logger</span> <span class="p">=</span> <span class="n">loggerfactory</span><span class="p">.</span><span class="n">CreateLogger</span><span class="p">(</span><span class="n">_environment</span><span class="p">);</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">Use</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span>    <span class="p">{</span>
+        <span class="n">logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;Handling request.&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="k">await</span> <span class="n">next</span><span class="p">.</span><span class="n">Invoke</span><span class="p">();</span>
+</span>        <span class="n">logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;Finished handling request.&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello from &quot;</span> <span class="p">+</span> <span class="n">_environment</span><span class="p">);</span>
+</span>    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be wary of modifying <code class="docutils literal"><span class="pre">HttpResponse</span></code> after invoking next, since one of the components further down the pipeline may have written to the response, causing it to be sent to the client.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This <code class="docutils literal"><span class="pre">ConfigureLogInline</span></code> method is called when the application is run with an environment set to <code class="docutils literal"><span class="pre">LogInline</span></code>. Learn more about <a class="reference internal" href="environments.html"><em>Working with Multiple Environments</em></a>. We will be using variations of <code class="docutils literal"><span class="pre">Configure[Environment]</span></code> to show different options in the rest of this article. The easiest way to run the samples in Visual Studio is with the <code class="docutils literal"><span class="pre">web</span></code> command, which is configured in <code class="docutils literal"><span class="pre">hosting.ini</span></code> to listen on <code class="docutils literal"><span class="pre">http://localhost:5000</span></code>. See also <a class="reference internal" href="startup.html"><em>Application Startup</em></a>.</p>
+</div>
+<p>In the above example, the call to <code class="docutils literal"><span class="pre">await</span> <span class="pre">next.Invoke()</span></code> will call into the delegate on line 14. The client will receive the expected response (&#8220;Hello from LogInline&#8221;), and the server&#8217;s console output includes both the before and after messages, as you can see here:</p>
+<img alt="../_images/console-loginline.png" src="../_images/console-loginline.png" />
+<div class="section" id="run-map-and-use">
+<h3>Run, Map, and Use<a class="headerlink" href="#run-map-and-use" title="Permalink to this headline">¶</a></h3>
+<p>You configure the HTTP pipeline using the <a class="reference external" href="https://github.com/aspnet/HttpAbstractions/tree/dev/src/Microsoft.AspNet.Http.Abstractions/Extensions">extensions</a> <code class="docutils literal"><span class="pre">Run</span></code>, <code class="docutils literal"><span class="pre">Map</span></code>, and <code class="docutils literal"><span class="pre">Use</span></code>. By convention, the <code class="docutils literal"><span class="pre">Run</span></code> method is simply a shorthand way of adding middleware to the pipeline that doesn&#8217;t call any other middleware (that is, it will not call a <code class="docutils literal"><span class="pre">next</span></code> request delegate). Thus, <code class="docutils literal"><span class="pre">Run</span></code> should only be called at the end of your pipeline. <code class="docutils literal"><span class="pre">Run</span></code> is a convention, and some middleware components may expose their own Run[Middleware] methods that should only run at the end of the pipeline. The following two examples (one using <code class="docutils literal"><span class="pre">Run</span></code> and the other <code class="docutils literal"><span class="pre">Use</span></code>) are equivalent to one another, since the second one doesn&#8217;t use its <code class="docutils literal"><span class="pre">next</span></code> parameter:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureEnvironmentOne</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+</span>    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello from &quot;</span> <span class="p">+</span> <span class="n">_environment</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureEnvironmentTwo</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">Use</span><span class="p">(</span><span class="n">next</span> <span class="p">=&gt;</span> <span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+</span>    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello from &quot;</span> <span class="p">+</span> <span class="n">_environment</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference external" href="https://github.com/aspnet/HttpAbstractions/blob/1.0.0-beta5/src/Microsoft.AspNet.Http.Abstractions/IApplicationBuilder.cs#L17">IApplicationBuilder interface</a> itself exposes a single <code class="docutils literal"><span class="pre">Use</span></code> method, so technically they&#8217;re not all <em>extension</em> methods.</p>
+</div>
+<p>We&#8217;ve already seen several examples of how to build a request pipeline with <code class="docutils literal"><span class="pre">Use</span></code>. <code class="docutils literal"><span class="pre">Map*</span></code> extensions are used as a convention for branching the pipeline. The current implementation supports branching based based on the request&#8217;s path, or using a predicate. The <code class="docutils literal"><span class="pre">Map</span></code> extension method is used to match request delegates based on a request&#8217;s path. <code class="docutils literal"><span class="pre">Map</span></code> simply accepts a path and a function that configures a separate middleware pipeline. In the following example, any request with the base path of <code class="docutils literal"><span class="pre">/maptest</span></code> will be handled by the pipeline configured in the <code class="docutils literal"><span class="pre">HandleMapTest</span></code> method.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">HandleMapTest</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Map Test Successful&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureMapping</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="s">&quot;/maptest&quot;</span><span class="p">,</span> <span class="n">HandleMapTest</span><span class="p">);</span>
+</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When <code class="docutils literal"><span class="pre">Map</span></code> is used, the matched path segment(s) are removed from <code class="docutils literal"><span class="pre">HttpRequest.Path</span></code> and appended to <code class="docutils literal"><span class="pre">HttpRequest.PathBase</span></code> for each request.</p>
+</div>
+<p>In addition to path-based mapping, the <code class="docutils literal"><span class="pre">MapWhen</span></code> method supports predicate-based middleware branching, allowing separate pipelines to be constructed in a very flexible fashion. Any predicate of type <code class="docutils literal"><span class="pre">Func&lt;HttpContext,</span> <span class="pre">bool&gt;</span></code> can be used to map requests to a new branch of the pipeline. In the following example, a simple predicate is used to detect the presence of a querystring variable <code class="docutils literal"><span class="pre">branch</span></code>:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">HandleBranch</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Branch used.&quot;</span><span class="p">);</span>
+</span>    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureMapWhen</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">MapWhen</span><span class="p">(</span><span class="n">context</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Query</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;branch&quot;</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">},</span> <span class="n">HandleBranch</span><span class="p">);</span>
+</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello from &quot;</span> <span class="p">+</span> <span class="n">_environment</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Using the configuration shown above, any request that includes a querystring value for <code class="docutils literal"><span class="pre">branch</span></code> will use the pipeline defined in the <code class="docutils literal"><span class="pre">HandleBranch</span></code> method (in this case, a response of &#8220;Branch used.&#8221;). All other requests (that do not define a querystring value for <code class="docutils literal"><span class="pre">branch</span></code>) will be handled by the delegate defined on line 17.</p>
+</div>
+</div>
+<div class="section" id="built-in-middleware">
+<h2>Built-in middleware<a class="headerlink" href="#built-in-middleware" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET ships with the following middleware components:</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Middleware</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Middleware</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../security/sociallogins.html"><em>Authentication</em></a></td>
+<td>Provides authentication support.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/aspnet/CORS/tree/1.0.0-beta6">CORS</a></td>
+<td>Configures Cross-Origin Resource Sharing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="diagnostics.html"><em>Diagnostics</em></a></td>
+<td>Includes support for error pages and runtime information.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="routing.html"><em>|stub-icon| Routing</em></a></td>
+<td>Define and constrain request routes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/aspnet/Session">Session</a></td>
+<td>Provides support for managing user sessions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="static-files.html"><em>Static Files</em></a></td>
+<td>Provides support for serving static files, and directory browsing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="writing-middleware">
+<h2>Writing middleware<a class="headerlink" href="#writing-middleware" title="Permalink to this headline">¶</a></h2>
+<p>For more complex request handling functionality, the ASP.NET team recommends implementing the middleware in its own class, and exposing an <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> extension method that can be called from the <code class="docutils literal"><span class="pre">Configure</span></code> method. The simple logging middleware shown in the previous example can be converted into a middleware class that takes in the next <code class="docutils literal"><span class="pre">RequestDelegate</span></code> in its constructor and supports an <code class="docutils literal"><span class="pre">Invoke</span></code> method as shown:</p>
+<div class="literal-block-wrapper container" id="requestloggermiddleware-cs">
+<div class="code-block-caption"><span class="caption-text">RequestLoggerMiddleware.cs</span><a class="headerlink" href="#requestloggermiddleware-cs" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.AspNet.Builder</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Framework.Logging</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">MiddlewareSample</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">RequestLoggerMiddleware</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">RequestDelegate</span> <span class="n">_next</span><span class="p">;</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">ILogger</span> <span class="n">_logger</span><span class="p">;</span>
+
+<span class="hll">        <span class="k">public</span> <span class="nf">RequestLoggerMiddleware</span><span class="p">(</span><span class="n">RequestDelegate</span> <span class="n">next</span><span class="p">,</span> <span class="n">ILoggerFactory</span> <span class="n">loggerFactory</span><span class="p">)</span>
+</span>        <span class="p">{</span>
+            <span class="n">_next</span> <span class="p">=</span> <span class="n">next</span><span class="p">;</span>
+            <span class="n">_logger</span> <span class="p">=</span> <span class="n">loggerFactory</span><span class="p">.</span><span class="n">CreateLogger</span><span class="p">&lt;</span><span class="n">RequestLoggerMiddleware</span><span class="p">&gt;();</span>
+        <span class="p">}</span>
+
+<span class="hll">        <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">Invoke</span><span class="p">(</span><span class="n">HttpContext</span> <span class="n">context</span><span class="p">)</span>
+</span>        <span class="p">{</span>
+            <span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;Handling request: &quot;</span> <span class="p">+</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Path</span><span class="p">);</span>
+            <span class="k">await</span> <span class="n">_next</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+            <span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;Finished handling request.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The middleware follows the <a class="reference external" href="http://deviq.com/explicit-dependencies-principle/">Explicit Dependencies Principle</a> and exposes all of its dependencies in its constructor. Middleware can take advantage of the <a class="reference external" href="https://github.com/aspnet/HttpAbstractions/blob/1.0.0-beta6/src/Microsoft.AspNet.Http.Abstractions/Extensions/UseMiddlewareExtensions.cs">UseMiddleware&lt;T&gt;</a> extension to inject services directly into their constructors, as shown in the example below. Dependency injected services are automatically filled, and the extension takes a <code class="docutils literal"><span class="pre">params</span></code> array of arguments to be used for non-injected parameters.</p>
+<div class="literal-block-wrapper container" id="requestloggerextensions-cs">
+<div class="code-block-caption"><span class="caption-text">RequestLoggerExtensions.cs</span><a class="headerlink" href="#requestloggerextensions-cs" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">RequestLoggerExtensions</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">IApplicationBuilder</span> <span class="nf">UseRequestLogger</span><span class="p">(</span><span class="k">this</span> <span class="n">IApplicationBuilder</span> <span class="n">builder</span><span class="p">)</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">UseMiddleware</span><span class="p">&lt;</span><span class="n">RequestLoggerMiddleware</span><span class="p">&gt;();</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Using the extension method and associated middleware class, the <code class="docutils literal"><span class="pre">Configure</span></code> method becomes very simple and readable.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureLogMiddleware</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span>
+    <span class="n">ILoggerFactory</span> <span class="n">loggerfactory</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">loggerfactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">(</span><span class="n">minLevel</span><span class="p">:</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseRequestLogger</span><span class="p">();</span>
+</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello from &quot;</span> <span class="p">+</span> <span class="n">_environment</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Although <code class="docutils literal"><span class="pre">RequestLoggerMiddleware</span></code> requires an <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> parameter in its constructor, neither the <code class="docutils literal"><span class="pre">Startup</span></code> class nor the <code class="docutils literal"><span class="pre">UseRequestLogger</span></code> extension method need to explicitly supply it. Instead, it is automatically provided through dependency injection performed within <code class="docutils literal"><span class="pre">UseMiddleware&lt;T&gt;</span></code>.</p>
+<p>Testing the middleware (by setting the <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> environment variable to <code class="docutils literal"><span class="pre">LogMiddleware</span></code>) should result in output like the following (when using WebListener):</p>
+<img alt="../_images/console-logmiddleware.png" src="../_images/console-logmiddleware.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can see another example of <code class="docutils literal"><span class="pre">UseMiddleware&lt;T&gt;</span></code> in action in the <a class="reference external" href="https://github.com/aspnet/StaticFiles/blob/1.0.0-beta6/src/Microsoft.AspNet.StaticFiles/StaticFileExtensions.cs#L44">UseStaticFiles</a> extension method, which is used to create the <a class="reference external" href="https://github.com/aspnet/StaticFiles/blob/1.0.0-beta6/src/Microsoft.AspNet.StaticFiles/StaticFileMiddleware.cs#L30">StaticFileMiddleware</a> with its required constructor parameters. In this case, the <code class="docutils literal"><span class="pre">StaticFileOptions</span></code> parameter is passed in, but other constructor parameters are supplied by <code class="docutils literal"><span class="pre">UseMiddleware&lt;T&gt;</span></code> and dependency injection.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Middleware provide simple components for adding features to individual web requests. Applications configure their request pipelines in accordance with the features they need to support, and thus have fine-grained control over the functionality each request uses. Developers can easily create their own middleware to provide additional functionality to ASP.NET applications.</p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="startup.html"><em>Application Startup</em></a></li>
+<li><a class="reference internal" href="request-features.html"><em>Request Features</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="static-files.html" class="btn btn-neutral float-right" title="Working with Static Files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="http-abstractions.html" class="btn btn-neutral" title="|stub-icon| HTTP Abstractions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

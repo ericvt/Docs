@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:4
+msgid "Key Storage Format"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:7
+msgid "Objects are stored at rest in XML representation. The default directory for key storage is %LOCALAPPDATA%\\\\ASP.NET\\DataProtection-Keys\\\\."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:10
+msgid "The <key> element"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:12
+msgid "Keys exist as top-level objects in the key repository. By convention keys have the filename **key-{guid}.xml**, where {guid} is the id of the key. Each such file contains a single key. The format of the file is as follows."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:35
+msgid "The <key> element contains the following attributes and child elements:"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:37
+msgid "The key id. This value is treated as authoritative; the filename is simply a nicety for human readability."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:38
+msgid "The version of the <key> element, currently fixed at 1."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:39
+msgid "The key's creation, activation, and expiration dates."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:40
+msgid "A <descriptor> element, which contains information on the authenticated encryption implementation contained within this key."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:42
+msgid "In the above example, the key's id is {80732141-ec8f-4b80-af9c-c4d2d1ff8901}, it was created and activated on March 19, 2015, and it has a lifetime of 90 days. (Occasionally the activation date might be slightly before the creation date as in this example. This is due to a nit in how the APIs work and is harmless in practice.)"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:45
+msgid "The <descriptor> element"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:47
+msgid "The outer <descriptor> element contains an attribute deserializerType, which is the assembly-qualified name of a type which implements IAuthenticatedEncryptorDescriptorDeserializer. This type is responsible for reading the inner <descriptor> element and for parsing the information contained within."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:49
+msgid "The particular format of the <descriptor> element depends on the authenticated encryptor implementation encapsulated by the key, and each deserializer type expects a slightly different format for this. In general, though, this element will contain algorithmic information (names, types, OIDs, or similar) and secret key material. In the above example, the descriptor specifies that this key wraps AES-256-CBC encryption + HMACSHA256 validation."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:52
+msgid "The <encryptedSecret> element"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:54
+msgid "An <encryptedSecret> element which contains the encrypted form of the secret key material may be present if :ref:`encryption of secrets at rest is enabled <data-protection-implementation-key-encryption-at-rest>`. The attribute decryptorType will be the assembly-qualified name of a type which implements IXmlDecryptor. This type is responsible for reading the inner <encryptedKey> element and decrypting it to recover the original plaintext."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:56
+msgid "As with <descriptor>, the particular format of the <encryptedSecret> element depends on the at-rest encryption mechanism in use. In the above example, the master key is encrypted using Windows DPAPI per the comment."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:59
+msgid "The <revocation> element"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:61
+msgid "Revocations exist as top-level objects in the key repository. By convention revocations have the filename **revocation-{timestamp}.xml** (for revoking all keys before a specific date) or **revocation-{guid}.xml** (for revoking a specific key). Each file contains a single <revocation> element."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:63
+msgid "For revocations of individual keys, the file contents will be as below."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:74
+msgid "In this case, only the specified key is revoked. If the key id is \"*\", however, as in the below example, all keys whose creation date is prior to the specified revocation date are revoked."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-storage-format.rst:86
+msgid "The <reason> element is never read by the system. It is simply a convenient place to store a human-readable reason for revocation."
+msgstr ""
+

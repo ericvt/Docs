@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\getting-started\installing-on-windows.rst:2
+msgid "Installing ASP.NET 5 On Windows"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:4
+msgid "By `Steve Smith`_, `Daniel Roth`_, `Rick Anderson`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:6
+msgid "`Install ASP.NET with Visual Studio`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:7
+msgid "`Install ASP.NET Standalone`_"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:10
+msgid "Install ASP.NET with Visual Studio"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:12
+msgid "The easiest way to get started building applications with ASP.NET 5 is to install the latest version of Visual Studio 2015 (including the free Community edition)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:14
+msgid "Install `Visual Studio 2015 <http://go.microsoft.com/fwlink/?LinkId=532606>`__"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:16
+msgid "Be sure to specify that you want to include the Microsoft Web Developer Tools."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:20
+msgid "Install the latest `ASP.NET 5 preview (Beta8) <http://go.microsoft.com/fwlink/?LinkId=690242>`_."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:22
+msgid "Select the appropriate version of the .NET Version Manager (x64 or x86) and the web tools extensions for Visual Studio. The installer will tell you if you've selected the wrong version of the .NET Version Manager."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:26
+msgid "Enable ASP.NET 5 command-line tools. Open a **Developer Command Prompt for VS2015** and run the following commands::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:31
+msgid "This will set up the .NET Version Manager (DNVM) on the path and install the latest .NET Execution Environment (DNX)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:33
+msgid "You are all set up to go."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:37
+msgid "Install ASP.NET Standalone"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:39
+msgid "Visual Studio isn't the only way to install ASP.NET, and installing an IDE may not be appropriate in some scenarios. You can also install ASP.NET on its own from a command prompt. There are a few steps involved, since we'll need to install and configure the environment in which ASP.NET runs, known as the .NET Execution Environment (DNX). To install DNX, we need one more tool, the .NET Version Manager (DNVM)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:42
+msgid "Install the .NET Version Manager (DNVM)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:44
+msgid "Use .NET Version Manager to install different versions of the .NET Execution Environment (DNX)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:46
+msgid "To install DNVM open a command prompt and run the following::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:50
+msgid "Once this step is complete you should be able to run ``dnvm`` and see some help text."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:53
+msgid "Install the .NET Execution Environment (DNX)"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:55
+msgid "The .NET Execution Environment (DNX) is used to build and run .NET projects. Use DNVM to install DNX for the full .NET Framework or for .NET Core (see :doc:`choosing-the-right-dotnet`)."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:57
+msgid "To install DNX for .NET Core run::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:61
+msgid "To install DNX for the full .NET Framework run::"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:65
+msgid "By default DNVM will install DNX for the full .NET Framework if no runtime is specified."
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:68
+msgid "Related Resources"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:70
+msgid ":doc:`/tutorials/your-first-aspnet-application`"
+msgstr ""
+
+#: ..\..\getting-started\installing-on-windows.rst:71
+msgid ":doc:`/fundamentals/index`"
+msgstr ""
+

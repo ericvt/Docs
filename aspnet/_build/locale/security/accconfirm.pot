@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\accconfirm.rst:2
+msgid "Account Confirmation and Password Recovery with ASP.NET Identity"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:4
+msgid "By `Rick Anderson`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:6
+msgid "This tutorial shows you how to build an ASP.NET 5 Web site with email confirmation and password reset using ASP.NET Identity."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:16
+msgid "In this article:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:9
+msgid "`Create a New ASP.NET 5 Project`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:10
+msgid "`Require SSL`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:11
+msgid "`Require email confirmation`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:12
+msgid "`Configure email provider`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:13
+msgid "`Enable account confirmation and password recovery`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:14
+msgid "`Register, confirm email, and reset password`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:15
+msgid "`Require email confirmation before login`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:16
+msgid "`Combine social and local login accounts`_"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:19
+msgid "Create a New ASP.NET 5 Project"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:21
+msgid "Create a new ASP.NET 5 web app with individual user accounts."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:25
+msgid "Run the app and then click on the **Register** link and register a user. At this  point, the only validation on the email is with the `[EmailAddress] <http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx>`_ attribute. After you submit the registration, you are logged into the app. Later in the tutorial we'll change this so new users cannot log in until their email has been validated."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:27
+msgid "In **SQL Server Object Explorer** (SSOX), navigate to **(localdb)\\MSSQLLocalDB(SQL Server 12)**. Right click on **dbo.AspNetUsers** > **View Data**:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:32
+msgid "Note the ``EmailConfirmed`` field is ``False``."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:34
+msgid "Right-click on the row and from the context menu, select **Delete**. You might want to use this email again in the next step, when the app sends a confirmation email. Deleting the email alias now will make it easier in the following steps."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:37
+msgid "Require SSL"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:39
+msgid "In this section we'll set up our Visual Studio project to use SSL and our project to require SSL."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:42
+msgid "Enable SSL in Visual Studio"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:44
+msgid "From the **Project** menu, select **Web app Properties**."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:45
+msgid "Select **Debug** in the left pane (see image below)."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:46
+msgid "Check **Enable SSL**, and then save changes (this step is necessary to populate the URL box)."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:47
+msgid "Copy the **URL** and paste it into the **Launch URL** box."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:52
+msgid "Require HTTPS"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:54
+msgid "Add the ``[RequireHttps]`` attribute to each controller. The ``[RequireHttps]`` attribute will redirect all HTTP GET requests to HTTPS GET and will reject all HTTP POSTs. A security best practice is to use HTTPS for all requests."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:63
+msgid "Require email confirmation"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:65
+msgid "It's a best practice to confirm the email of a new user registration to verify they are not impersonating someone else (that is, they haven't registered with someone else's email). Suppose you had a discussion forum, you would want to prevent \"bob@example.com\" from registering as \"joe@contoso.com\". Without email confirmation, \"joe@contoso.com\" could get unwanted email from your app. Suppose Bob accidentally registered as  \"bib@example.com\" and hadn't noticed it, he wouldn't be able to use password recovery because the app doesn't have his correct email. Email confirmation provides only limited protection from bots and doesn't provide protection from determined spammers who have many working email aliases they can use to register."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:67
+msgid "You generally want to prevent new users from posting any data to your web site before they have been confirmed by email, an SMS text message, or another mechanism. In the sections below, we will enable email confirmation and modify the code to prevent newly registered  users from logging in until their email has been confirmed."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:70
+msgid "Configure email provider"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:72
+msgid "We'll use the :ref:`Options pattern <options-config-objects>` to access the user account and key settings. For more information, see :doc:`../fundamentals/configuration`."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:74
+msgid "Create a class to fetch the secure email key. For this sample, the ``AuthMessageSenderOptions`` class is created in the *Services/AuthMessageSenderOptions.cs* file."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:81
+msgid "Set the ``SendGridUser`` and ``SendGridKey`` with the `secret-manager tool <http://docs.asp.net/en/latest/security/app-secrets.html>`_. For example:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:88
+msgid "On Windows, Secret Manager stores your keys/value pairs in a *secrets.json* file in the %APPDATA%/Microsoft/UserSecrets/<**userSecretsId**> directory. The **userSecretsId** directory can be found in your *project.json* file. For this example, the first few lines of the *project.json* file are shown below:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:95
+msgid "At this time, the contents of the *project.json* file are not encrypted. The *project.json* file is shown below (the sensitive keys have been removed.)"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:107
+msgid "Configure startup to use ``AuthMessageSenderOptions``"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:109
+msgid "Add ``AuthMessageSenderOptions`` to the service container at the end of the ``ConfigureServices`` method in the *Startup.cs* file:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:120
+msgid "Configure the ``AuthMessageSender`` class"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:122
+msgid "This tutorial shows how to add email notification through `SendGrid <https://sendgrid.com/>`_, but you can send email using SMTP and other mechanisms."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:124
+msgid "Install the SendGrid NuGet package. From the Package Manager Console,  enter the following the following command:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:126
+msgid "``Install-Package SendGrid``"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:128
+msgid "Follow the instructions `Create a SendGrid account <https://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/#create-a-sendgrid-account>`_ to register for a free SendGrid account."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:129
+msgid "Add code in *Services/MessageServices.cs* similar to the following to configure SendGrid"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:136
+msgid "SendGrid doesn't currently target dnxcore50: If you build your project you will get compilation errors. This is because SendGrid does not have a package for dnxcore50 and some APIs such as System.Mail are not available on .NET Core. You can remove dnxcore50 from *project.json* or call the REST API from SendGrid to send email. The code below shows the updated *project.json* file with ``\"dnxcore50\": { }`` removed."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:145
+msgid "Enable account confirmation and password recovery"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:147
+msgid "The template already has the code for account confirmation and password recovery. Follow these steps to enable it:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:149
+msgid "Find the ``[HttpPost] Register`` method in the  *AccountController.cs* file."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:150
+msgid "Uncomment the code to enable account confirmation."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:158
+msgid "**Note:** We're also preventing a newly registered user from being automatically logged on by commenting out the following line:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:164
+msgid "Enable password recovery by uncommenting the code in the ``ForgotPassword`` action in the *Controllers/AccountController.cs* file."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:172
+msgid "Uncomment the highlighted ``ForgotPassword`` from in the *Views/Account/ForgotPassword.cshtml* view file."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:179
+msgid "Register, confirm email, and reset password"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:181
+msgid "In this section, run the web app and show the account confirmation and password recovery flow."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:183
+msgid "Run the application and register a new user"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:187
+msgid "Check your email for the account confirmation link. If you don't get the email notification:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:189
+msgid "Check the SendGrid web site to verify your sent mail messages."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:190
+msgid "Check your spam folder."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:191
+msgid "Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:192
+msgid "In SSOX, navigate to **dbo.AspNetUsers** and delete the email entry and try again."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:194
+msgid "Click the link to confirm your email."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:195
+msgid "Log in with your email and password."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:196
+msgid "Log off."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:199
+msgid "Test password reset"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:201
+msgid "Login and select **Forgot your password?**"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:202
+msgid "Enter the email you used to register the account."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:203
+msgid "An email with a link to reset your password will be sent. Check your email and click the link to reset your password.  After your password has been successfully reset, you can login with your email and new password."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:206
+msgid "Require email confirmation before login"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:208
+msgid "With the current templates, once a user completes the registration form, they are logged in (authenticated). You generally want to confirm their email before logging them in. In the section below, we will modify the code to require new users have a confirmed email before they are logged in. Update the ``[HttpPost] Login`` action in the *AccountController.cs* file with the following highlighted changes."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:216
+msgid "A security best practice is to not use production secrets in test and development. If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal. The configuration system is setup to read keys from environment variables."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:219
+msgid "Combine social and local login accounts"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:221
+msgid "To complete this section, you must first enable an external authentication provider. See :doc:`sociallogins`."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:223
+msgid "You can combine local and social accounts by clicking on your email link. In the following sequence \"RickAndMSFT@gmail.com\" is first created as a local login, but you can create the account as a social login first, then add a local login."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:227
+msgid "Click on the **Manage** link. Note the 0 external (social logins) associated with this account."
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:231
+msgid "Click the link to another login service and accept the app requests. In the image below, Facebook is the external authentication provider:"
+msgstr ""
+
+#: ..\..\security\accconfirm.rst:235
+msgid "The two accounts have been combined. You will be able to log on with either account. You might want your users to add local accounts in case their social log in authentication service is down, or more likely they have lost access to their social account."
+msgstr ""
+

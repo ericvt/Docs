@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Microsoft
+# This file is distributed under the same license as the ASP.NET package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ASP.NET 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-12 14:35-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\security\data-protection\implementation\key-management.rst:4
+msgid "Key Management"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:6
+msgid "The data protection system automatically manages the lifetime of master keys used to protect and unprotect payloads. Each key can exist in one of four stages."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:8
+msgid "Created - the key exists in the key ring but has not yet been activated. The key shouldn't be used for new Protect operations until sufficient time has elapsed that the key has had a chance to propagate to all machines that are consuming this key ring."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:9
+msgid "Active - the key exists in the key ring and should be used for all new Protect operations."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:10
+msgid "Expired - the key has run its natural lifetime and should no longer be used for new Protect operations."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:11
+msgid "Revoked - the key is compromised and must not be used for new Protect operations."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:13
+msgid "Created, active, and expired keys may all be used to unprotect incoming payloads. Revoked keys by default may not be used to unprotect payloads, but the application developer can :ref:`override this behavior <data-protection-consumer-apis-dangerous-unprotect>` if necessary."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:16
+msgid "The developer might be tempted to delete a key from the key ring (e.g., by deleting the corresponding file from the file system). At that point, all data protected by the key is permanently undecipherable, and there is no emergency override like there is with revoked keys. Deleting a key is truly destructive behavior, and consequently the data protection system exposes no first-class API for performing this operation."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:19
+msgid "Default key selection"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:21
+msgid "When the data protection system reads the key ring from the backing repository, it will attempt to locate a \"default\" key from the key ring. The default key is used for new Protect operations."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:23
+msgid "The general heuristic is that the data protection system chooses the key with the most recent activation date as the default key. (There's a small fudge factor to allow for server-to-server clock skew.) If the key is expired or revoked, and if the application has not disabled automatic key generation, then a new key will be generated with immediate activation per the :ref:`key expiration and rolling <data-protection-implementation-key-management-expiration>` policy below."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:25
+msgid "The reason the data protection system generates a new key immediately rather than falling back to a different key is that new key generation should be treated as an implicit expiration of all keys that were activated prior to the new key. The general idea is that new keys may have been configured with different algorithms or encryption-at-rest mechanisms than old keys, and the system should prefer the current configuration over falling back."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:27
+msgid "There is an exception. If the application developer has :ref:`disabled automatic key generation <data-protection-configuring-disable-automatic-key-generation>`, then the data protection system must choose something as the default key. In this fallback scenario, the system will choose the non-revoked key with the most recent activation date, with preference given to keys that have had time to propagate to other machines in the cluster. The fallback system may end up choosing an expired default key as a result. The fallback system will never choose a revoked key as the default key, and if the key ring is empty or every key has been revoked then the system will produce an error upon initialization."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:32
+msgid "Key expiration and rolling"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:34
+msgid "When a key is created, it is automatically given an activation date of { now + 2 days } and an expiration date of { now + 90 days }. The 2-day delay before activation gives the key time to propagate through the system. That is, it allows other applications pointing at the backing store to observe the key at their next auto-refresh period, thus maximizing the chances that when the key ring does become active it has propagated to all applications that might need to use it."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:36
+msgid "If the default key will expire within 2 days and if the key ring does not already have a key that will be active upon expiration of the default key, then the data protection system will automatically persist a new key to the key ring. This new key has an activation date of { default key's expiration date } and an expiration date of { now + 90 days }. This allows the system to automatically roll keys on a regular basis with no interruption of service."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:38
+msgid "There might be circumstances where a key will be created with immediate activation. One example would be when the application hasn't run for a time and all keys in the key ring are expired. When this happens, the key is given an activation date of { now } without the normal 2-day activation delay."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:40
+msgid "The default key lifetime is 90 days, though this is configurable as in the following example."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:50
+msgid "An administrator can also change the default system-wide, though an explicit call to SetDefaultKeyLifetime will override any system-wide policy. The default key lifetime cannot be shorter than 7 days."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:53
+msgid "Automatic keyring refresh"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:55
+msgid "When the data protection system initializes, it reads the key ring from the underlying repository and caches it in memory. This cache allows Protect and Unprotect operations to proceed without hitting the backing store. The system will automatically check the backing store for changes approximately every 24 hours or when the current default key expires, whichever comes first."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:58
+msgid "Developers should very rarely (if ever) need to use the key management APIs directly. The data protection system will perform automatic key management as described above."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:60
+msgid "The data protection system exposes an interface IKeyManager that can be used to inspect and make changes to the key ring. The DI system that provided the instance of IDataProtectionProvider can also provide an instance of IKeyManager for your consumption. Alternatively, you can pull the IKeyManager straight from the IServiceProvider as in the example below."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:62
+msgid "Any operation which modifies the key ring (creating a new key explicitly or performing a revocation) will invalidate the in-memory cache. The next call to Protect or Unprotect will cause the data protection system to reread the key ring and recreate the cache."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:64
+msgid "The sample below demonstrates using the IKeyManager interface to inspect and manipulate the key ring, including revoking existing keys and generating a new key manually."
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:71
+msgid "Key storage"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:73
+msgid "The data protection system has a heuristic whereby it tries to deduce an appropriate key storage location and encryption at rest mechanism automatically. This is also configurable by the app developer. The following documents discuss the in-box implementations of these mechanisms:"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:75
+msgid ":ref:`In-box key storage providers <data-protection-implementation-key-storage-providers>`"
+msgstr ""
+
+#: ..\..\security\data-protection\implementation\key-management.rst:76
+msgid ":ref:`In-box key encryption at rest providers <data-protection-implementation-key-encryption-at-rest-providers>`"
+msgstr ""
+

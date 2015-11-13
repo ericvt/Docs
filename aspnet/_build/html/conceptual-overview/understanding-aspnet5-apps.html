@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Understanding ASP.NET 5 Web Apps &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Conceptual Overview" href="index.html"/>
+        <link rel="next" title="Fundamentals" href="../fundamentals/index.html"/>
+        <link rel="prev" title="|stub-icon| Introduction to NuGet" href="nuget.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Conceptual Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aspnet.html">Introduction to ASP.NET 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotnetcore.html">Introducing .NET Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dnx/overview.html">DNX Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nuget.html">|stub-icon| Introduction to NuGet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Understanding ASP.NET 5 Web Apps</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Conceptual Overview</a> &raquo;</li>
+      
+    <li>Understanding ASP.NET 5 Web Apps</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/conceptual-overview/understanding-aspnet5-apps.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="understanding-asp-net-5-web-apps">
+<h1>Understanding ASP.NET 5 Web Apps<a class="headerlink" href="#understanding-asp-net-5-web-apps" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 introduces several new fundamental concepts of web programming that are important to understand in order to productively create web apps. These concepts are not necessarily new to web programming in general, but are new to ASP.NET and thus are likely new to many developers whose experience with web programming has mainly been using ASP.NET and Visual Studio.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#asp-net-project-structure">ASP.NET Project Structure</a></li>
+<li><a class="reference internal" href="#framework-target">Framework Target</a></li>
+<li><a class="reference internal" href="#the-project-json-file">The project.json File</a></li>
+<li><a class="reference internal" href="#the-global-json-file">The global.json File</a></li>
+<li><a class="reference internal" href="#the-wwwroot-folder">The wwwroot folder</a></li>
+<li><a class="reference internal" href="#client-side-dependency-management">Client Side Dependency Management</a></li>
+<li><a class="reference internal" href="#server-side-dependency-management">Server Side Dependency Management</a></li>
+<li><a class="reference internal" href="#configuring-the-application">Configuring the Application</a></li>
+<li><a class="reference internal" href="#application-startup">Application Startup</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="asp-net-project-structure">
+<h2>ASP.NET Project Structure<a class="headerlink" href="#asp-net-project-structure" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5&#8217;s project structure adds new concepts and replaces some legacy elements found in previous versions of ASP.NET projects. The new default web project template creates a solution and project structure like the one shown here:</p>
+<img alt="../_images/solution-explorer.png" src="../_images/solution-explorer.png" />
+<p>The first thing you may notice about this new structure is that it includes a Solution Items folder with a <em>global.json</em> file, and the web
+project itself is located within a <em>src</em> folder within the solution. The new structure also includes a special <em>wwwroot</em> folder and a
+Dependencies section in addition to the References section that was present in past versions of ASP.NET (but which has been updated in this
+version). In the root the project there are also several new files such as <em>bower.json, appsettings.json, gulpfile.js, package.json, project.json</em>,
+and <em>Startup.cs</em>. You may notice that the files <em>global.asax, packages.config</em>, and <em>web.config</em> are gone. In previous versions of
+ASP.NET, a great deal of application configuration was stored in these files and in the project file. In ASP.NET 5, this information and logic
+has been refactored into files that are generally smaller and more focused.</p>
+</div>
+<div class="section" id="framework-target">
+<h2>Framework Target<a class="headerlink" href="#framework-target" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 can target multiple frameworks, allowing the application to be deployed into different hosting environments. By default applications will target the full version of .NET, but they can also target the .NET Core. Most legacy apps will target the full ASP.NET 5, at least initially, since they&#8217;re likely to have dependencies that include framework base class libraries that are not available in .NET Core today. .NET Core is a small version of the .NET framework that is optimized for web apps and supports Linux and Mac environments. It can be deployed with an application, allowing multiple apps on the same server to target different versions of .NET Core. It is also modular, allowing additional functionality to be added only when it is required, as separate NuGet packages (<a class="reference internal" href="dotnetcore.html"><em>learn more about .NET Core</em></a>).</p>
+<p>You can see which framework is currently being targeted in the web application project&#8217;s properties, by right-clicking on the web project in Solution Explorer and selecting Properties:</p>
+<img alt="../_images/project-properties.png" src="../_images/project-properties.png" />
+<p>By default, the checkbox for <em>Use specific DNX version</em> is unchecked. To target a specific version, check the box and choose the appropriate <em>Version</em>, <em>Platform</em>, and <em>Architecture</em>.</p>
+</div>
+<div class="section" id="the-project-json-file">
+<h2>The project.json File<a class="headerlink" href="#the-project-json-file" title="Permalink to this headline">¶</a></h2>
+<p>The project.json file is new to ASP.NET 5. It is used to define the project&#8217;s <a class="reference internal" href="#server-side-dependencies">server side dependencies</a> (discussed below), as well as other project-specific information. The sections included in <em>project.json</em> by default with the default web project template are shown below.</p>
+<img alt="../_images/project-json.png" src="../_images/project-json.png" />
+<p>The <strong>webroot</strong> section specifies the folder that should act as the root of the web site, which by convention defaults to <a class="reference internal" href="#the-wwwroot-folder">the wwwroot folder</a>. The version property specifies the current version of the project. You can also specify other metadata about the project such as <strong>authors</strong> and <strong>description</strong>.</p>
+<p>ASP.NET 5 has a great deal of support for command line tooling, and the <strong>commands</strong> section allows you to configure what certain command line commands should do (for instance, launch a web site or run tests).</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;commands&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;web&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gen&quot;</span><span class="o">:</span> <span class="s2">&quot;Microsoft.Framework.CodeGeneration&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ef&quot;</span><span class="o">:</span> <span class="s2">&quot;EntityFramework.Commands&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>The <strong>frameworks</strong> section designates which targeted frameworks will be built, and what dependencies need to be included. For instance, if you were using LINQ and collections, you could ensure these were included with your .NET Core build by adding them to the <code class="docutils literal"><span class="pre">dnxcore50</span></code> list of dependencies as shown.</p>
+<p><strong>See Also:</strong> <a class="reference external" href="http://davidfowl.com/diagnosing-dependency-issues-with-asp-net-5/">Diagnosing dependency issues with ASP.NET 5</a></p>
+<p>The <strong>exclude</strong> section is used to identify files and folders that should be excluded from builds. Likewise, <strong>publishExclude</strong> is used to identify content portions of the project that should be excluded when publishing the site (for example, in production).</p>
+<img alt="../_images/excludes.png" src="../_images/excludes.png" />
+<p>The <strong>scripts</strong> section is used to specify when certain build automation scripts should run. Visual Studio now has built-in support for running such scripts before and after certain events. The default ASP.NET project template has scripts in place to run during <em>postrestore</em> and <em>prepare</em> that install <a class="reference internal" href="#client-side-dependencies">client side dependencies</a> using npm and bower.</p>
+<img alt="../_images/scripts.png" src="../_images/scripts.png" />
+</div>
+<div class="section" id="the-global-json-file">
+<h2>The global.json File<a class="headerlink" href="#the-global-json-file" title="Permalink to this headline">¶</a></h2>
+<p>The global.json file is used to configure the solution as a whole. It includes just two sections, <code class="docutils literal"><span class="pre">projects</span></code> and <code class="docutils literal"><span class="pre">sdk</span></code> by default.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;projects&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span> <span class="p">],</span>
+  <span class="s2">&quot;sdk&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0-beta8&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <em>projects</em> property designates which folders contain source code for the solution. By default the project structure places source files in a <em>src</em> folder, allowing build artifacts to be placed in a sibling folder, making it easier to exclude such things from source control.</p>
+<img alt="../_images/solution-files.png" src="../_images/solution-files.png" />
+<p>The <em>sdk</em> property specifies the version of the DNX (.Net Execution Environment) that Visual Studio will use when opening the solution. It&#8217;s set here, rather than in project.json, to avoid scenarios where different projects within a solution are targeting different versions of the SDK.</p>
+</div>
+<div class="section" id="the-wwwroot-folder">
+<span id="id1"></span><h2>The wwwroot Folder<a class="headerlink" href="#the-wwwroot-folder" title="Permalink to this headline">¶</a></h2>
+<p>In previous versions of ASP.NET, the root of the project was typically the root of the website. If you placed a <em>Default.aspx</em> file in the project root of an early version of ASP.NET, it would load if a request was made to the web application’s root. In later versions of ASP.NET, support for routing was added, making it possible to decouple the locations of files from their corresponding URLs (thus, HomeController in the Controllers folder is able to serve requests made to the root of the site, using a default route implementation). However, this routing  was used only for ASP.NET-specific application logic, not static files needed by the client to properly render the resulting page. Resources like images, script files, and stylesheets were generally still loaded based on their location within the file structure of the application, based off of the root of the project.</p>
+<img alt="../_images/wwwroot.png" src="../_images/wwwroot.png" />
+<p>The file based approach presented several problems. First, protecting sensitive project files required framework-level protection of certain filenames or extensions, to prevent having things like <em>web.config</em> or <em>global.asax</em> served to a client in response to a request. Having to specifically block access (also know as blacklisting) to certain files is much less secure than granting access only to those files which should be accessible(also known as whitelisting). Typically different versions were required for dev/test and production (for example <em>web.config</em>).  Scripts would typically be referenced individually and in a readable format during development, but would be minified and bundled together when deployed for production. It’s beneficial to deploy only production files to production, but handling these kinds of scenarios was difficult with the previous file structure.</p>
+<p>Enter the <em>wwwroot</em> folder in ASP.NET 5. The <em>wwwroot</em> folder represents the actual root of the web app when running on a web server. Static files, like <em>appsettings.json</em>, which are not located in <em>wwwroot</em> will never be accessible, and there is no need to create special rules to block access to sensitive files. Instead of blacklisting access to sensitive files, a more secure whitelist approach is taken whereby only those files in the <em>wwwroot</em> folder are accessible via web requests.</p>
+<p>In addition to the security benefits, the <em>wwwroot</em> folder also simplifies common tasks like bundling and minification, which can now be more easily incorporated into a standard build process and automated using tools like Grunt.</p>
+</div>
+<div class="section" id="client-side-dependency-management">
+<span id="client-side-dependencies"></span><h2>Client Side Dependency Management<a class="headerlink" href="#client-side-dependency-management" title="Permalink to this headline">¶</a></h2>
+<p>The Dependencies folder contains two subfolders: Bower and NPM. These folders correspond to two package managers by the same names, and they’re used to pull in client-side dependencies and tools (e.g. jQuery, bootstrap, or grunt). Expanding the folders reveals which dependencies are currently managed by each tool, and the current version being used by the project.</p>
+<img alt="../_images/dependencies.png" src="../_images/dependencies.png" />
+<p>The bower dependencies are controlled by the <em>bower.json</em> file. You&#8217;ll notice that each of the items listed in the figure above correspond to dependencies listed in bower.json:</p>
+<img alt="../_images/bower-json.png" src="../_images/bower-json.png" />
+<p>Each dependency is then further configured in its own section within the <em>bower.json</em> file, indicating how it should be deployed to the <em>wwwroot</em> folder when the bower task is executed.</p>
+<p>By default, the bower task is executed using gulp, which is configured in <em>gulpfile.js</em>. The current web template’s gulpfile includes tasks for copying and cleaning script and CSS files from the bower folder to a <code class="docutils literal"><span class="pre">/lib</span></code> folder in <code class="docutils literal"><span class="pre">wwwroot</span></code>.</p>
+<img alt="../_images/bower-npm-folders.png" src="../_images/bower-npm-folders.png" />
+</div>
+<div class="section" id="server-side-dependency-management">
+<span id="server-side-dependencies"></span><h2>Server Side Dependency Management<a class="headerlink" href="#server-side-dependency-management" title="Permalink to this headline">¶</a></h2>
+<p>The <em>References</em> folder details the server-side references for the project. It should be familiar to ASP.NET developers, but it has been modified to differentiate between references for different framework targets, such as the full ASP.NET 5.0 vs. ASP.NET Core 5.0.  Within each framework target, you will find individual references, with icons indicating whether the reference is to an assembly, a NuGet package, or a project. Note that these dependencies are checked at compile time, with missing dependencies downloaded from the configured NuGet package source (specified under Options – NuGet Package Manager – Package Sources).</p>
+<img alt="../_images/references.png" src="../_images/references.png" />
+</div>
+<div class="section" id="configuring-the-application">
+<h2>Configuring the Application<a class="headerlink" href="#configuring-the-application" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 no longer stores configuration settings in XML files (<em>web.config</em> and <em>machine.config</em>). Configuration is now stored in <em>appsettings.json</em>, which was designed specifically for storing app configuration settings. The default ASP.NET project template includes Entity Framework, and so specifies the database connection string details in the <em>appsettings.json</em> file included in the project.</p>
+<div class="highlight-JSON"><div class="highlight"><pre><span class="p">{</span>
+        <span class="nt">&quot;Data&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;DefaultConnection&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=(localdb)\\mssqllocaldb;Database=aspnet5-FundamentalConcepts&quot;</span>
+        <span class="p">},</span>
+
+        <span class="nt">&quot;Entity&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;ApplicationDbContext&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Data:DefaultConnection:ConnectionString&quot;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Individual entries within <em>appsettings.json</em> are not limited to name-value pairs, but can specify rich objects. Entries can also reference other entries, as you can see the EF configuration does above.</p>
+<p>There&#8217;s nothing special about the <em>appsettings.json</em> filename - it&#8217;s specified by name in <a class="reference internal" href="#startup-cs">Startup.cs</a>. You can add as many different configuration files as makes sense for your app, rather than having to add to an ever-growing <em>web.config</em> file. You&#8217;re also not limited to just JSON-formatted files - you can still use XML or even .INI files if you prefer.</p>
+<p>Accessing configuration data from your app is best done by injecting the <a class="reference external" href="https://github.com/aspnet/Configuration/blob/dev/src/Microsoft.Framework.ConfigurationModel.Interfaces/IConfiguration.cs">IConfiguration</a> interface into your controller, and then simply using the indexer with the name of the configuration element you need. For example, to store the application name in config and display it on the About page, you would need to make three changes to the default project. First, add the entry to <em>appsettings.json</em>.</p>
+<div class="highlight-JSON"><div class="highlight"><pre><span class="p">{</span>
+        <span class="nt">&quot;Data&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;DefaultConnection&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=(localdb)\\mssqllocaldb;Database=aspnet5-FundamentalConcepts&quot;</span>
+        <span class="p">},</span>
+
+        <span class="nt">&quot;Entity&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;ApplicationDbContext&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Data:DefaultConnection:ConnectionString&quot;</span>
+                <span class="p">}</span>
+        <span class="p">},</span>
+<span class="hll">        <span class="nt">&quot;ApplicationName&quot;</span><span class="p">:</span><span class="s2">&quot;Fundamental Concepts&quot;</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, make sure ASP.NET knows what to return when a constructor requires an instance of <code class="docutils literal"><span class="pre">IConfiguration</span></code>. In this case, we can specify that the configuration value is a service. We&#8217;ll address <em>Startup.cs</em> in a moment, but for this step just add one line to the end of the <code class="docutils literal"><span class="pre">ConfigureServices()</span></code> method in <em>Startup.cs</em>:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">AddInstance</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IConfiguration</span><span class="p">),</span> <span class="n">Configuration</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The third and final step is to specify that your controller expects an <code class="docutils literal"><span class="pre">IConfiguration</span></code> instance via its constructor. Following the <a class="reference external" href="http://deviq.com/explicit-dependencies-principle/">Explicit Dependencies Principle</a> with your classes is a good habit to get into, and will allow ASP.NET 5&#8217;s built-in support for Dependency Injection to work correctly. Assign the instance to a local field, and then access the configuration value by utilizing its&#8217; indexer on this instance.</p>
+<p>You will need to ensure you have this using statement:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.Framework.Configuration</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then, update the controller as shown:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">HomeController</span> <span class="p">:</span> <span class="n">Controller</span>
+<span class="p">{</span>
+<span class="hll">        <span class="k">private</span> <span class="k">readonly</span> <span class="n">IConfiguration</span> <span class="n">_config</span><span class="p">;</span>
+</span>
+<span class="hll">        <span class="k">public</span> <span class="nf">HomeController</span><span class="p">(</span><span class="n">IConfiguration</span> <span class="n">config</span><span class="p">){</span>
+</span><span class="hll">                <span class="n">_config</span> <span class="p">=</span> <span class="n">config</span><span class="p">;</span>
+</span><span class="hll">        <span class="p">}</span>
+</span>
+<span class="hll">        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">About</span><span class="p">()</span>
+</span><span class="hll">        <span class="p">{</span>
+</span><span class="hll">                <span class="kt">string</span> <span class="n">appName</span> <span class="p">=</span> <span class="n">_config</span><span class="p">[</span><span class="s">&quot;ApplicationName&quot;</span><span class="p">];</span>
+</span><span class="hll">                <span class="n">ViewData</span><span class="p">[</span><span class="s">&quot;Message&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;You application name: &quot;</span> <span class="p">+</span> <span class="n">appName</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">                <span class="k">return</span> <span class="nf">View</span><span class="p">();</span>
+</span><span class="hll">        <span class="p">}</span>
+</span>
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">(){</span>
+                <span class="k">return</span> <span class="nf">View</span><span class="p">();</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run the application and navigate to the About page and you should see the result.</p>
+<img alt="../_images/about-page.png" src="../_images/about-page.png" />
+</div>
+<div class="section" id="application-startup">
+<span id="fundamentalconcepts-application-startup"></span><span id="startup-cs"></span><h2>Application Startup<a class="headerlink" href="#application-startup" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 has decomposed its feature set into a variety of modules that can be individually added to a web app. This allows for lean web apps that do not import or bring in features they don&#8217;t use. When your ASP.NET app starts, the ASP.NET runtime calls <code class="docutils literal"><span class="pre">Configure</span></code> in the <code class="docutils literal"><span class="pre">Startup</span></code> class. If you create a new ASP.NET web project using the Empty template, you will find that the <em>Startup.cs</em> file has only a couple lines of code. The default Web project’s <code class="docutils literal"><span class="pre">Startup</span></code> class wires up configuration, MVC, EF, Identity services, logging, routes, and more. It provides a good example for how to configure the services used by your ASP.NET app. There are three parts to the sample startup class: a constructor, <code class="docutils literal"><span class="pre">ConfigureServices</span></code>, and <code class="docutils literal"><span class="pre">Configure</span></code>. The <code class="docutils literal"><span class="pre">Configure</span></code> method is called after <code class="docutils literal"><span class="pre">ConfigureServices</span></code> and is used to configure middleware.</p>
+<p>The constructor specifies how configuration will be handled by the app. Configuration is a property of the <code class="docutils literal"><span class="pre">Startup</span></code> class and can be read from a variety of file formats as well as from environment variables. The default project template uses a <code class="docutils literal"><span class="pre">ConfigurationBuilder</span></code> to create a <code class="docutils literal"><span class="pre">IConfiguration</span></code> that loads <em>appsettings.json</em> and environment variables.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="nf">Startup</span><span class="p">(</span><span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">,</span> <span class="n">IApplicationEnvironment</span> <span class="n">appEnv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// Setup configuration sources.</span>
+        <span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConfigurationBuilder</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">SetBasePath</span><span class="p">(</span><span class="n">appEnv</span><span class="p">.</span><span class="n">ApplicationBasePath</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">AddJsonFile</span><span class="p">(</span><span class="s">&quot;appsettings.json&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">AddEnvironmentVariables</span><span class="p">();</span>
+
+        <span class="n">Configuration</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method is used to specify which services are available to the app. The default template uses helper methods to add a variety of services used for EF, Identity, and MVC. This is also where you can add your own services, as we did above to expose the configuration as a service. The complete <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method, including the call to add <code class="docutils literal"><span class="pre">Configuration</span></code> as a service, is shown here:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="c1">// This method gets called by the runtime.</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// Add EF services to the services container.</span>
+        <span class="n">services</span><span class="p">.</span><span class="n">AddEntityFramework</span><span class="p">(</span><span class="n">Configuration</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">AddSqlServer</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">ApplicationDbContext</span><span class="p">&gt;();</span>
+
+        <span class="c1">// Add Identity services to the services container.</span>
+        <span class="n">services</span><span class="p">.</span><span class="n">AddIdentity</span><span class="p">&lt;</span><span class="n">ApplicationUser</span><span class="p">,</span> <span class="n">IdentityRole</span><span class="p">&gt;(</span><span class="n">Configuration</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">AddEntityFrameworkStores</span><span class="p">&lt;</span><span class="n">ApplicationDbContext</span><span class="p">&gt;();</span>
+
+        <span class="c1">// Add MVC services to the services container.</span>
+        <span class="n">services</span><span class="p">.</span><span class="n">AddMvc</span><span class="p">();</span>
+
+        <span class="n">services</span><span class="p">.</span><span class="n">AddInstance</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IConfiguration</span><span class="p">),</span> <span class="n">Configuration</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Finally, the <code class="docutils literal"><span class="pre">Configure</span></code> method will be called by the runtime after <code class="docutils literal"><span class="pre">ConfigureServices</span></code>. In the sample project, <code class="docutils literal"><span class="pre">Configure</span></code> is used to wire up a console logger, add several useful features for the development environment, add support for static files, Identity, and MVC routing. Note that adding Identity and MVC in <code class="docutils literal"><span class="pre">ConfigureServices</span></code> isn’t sufficient - they also need to be configured in  the request pipeline via these calls in <code class="docutils literal"><span class="pre">Configure</span></code>.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="c1">// Configure is called after ConfigureServices is called.</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">,</span> <span class="n">ILoggerFactory</span> <span class="n">loggerfactory</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// Configure the HTTP request pipeline.</span>
+        <span class="c1">// Add the console logger.</span>
+        <span class="n">loggerfactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">();</span>
+
+        <span class="c1">// Add the following to the request pipeline only in development environment.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">EnvironmentName</span><span class="p">,</span> <span class="s">&quot;Development&quot;</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="n">app</span><span class="p">.</span><span class="n">UseBrowserLink</span><span class="p">();</span>
+                <span class="n">app</span><span class="p">.</span><span class="n">UseErrorPage</span><span class="p">(</span><span class="n">ErrorPageOptions</span><span class="p">.</span><span class="n">ShowAll</span><span class="p">);</span>
+                <span class="n">app</span><span class="p">.</span><span class="n">UseDatabaseErrorPage</span><span class="p">(</span><span class="n">DatabaseErrorPageOptions</span><span class="p">.</span><span class="n">ShowAll</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+                <span class="c1">// Add Error handling middleware which catches all application specific errors and</span>
+                <span class="c1">// send the request to the following path or controller action.</span>
+                <span class="n">app</span><span class="p">.</span><span class="n">UseErrorHandler</span><span class="p">(</span><span class="s">&quot;/Home/Error&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Add static files to the request pipeline.</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+
+        <span class="c1">// Add cookie-based authentication to the request pipeline.</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseIdentity</span><span class="p">();</span>
+
+        <span class="c1">// Add MVC to the request pipeline.</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseMvc</span><span class="p">(</span><span class="n">routes</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+                <span class="n">routes</span><span class="p">.</span><span class="n">MapRoute</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">:</span> <span class="s">&quot;default&quot;</span><span class="p">,</span>
+                        <span class="n">template</span><span class="p">:</span> <span class="s">&quot;{controller}/{action}/{id?}&quot;</span><span class="p">,</span>
+                        <span class="n">defaults</span><span class="p">:</span> <span class="k">new</span> <span class="p">{</span> <span class="n">controller</span> <span class="p">=</span> <span class="s">&quot;Home&quot;</span><span class="p">,</span> <span class="n">action</span> <span class="p">=</span> <span class="s">&quot;Index&quot;</span> <span class="p">});</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you can see, configuring which services are available and how the request pipeline is configured is now done completely in code in the <code class="docutils literal"><span class="pre">Startup</span></code> class, as opposed to using HTTP Modules and Handlers managed via <em>web.config</em>.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 introduces a few concepts that didn&#8217;t exist in previous versions of ASP.NET. Rather than working with <em>web.config</em>, packages.config, and a variety of project properties stored in the .csproj/.vbproj file, developers can now work with specific files and folders devoted to specific purposes. Although at first there is some learning curve, the end result is more secure, more maintainable, works better with source control, and has better separation of concerns than the approach used in previous versions of ASP.NET.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fundamentals/index.html" class="btn btn-neutral float-right" title="Fundamentals" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nuget.html" class="btn btn-neutral" title="|stub-icon| Introduction to NuGet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

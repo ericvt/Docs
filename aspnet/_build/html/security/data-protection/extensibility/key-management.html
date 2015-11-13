@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Key management extensibility &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Extensibility APIs" href="index.html"/>
+        <link rel="next" title="Miscellaneous APIs" href="misc-apis.html"/>
+        <link rel="prev" title="Core cryptography extensibility" href="core-crypto.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Extensibility APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="core-crypto.html">Core cryptography extensibility</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Key management extensibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="misc-apis.html">Miscellaneous APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Extensibility APIs</a> &raquo;</li>
+      
+    <li>Key management extensibility</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/extensibility/key-management.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="key-management-extensibility">
+<span id="data-protection-extensibility-key-management"></span><h1>Key management extensibility<a class="headerlink" href="#key-management-extensibility" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Read the <a class="reference internal" href="../implementation/key-management.html#data-protection-implementation-key-management"><span>key management</span></a> section before reading this section, as it explains some of the fundamental concepts behind these APIs.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Types that implement any of the following interfaces should be thread-safe for multiple callers.</p>
+</div>
+<div class="section" id="key">
+<h2>Key<a class="headerlink" href="#key" title="Permalink to this headline">¶</a></h2>
+<p>The IKey interface is the basic representation of a key in cryptosystem. The term key is used here in the abstract sense, not in the literal sense of &#8220;cryptographic key material&#8221;. A key has the following properties:</p>
+<ul class="simple">
+<li>Activation, creation, and expiration dates</li>
+<li>Revocation status</li>
+<li>Key identifier (a GUID)</li>
+</ul>
+<p>Additionally, IKey exposes a CreateEncryptorInstance method which can be used to create an <a class="reference internal" href="core-crypto.html#data-protection-extensibility-core-crypto-iauthenticatedencryptor"><span>IAuthenticatedEncryptor</span></a> instance tied to this key.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is no API to retrieve the raw cryptographic material from an IKey instance.</p>
+</div>
+</div>
+<div class="section" id="ikeymanager">
+<h2>IKeyManager<a class="headerlink" href="#ikeymanager" title="Permalink to this headline">¶</a></h2>
+<p>The IKeyManager interface represents an object responsible for general key storage, retrieval, and manipulation. It exposes three high-level operations:</p>
+<ul class="simple">
+<li>Create a new key and persist it to storage.</li>
+<li>Get all keys from storage.</li>
+<li>Revoke one or more keys and persist the revocation information to storage.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Writing an IKeyManager is a very advanced task, and the majority of developers should not attempt it. Instead, most developers should take advantage of the facilities offered by the <a class="reference internal" href="#data-protection-extensibility-key-management-xmlkeymanager"><span>XmlKeyManager</span></a> class.</p>
+</div>
+</div>
+<div class="section" id="xmlkeymanager">
+<span id="data-protection-extensibility-key-management-xmlkeymanager"></span><h2>XmlKeyManager<a class="headerlink" href="#xmlkeymanager" title="Permalink to this headline">¶</a></h2>
+<p>The XmlKeyManager type is the in-box concrete implementation of IKeyManager. It provides several useful facilities, including key escrow and encryption of keys at rest. Keys in this system are represented as XML elements (specifically, <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.xml.linq.xelement(v=vs.110).aspx">XElement</a>).</p>
+<p>XmlKeyManager depends on several other components in the course of fulfilling its tasks:</p>
+<ul class="simple">
+<li>IAuthenticatedEncryptorConfiguration, which dictates the algorithms used by new keys.</li>
+<li>IXmlRepository, which controls where keys are persisted in storage.</li>
+<li>IXmlEncryptor [optional], which allows encrypting keys at rest.</li>
+<li>IKeyEscrowSink [optional], which provides key escrow services.</li>
+</ul>
+<p>Below are high-level diagrams which indicate how these components are wired together within XmlKeyManager.</p>
+<div class="figure" id="id1">
+<img alt="Key Creation" src="../../../_images/keycreation.png" />
+<p class="caption"><span class="caption-text">Key Creation / CreateNewKey</span></p>
+</div>
+<p>In the implementation of CreateNewKey, the IAuthenticatedEncryptorConfiguration component is used to create a unique IAuthenticatedEncryptorDescriptor, which is then serialized as XML. If a key escrow sink is present, the raw (unencrypted) XML is provided to the sink for long-term storage. The unencrypted XML is then run through an IXmlEncryptor (if required) to generate the encrypted XML document. This encrypted document is persisted to long-term storage via the IXmlRepository. (If no IXmlEncryptor is configured, the unencrypted document is persisted in the IXmlRepository.)</p>
+<div class="figure" id="id2">
+<img alt="Key Retrieval" src="../../../_images/keyretrieval.png" />
+<p class="caption"><span class="caption-text">Key Retrieval / GetAllKeys</span></p>
+</div>
+<p>In the implementation of GetAllKeys, the XML documents representing keys and revocations are read from the underlying IXmlRepository. If these documents are encrypted, the system will automatically decrypt them. XmlKeyManager creates the appropriate IAuthenticatedEncryptorDescriptorDeserializer instances to deserialize the documents back into IAuthenticatedEncryptorDescriptor instances, which are then wrapped in individual IKey instances. This collection of IKey instances is returned to the caller.</p>
+<p>Further information on the particular XML elements can be found in the <a class="reference internal" href="../implementation/key-storage-format.html#data-protection-implementation-key-storage-format"><span>key storage format document</span></a>.</p>
+</div>
+<div class="section" id="ixmlrepository">
+<h2>IXmlRepository<a class="headerlink" href="#ixmlrepository" title="Permalink to this headline">¶</a></h2>
+<p>The IXmlRepository interface represents a type that can persist XML to and retrieve XML from a backing store. It exposes two APIs:</p>
+<ul class="simple">
+<li>GetAllElements() : IReadOnlyCollection&lt;XElement&gt;</li>
+<li>StoreElement(XElement element, string friendlyName)</li>
+</ul>
+<p>Implementations of IXmlRepository don&#8217;t need to parse the XML passing through them. They should treat the XML documents as opaque and let higher layers worry about generating and parsing the documents.</p>
+<p>There are two built-in concrete types which implement IXmlRepository: FileSystemXmlRepository and RegistryXmlRepository. See the <a class="reference internal" href="../implementation/key-storage-providers.html#data-protection-implementation-key-storage-providers"><span>key storage providers document</span></a> for more information. Registering a custom IXmlRepository would be the appropriate manner to use a different backing store, e.g., Azure Blob Storage. To change the default repository application-wide, register a custom singleton IXmlRepository in the service provider.</p>
+</div>
+<div class="section" id="ixmlencryptor">
+<span id="data-protection-extensibility-key-management-ixmlencryptor"></span><h2>IXmlEncryptor<a class="headerlink" href="#ixmlencryptor" title="Permalink to this headline">¶</a></h2>
+<p>The IXmlEncryptor interface represents a type that can encrypt a plaintext XML element. It exposes a single API:</p>
+<ul class="simple">
+<li>Encrypt(XElement plaintextElement) : EncryptedXmlInfo</li>
+</ul>
+<p>If a serialized IAuthenticatedEncryptorDescriptor contains any elements marked as &#8220;requires encryption&#8221;, then XmlKeyManager will run those elements through the configured IXmlEncryptor&#8217;s Encrypt method, and it will persist the enciphered element rather than the plaintext element to the IXmlRepository. The output of the Encrypt method is an EncryptedXmlInfo object. This object is a wrapper which contains both the resultant enciphered XElement and the Type which represents an IXmlDecryptor which can be used to decipher the corresponding element.</p>
+<p>There are four built-in concrete types which implement IXmlEncryptor: CertificateXmlEncryptor, DpapiNGXmlEncryptor, DpapiXmlEncryptor, and NullXmlEncryptor. See the <a class="reference internal" href="../implementation/key-encryption-at-rest.html#data-protection-implementation-key-encryption-at-rest"><span>key encryption at rest document</span></a> for more information. To change the default key-encryption-at-rest mechanism application-wide, register a custom singleton IXmlEncryptor in the service provider.</p>
+</div>
+<div class="section" id="ixmldecryptor">
+<h2>IXmlDecryptor<a class="headerlink" href="#ixmldecryptor" title="Permalink to this headline">¶</a></h2>
+<p>The IXmlDecryptor interface represents a type that knows how to decrypt an XElement that was enciphered via an IXmlEncryptor. It exposes a single API:</p>
+<ul class="simple">
+<li>Decrypt(XElement encryptedElement) : XElement</li>
+</ul>
+<p>The Decrypt method undoes the encryption performed by IXmlEncryptor.Encrypt. Generally each concrete IXmlEncryptor implementation will have a corresponding concrete IXmlDecryptor implementation.</p>
+<p>Types which implement IXmlDecryptor should have one of the following two public constructors:</p>
+<ul class="simple">
+<li>.ctor(IServiceProvider)</li>
+<li>.ctor()</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IServiceProvider passed to the constructor may be null.</p>
+</div>
+</div>
+<div class="section" id="ikeyescrowsink">
+<h2>IKeyEscrowSink<a class="headerlink" href="#ikeyescrowsink" title="Permalink to this headline">¶</a></h2>
+<p>The IKeyEscrowSink interface represents a type that can perform escrow of sensitive information. Recall that serialized descriptors might contain sensitive information (such as cryptographic material), and this is what led to the introduction of the <a class="reference internal" href="#data-protection-extensibility-key-management-ixmlencryptor"><span>IXmlEncryptor</span></a> type in the first place. However, accidents happen, and keyrings can be deleted or become corrupted.</p>
+<p>The escrow interface provides an emergency escape hatch, allowing access to the raw serialized XML before it is transformed by any configured <a class="reference internal" href="#data-protection-extensibility-key-management-ixmlencryptor"><span>IXmlEncryptor</span></a>. The interface exposes a single API:</p>
+<ul class="simple">
+<li>Store(Guid keyId, XElement element)</li>
+</ul>
+<p>It is up to the IKeyEscrowSink implementation to handle the provided element in a secure manner consistent with business policy. One possible implementation could be for the escrow sink to encrypt the XML element using a known corporate X.509 certificate where the certificate&#8217;s private key has been escrowed; the CertificateXmlEncryptor type can assist with this. The IKeyEscrowSink implementation is also responsible for persisting the provided element appropriately.</p>
+<p>By default no escrow mechanism is enabled, though server administrators can <a class="reference internal" href="../configuration/machine-wide-policy.html#data-protection-configuration-machinewidepolicy"><span>configure this globally</span></a>. It can also be configured programmatically via the <em>DataProtectionConfiguration.AddKeyEscrowSink</em> method as shown in the sample below. The <em>AddKeyEscrowSink</em> method overloads mirror the <em>IServiceCollection.AddSingleton</em> and <em>IServiceCollection.AddInstance</em> overloads, as IKeyEscrowSink instances are intended to be singletons. If multiple IKeyEscrowSink instances are registered, each one will be called during key generation, so keys can be escrowed to multiple mechanisms simultaneously.</p>
+<p>There is no API to read material from an IKeyEscrowSink instance. This is consistent with the design theory of the escrow mechanism: it&#8217;s intended to make the key material accessible to a trusted authority, and since the application is itself not a trusted authority, it shouldn&#8217;t have access to its own escrowed material.</p>
+<p>The following sample code demonstrates creating and registering an IKeyEscrowSink where keys are escrowed such that only members of &#8220;CONTOSODomain Admins&#8221; can recover them.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To run this sample, you must be on a domain-joined Windows 8 / Windows Server 2012 machine, and the domain controller must be Windows Server 2012 or later.</p>
+</div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre></div></td><td class="code"><div class="highlight"><pre>using System;
+using System.IO;
+using System.Xml.Linq;
+using Microsoft.AspNet.DataProtection.KeyManagement;
+using Microsoft.AspNet.DataProtection.XmlEncryption;
+using Microsoft.Framework.DependencyInjection;
+ 
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddDataProtection();
+        serviceCollection.ConfigureDataProtection(configure =&gt;
+        {
+            // point at a specific folder and use DPAPI to encrypt keys
+            configure.PersistKeysToFileSystem(new DirectoryInfo(@&quot;c:\temp-keys&quot;));
+            configure.ProtectKeysWithDpapi();
+            configure.AddKeyEscrowSink(sp =&gt; new MyKeyEscrowSink(sp));
+        });
+        var services = serviceCollection.BuildServiceProvider();
+ 
+        // get a reference to the key manager and force a new key to be generated
+        Console.WriteLine(&quot;Generating new key...&quot;);
+        var keyManager = services.GetService&lt;IKeyManager&gt;();
+        keyManager.CreateNewKey(
+            activationDate: DateTimeOffset.Now,
+            expirationDate: DateTimeOffset.Now.AddDays(7));
+    }
+ 
+    // A key escrow sink where keys are escrowed such that they
+    // can be read by members of the CONTOSO\Domain Admins group.
+    private class MyKeyEscrowSink : IKeyEscrowSink
+    {
+        private readonly IXmlEncryptor _escrowEncryptor;
+ 
+        public MyKeyEscrowSink(IServiceProvider services)
+        {
+            // Assuming I&#39;m on a machine that&#39;s a member of the CONTOSO
+            // domain, I can use the Domain Admins SID to generate an
+            // encrypted payload that only they can read. Sample SID from
+            // https://technet.microsoft.com/en-us/library/cc778824(v=ws.10).aspx.
+            _escrowEncryptor = new DpapiNGXmlEncryptor(
+                &quot;SID=S-1-5-21-1004336348-1177238915-682003330-512&quot;,
+                DpapiNGProtectionDescriptorFlags.None,
+                services);
+        }
+ 
+        public void Store(Guid keyId, XElement element)
+        {
+            // Encrypt the key element to the escrow encryptor.
+            var encryptedXmlInfo = _escrowEncryptor.Encrypt(element);
+ 
+            // A real implementation would save the escrowed key to a
+            // write-only file share or some other stable storage, but
+            // in this sample we&#39;ll just write it out to the console.
+            Console.WriteLine($&quot;Escrowing key {keyId}&quot;);
+            Console.WriteLine(encryptedXmlInfo.EncryptedElement);
+ 
+            // Note: We cannot read the escrowed key material ourselves.
+            // We need to get a member of CONTOSO\Domain Admins to read
+            // it for us in the event we need to recover it.
+        }
+    }
+}
+ 
+/*
+ * SAMPLE OUTPUT
+ *
+ * Generating new key...
+ * Escrowing key 38e74534-c1b8-4b43-aea1-79e856a822e5
+ * &lt;encryptedKey&gt;
+ *   &lt;!-- This key is encrypted with Windows DPAPI-NG. --&gt;
+ *   &lt;!-- Rule: SID=S-1-5-21-1004336348-1177238915-682003330-512 --&gt;
+ *   &lt;value&gt;MIIIfAYJKoZIhvcNAQcDoIIIbTCCCGkCAQ...T5rA4g==&lt;/value&gt;
+ * &lt;/encryptedKey&gt;
+ */
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="misc-apis.html" class="btn btn-neutral float-right" title="Miscellaneous APIs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="core-crypto.html" class="btn btn-neutral" title="Core cryptography extensibility" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

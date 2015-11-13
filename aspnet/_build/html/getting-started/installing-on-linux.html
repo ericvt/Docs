@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing ASP.NET 5 On Linux &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Choosing the Right .NET For You on the Server" href="choosing-the-right-dotnet.html"/>
+        <link rel="prev" title="Installing ASP.NET 5 On Mac OS X" href="installing-on-mac.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing-on-windows.html">Installing ASP.NET 5 On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-on-mac.html">Installing ASP.NET 5 On Mac OS X</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Installing ASP.NET 5 On Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="choosing-the-right-dotnet.html">Choosing the Right .NET For You on the Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Installing ASP.NET 5 On Linux</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting-started/installing-on-linux.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="installing-asp-net-5-on-linux">
+<h1>Installing ASP.NET 5 On Linux<a class="headerlink" href="#installing-asp-net-5-on-linux" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/danroth27">Daniel Roth</a></p>
+<p>ASP.NET 5 runs on the .NET Execution Environment (DNX), which is available on multiple platforms, including Linux. This article describes how to install DNX, and therefore ASP.NET 5, on Linux using .NET Core and Mono.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#installing-on-debian-ubuntu-and-derivatives">Installing on Debian, Ubuntu and derivatives</a></li>
+<li><a class="reference internal" href="#installing-on-centos-fedora-and-derivatives">Installing on CentOS, Fedora and derivatives</a></li>
+<li><a class="reference internal" href="#using-docker">Using Docker</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="installing-on-debian-ubuntu-and-derivatives">
+<h2>Installing on Debian, Ubuntu and derivatives<a class="headerlink" href="#installing-on-debian-ubuntu-and-derivatives" title="Permalink to this headline">¶</a></h2>
+<p>The following instructions were tested using Ubuntu 14.04.</p>
+<div class="section" id="install-the-net-version-manager-dnvm">
+<h3>Install the .NET Version Manager (DNVM)<a class="headerlink" href="#install-the-net-version-manager-dnvm" title="Permalink to this headline">¶</a></h3>
+<p>Use the .NET Version Manager (DNVM) to install different versions of the .NET Execution Environment (DNX) on Linux.</p>
+<ol class="arabic">
+<li><p class="first">Install <code class="docutils literal"><span class="pre">unzip</span></code> and <code class="docutils literal"><span class="pre">curl</span></code> if you don&#8217;t already have them:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install unzip curl
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download and install DNVM:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh &amp;&amp; source ~/.dnx/dnvm/dnvm.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Once this step is complete you should be able to run <code class="docutils literal"><span class="pre">dnvm</span></code> and see some help text.</p>
+</div>
+<div class="section" id="install-the-net-execution-environment-dnx">
+<h3>Install the .NET Execution Environment (DNX)<a class="headerlink" href="#install-the-net-execution-environment-dnx" title="Permalink to this headline">¶</a></h3>
+<p>The .NET Execution Environment (DNX) is used to build and run .NET projects. Use DNVM to install DNX for <a class="reference external" href="http://mono-project.com">Mono</a> or .NET Core (see <a class="reference internal" href="choosing-the-right-dotnet.html"><em>Choosing the Right .NET For You on the Server</em></a>).</p>
+<p><strong>To install DNX for .NET Core:</strong></p>
+<ol class="arabic">
+<li><p class="first">Install the DNX prerequisites:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install libunwind8 gettext libssl-dev libcurl3-dev zlib1g libicu-dev
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use DNVM to install DNX for .NET Core:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm upgrade -r coreclr
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">.NET Core on Linux is still in early preview. Please refer to the latest <a class="reference external" href="https://github.com/aspnet/home/releases">Release Notes</a> for known issues and limitations.</p>
+</div>
+<p><strong>To install DNX for Mono:</strong></p>
+<ol class="arabic">
+<li><p class="first">Install <a class="reference external" href="http://www.mono-project.com/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives">Mono</a> via the <code class="docutils literal"><span class="pre">mono-complete</span></code> package.</p>
+</li>
+<li><p class="first">Ensure that the <code class="docutils literal"><span class="pre">ca-certificates-mono</span></code> package is also installed as <a class="reference external" href="http://www.mono-project.com/docs/getting-started/install/linux/#notes">noted</a> in the Mono installation instructions.</p>
+</li>
+<li><p class="first">Use DNVM to install DNX for Mono:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm upgrade -r mono
+</pre></div>
+</div>
+</li>
+</ol>
+<p>By default DNVM will install DNX for Mono if no runtime is specified.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Restoring packages using DNX on Mono may fail with multiple canceled requests. You may be able to work around this issue by setting <code class="docutils literal"><span class="pre">MONO_THREADS_PER_CPU</span></code> to a larger number (ex. 2000).</p>
+</div>
+</div>
+<div class="section" id="install-libuv">
+<h3>Install libuv<a class="headerlink" href="#install-libuv" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/libuv/libuv">Libuv</a> is a multi-platform asynchronous IO library that is used by <a class="reference internal" href="../fundamentals/servers.html#kestrel"><span>Kestrel</span></a>, a cross-platform HTTP server for hosting ASP.NET 5 web applications.</p>
+<p>To build libuv you should do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install make automake libtool curl
+curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
+cd /usr/local/src/libuv-1.4.2
+sudo sh autogen.sh
+sudo ./configure
+sudo make
+sudo make install
+sudo rm -rf /usr/local/src/libuv-1.4.2 &amp;&amp; cd ~/
+sudo ldconfig
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> puts <code class="docutils literal"><span class="pre">libuv.so.1</span></code> in <code class="docutils literal"><span class="pre">/usr/local/lib</span></code>, in the above commands <code class="docutils literal"><span class="pre">`ldconfig</span></code> is used to update <code class="docutils literal"><span class="pre">ld.so.cache</span></code> so that <code class="docutils literal"><span class="pre">dlopen</span></code> (see <code class="docutils literal"><span class="pre">man</span> <span class="pre">dlopen</span></code>) can load it. If you are getting libuv some other way or not running <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> then you need to ensure that dlopen is capable of loading <code class="docutils literal"><span class="pre">libuv.so.1</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="installing-on-centos-fedora-and-derivatives">
+<h2>Installing on CentOS, Fedora and derivatives<a class="headerlink" href="#installing-on-centos-fedora-and-derivatives" title="Permalink to this headline">¶</a></h2>
+<p>The following instructions were tested using CentOS 7.</p>
+<div class="section" id="id1">
+<h3>Install the .NET Version Manager (DNVM)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Use the .NET Version Manager (DNVM) to install different versions of the .NET Execution Environment (DNX) on Linux.</p>
+<ol class="arabic">
+<li><p class="first">Install <code class="docutils literal"><span class="pre">unzip</span></code> if you don&#8217;t already have it:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo yum install unzip
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download and install DNVM:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh &amp;&amp; source ~/.dnx/dnvm/dnvm.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Once this step is complete you should be able to run <code class="docutils literal"><span class="pre">dnvm</span></code> and see some help text.</p>
+</div>
+<div class="section" id="id2">
+<h3>Install the .NET Execution Environment (DNX)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The .NET Execution Environment (DNX) is used to build and run .NET projects. Use DNVM to install DNX for <a class="reference external" href="http://mono-project.com">Mono</a> (see <a class="reference internal" href="choosing-the-right-dotnet.html"><em>Choosing the Right .NET For You on the Server</em></a>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DNX support for .NET Core is not available for CentOS, Fedora and derivative in this release, but will be enabled in a future release.</p>
+</div>
+<p><strong>To install DNX for Mono:</strong></p>
+<ol class="arabic">
+<li><p class="first">Install <a class="reference external" href="http://www.mono-project.com/docs/getting-started/install/linux/#centos-fedora-and-derivatives">Mono</a> via the <code class="docutils literal"><span class="pre">mono-complete</span></code> package.</p>
+</li>
+<li><p class="first">Ensure that the <code class="docutils literal"><span class="pre">ca-certificates-mono</span></code> package is also installed as <a class="reference external" href="http://www.mono-project.com/docs/getting-started/install/linux/#notes">noted</a> in the Mono installation instructions.</p>
+</li>
+<li><p class="first">Use DNVM to install DNX for Mono:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm upgrade -r mono
+</pre></div>
+</div>
+</li>
+</ol>
+<p>By default DNVM will install DNX for Mono if no runtime is specified.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Restoring packages using DNX on Mono may fail with multiple canceled requests. You may be able to work around this issue by setting <code class="docutils literal"><span class="pre">MONO_THREADS_PER_CPU</span></code> to a larger number (ex. 2000).</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Install Libuv<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/libuv/libuv">Libuv</a> is a multi-platform asynchronous IO library that is used by <a class="reference internal" href="../fundamentals/servers.html#kestrel"><span>Kestrel</span></a>, a cross-platform HTTP server for hosting ASP.NET 5 web applications.</p>
+<p>To build libuv you should do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo yum install automake libtool wget
+wget http://dist.libuv.org/dist/v1.4.2/libuv-v1.4.2.tar.gz
+tar -zxf libuv-v1.4.2.tar.gz
+cd libuv-v1.4.2
+sudo sh autogen.sh
+sudo ./configure
+sudo make
+sudo make check
+sudo make install
+ln -s /usr/lib64/libdl.so.2 /usr/lib64/libdl
+ln -s /usr/local/lib/libuv.so /usr/lib64/libuv.so.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-docker">
+<h2>Using Docker<a class="headerlink" href="#using-docker" title="Permalink to this headline">¶</a></h2>
+<p>The following instructions were tested with Docker 1.8.3 and Ubuntu 14.04.</p>
+<div class="section" id="install-docker">
+<h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h3>
+<p>Instructions on how to install Docker can be found in the <a class="reference external" href="https://docs.docker.com/installation/">Docker Documentation</a>.</p>
+</div>
+<div class="section" id="create-a-container">
+<h3>Create a Container<a class="headerlink" href="#create-a-container" title="Permalink to this headline">¶</a></h3>
+<p>Inside your application folder, you create a <code class="docutils literal"><span class="pre">Dockerfile</span></code> which should looks something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre># Base of your container
+FROM microsoft/aspnet:latest
+
+# Copy the project into folder and then restore packages
+COPY . /app
+WORKDIR /app
+RUN [&quot;dnu&quot;,&quot;restore&quot;]
+
+# Open this port in the container
+EXPOSE 5000
+# Start application
+ENTRYPOINT [&quot;dnx&quot;,&quot;-p&quot;,&quot;project.json&quot;, &quot;web&quot;]
+</pre></div>
+</div>
+<p>You also have a choice to use CoreCLR or Mono. At this time the <code class="docutils literal"><span class="pre">microsoft/aspnet:latest</span></code> repository is based on Mono. You can use the <a class="reference external" href="https://hub.docker.com/r/microsoft/aspnet/">Microsoft Docker Hub</a> to pick a different base running either an older version or CoreCLR.</p>
+</div>
+<div class="section" id="run-a-container">
+<h3>Run a Container<a class="headerlink" href="#run-a-container" title="Permalink to this headline">¶</a></h3>
+<p>When you have an application, you can build and run your container using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>docker build -t yourapplication .
+docker run -t -d -p 8080:5000 yourapplication
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 is built on the cross-platform .NET Execution Environment (DNX), which can be installed on Linux as well as <a class="reference internal" href="installing-on-mac.html"><em>Mac</em></a> and <a class="reference internal" href="installing-on-windows.html"><em>Windows</em></a>. Installing DNX and ASP.NET 5 on Linux takes just a few minutes, using a few simple commands. You&#8217;re now  ready to build <a class="reference internal" href="../tutorials/your-first-mac-aspnet.html"><em>your first ASP.NET application</em></a>!</p>
+</div>
+<div class="section" id="related-resources">
+<h2>Related Resources<a class="headerlink" href="#related-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../tutorials/your-first-mac-aspnet.html"><em>Your First ASP.NET 5 Application on a Mac</em></a></li>
+<li><a class="reference internal" href="../fundamentals/index.html"><em>Fundamentals</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="choosing-the-right-dotnet.html" class="btn btn-neutral float-right" title="Choosing the Right .NET For You on the Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installing-on-mac.html" class="btn btn-neutral" title="Installing ASP.NET 5 On Mac OS X" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

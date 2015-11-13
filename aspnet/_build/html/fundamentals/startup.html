@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application Startup &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="|stub-icon| HTTP Abstractions" href="http-abstractions.html"/>
+        <link rel="prev" title="Fundamentals" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Application Startup</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Working with Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Application Startup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/startup.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="application-startup">
+<h1>Application Startup<a class="headerlink" href="#application-startup" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 provides complete control of how individual requests are handled by your application. The <code class="docutils literal"><span class="pre">Startup</span></code> class is the entry point to the application, setting up configuration and wiring up services the application will use. Developers configure a request pipeline in the <code class="docutils literal"><span class="pre">Startup</span></code> class that is used to handle all requests made to the application.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#the-startup-class">The Startup class</a></li>
+<li><a class="reference internal" href="#the-configure-method">The Configure method</a></li>
+<li><a class="reference internal" href="#the-configureservices-method">The ConfigureServices method</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="the-startup-class">
+<h2>The Startup class<a class="headerlink" href="#the-startup-class" title="Permalink to this headline">¶</a></h2>
+<p>In ASP.NET 5, the <code class="docutils literal"><span class="pre">Startup</span></code> class provides the entry point for an application. It&#8217;s possible to have environment-specific startup classes and methods (see <a class="reference internal" href="environments.html"><em>Working with Multiple Environments</em></a>), but regardless, one <code class="docutils literal"><span class="pre">Startup</span></code> class will serve as the entry point for the application. ASP.NET searches the primary assembly for a class named <code class="docutils literal"><span class="pre">Startup</span></code> (in any namespace). You can specify a different assembly to search using the <cite>Hosting:Application</cite> configuration key. It doesn&#8217;t matter whether the class is defined as <code class="docutils literal"><span class="pre">public</span></code>; ASP.NET will still load it if it conforms to the naming convention. If there are multiple <code class="docutils literal"><span class="pre">Startup</span></code> classes, this will not trigger an exception. ASP.NET will select one based on its namespace (matching the project&#8217;s root namespace first, otherwise using the class in the alphabetically first namespace).</p>
+<p>The <code class="docutils literal"><span class="pre">Startup</span></code> class can optionally accept dependencies in its constructor that are provided through <a class="reference internal" href="dependency-injection.html"><em>dependency injection</em></a>.  Typically, the way an application will be configured is defined within its Startup class&#8217;s constructor (see <a class="reference internal" href="configuration.html"><em>Configuration</em></a>). The Startup class must define a <code class="docutils literal"><span class="pre">Configure</span></code> method, and may optionally also define a <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method, which will be called when the application is started.</p>
+</div>
+<div class="section" id="the-configure-method">
+<h2>The Configure method<a class="headerlink" href="#the-configure-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">Configure</span></code> method is used to specify how the ASP.NET application will respond to individual HTTP requests. At its simplest, you can configure every request to receive the same response. However, most real-world applications require more functionality than this. More complex sets of pipeline configuration can be encapsulated in <a class="reference internal" href="middleware.html"><em>middleware</em></a> and added using extension methods on <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code>.</p>
+<p>Your <code class="docutils literal"><span class="pre">Configure</span></code> method must accept an <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> parameter. Additional services, like <code class="docutils literal"><span class="pre">IHostingEnvironment</span></code> and <code class="docutils literal"><span class="pre">ILoggerFactory</span></code> may also be specified, in which case these services will be <a class="reference internal" href="dependency-injection.html"><em>injected</em></a> by the server if they are available. In the following example from the default web site template, you can see several extension methods are used to configure the pipeline with support for <a class="reference external" href="http://www.asp.net/visual-studio/overview/2013/using-browser-link">BrowserLink</a>, error pages, static files, ASP.NET MVC, and Identity.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">,</span> <span class="n">ILoggerFactory</span> <span class="n">loggerFactory</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">MinimumLevel</span> <span class="p">=</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Information</span><span class="p">;</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddConsole</span><span class="p">();</span>
+    <span class="n">loggerFactory</span><span class="p">.</span><span class="n">AddDebug</span><span class="p">();</span>
+
+    <span class="c1">// Configure the HTTP request pipeline.</span>
+
+    <span class="c1">// Add the following to the request pipeline only in development environment.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseBrowserLink</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseDatabaseErrorPage</span><span class="p">(</span><span class="n">DatabaseErrorPageOptions</span><span class="p">.</span><span class="n">ShowAll</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// Add Error handling middleware which catches all application specific errors and</span>
+        <span class="c1">// sends the request to the following path or controller action.</span>
+<span class="hll">        <span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">&quot;/Home/Error&quot;</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+
+    <span class="c1">// Add the platform handler to the request pipeline.</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseIISPlatformHandler</span><span class="p">();</span>
+
+    <span class="c1">// Add static files to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+</span>
+    <span class="c1">// Add cookie-based authentication to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseIdentity</span><span class="p">();</span>
+</span>
+    <span class="c1">// Add MVC to the request pipeline.</span>
+<span class="hll">    <span class="n">app</span><span class="p">.</span><span class="n">UseMvc</span><span class="p">(</span><span class="n">routes</span> <span class="p">=&gt;</span>
+</span>    <span class="p">{</span>
+        <span class="n">routes</span><span class="p">.</span><span class="n">MapRoute</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="s">&quot;default&quot;</span><span class="p">,</span>
+            <span class="n">template</span><span class="p">:</span> <span class="s">&quot;{controller=Home}/{action=Index}/{id?}&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Uncomment the following line to add a route for porting Web API 2 controllers.</span>
+        <span class="c1">// routes.MapWebApiRoute(&quot;DefaultApi&quot;, &quot;api/{controller}/{id?}&quot;);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>You can see what each of these extensions does by examining the source. For instance, the <code class="docutils literal"><span class="pre">UseMvc</span></code> extension method is defined in <code class="docutils literal"><span class="pre">BuilderExtensions</span></code> available on <a class="reference external" href="https://github.com/aspnet/Mvc/blob/6.0.0-beta5/src/Microsoft.AspNet.Mvc/BuilderExtensions.cs">GitHub</a>. Its primary responsibility is to ensure that MVC was added as a service (in <code class="docutils literal"><span class="pre">ConfigureServices</span></code>) and to correctly set up routing for an ASP.NET MVC application.</p>
+<p>You can learn all about middleware and using <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> to define your request pipeline in the <a class="reference internal" href="middleware.html"><em>Middleware</em></a> topic.</p>
+</div>
+<div class="section" id="the-configureservices-method">
+<h2>The ConfigureServices method<a class="headerlink" href="#the-configureservices-method" title="Permalink to this headline">¶</a></h2>
+<p>Your <code class="docutils literal"><span class="pre">Startup</span></code> class can optionally include a <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method for configuring services that are used by your application. The <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method is a public method on your <code class="docutils literal"><span class="pre">Startup</span></code> class that take a <code class="docutils literal"><span class="pre">IServiceCollection</span></code> as a parameter and optionally returns an <code class="docutils literal"><span class="pre">IServiceProvider</span></code>. The <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method is called before <code class="docutils literal"><span class="pre">Configure</span></code>. This is important, because some features like ASP.NET MVC require certain services to be added in <code class="docutils literal"><span class="pre">ConfigureServices</span></code> before they can be wired up to the request pipeline.</p>
+<p>Just as with <code class="docutils literal"><span class="pre">Configure</span></code>, it is recommended that features that require substantial setup within <code class="docutils literal"><span class="pre">ConfigureServices</span></code> be wrapped up in extension methods on <code class="docutils literal"><span class="pre">IServiceCollection</span></code>. You can see in this example from the default web site template that several <code class="docutils literal"><span class="pre">Add[Something]</span></code> extension methods are used to configure the app to use services from Entity Framework, Identity, and MVC:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Add Entity Framework services to the services container.</span>
+<span class="hll">    <span class="n">services</span><span class="p">.</span><span class="n">AddEntityFramework</span><span class="p">()</span>
+</span>        <span class="p">.</span><span class="n">AddSqlServer</span><span class="p">()</span>
+        <span class="p">.</span><span class="n">AddDbContext</span><span class="p">&lt;</span><span class="n">ApplicationDbContext</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
+            <span class="n">options</span><span class="p">.</span><span class="n">UseSqlServer</span><span class="p">(</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Data:DefaultConnection:ConnectionString&quot;</span><span class="p">]));</span>
+
+    <span class="c1">// Add Identity services to the services container.</span>
+<span class="hll">    <span class="n">services</span><span class="p">.</span><span class="n">AddIdentity</span><span class="p">&lt;</span><span class="n">ApplicationUser</span><span class="p">,</span> <span class="n">IdentityRole</span><span class="p">&gt;()</span>
+</span>        <span class="p">.</span><span class="n">AddEntityFrameworkStores</span><span class="p">&lt;</span><span class="n">ApplicationDbContext</span><span class="p">&gt;()</span>
+        <span class="p">.</span><span class="n">AddDefaultTokenProviders</span><span class="p">();</span>
+
+    <span class="c1">// Add MVC services to the services container.</span>
+<span class="hll">    <span class="n">services</span><span class="p">.</span><span class="n">AddMvc</span><span class="p">();</span>
+</span>
+    <span class="c1">// Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.</span>
+    <span class="c1">// You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the &#39;dependencies&#39; section of project.json.</span>
+    <span class="c1">// services.AddWebApiConventions();</span>
+
+    <span class="c1">// Register application services.</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IEmailSender</span><span class="p">,</span> <span class="n">AuthMessageSender</span><span class="p">&gt;();</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">ISmsSender</span><span class="p">,</span> <span class="n">AuthMessageSender</span><span class="p">&gt;();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Adding services to the services container makes them available within your application via <a class="reference internal" href="dependency-injection.html"><em>dependency injection</em></a>. Just as the <code class="docutils literal"><span class="pre">Startup</span></code> class is able to specify dependencies its methods require as parameters, rather than hard-coding to a specific implementation, so too can your middleware, MVC controllers and other classes in your application.</p>
+<p>The <code class="docutils literal"><span class="pre">ConfigureServices</span></code> method is also where you should add configuration option classes, like <code class="docutils literal"><span class="pre">AppSettings</span></code> in the example above, that you would like to have available in your application. See the <a class="reference internal" href="configuration.html"><em>Configuration</em></a> topic to learn more about configuring options.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In ASP.NET 5, the <code class="docutils literal"><span class="pre">Startup</span></code> class is responsible for setting up the application, including its configuration, the services it will use, and how it will process requests.</p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="environments.html"><em>Working with Multiple Environments</em></a></li>
+<li><a class="reference internal" href="middleware.html"><em>Middleware</em></a></li>
+<li><a class="reference internal" href="owin.html"><em>OWIN</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http-abstractions.html" class="btn btn-neutral float-right" title="|stub-icon| HTTP Abstractions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Fundamentals" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

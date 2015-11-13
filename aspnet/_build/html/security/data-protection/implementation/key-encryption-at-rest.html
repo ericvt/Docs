@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Key Encryption At Rest &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Implementation" href="index.html"/>
+        <link rel="next" title="Key Immutability and Changing Settings" href="key-immutability.html"/>
+        <link rel="prev" title="Key Storage Providers" href="key-storage-providers.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Implementation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="authenticated-encryption-details.html">Authenticated encryption details.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subkeyderivation.html">Subkey Derivation and Authenticated Encryption</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context-headers.html">Context headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-management.html">Key Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-providers.html">Key Storage Providers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Key Encryption At Rest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-immutability.html">Key Immutability and Changing Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-format.html">Key Storage Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-ephemeral.html">Ephemeral data protection providers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Implementation</a> &raquo;</li>
+      
+    <li>Key Encryption At Rest</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/implementation/key-encryption-at-rest.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="key-encryption-at-rest">
+<span id="data-protection-implementation-key-encryption-at-rest"></span><h1>Key Encryption At Rest<a class="headerlink" href="#key-encryption-at-rest" title="Permalink to this headline">¶</a></h1>
+<p>By default the data protection system <a class="reference internal" href="../configuration/default-settings.html#data-protection-default-settings"><span>employs a heuristic</span></a> to determine how cryptographic key material should be encrypted at rest. The developer can override the heuristic and manually specify how keys should be encrypted at rest.</p>
+<p>Note: If you specify an explicit key encryption at rest mechanism, the data protection system will deregister the default key storage mechanism that the heuristic provided. You must <a class="reference internal" href="key-storage-providers.html#data-protection-implementation-key-storage-providers"><span>specify an explicit key storage mechanism</span></a>, otherwise the data protection system will fail to start.</p>
+<p id="data-protection-implementation-key-encryption-at-rest-providers">The data protection system ships with three in-box key encryption mechanisms.</p>
+<div class="section" id="windows-dpapi">
+<h2>Windows DPAPI<a class="headerlink" href="#windows-dpapi" title="Permalink to this headline">¶</a></h2>
+<p><em>This mechanism is available only on Windows.</em></p>
+<p>When Windows DPAPI is used, key material will be encrypted via <a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa380261(v=vs.85).aspx">CryptProtectData</a> before being persisted to storage. DPAPI is an appropriate encryption mechanism for data that will never be read outside of the current machine (though it is possible to back these keys up to Active Directory; see <a class="reference external" href="https://support.microsoft.com/en-us/kb/309408/#6">DPAPI and Roaming Profiles</a>). For example to configure DPAPI key-at-rest encryption.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// only the local user account can decrypt the keys</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithDpapi</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If ProtectKeysWithDpapi is called with no parameters, only the current Windows user account can decipher the persisted key material. You can optionally specify that any user account on the machine (not just the current user account) should be able to decipher the key material, as shown in the below example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// all user accounts on the machine can decrypt the keys</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithDpapi</span><span class="p">(</span><span class="n">protectToLocalMachine</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="x-509-certificate">
+<h2>X.509 certificate<a class="headerlink" href="#x-509-certificate" title="Permalink to this headline">¶</a></h2>
+<p><em>This mechanism is not yet available on Core CLR.</em></p>
+<p>If your application is spread across multiple machines, it may be convenient to distribute a shared X.509 certificate across the machines and to configure applications to use this certificate for encryption of keys at rest. See below for an example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// searches the cert store for the cert with this thumbprint</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithCertificate</span><span class="p">(</span><span class="s">&quot;3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Because this mechanism uses <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate2(v=vs.110).aspx">X509Certificate2</a> and <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.security.cryptography.xml.encryptedxml(v=vs.110).aspx">EncryptedXml</a> under the covers, this feature is currently only available on Desktop CLR. Additionally, due to .NET Framework limitations only certificates with CAPI private keys are supported. See <a class="reference internal" href="#data-protection-implementation-key-encryption-at-rest-dpapi-ng"><span>Certificate-based encryption with Windows DPAPI-NG</span></a> below for possible workarounds to these limitations.</p>
+</div>
+<div class="section" id="windows-dpapi-ng">
+<span id="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></span><h2>Windows DPAPI-NG<a class="headerlink" href="#windows-dpapi-ng" title="Permalink to this headline">¶</a></h2>
+<p><em>This mechanism is available only on Windows 8 / Windows Server 2012 and later.</em></p>
+<p>Beginning with Windows 8, the operating system supports DPAPI-NG (also called CNG DPAPI). Microsoft lays out its usage scenario as follows.</p>
+<blockquote>
+<div><p>Cloud computing, however, often requires that content encrypted on one computer be decrypted on another. Therefore, beginning with Windows&nbsp;8, Microsoft extended the idea of using a relatively straightforward API to encompass cloud scenarios. This new API, called DPAPI-NG, enables you to securely share secrets (keys, passwords, key material) and messages by protecting them to a set of principals that can be used to unprotect them on different computers after proper authentication and authorization.</p>
+<p>From <a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/hh706794(v=vs.85).aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/hh706794(v=vs.85).aspx</a></p>
+</div></blockquote>
+<p>The principal is encoded as a protection descriptor rule. Consider the below example, which encrypts key material such that only the domain-joined user with the specified SID can decrypt the key material.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="c1">// uses the descriptor rule &quot;SID=S-1-5-21-...&quot;</span>
+  <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithDpapiNG</span><span class="p">(</span><span class="s">&quot;SID=S-1-5-21-...&quot;</span><span class="p">,</span>
+    <span class="n">flags</span><span class="p">:</span> <span class="n">DpapiNGProtectionDescriptorFlags</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>There is also a parameterless overload of ProtectKeysWithDpapiNG. This is a convenience method for specifying the rule &#8220;SID=mine&#8221;, where mine is the SID of the current Windows user account.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="c1">// uses the descriptor rule &quot;SID={current account SID}&quot;</span>
+  <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithDpapiNG</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>In this scenario, the AD domain controller is responsible for distributing the encryption keys used by the DPAPI-NG operations. The target user will be able to decipher the encrypted payload from any domain-joined machine (provided that the process is running under his identity).</p>
+</div>
+<div class="section" id="certificate-based-encryption-with-windows-dpapi-ng">
+<h2>Certificate-based encryption with Windows DPAPI-NG<a class="headerlink" href="#certificate-based-encryption-with-windows-dpapi-ng" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;re running on Windows 8.1 / Windows Server 2012 R2 or later, you can use Windows DPAPI-NG to perform certificate-based encryption, even if the application is running on Core CLR. To take advantage of this, use the rule descriptor string &#8220;CERTIFICATE=HashId:thumbprint&#8221;, where thumbprint is the hex-encoded SHA1 thumbprint of the certificate to use. See below for an example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">sc</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// searches the cert store for the cert with this thumbprint</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithDpapiNG</span><span class="p">(</span><span class="s">&quot;CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0&quot;</span><span class="p">,</span>
+        <span class="n">flags</span><span class="p">:</span> <span class="n">DpapiNGProtectionDescriptorFlags</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Any application which is pointed at this repository must be running on Windows 8.1 / Windows Server 2012 R2 or later to be able to decipher this key.</p>
+</div>
+<div class="section" id="custom-key-encryption">
+<h2>Custom key encryption<a class="headerlink" href="#custom-key-encryption" title="Permalink to this headline">¶</a></h2>
+<p>If the in-box mechanisms are not appropriate, the developer can specify his own key encryption mechanism by providing a custom IXmlEncryptor.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="key-immutability.html" class="btn btn-neutral float-right" title="Key Immutability and Changing Settings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="key-storage-providers.html" class="btn btn-neutral" title="Key Storage Providers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

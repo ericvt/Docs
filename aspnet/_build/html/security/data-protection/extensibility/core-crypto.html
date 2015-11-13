@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Core cryptography extensibility &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Extensibility APIs" href="index.html"/>
+        <link rel="next" title="Key management extensibility" href="key-management.html"/>
+        <link rel="prev" title="Extensibility APIs" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Extensibility APIs</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Core cryptography extensibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-management.html">Key management extensibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="misc-apis.html">Miscellaneous APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Extensibility APIs</a> &raquo;</li>
+      
+    <li>Core cryptography extensibility</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/extensibility/core-crypto.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="core-cryptography-extensibility">
+<span id="data-protection-extensibility-core-crypto"></span><h1>Core cryptography extensibility<a class="headerlink" href="#core-cryptography-extensibility" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Types that implement any of the following interfaces should be thread-safe for multiple callers.</p>
+</div>
+<div class="section" id="iauthenticatedencryptor">
+<span id="data-protection-extensibility-core-crypto-iauthenticatedencryptor"></span><h2>IAuthenticatedEncryptor<a class="headerlink" href="#iauthenticatedencryptor" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>IAuthenticatedEncryptor</strong> interface is the basic building block of the cryptographic subsystem. There is generally one IAuthenticatedEncryptor per key, and the IAuthenticatedEncryptor instance wraps all cryptographic key material and algorithmic information necessary to perform cryptographic operations.</p>
+<p>As its name suggests, the type is responsible for providing authenticated encryption and decryption services. It exposes the following two APIs.</p>
+<ul class="simple">
+<li>Decrypt(ArraySegment&lt;byte&gt; ciphertext, ArraySegment&lt;byte&gt; additionalAuthenticatedData) : byte[]</li>
+<li>Encrypt(ArraySegment&lt;byte&gt; plaintext, ArraySegment&lt;byte&gt; additionalAuthenticatedData) : byte[]</li>
+</ul>
+<p>The Encrypt method returns a blob that includes the enciphered plaintext and an authentication tag. The authentication tag must encompass the additional authenticated data (AAD), though the AAD itself need not be recoverable from the final payload. The Decrypt method validates the authentication tag and returns the deciphered payload. All failures (except ArgumentNullException and similar) should be homogenized to CryptographicException.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IAuthenticatedEncryptor instance itself doesn&#8217;t actually need to contain the key material. For example, the implementation could delegate to an HSM for all operations.</p>
+</div>
+</div>
+<div class="section" id="iauthenticatedencryptordescriptor">
+<span id="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor"></span><h2>IAuthenticatedEncryptorDescriptor<a class="headerlink" href="#iauthenticatedencryptordescriptor" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>IAuthenticatedEncryptorDescriptor</strong> interface represents a type that knows how to create an <a class="reference internal" href="#data-protection-extensibility-core-crypto-iauthenticatedencryptor"><span>IAuthenticatedEncryptor</span></a> instance. Its API is as follows.</p>
+<ul class="simple">
+<li>CreateEncryptorInstance() : IAuthenticatedEncryptor</li>
+<li>ExportToXml() : XmlSerializedDescriptorInfo</li>
+</ul>
+<p>Like IAuthenticatedEncryptor, an instance of IAuthenticatedEncryptorDescriptor is assumed to wrap one specific key. This means that for any given IAuthenticatedEncryptorDescriptor instance, any authenticated encryptors created by its CreateEncryptorInstance method should be considered equivalent, as in the below code sample.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="c1">// we have an IAuthenticatedEncryptorDescriptor instance</span>
+<span class="n">IAuthenticatedEncryptorDescriptor</span> <span class="n">descriptor</span> <span class="p">=</span> <span class="p">...;</span>
+
+<span class="c1">// get an encryptor instance and perform an authenticated encryption operation</span>
+<span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;</span> <span class="n">plaintext</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="s">&quot;plaintext&quot;</span><span class="p">));</span>
+<span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;</span> <span class="n">aad</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="s">&quot;AAD&quot;</span><span class="p">));</span>
+<span class="kt">var</span> <span class="n">encryptor1</span> <span class="p">=</span> <span class="n">descriptor</span><span class="p">.</span><span class="n">CreateEncryptorInstance</span><span class="p">();</span>
+<span class="kt">byte</span><span class="p">[]</span> <span class="n">ciphertext</span> <span class="p">=</span> <span class="n">encryptor1</span><span class="p">.</span><span class="n">Encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">aad</span><span class="p">);</span>
+
+<span class="c1">// get another encryptor instance and perform an authenticated decryption operation</span>
+<span class="kt">var</span> <span class="n">encryptor2</span> <span class="p">=</span> <span class="n">descriptor</span><span class="p">.</span><span class="n">CreateEncryptorInstance</span><span class="p">();</span>
+<span class="kt">byte</span><span class="p">[]</span> <span class="n">roundTripped</span> <span class="p">=</span> <span class="n">encryptor2</span><span class="p">.</span><span class="n">Decrypt</span><span class="p">(</span><span class="k">new</span> <span class="n">ArraySegment</span><span class="p">&lt;</span><span class="kt">byte</span><span class="p">&gt;(</span><span class="n">ciphertext</span><span class="p">),</span> <span class="n">aad</span><span class="p">);</span>
+
+
+<span class="c1">// the &#39;roundTripped&#39; and &#39;plaintext&#39; buffers should be equivalent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xml-serialization">
+<h2>XML Serialization<a class="headerlink" href="#xml-serialization" title="Permalink to this headline">¶</a></h2>
+<p>The primary difference between IAuthenticatedEncryptor and IAuthenticatedEncryptorDescriptor is that the descriptor knows how to create the encryptor and supply it with valid arguments. Consider an IAuthenticatedEncryptor whose implementation relies on SymmetricAlgorithm and KeyedHashAlgorithm. The encryptor&#8217;s job is to consume these types, but it doesn&#8217;t necessarily know where these types came from, so it can&#8217;t really write out a proper description of how to recreate itself if the application restarts. The descriptor acts as a higher level on top of this. Since the descriptor knows how to create the encryptor instance (e.g., it knows how to create the required algorithms), it can serialize that knowledge in XML form so that the encryptor instance can be recreated after an application reset.</p>
+<p id="data-protection-extensibility-core-crypto-exporttoxml">The descriptor can be serialized via its ExportToXml routine. This routine returns an XmlSerializedDescriptorInfo which contains two properties: the XElement representation of the descriptor and the Type which represents an <a class="reference internal" href="#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"><span>IAuthenticatedEncryptorDescriptorDeserializer</span></a> which can be used to resurrect this descriptor given the corresponding XElement.</p>
+<p>The serialized descriptor may contain sensitive information such as cryptographic key material. The data protection system has built-in support for encrypting information before it&#8217;s persisted to storage. To take advantage of this, the descriptor should mark the element which contains sensitive information with the attribute name &#8220;requiresEncryption&#8221; (xmlns &#8220;<a class="reference external" href="http://schemas.asp.net/2015/03/dataProtection">http://schemas.asp.net/2015/03/dataProtection</a>&#8221;), value &#8220;true&#8221;.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">There&#8217;s a helper API for setting this attribute. Call the extension method XElement.MarkAsRequiresEncryption() located in namespace Microsoft.AspNet.DataProtection.AuthenticatedEncryption.ConfigurationModel.</p>
+</div>
+<p>There can also be cases where the serialized descriptor doesn&#8217;t contain sensitive information. Consider again the case of a cryptographic key stored in an HSM. The descriptor cannot write out the key material when serializing itself since the HSM will not expose the material in plaintext form. Instead, the descriptor might write out the key-wrapped version of the key (if the HSM allows export in this fashion) or the HSM&#8217;s own unique identifier for the key.</p>
+</div>
+<div class="section" id="iauthenticatedencryptordescriptordeserializer">
+<span id="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></span><h2>IAuthenticatedEncryptorDescriptorDeserializer<a class="headerlink" href="#iauthenticatedencryptordescriptordeserializer" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>IAuthenticatedEncryptorDescriptorDeserializer</strong> interface represents a type that knows how to deserialize an IAuthenticatedEncryptorDescriptor instance from an XElement. It exposes a single method:</p>
+<ul class="simple">
+<li>ImportFromXml(XElement element) : IAuthenticatedEncryptorDescriptor</li>
+</ul>
+<p>The ImportFromXml method takes the XElement that was returned by <a class="reference internal" href="#data-protection-extensibility-core-crypto-exporttoxml"><span>IAuthenticatedEncryptorDescriptor.ExportToXml</span></a> and creates an equivalent of the original IAuthenticatedEncryptorDescriptor.</p>
+<p>Types which implement IAuthenticatedEncryptorDescriptorDeserializer should have one of the following two public constructors:</p>
+<ul class="simple">
+<li>.ctor(IServiceProvider)</li>
+<li>.ctor()</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IServiceProvider passed to the constructor may be null.</p>
+</div>
+</div>
+<div class="section" id="iauthenticatedencryptorconfiguration">
+<h2>IAuthenticatedEncryptorConfiguration<a class="headerlink" href="#iauthenticatedencryptorconfiguration" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>IAuthenticatedEncryptorConfiguration</strong> interface represents a type which knows how to create <a class="reference internal" href="#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor"><span>IAuthenticatedEncryptorDescriptor</span></a> instances. It exposes a single API.</p>
+<ul class="simple">
+<li>CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor</li>
+</ul>
+<p>Think of IAuthenticatedEncryptorConfiguration as the top-level factory. The configuration serves as a template. It wraps algorithmic information (e.g., this configuration produces descriptors with an AES-128-GCM master key), but it is not yet associated with a specific key.</p>
+<p>When CreateNewDescriptor is called, fresh key material is created solely for this call, and a new IAuthenticatedEncryptorDescriptor is produced which wraps this key material and the algorithmic information required to consume the material. The key material could be created in software (and held in memory), it could be created and held within an HSM, and so on. The crucial point is that any two calls to CreateNewDescriptor should never create equivalent IAuthenticatedEncryptorDescriptor instances.</p>
+<p>The IAuthenticatedEncryptorConfiguration type serves as the entry point for key creation routines such as <a class="reference internal" href="../implementation/key-management.html#data-protection-implementation-key-management"><span>automatic key rolling</span></a>. To change the implementation for all future keys, register a singleton IAuthenticatedEncryptorConfiguration in the service container.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="key-management.html" class="btn btn-neutral float-right" title="Key management extensibility" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Extensibility APIs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

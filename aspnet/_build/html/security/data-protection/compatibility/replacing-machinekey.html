@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Replacing &lt;machineKey&gt; in ASP.NET 4.5.1 &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Compatibility" href="index.html"/>
+        <link rel="next" title="Safe Storage of Application Secrets" href="../../app-secrets.html"/>
+        <link rel="prev" title="Sharing cookies between applications." href="cookie-sharing.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Compatibility</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cookie-sharing.html">Sharing cookies between applications.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Replacing &lt;machineKey&gt; in ASP.NET 4.5.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Compatibility</a> &raquo;</li>
+      
+    <li>Replacing &lt;machineKey&gt; in ASP.NET 4.5.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/compatibility/replacing-machinekey.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="replacing-machinekey-in-asp-net-4-5-1">
+<span id="compatibility-replacing-machinekey"></span><h1>Replacing &lt;machineKey&gt; in ASP.NET 4.5.1<a class="headerlink" href="#replacing-machinekey-in-asp-net-4-5-1" title="Permalink to this headline">¶</a></h1>
+<p>As of ASP.NET 4.5, the implementation of the &lt;machineKey&gt; element <a class="reference external" href="http://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx">is replaceable</a>. This allows most calls to ASP.NET 4.5+&#8217;s cryptographic routines to be routed through a replacement data protection mechanism, including the new data protection system.</p>
+<div class="section" id="package-installation">
+<h2>Package installation<a class="headerlink" href="#package-installation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The new data protection system can only be installed into an existing ASP.NET application targeting .NET 4.5.1 or higher. Installation will fail if the application targets .NET 4.5 or lower.</p>
+</div>
+<p>To install the new data protection system into an existing ASP.NET 4.5.1+ project, install the package Microsoft.AspNet.DataProtection.SystemWeb. This will instantiate the data protection system using the <a class="reference internal" href="../configuration/default-settings.html#data-protection-default-settings"><span>default configuration</span></a> settings.</p>
+<p>When you install the package, it inserts a line into Web.config that tells ASP.NET to use it for <a class="reference external" href="http://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx">most cryptographic operations</a>, including forms authentication, view state, and calls to MachineKey.Protect. The line that&#8217;s inserted reads as follows.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;machineKey</span> <span class="na">compatibilityMode=</span><span class="s">&quot;Framework45&quot;</span> <span class="na">dataProtectorType=</span><span class="s">&quot;...&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can tell if the new data protection system is active by inspecting fields like __VIEWSTATE, which should begin with &#8220;CfDJ8&#8221; as in the below example. &#8220;CfDJ8&#8221; is the base64 representation of the magic &#8220;09 F0 C9 F0&#8221; header that identifies a payload protected by the data protection system.</p>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;__VIEWSTATE&quot;</span> <span class="na">id=</span><span class="s">&quot;__VIEWSTATE&quot;</span> <span class="na">value=</span><span class="s">&quot;CfDJ8AWPr2EQPTBGs3L2GCZOpk...&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package-configuration">
+<h2>Package configuration<a class="headerlink" href="#package-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The data protection system is instantiated with a default zero-setup configuration. However, since by default keys are persisted to the local file system, this won&#8217;t work for applications which are deployed in a farm. To resolve this, you can provide configuration by creating a type which subclasses DataProtectionStartup and overrides its ConfigureServices method.</p>
+<p>Below is an example of a custom data protection startup type which configured both where keys are persisted and how they&#8217;re encrypted at rest. It also overrides the default app isolation policy by providing its own application name.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.DataProtection.SystemWeb</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Framework.DependencyInjection</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">DataProtectionDemo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">MyDataProtectionStartup</span> <span class="p">:</span> <span class="n">DataProtectionStartup</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">configure</span><span class="p">.</span><span class="n">SetApplicationName</span><span class="p">(</span><span class="s">&quot;my-app&quot;</span><span class="p">);</span>
+                <span class="n">configure</span><span class="p">.</span><span class="n">PersistKeysToFileSystem</span><span class="p">(</span><span class="k">new</span> <span class="n">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;\\server\share\myapp-keys\&quot;</span><span class="p">));</span>
+                <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithCertificate</span><span class="p">(</span><span class="s">&quot;thumbprint&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can also use &lt;machineKey applicationName=&#8221;my-app&#8221; ... /&gt; in place of an explicit call to SetApplicationName. This is a convenience mechanism to avoid forcing the developer to create a DataProtectionStartup-derived type if all he wanted to configure was setting the application name.</p>
+</div>
+<p>To enable this custom configuration, go back to Web.config and look for the &lt;appSettings&gt; element that the package install added to the config file. It will look like the below.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;appSettings&gt;</span>
+  <span class="c">&lt;!--</span>
+<span class="c">  If you want to customize the behavior of the ASP.NET 5 Data Protection stack, set the</span>
+<span class="c">  &quot;aspnet:dataProtectionStartupType&quot; switch below to be the fully-qualified name of a</span>
+<span class="c">  type which subclasses Microsoft.AspNet.DataProtection.SystemWeb.DataProtectionStartup.</span>
+<span class="c">  --&gt;</span>
+  <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;aspnet:dataProtectionStartupType&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/appSettings&gt;</span>
+</pre></div>
+</div>
+<p>Fill in the blank value with the assembly-qualified name of the DataProtectionStartup-derived type you just created. If the name of the application is DataProtectionDemo, this would look like the below.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;aspnet:dataProtectionStartupType&quot;</span>
+     <span class="na">value=</span><span class="s">&quot;DataProtectionDemo.MyDataProtectionStartup, DataProtectionDemo&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The newly-configured data protection system is now ready for use inside the application.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../app-secrets.html" class="btn btn-neutral float-right" title="Safe Storage of Application Secrets" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cookie-sharing.html" class="btn btn-neutral" title="Sharing cookies between applications." accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

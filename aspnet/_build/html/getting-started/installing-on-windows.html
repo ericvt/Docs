@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing ASP.NET 5 On Windows &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Installing ASP.NET 5 On Mac OS X" href="installing-on-mac.html"/>
+        <link rel="prev" title="Getting Started" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Installing ASP.NET 5 On Windows</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installing-on-mac.html">Installing ASP.NET 5 On Mac OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-on-linux.html">Installing ASP.NET 5 On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="choosing-the-right-dotnet.html">Choosing the Right .NET For You on the Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Installing ASP.NET 5 On Windows</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting-started/installing-on-windows.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="installing-asp-net-5-on-windows">
+<h1>Installing ASP.NET 5 On Windows<a class="headerlink" href="#installing-asp-net-5-on-windows" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a>, <a class="reference external" href="https://github.com/danroth27">Daniel Roth</a>, <a class="reference external" href="https://github.com/rick-anderson">Rick Anderson</a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#install-asp-net-with-visual-studio">Install ASP.NET with Visual Studio</a></li>
+<li><a class="reference internal" href="#install-asp-net-standalone">Install ASP.NET Standalone</a></li>
+</ul>
+<div class="section" id="install-asp-net-with-visual-studio">
+<h2>Install ASP.NET with Visual Studio<a class="headerlink" href="#install-asp-net-with-visual-studio" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get started building applications with ASP.NET 5 is to install the latest version of Visual Studio 2015 (including the free Community edition).</p>
+<ol class="arabic simple">
+<li>Install <a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=532606">Visual Studio 2015</a></li>
+</ol>
+<blockquote>
+<div><p>Be sure to specify that you want to include the Microsoft Web Developer Tools.</p>
+<img alt="../_images/web-dev-tools.png" src="../_images/web-dev-tools.png" />
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Install the latest <a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=690242">ASP.NET 5 preview (Beta8)</a>.</li>
+</ol>
+<blockquote>
+<div><p>Select the appropriate version of the .NET Version Manager (x64 or x86) and the web tools extensions for Visual Studio. The installer will tell you if you&#8217;ve selected the wrong version of the .NET Version Manager.</p>
+<img alt="../_images/install2.png" src="../_images/install2.png" />
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Enable ASP.NET 5 command-line tools. Open a <strong>Developer Command Prompt for VS2015</strong> and run the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm setup
+dnvm upgrade
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This will set up the .NET Version Manager (DNVM) on the path and install the latest .NET Execution Environment (DNX).</p>
+<p>You are all set up to go.</p>
+</div></blockquote>
+</div>
+<div class="section" id="install-asp-net-standalone">
+<h2>Install ASP.NET Standalone<a class="headerlink" href="#install-asp-net-standalone" title="Permalink to this headline">¶</a></h2>
+<p>Visual Studio isn&#8217;t the only way to install ASP.NET, and installing an IDE may not be appropriate in some scenarios. You can also install ASP.NET on its own from a command prompt. There are a few steps involved, since we&#8217;ll need to install and configure the environment in which ASP.NET runs, known as the .NET Execution Environment (DNX). To install DNX, we need one more tool, the .NET Version Manager (DNVM).</p>
+<div class="section" id="install-the-net-version-manager-dnvm">
+<h3>Install the .NET Version Manager (DNVM)<a class="headerlink" href="#install-the-net-version-manager-dnvm" title="Permalink to this headline">¶</a></h3>
+<p>Use .NET Version Manager to install different versions of the .NET Execution Environment (DNX).</p>
+<p>To install DNVM open a command prompt and run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>@powershell -NoProfile -ExecutionPolicy unrestricted -Command &quot;&amp;{$Branch=&#39;dev&#39;;iex ((new-object net.webclient).DownloadString(&#39;https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1&#39;))}&quot;
+</pre></div>
+</div>
+<p>Once this step is complete you should be able to run <code class="docutils literal"><span class="pre">dnvm</span></code> and see some help text.</p>
+</div>
+<div class="section" id="install-the-net-execution-environment-dnx">
+<h3>Install the .NET Execution Environment (DNX)<a class="headerlink" href="#install-the-net-execution-environment-dnx" title="Permalink to this headline">¶</a></h3>
+<p>The .NET Execution Environment (DNX) is used to build and run .NET projects. Use DNVM to install DNX for the full .NET Framework or for .NET Core (see <a class="reference internal" href="choosing-the-right-dotnet.html"><em>Choosing the Right .NET For You on the Server</em></a>).</p>
+<p>To install DNX for .NET Core run:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm upgrade -r coreclr
+</pre></div>
+</div>
+<p>To install DNX for the full .NET Framework run:</p>
+<div class="highlight-python"><div class="highlight"><pre>dnvm upgrade -r clr
+</pre></div>
+</div>
+<p>By default DNVM will install DNX for the full .NET Framework if no runtime is specified.</p>
+</div>
+<div class="section" id="related-resources">
+<h3>Related Resources<a class="headerlink" href="#related-resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../tutorials/your-first-aspnet-application.html"><em>Your First ASP.NET 5 Application Using Visual Studio</em></a></li>
+<li><a class="reference internal" href="../fundamentals/index.html"><em>Fundamentals</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installing-on-mac.html" class="btn btn-neutral float-right" title="Installing ASP.NET 5 On Mac OS X" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

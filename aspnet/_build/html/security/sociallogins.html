@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enabling authentication using external providers &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Security" href="index.html"/>
+        <link rel="next" title="Account Confirmation and Password Recovery with ASP.NET Identity" href="accconfirm.html"/>
+        <link rel="prev" title="Security" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Security</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Enabling authentication using external providers</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization/index.html">Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-protection/index.html">Data Protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Security</a> &raquo;</li>
+      
+    <li>Enabling authentication using external providers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/security/sociallogins.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="enabling-authentication-using-external-providers">
+<h1>Enabling authentication using external providers<a class="headerlink" href="#enabling-authentication-using-external-providers" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/rustd">Pranav Rastogi</a></p>
+<p>This tutorial shows you how to build an ASP.NET 5 Web application that enables users to log in using OAuth 2.0  with credentials from an external authentication provider, such as Facebook, Twitter, LinkedIn, Microsoft, or Google. For simplicity, this tutorial focuses on working with credentials from Facebook and Google.</p>
+<p>Enabling these credentials in your web sites provides a significant advantage because millions of users already have accounts with these external providers. These users may be more inclined to sign up for your site if they do not have to create and remember a new set of credentials.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#create-a-new-asp-net-5-project">Create a New ASP.NET 5 Project</a></li>
+<li><a class="reference internal" href="#running-the-application">Running the Application</a></li>
+<li><a class="reference internal" href="#creating-the-app-in-facebook">Creating the app in Facebook</a></li>
+<li><a class="reference internal" href="#use-secretmanager-to-store-facebook-appid-and-appsecret">Use SecretManager to store Facebook AppId and AppSecret</a></li>
+<li><a class="reference internal" href="#enable-facebook-middleware">Enable Facebook middleware</a></li>
+<li><a class="reference internal" href="#login-with-facebook">Login with Facebook</a></li>
+<li><a class="reference internal" href="#optionally-set-password">Optionally set password</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="create-a-new-asp-net-5-project">
+<h2>Create a New ASP.NET 5 Project<a class="headerlink" href="#create-a-new-asp-net-5-project" title="Permalink to this headline">¶</a></h2>
+<p>To get started, open Visual Studio 2015. Next, create a New Project (from the Start Page, or via File - New - Project).  On the left part of the New Project window, make sure the Visual C# templates are open and &#8220;Web&#8221; is selected, as shown:</p>
+<img alt="../_images/new-project1.png" src="../_images/new-project1.png" />
+<p>Next you should see another dialog, the New ASP.NET Project window:</p>
+<img alt="../_images/select-project.png" src="../_images/select-project.png" />
+<p>Select the ASP.NET 5 Web site template from the set of ASP.NET 5 templates. Make sure you have Individual Authentication selected for this template. After selecting, click OK.</p>
+<p>At this point, the project is created. It may take a few moments to load, and you may notice Visual Studio&#8217;s status bar indicates that Visual Studio is downloading some resources as part of this process.  Visual Studio ensures some required files are pulled into the project when a solution is opened (or a new project is created), and other files may be pulled in at compile time.</p>
+</div>
+<div class="section" id="running-the-application">
+<h2>Running the Application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Run the application and after a quick build step, you should see it open in your web browser.</p>
+<img alt="../_images/first-run.png" src="../_images/first-run.png" />
+</div>
+<div class="section" id="creating-the-app-in-facebook">
+<h2>Creating the app in Facebook<a class="headerlink" href="#creating-the-app-in-facebook" title="Permalink to this headline">¶</a></h2>
+<p>For Facebook OAuth2 authentication, you need to copy to your project some settings from an application that you create in Facebook.</p>
+<ul class="simple">
+<li>In your browser, navigate to <a class="reference external" href="https://developers.facebook.com/apps">https://developers.facebook.com/apps</a> and log in by entering your Facebook credentials.</li>
+<li>If you aren’t already registered as a Facebook developer, click  Register as a Developer and follow the directions to register.</li>
+<li>On the Apps tab, click Create New App.</li>
+</ul>
+<img alt="../_images/FBApp01.png" src="../_images/FBApp01.png" />
+<ul class="simple">
+<li>Select Website from the platform choices.</li>
+</ul>
+<img alt="../_images/FBApp02.png" src="../_images/FBApp02.png" />
+<ul class="simple">
+<li>Click <strong>Skip and Create App ID</strong></li>
+</ul>
+<img alt="../_images/FBApp03.png" src="../_images/FBApp03.png" />
+<ul class="simple">
+<li>Set a display name and choose a Category.</li>
+</ul>
+<img alt="../_images/FBApp04.png" src="../_images/FBApp04.png" />
+<ul class="simple">
+<li>Select <strong>Settings</strong> from the left menu bar.</li>
+</ul>
+<img alt="../_images/FBApp05.png" src="../_images/FBApp05.png" />
+<ul class="simple">
+<li>On the <strong>Basic</strong> settings section of the page select Add Platform to specify that you are adding a website application.</li>
+</ul>
+<img alt="../_images/FBApp06.png" src="../_images/FBApp06.png" />
+<ul class="simple">
+<li>Select Website from the platform choices.</li>
+</ul>
+<img alt="../_images/FBApp07.png" src="../_images/FBApp07.png" />
+<ul class="simple">
+<li>Add your Site URL (<a class="reference external" href="http://localhost:port/">http://localhost:port/</a>)</li>
+<li>Make a note of your App ID and your App Secret so that you can add both into your ASP.NET 5 Web site later in this tutorial. Also, Add your Site URL (<a class="reference external" href="https://localhost:44300/">https://localhost:44300/</a>) to test your application.</li>
+</ul>
+<img alt="../_images/FBApp08.png" src="../_images/FBApp08.png" />
+</div>
+<div class="section" id="use-secretmanager-to-store-facebook-appid-and-appsecret">
+<h2>Use SecretManager to store Facebook AppId and AppSecret<a class="headerlink" href="#use-secretmanager-to-store-facebook-appid-and-appsecret" title="Permalink to this headline">¶</a></h2>
+<p>The project created has the following code in Startup which reads the configuration values from a secret store. As a best practice, it is not recommended to store the secrets in a configuration file in the application since they can be checked into source control which may be publicly accessible.</p>
+<p>Follow these steps to add the Facebook AppId and AppSecret to the Secret Manager:</p>
+<ul class="simple">
+<li>Open a Command Prompt and navigate to the folder of project.json for your project.</li>
+<li>Use DNVM (.NET Version Manager) to set a runtime version by running <strong>dnvm use 1.0.0-beta5</strong></li>
+</ul>
+<img alt="../_images/SM1.PNG" src="../_images/SM1.PNG" />
+<ul class="simple">
+<li>Install the SecretManager tool using DNU (Microsoft .NET Development Utility) by running <strong>dnu commands install SecretManager</strong></li>
+<li>Set the Facebook AppId by running <strong>user-secret set Authentication:Facebook:AppId 862373430475128</strong></li>
+<li>Set the Facebook AppSecret by running <strong>user-secret set Authentication:Facebook:AppSecret 862373430475128</strong></li>
+<li>The following code in the template reads the configuration values from the SecretManager. To learn more about SecretManager see <a class="reference external" href="https://github.com/aspnet/Home/wiki/DNX-Secret-Configuration">Secret Manager</a></li>
+</ul>
+<div class="highlight-c#"><div class="highlight"><pre> var configuration = new Configuration()
+.AddJsonFile(&quot;config.json&quot;)
+.AddJsonFile($&quot;config.{env.EnvironmentName}.json&quot;, optional: true);
+
+if (env.IsEnvironment(&quot;Development&quot;))
+{
+    // This reads the configuration keys from the secret store.
+    // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+    configuration.AddUserSecrets();
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-facebook-middleware">
+<h2>Enable Facebook middleware<a class="headerlink" href="#enable-facebook-middleware" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You can add the options for Facebook middleware such as Facebook AppId and AppSecret in the ConfigureServices method in Startup.</li>
+</ul>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">Configure</span><span class="p">&lt;</span><span class="n">FacebookAuthenticationOptions</span><span class="p">&gt;(</span><span class="n">options</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">options</span><span class="p">.</span><span class="n">AppId</span> <span class="p">=</span> <span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Authentication:Facebook:AppId&quot;</span><span class="p">];</span>
+    <span class="n">options</span><span class="p">.</span><span class="n">AppSecret</span> <span class="p">=</span> <span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Authentication:Facebook:AppSecret&quot;</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Add the Facebook middleware by adding it to the HTTP request pipeline by uncommenting the following line in the Configure method in Startup.</li>
+</ul>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">app</span><span class="p">.</span><span class="n">UseFacebookAuthentication</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-with-facebook">
+<h2>Login with Facebook<a class="headerlink" href="#login-with-facebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Run your application and click Login. You will see an option for Facebook.</li>
+</ul>
+<img alt="../_images/FBLogin1.PNG" src="../_images/FBLogin1.PNG" />
+<ul class="simple">
+<li>When you click on Facebook, you will be redirected to Facebook for authentication.</li>
+</ul>
+<img alt="../_images/FBLogin2.PNG" src="../_images/FBLogin2.PNG" />
+<ul class="simple">
+<li>Once you enter your Facebook credentials, then you will be redirected back to the Web site where you can set your email.</li>
+<li>You are now logged in using your Facebook credentials.</li>
+</ul>
+<img alt="../_images/FBLogin3.PNG" src="../_images/FBLogin3.PNG" />
+</div>
+<div class="section" id="optionally-set-password">
+<h2>Optionally set password<a class="headerlink" href="#optionally-set-password" title="Permalink to this headline">¶</a></h2>
+<p>When you authenticate with External Login providers, then you do not have to set a password locally on the Web site. This is useful since you do not have to create an extra password that you have to remember and maintain. However sometimes you might want to create a password and login using your email that you set during the login process with external providers.
+To set the password once you have logged in with an external provider:</p>
+<ul class="simple">
+<li>Click the <strong>Hello raspranav&#64;gmail.com</strong> at the top right corner to navigate to the Manage view.</li>
+</ul>
+<img alt="../_images/pass1.PNG" src="../_images/pass1.PNG" />
+<ul class="simple">
+<li>Click <strong>Create</strong> next to the Password text.</li>
+</ul>
+<img alt="../_images/pass2.PNG" src="../_images/pass2.PNG" />
+<ul class="simple">
+<li>Set a valid password and you can use this to login with your email.</li>
+</ul>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This article showed how you can authenticate with Facebook. You can follow a similar approach to authenticate with Microsoft Account, Twitter, Google and other providers.</li>
+<li>Once you publish your Web site to Azure Web App, you should reset the AppSecret in the Facebook developer portal.</li>
+<li>Set the Facebook AppId and AppSecret as application setting in the Azure Web App portal. The configuration system is setup to read keys from environment variables.</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET Identity and Security middleware can be used to authenticate with external providers.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="accconfirm.html" class="btn btn-neutral float-right" title="Account Confirmation and Password Recovery with ASP.NET Identity" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Security" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

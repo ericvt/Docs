@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Styling Applications with Less, Sass, and Font Awesome &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Client-Side Development" href="index.html"/>
+        <link rel="next" title="|stub-icon| Bundling and Minification" href="bundling-and-minification.html"/>
+        <link rel="prev" title="Using Angular for Single Page Applications (SPAs)" href="angular.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Client-Side Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using-gulp.html">Using Gulp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-grunt.html">Using Grunt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bower.html">Manage Client-Side Packages with Bower</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Building Beautiful, Responsive Sites with Bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knockout.html">Knockout.js MVVM Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html">Using Angular for Single Page Applications (SPAs)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Styling Applications with Less, Sass, and Font Awesome</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bundling-and-minification.html">|stub-icon| Bundling and Minification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdn.html">|stub-icon| Working with a Content Delivery Network (CDN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="responsive-design.html">|stub-icon| Responsive Design for the Mobile Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript.html">|stub-icon| Introducing TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yeoman.html">Building Projects with Yeoman</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Client-Side Development</a> &raquo;</li>
+      
+    <li>Styling Applications with Less, Sass, and Font Awesome</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client-side/less-sass-fa.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="styling-applications-with-less-sass-and-font-awesome">
+<h1>Styling Applications with Less, Sass, and Font Awesome<a class="headerlink" href="#styling-applications-with-less-sass-and-font-awesome" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>Users of web applications have increasingly high expectations when it comes to style and overall experience. Modern web applications frequently leverage rich tools and frameworks for defining and managing their look and feel in a consistent manner. Frameworks like <a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> can go a long way toward defining a common set of styles and layout options for the web sites. However, most non-trivial sites also benefit from being able to effectively define and maintain styles and cascading style sheet (CSS) files, as well as having easy access to non-image icons that help make the site&#8217;s interface more intuitive. That&#8217;s where languages and tools that support <a class="reference external" href="http://lesscss.org/">Less</a> and <a class="reference external" href="http://sass-lang.com/">Sass</a>, and libraries like <a class="reference external" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>, come in.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#css-preprocessor-languages">CSS Preprocessor Languages</a></li>
+<li><a class="reference external" href="http://lesscss.org/">Less</a></li>
+<li><a class="reference external" href="http://sass-lang.com/">Sass</a></li>
+<li><a class="reference internal" href="#less-or-sass">Less or Sass?</a></li>
+<li><a class="reference external" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="css-preprocessor-languages">
+<h2>CSS Preprocessor Languages<a class="headerlink" href="#css-preprocessor-languages" title="Permalink to this headline">¶</a></h2>
+<p>Languages that are compiled into other languages, in order to improve the experience of working with the underlying language, are referred to as pre-processors. There are two popular pre-processors for CSS: Less and Sass.  These pre-processors add features to CSS, such as support for variables and nested rules, which improve the maintainability of large, complex stylesheets. CSS as a language is very basic, lacking support even for something as simple as variables, and this tends to make CSS files repetitive and bloated. Adding real programming language features via preprocessors can help reduce duplication and provide better organization of styling rules. Visual Studio provides built-in support for both Less and Sass, as well as extensions that can further improve the development experience when working with these languages.</p>
+<p>As a quick example of how preprocessors can improve readability and maintainability of style information, consider this CSS:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.header</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+   <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="o">:</span> <span class="m">18px</span><span class="p">;</span>
+   <span class="k">font-family</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.small-header</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+   <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+   <span class="k">font-family</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Using Less, this can be rewritten to eliminate all of the duplication, using a mixin (so named because it allows you to &#8220;mix in&#8221; properties from one class or rule-set into another):</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.header</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+   <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="o">:</span> <span class="m">18px</span><span class="p">;</span>
+   <span class="k">font-family</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.small-header</span> <span class="p">{</span>
+<span class="hll">   <span class="o">.</span><span class="n">header</span><span class="p">;</span>
+</span>   <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Visual Studio 2015 adds a great deal of built-in support for Less and Sass. You can also add support for earlier versions of Visual Studio by installing the <a class="reference external" href="http://vswebessentials.com/">Web Essentials extension</a>.</p>
+</div>
+<div class="section" id="id1">
+<h2>Less<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The Less CSS pre-processor runs using Node.js. You can quickly install it using the Node Package Manager (NPM), with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">npm install -g less</span>
+</pre></div>
+</div>
+<p>If you&#8217;re using Visual Studio 2015, you can get started with Less by adding one or more Less files to your project, and then configuring Gulp (or Grunt) to process them at compile-time. Add a Styles folder to your project, and then add a new Less file called main.less to this folder.</p>
+<img alt="../_images/add-less-file.png" src="../_images/add-less-file.png" />
+<p>Once added, your folder structure should look something like this:</p>
+<img alt="../_images/folder-structure.png" src="../_images/folder-structure.png" />
+<p>Now we can add some basic styling to the file, which will be compiled into CSS and deployed to the wwwroot folder by Gulp.</p>
+<p>Modify main.less to include the following content, which creates a simple color palette from a single base color.</p>
+<div class="highlight-css"><div class="highlight"><pre>@base: #663333;
+@background: spin(@base, 180);
+@lighter: lighten(spin(@base, 5), 10%);
+@lighter2: lighten(spin(@base, 10), 20%);
+@darker: darken(spin(@base, -5), 10%);
+@darker2: darken(spin(@base, -10), 20%);
+
+body {
+        background-color:@background;
+}
+.baseColor  {color:@base}
+.bgLight    {color:@lighter}
+.bgLight2   {color:@lighter2}
+.bgDark     {color:@darker}
+.bgDark2    {color:@darker2}
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">&#64;base</span></code> and the other &#64;-prefixed items are variables. Each of them represents a color. Except for <code class="docutils literal"><span class="pre">&#64;base</span></code>, they are set using color functions: lighten, darken, and spin. Lighten and darken do pretty much what you would expect; spin adjusts the hue of a color by a number of degrees (around the color wheel). The less processor is smart enough to ignore variables that aren&#8217;t used, so to demonstrate how these variables work, we need to use them somewhere. The classes <code class="docutils literal"><span class="pre">.baseColor</span></code>, etc. will demonstrate the calculated values of each of the variables in the CSS file that is produced.</p>
+<div class="section" id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<p>If you don&#8217;t already have one in your project, add a new Gulp configuration file. Make sure package.json includes gulp in its <code class="docutils literal"><span class="pre">devDependencies</span></code>, and add &#8220;gulp-less&#8221;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;gulp&quot;</span><span class="o">:</span> <span class="s2">&quot;3.8.11&quot;</span><span class="p">,</span>
+<span class="hll">                <span class="s2">&quot;gulp-less&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span>
+</span>                <span class="s2">&quot;rimraf&quot;</span><span class="o">:</span> <span class="s2">&quot;2.3.2&quot;</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>Save your changes to the package.json file, and you should see that the all of the files referenced can be found in the Dependencies folder under NPM. If not, right-click on the NPM folder and select &#8220;Restore Packages.&#8221;</p>
+<p>Now open gulpfile.js. Add a variable at the top to represent less:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp&quot;</span><span class="p">),</span>
+    <span class="nx">rimraf</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;rimraf&quot;</span><span class="p">),</span>
+    <span class="nx">fx</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">),</span>
+<span class="hll">    <span class="nx">less</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp-less&quot;</span><span class="p">);</span>
+</span></pre></div>
+</div>
+<p>add another variable to allow you to access project properties:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">project</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./project.json&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Next, add a task to run less, using the syntax shown here:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>    <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;less&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;Styles/main.less&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">less</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">project</span><span class="p">.</span><span class="nx">webroot</span> <span class="o">+</span> <span class="s1">&#39;/css&#39;</span><span class="p">))</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>Open the Task Runner Explorer (view&gt;Other Windows &gt; Task Runner Explorer). Among the tasks, you should see a new task named <code class="docutils literal"><span class="pre">less</span></code>. Run it, and you should have output similar to what is shown here:</p>
+<img alt="../_images/less-task-runner.png" src="../_images/less-task-runner.png" />
+<p>Now refresh your Solution Explorer and inspect the contents of the wwwroot/css folder. You should find a new file, main.css, there:</p>
+<img alt="../_images/main-css-created.png" src="../_images/main-css-created.png" />
+<p>Open main.css and you should see something like the following:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#336666</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.baseColor</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#663333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.bgLight</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#884a44</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.bgLight2</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#aa6355</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.bgDark</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#442225</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.bgDark2</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#221114</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Add a simple HTML page to the wwwroot folder and reference main.css to see the color palette in action.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;css/main.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;baseColor&quot;</span><span class="nt">&gt;</span>BaseColor<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bgLight&quot;</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bgLight2&quot;</span><span class="nt">&gt;</span>Light2<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bgDark&quot;</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bgDark2&quot;</span><span class="nt">&gt;</span>Dark2<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>You can see that the 180 degree spin on <code class="docutils literal"><span class="pre">&#64;base</span></code> used to produce <code class="docutils literal"><span class="pre">&#64;background</span></code> resulted in the color wheel opposing color of <code class="docutils literal"><span class="pre">&#64;base</span></code>:</p>
+<img alt="../_images/less-test-screenshot.png" src="../_images/less-test-screenshot.png" />
+<p>Less also provides support for nested rules, as well as nested media queries. For example, defining nested hierarchies like menus can result in verbose CSS rules like these:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">nav</span> <span class="p">{</span>
+        <span class="k">height</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+        <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span>
+        <span class="k">height</span><span class="o">:</span> <span class="m">38px</span><span class="p">;</span>
+        <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:link</span> <span class="p">{</span>
+        <span class="k">color</span><span class="o">:</span> <span class="m">#000</span><span class="p">;</span>
+        <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:visited</span> <span class="p">{</span>
+        <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+        <span class="k">color</span><span class="o">:</span> <span class="m">#CC3333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+        <span class="k">text-decoration</span><span class="o">:</span> <span class="k">underline</span><span class="p">;</span>
+        <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:active</span> <span class="p">{</span>
+        <span class="k">text-decoration</span><span class="o">:</span> <span class="k">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ideally all of the related style rules will be placed together within the CSS file, but in practice there is nothing enforcing this rule except convention and perhaps block comments.</p>
+<p>Defining these same rules using Less looks like this:</p>
+<div class="highlight-css"><div class="highlight"><pre>nav {
+        height: 40px;
+        width: 100%;
+        li {
+                height: 38px;
+                width: 100px;
+                a {
+                        color: #000;
+                        &amp;:link { text-decoration:none}
+                        &amp;:visited { color: #CC3333; text-decoration:none}
+                        &amp;:hover { text-decoration:underline; font-weight:bold}
+                        &amp;:active {text-decoration:underline}
+                }
+        }
+}
+</pre></div>
+</div>
+<p>Note that in this case, all of the subordinate elements of <code class="docutils literal"><span class="pre">nav</span></code> are contained within its scope. There is no longer any repetition of parent elements (<code class="docutils literal"><span class="pre">nav</span></code>, <code class="docutils literal"><span class="pre">li</span></code>, <code class="docutils literal"><span class="pre">a</span></code>), and the total line count has dropped as well (though some of that is a result of putting values on the same lines in the second example). It can be very helpful, organizationally, to see all of the rules for a given UI element within an explicitly bounded scope, in this case set off from the rest of the file by curly braces.</p>
+<p>The <code class="docutils literal"><span class="pre">&amp;</span></code> syntax is a Less selector feature, with &amp; representing the current selector parent. So, within the a {...} block, <code class="docutils literal"><span class="pre">&amp;</span></code> represents an <code class="docutils literal"><span class="pre">a</span></code> tag, and thus <code class="docutils literal"><span class="pre">&amp;:link</span></code> is equivalent to <code class="docutils literal"><span class="pre">a:link</span></code>.</p>
+<p>Media queries, extremely useful in creating responsive designs, can also contribute heavily to repetition and complexity in CSS. Less allows media queries to be nested within classes, so that the entire class definition doesn&#8217;t need to be repeated within different top-level <code class="docutils literal"><span class="pre">&#64;media</span></code> elements. For example, this CSS for a responsive menu:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.navigation</span> <span class="p">{</span>
+        <span class="k">margin-top</span><span class="o">:</span> <span class="m">30%</span><span class="p">;</span>
+        <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">40em</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nc">.navigation</span> <span class="p">{</span>
+                <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">62em</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nc">.navigation</span> <span class="p">{</span>
+                <span class="k">width</span><span class="o">:</span> <span class="m">960px</span><span class="p">;</span>
+                <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This can be better defined in Less as:</p>
+<div class="highlight-css"><div class="highlight"><pre>.navigation {
+        margin-top: 30%;
+        width: 100%;
+        @media screen and (min-width: 40em) {
+                margin: 0;
+        }
+        @media screen and (min-width: 62em) {
+                width: 960px;
+                margin: 0;
+        }
+}
+</pre></div>
+</div>
+<p>Another feature of Less that we have already seen is its support for mathematical operations, allowing style attributes to be constructed from pre-defined variables. This makes updating related styles much easier, since the base variable can be modified and all dependent values change automatically.</p>
+<p>CSS files, especially for large sites (and especially if media queries are being used), tend to get quite large over time, making working with them unwieldy. Less files can be defined separately, then pulled together using <code class="docutils literal"><span class="pre">&#64;import</span></code> directives. Less can also be used to import individual CSS files, as well, if desired.</p>
+<p><em>Mixins</em> can accept parameters, and Less supports conditional logic in the form of mixin guards, which provide a declarative way to define when certain mixins take effect. A common use for mixin guards is to adjust colors based on how light or dark the source color is. Given a mixin that accepts a parameter for color, a mixin guard can be used to modify the mixin based on that color:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.box</span> <span class="o">(</span><span class="k">@color</span><span class="o">)</span> <span class="nt">when</span> <span class="o">(</span><span class="nt">lightness</span><span class="o">(</span><span class="k">@color</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="nt">50</span><span class="o">%)</span> <span class="p">{</span>
+        <span class="nt">background-color</span><span class="o">:</span> <span class="nf">#000</span><span class="o">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span> <span class="o">(</span><span class="k">@color</span><span class="o">)</span> <span class="nt">when</span> <span class="o">(</span><span class="nt">lightness</span><span class="o">(</span><span class="k">@color</span><span class="o">)</span> <span class="o">&lt;</span> <span class="nt">50</span><span class="o">%)</span> <span class="p">{</span>
+        <span class="nt">background-color</span><span class="o">:</span> <span class="nf">#FFF</span><span class="o">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span> <span class="o">(</span><span class="k">@color</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="o">:</span> <span class="k">@color</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.feature</span> <span class="p">{</span>
+        <span class="nc">.box</span> <span class="o">(</span><span class="k">@base</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Given our current <code class="docutils literal"><span class="pre">&#64;base</span></code> value of <code class="docutils literal"><span class="pre">#663333</span></code>, this Less script will produce the following CSS:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.feature</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#663333</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Less provides a number of additional features, but this should give you some idea of the power of this preprocessing language.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Sass<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Sass is similar to Less, providing support for many of the same features, but with slightly different syntax. It is built using Ruby, rather than JavaScript, and so has different setup requirements. The original Sass language did not use curly braces or semicolons, but instead defined scope using white space and indentation. In version 3 of Sass, a new syntax was introduced, <strong>SCSS</strong> (&#8220;Sassy CSS&#8221;). SCSS is similar to CSS in that it ignores indentation levels and whitespace, and instead uses semicolons and curly braces.</p>
+<p>To install Sass, typically you would first install Ruby (pre-installed on Mac), and then run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">gem install sass-lang</span>
+</pre></div>
+</div>
+<p>However, assuming you&#8217;re running Visual Studio, you can get started with Sass in much the same way as you would with Less. Open package.json and add the &#8220;gulp-sass&#8221; package to <code class="docutils literal"><span class="pre">devDependencies</span></code>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;gulp&quot;</span><span class="o">:</span> <span class="s2">&quot;3.8.11&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gulp-less&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gulp-sass&quot;</span><span class="o">:</span> <span class="s2">&quot;1.3.3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rimraf&quot;</span><span class="o">:</span> <span class="s2">&quot;2.3.2&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, modify gulpfile.js to add a sass variable and a task to compile your Sass files and place the results in the wwwroot folder:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp&quot;</span><span class="p">),</span>
+        <span class="nx">rimraf</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;rimraf&quot;</span><span class="p">),</span>
+        <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">),</span>
+        <span class="nx">less</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp-less&quot;</span><span class="p">),</span>
+        <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp-sass&quot;</span><span class="p">);</span>
+
+<span class="c1">// other content removed</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;sass&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;Styles/main2.scss&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
+                <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">project</span><span class="p">.</span><span class="nx">webroot</span> <span class="o">+</span> <span class="s1">&#39;/css&#39;</span><span class="p">))</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Now you can add the Sass file main2.scss to the Styles folder in the root of the project:</p>
+<img alt="../_images/add-scss-file.png" src="../_images/add-scss-file.png" />
+<p>Open main2.scss and add the following:</p>
+<div class="highlight-css"><div class="highlight"><pre>$base: #CC0000;
+body {
+        background-color: $base;
+}
+</pre></div>
+</div>
+<p>Save all of your files. Now in Task Runner Explorer, you should see a sass task. Run it, refresh solution explorer, and look in the /wwwroot/css folder. There should be a main2.css file, with these contents:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#CC0000</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Sass supports nesting in much the same was that Less does, providing similar benefits. Files can be split up by function and included using the <code class="docutils literal"><span class="pre">&#64;import</span></code> directive:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@import</span> <span class="s1">&#39;anotherfile&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Sass supports mixins as well, using the <code class="docutils literal"><span class="pre">&#64;mixin</span></code> keyword to define them and &#64;include to include them, as in this example from <a class="reference external" href="http://sass-lang.com">sass-lang.com</a>:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@mixin</span> <span class="nt">border-radius</span><span class="o">($</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">-webkit-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+         <span class="nt">-moz-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+          <span class="nt">-ms-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+                  <span class="nt">border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="p">(</span><span class="m">10px</span><span class="p">);</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>In addition to mixins, Sass also supports the concept of inheritance, allowing one class to extend another. It&#8217;s conceptually similar to a mixin, but results in less CSS code. It&#8217;s accomplished using the <code class="docutils literal"><span class="pre">&#64;extend</span></code> keyword. First, let&#8217;s see how we might use mixins, and the resulting CSS code. Add the following to your main2.scss file:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@mixin</span> <span class="nt">alert</span> <span class="p">{</span>
+        <span class="nt">border</span><span class="o">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="nt">black</span><span class="o">;</span>
+        <span class="nt">padding</span><span class="o">:</span> <span class="nt">5px</span><span class="o">;</span>
+        <span class="nt">color</span><span class="o">:</span> <span class="nf">#333333</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.success</span> <span class="p">{</span>
+<span class="hll">        <span class="o">@</span><span class="n">include</span> <span class="n">alert</span><span class="p">;</span>
+</span>        <span class="k">border-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.error</span> <span class="p">{</span>
+<span class="hll">        <span class="o">@</span><span class="n">include</span> <span class="n">alert</span><span class="p">;</span>
+</span>        <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+        <span class="k">border-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+        <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Examine the output in main2.css after running the sass task in Task Runner Explorer:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.success</span> <span class="p">{</span>
+<span class="hll">  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span>
+</span>  <span class="k">border-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+ <span class="p">}</span>
+
+<span class="nc">.error</span> <span class="p">{</span>
+<span class="hll">  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class="hll">  <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span>
+</span>  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice that all of the common properties of the alert mixin are repeated in each class. The mixin did a good job of helping use eliminate duplication at development time, but it&#8217;s still creating CSS with a lot of duplication in it, resulting in larger than necessary CSS files - a potential performance issue. It would be great if we could follow the <a class="reference external" href="http://deviq.com/don-t-repeat-yourself/">Don&#8217;t Repeat Yourself (DRY) Principle</a> at both development time and runtime.</p>
+<p>Now replace the alert mixin with a <code class="docutils literal"><span class="pre">.alert</span></code> class, and change <code class="docutils literal"><span class="pre">&#64;include</span></code> to <code class="docutils literal"><span class="pre">&#64;extend</span></code> (remembering to extend <code class="docutils literal"><span class="pre">.alert</span></code>, not <code class="docutils literal"><span class="pre">alert</span></code>):</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.alert</span> <span class="p">{</span>
+        <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+        <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+        <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.success</span> <span class="p">{</span>
+<span class="hll">        <span class="o">@</span><span class="n">extend</span> <span class="o">.</span><span class="n">alert</span><span class="p">;</span>
+</span>        <span class="k">border-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.error</span> <span class="p">{</span>
+<span class="hll">        <span class="o">@</span><span class="n">extend</span> <span class="o">.</span><span class="n">alert</span><span class="p">;</span>
+</span>        <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+        <span class="k">border-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+        <span class="k">font-weight</span><span class="o">:</span><span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run Sass once more, and examine the resulting CSS:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.alert</span><span class="o">,</span> <span class="nc">.success</span><span class="o">,</span> <span class="nc">.error</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.success</span> <span class="p">{</span>
+  <span class="k">border-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.error</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Now the properties are defined only as many times as needed, and better CSS is generated.</p>
+<p>Sass also includes functions and conditional logic operations, similar to Less. In fact, the two languages&#8217; capabilities are very similar.</p>
+</div>
+<div class="section" id="less-or-sass">
+<h2>Less or Sass?<a class="headerlink" href="#less-or-sass" title="Permalink to this headline">¶</a></h2>
+<p>There is still no consensus as to whether it&#8217;s generally better to use Less or Sass (or even whether to prefer the original Sass or the newer SCSS syntax within Sass). A recent poll conducted on twitter of mostly ASP.NET developers found that the majority preferred to use Less, by about a 2-to-1 margin. Probably the most important decision is to <strong>use one of these tools</strong>, as opposed to just hand-coding your CSS files. Once you&#8217;ve made that decision, both Less and Sass are good choices.</p>
+</div>
+<div class="section" id="id3">
+<h2>Font Awesome<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>In addition to CSS pre-compilers, another great resource for styling modern web applications is Font Awesome. Font Awesome is a toolkit that provides over 500 scalable vector icons that can be freely used in your web applications. It was originally designed to work with Bootstrap, but has no dependency on that framework, or on any JavaScript libraries.</p>
+<p>The easiest way to get started with Font Awesome is to add a reference to it, using its public content delivery network (CDN) location:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span>
+<span class="na">href=</span><span class="s">&quot;//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>Of course, you can also quickly add it to your Visual Studio 2015 project by adding it to the &#8220;dependencies&#8221; in bower.json:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;ASP.NET&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;private&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="s2">&quot;1.10.2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery-validation&quot;</span><span class="o">:</span> <span class="s2">&quot;1.11.1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery-validation-unobtrusive&quot;</span><span class="o">:</span> <span class="s2">&quot;3.2.2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;hammer.js&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0.4&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bootstrap-touch-carousel&quot;</span><span class="o">:</span> <span class="s2">&quot;0.8.0&quot;</span><span class="p">,</span>
+<span class="hll">                <span class="s2">&quot;Font-Awesome&quot;</span><span class="o">:</span> <span class="s2">&quot;4.3.0&quot;</span>
+</span>        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, to get the stylesheet added to the wwwroot folder, modify gulpfile.js as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;clean&quot;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">bower</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;angular&quot;</span><span class="o">:</span> <span class="s2">&quot;angular/angular*.{js,map}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bootstrap&quot;</span><span class="o">:</span> <span class="s2">&quot;bootstrap/dist/**/*.{js,map,css,ttf,svg,woff,eot}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bootstrap-touch-carousel&quot;</span><span class="o">:</span> <span class="s2">&quot;bootstrap-touch-carousel/dist/**/*.{js,css}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;hammer.js&quot;</span><span class="o">:</span> <span class="s2">&quot;hammer.js/hammer*.{js,map}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery&quot;</span><span class="o">:</span> <span class="s2">&quot;jquery/jquery*.{js,map}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery-validation&quot;</span><span class="o">:</span> <span class="s2">&quot;jquery-validation/jquery.validate.js&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;jquery-validation-unobtrusive&quot;</span><span class="o">:</span> <span class="s2">&quot;jquery-validation-unobtrusive/jquery.validate.unobtrusive.js&quot;</span><span class="p">,</span>
+<span class="hll">                <span class="s2">&quot;font-awesome&quot;</span><span class="o">:</span> <span class="s2">&quot;Font-Awesome/**/*.{css,otf,eot,svg,ttf,woff,wof2}&quot;</span>
+</span>        <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">destinationDir</span> <span class="k">in</span> <span class="nx">bower</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">bower</span> <span class="o">+</span> <span class="nx">bower</span><span class="p">[</span><span class="nx">destinationDir</span><span class="p">])</span>
+                        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">lib</span> <span class="o">+</span> <span class="nx">destinationDir</span><span class="p">));</span>
+        <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Once this is in place (and saved), running the &#8216;copy&#8217; task in Task Runner Explorer should copy the font awesome fonts and css files to <code class="docutils literal"><span class="pre">/lib/font-awesome</span></code>.</p>
+<p>Once you have a reference to it on a page, you can add icons to your application by simply applying Font Awesome classes, typically prefixed with &#8220;fa-&#8221;, to your inline HTML elements (such as <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;i&gt;</span></code>).  As a very simple example, you can add icons to simple lists and menus using code like this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+<span class="hll">        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;lib/font-awesome/css/font-awesome.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
+</span><span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="hll">        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;fa-ul&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-li fa-home&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Home<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-li fa-cog&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Settings<span class="nt">&lt;/li&gt;</span>
+</span>        <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>This produces the following in the browser - note the icon beside each item:</p>
+<img alt="../_images/list-icons-screenshot.png" src="../_images/list-icons-screenshot.png" />
+<p>You can view a complete list of the available icons here:</p>
+<p><a class="reference external" href="http://fortawesome.github.io/Font-Awesome/icons/">http://fortawesome.github.io/Font-Awesome/icons/</a></p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Modern web applications increasingly demand responsive, fluid designs that are clean, intuitive, and easy to use from a variety of devices. Managing the complexity of the CSS stylesheets required to achieve these goals is best done using a pre-processor like Less or Sass. In addition, toolkits like Font Awesome quickly provide well-known icons to textual navigation menus and buttons, improving the overall user experience of your application.</p>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bundling-and-minification.html" class="btn btn-neutral float-right" title="|stub-icon| Bundling and Minification" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="angular.html" class="btn btn-neutral" title="Using Angular for Single Page Applications (SPAs)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

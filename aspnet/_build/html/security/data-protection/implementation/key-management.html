@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Key Management &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Implementation" href="index.html"/>
+        <link rel="next" title="Key Storage Providers" href="key-storage-providers.html"/>
+        <link rel="prev" title="Context headers" href="context-headers.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Implementation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="authenticated-encryption-details.html">Authenticated encryption details.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subkeyderivation.html">Subkey Derivation and Authenticated Encryption</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context-headers.html">Context headers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Key Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-providers.html">Key Storage Providers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-encryption-at-rest.html">Key Encryption At Rest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-immutability.html">Key Immutability and Changing Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-format.html">Key Storage Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="key-storage-ephemeral.html">Ephemeral data protection providers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Implementation</a> &raquo;</li>
+      
+    <li>Key Management</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/implementation/key-management.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="key-management">
+<span id="data-protection-implementation-key-management"></span><h1>Key Management<a class="headerlink" href="#key-management" title="Permalink to this headline">¶</a></h1>
+<p>The data protection system automatically manages the lifetime of master keys used to protect and unprotect payloads. Each key can exist in one of four stages.</p>
+<ul class="simple">
+<li>Created - the key exists in the key ring but has not yet been activated. The key shouldn&#8217;t be used for new Protect operations until sufficient time has elapsed that the key has had a chance to propagate to all machines that are consuming this key ring.</li>
+<li>Active - the key exists in the key ring and should be used for all new Protect operations.</li>
+<li>Expired - the key has run its natural lifetime and should no longer be used for new Protect operations.</li>
+<li>Revoked - the key is compromised and must not be used for new Protect operations.</li>
+</ul>
+<p>Created, active, and expired keys may all be used to unprotect incoming payloads. Revoked keys by default may not be used to unprotect payloads, but the application developer can <a class="reference internal" href="../consumer-apis/dangerous-unprotect.html#data-protection-consumer-apis-dangerous-unprotect"><span>override this behavior</span></a> if necessary.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The developer might be tempted to delete a key from the key ring (e.g., by deleting the corresponding file from the file system). At that point, all data protected by the key is permanently undecipherable, and there is no emergency override like there is with revoked keys. Deleting a key is truly destructive behavior, and consequently the data protection system exposes no first-class API for performing this operation.</p>
+</div>
+<div class="section" id="default-key-selection">
+<h2>Default key selection<a class="headerlink" href="#default-key-selection" title="Permalink to this headline">¶</a></h2>
+<p>When the data protection system reads the key ring from the backing repository, it will attempt to locate a &#8220;default&#8221; key from the key ring. The default key is used for new Protect operations.</p>
+<p>The general heuristic is that the data protection system chooses the key with the most recent activation date as the default key. (There&#8217;s a small fudge factor to allow for server-to-server clock skew.) If the key is expired or revoked, and if the application has not disabled automatic key generation, then a new key will be generated with immediate activation per the <a class="reference internal" href="#data-protection-implementation-key-management-expiration"><span>key expiration and rolling</span></a> policy below.</p>
+<p>The reason the data protection system generates a new key immediately rather than falling back to a different key is that new key generation should be treated as an implicit expiration of all keys that were activated prior to the new key. The general idea is that new keys may have been configured with different algorithms or encryption-at-rest mechanisms than old keys, and the system should prefer the current configuration over falling back.</p>
+<p>There is an exception. If the application developer has <a class="reference internal" href="../configuration/overview.html#data-protection-configuring-disable-automatic-key-generation"><span>disabled automatic key generation</span></a>, then the data protection system must choose something as the default key. In this fallback scenario, the system will choose the non-revoked key with the most recent activation date, with preference given to keys that have had time to propagate to other machines in the cluster. The fallback system may end up choosing an expired default key as a result. The fallback system will never choose a revoked key as the default key, and if the key ring is empty or every key has been revoked then the system will produce an error upon initialization.</p>
+</div>
+<div class="section" id="key-expiration-and-rolling">
+<span id="data-protection-implementation-key-management-expiration"></span><h2>Key expiration and rolling<a class="headerlink" href="#key-expiration-and-rolling" title="Permalink to this headline">¶</a></h2>
+<p>When a key is created, it is automatically given an activation date of { now + 2 days } and an expiration date of { now + 90 days }. The 2-day delay before activation gives the key time to propagate through the system. That is, it allows other applications pointing at the backing store to observe the key at their next auto-refresh period, thus maximizing the chances that when the key ring does become active it has propagated to all applications that might need to use it.</p>
+<p>If the default key will expire within 2 days and if the key ring does not already have a key that will be active upon expiration of the default key, then the data protection system will automatically persist a new key to the key ring. This new key has an activation date of { default key&#8217;s expiration date } and an expiration date of { now + 90 days }. This allows the system to automatically roll keys on a regular basis with no interruption of service.</p>
+<p>There might be circumstances where a key will be created with immediate activation. One example would be when the application hasn&#8217;t run for a time and all keys in the key ring are expired. When this happens, the key is given an activation date of { now } without the normal 2-day activation delay.</p>
+<p>The default key lifetime is 90 days, though this is configurable as in the following example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// use 14-day lifetime instead of 90-day lifetime</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">SetDefaultKeyLifetime</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromDays</span><span class="p">(</span><span class="m">14</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>An administrator can also change the default system-wide, though an explicit call to SetDefaultKeyLifetime will override any system-wide policy. The default key lifetime cannot be shorter than 7 days.</p>
+</div>
+<div class="section" id="automatic-keyring-refresh">
+<h2>Automatic keyring refresh<a class="headerlink" href="#automatic-keyring-refresh" title="Permalink to this headline">¶</a></h2>
+<p>When the data protection system initializes, it reads the key ring from the underlying repository and caches it in memory. This cache allows Protect and Unprotect operations to proceed without hitting the backing store. The system will automatically check the backing store for changes approximately every 24 hours or when the current default key expires, whichever comes first.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Developers should very rarely (if ever) need to use the key management APIs directly. The data protection system will perform automatic key management as described above.</p>
+</div>
+<p>The data protection system exposes an interface IKeyManager that can be used to inspect and make changes to the key ring. The DI system that provided the instance of IDataProtectionProvider can also provide an instance of IKeyManager for your consumption. Alternatively, you can pull the IKeyManager straight from the IServiceProvider as in the example below.</p>
+<p>Any operation which modifies the key ring (creating a new key explicitly or performing a revocation) will invalidate the in-memory cache. The next call to Protect or Unprotect will cause the data protection system to reread the key ring and recreate the cache.</p>
+<p>The sample below demonstrates using the IKeyManager interface to inspect and manipulate the key ring, including revoking existing keys and generating a new key manually.</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></div></td><td class="code"><div class="highlight"><pre>using System;
+using System.IO;
+using System.Threading;
+using Microsoft.AspNet.DataProtection;
+using Microsoft.AspNet.DataProtection.KeyManagement;
+using Microsoft.Framework.DependencyInjection;
+ 
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddDataProtection();
+        serviceCollection.ConfigureDataProtection(configure =&gt;
+        {
+            // point at a specific folder and use DPAPI to encrypt keys
+            configure.PersistKeysToFileSystem(new DirectoryInfo(@&quot;c:\temp-keys&quot;));
+            configure.ProtectKeysWithDpapi();
+        });
+        var services = serviceCollection.BuildServiceProvider();
+ 
+        // perform a protect operation to force the system to put at least
+        // one key in the key ring
+        services.GetDataProtector(&quot;Sample.KeyManager.v1&quot;).Protect(&quot;payload&quot;);
+        Console.WriteLine(&quot;Performed a protect operation.&quot;);
+        Thread.Sleep(2000);
+ 
+        // get a reference to the key manager
+        var keyManager = services.GetService&lt;IKeyManager&gt;();
+ 
+        // list all keys in the key ring
+        var allKeys = keyManager.GetAllKeys();
+        Console.WriteLine($&quot;The key ring contains {allKeys.Count} key(s).&quot;);
+        foreach (var key in allKeys)
+        {
+            Console.WriteLine($&quot;Key {key.KeyId:B}: Created = {key.CreationDate:u}, IsRevoked = {key.IsRevoked}&quot;);
+        }
+ 
+        // revoke all keys in the key ring
+        keyManager.RevokeAllKeys(DateTimeOffset.Now, reason: &quot;Revocation reason here.&quot;);
+        Console.WriteLine(&quot;Revoked all existing keys.&quot;);
+ 
+        // add a new key to the key ring with immediate activation and a 1-month expiration
+        keyManager.CreateNewKey(
+            activationDate: DateTimeOffset.Now,
+            expirationDate: DateTimeOffset.Now.AddMonths(1));
+        Console.WriteLine(&quot;Added a new key.&quot;);
+ 
+        // list all keys in the key ring
+        allKeys = keyManager.GetAllKeys();
+        Console.WriteLine($&quot;The key ring contains {allKeys.Count} key(s).&quot;);
+        foreach (var key in allKeys)
+        {
+            Console.WriteLine($&quot;Key {key.KeyId:B}: Created = {key.CreationDate:u}, IsRevoked = {key.IsRevoked}&quot;);
+        }
+    }
+}
+ 
+/*
+ * SAMPLE OUTPUT
+ *
+ * Performed a protect operation.
+ * The key ring contains 1 key(s).
+ * Key {1b948618-be1f-440b-b204-64ff5a152552}: Created = 2015-03-18 22:20:49Z, IsRevoked = False
+ * Revoked all existing keys.
+ * Added a new key.
+ * The key ring contains 2 key(s).
+ * Key {1b948618-be1f-440b-b204-64ff5a152552}: Created = 2015-03-18 22:20:49Z, IsRevoked = True
+ * Key {2266fc40-e2fb-48c6-8ce2-5fde6b1493f7}: Created = 2015-03-18 22:20:51Z, IsRevoked = False
+ */
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="key-storage">
+<h2>Key storage<a class="headerlink" href="#key-storage" title="Permalink to this headline">¶</a></h2>
+<p>The data protection system has a heuristic whereby it tries to deduce an appropriate key storage location and encryption at rest mechanism automatically. This is also configurable by the app developer. The following documents discuss the in-box implementations of these mechanisms:</p>
+<ul class="simple">
+<li><a class="reference internal" href="key-storage-providers.html#data-protection-implementation-key-storage-providers"><span>In-box key storage providers</span></a></li>
+<li><a class="reference internal" href="key-encryption-at-rest.html#data-protection-implementation-key-encryption-at-rest-providers"><span>In-box key encryption at rest providers</span></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="key-storage-providers.html" class="btn btn-neutral float-right" title="Key Storage Providers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="context-headers.html" class="btn btn-neutral" title="Context headers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

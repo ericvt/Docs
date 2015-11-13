@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with Multiple Environments &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Fundamentals" href="index.html"/>
+        <link rel="next" title="|stub-icon| WebSockets" href="websockets.html"/>
+        <link rel="prev" title="|stub-icon| Managing Application State" href="app-state.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Fundamentals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="startup.html">Application Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http-abstractions.html">|stub-icon| HTTP Abstractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-files.html">Working with Static Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">|stub-icon| File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">|stub-icon| Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency-injection.html">|stub-icon| Dependency Injection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application-insights.html">Application Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app-state.html">|stub-icon| Managing Application State</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Working with Multiple Environments</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="websockets.html">|stub-icon| WebSockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">|stub-icon| Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html">|stub-icon| Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-features.html">Request Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owin.html">OWIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosting.html">|stub-icon| Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Fundamentals</a> &raquo;</li>
+      
+    <li>Working with Multiple Environments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/fundamentals/environments.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="working-with-multiple-environments">
+<h1>Working with Multiple Environments<a class="headerlink" href="#working-with-multiple-environments" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a></p>
+<p>ASP.NET 5 introduces improved support for controlling application behavior across multiple environments, such as development, staging, and production. Environment variables are used to indicate which environment the application is running in, allowing the app to be configured appropriately.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#development-staging-production">Development, Staging, Production</a></li>
+<li><a class="reference internal" href="#determining-the-environment-at-runtime">Determining the environment at runtime</a></li>
+<li><a class="reference internal" href="#startup-conventions">Startup conventions</a></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/aspnet/Docs/tree/master/docs/fundamentals/environments/sample">Browse or download samples on GitHub</a>.</p>
+<div class="section" id="development-staging-production">
+<h2>Development, Staging, Production<a class="headerlink" href="#development-staging-production" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 references a particular <a class="reference external" href="https://github.com/aspnet/Home/wiki/Environment-Variables">environment variable</a>, <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code>, to describe the environment the application is currently running in. This variable can be set to any value you like, but three values are used by convention: <code class="docutils literal"><span class="pre">Development</span></code>, <code class="docutils literal"><span class="pre">Staging</span></code>, and <code class="docutils literal"><span class="pre">Production</span></code>. You will find these values used in the samples and templates provided with ASP.NET 5.</p>
+<p>The current environment setting can be detected programmatically from within ASP.NET 5. In addition, ASP.NET MVC 6 introduces an <a class="reference external" href="http://docs.asp.net/en/latest/mvc/views/tag-helpers/index.html">Environment Tag Helper</a> that allows MVC Views to include certain sections based on the current application environment.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The specified environment name is case insensitive. Whether you set the variable to <code class="docutils literal"><span class="pre">Development</span></code> or <code class="docutils literal"><span class="pre">development</span></code> or <code class="docutils literal"><span class="pre">DEVELOPMENT</span></code> the results will be the same.</p>
+</div>
+<div class="section" id="development">
+<h3>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h3>
+<p>This should be the environment used when developing an application. When using Visual Studio 2015, this setting can be specified in your project&#8217;s debug profiles, such as for IIS Express, shown here:</p>
+<img alt="../_images/project-properties-debug.png" src="../_images/project-properties-debug.png" />
+<p>When you modify the default settings created with the project, your changes are persisted in <em>launchSettings.json</em> in the <code class="docutils literal"><span class="pre">Properties</span></code> folder. After modifying the <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> variable in the <code class="docutils literal"><span class="pre">web</span></code> profile to be set to <code class="docutils literal"><span class="pre">Staging</span></code>, the <code class="docutils literal"><span class="pre">launchSettings.js</span></code> file in our sample project is shown below:</p>
+<div class="literal-block-wrapper container" id="launchsettings-json">
+<div class="code-block-caption"><span class="caption-text">launchSettings.json</span><a class="headerlink" href="#launchsettings-json" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;profiles&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;IIS Express&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;commandName&quot;</span><span class="o">:</span> <span class="s2">&quot;IISExpress&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;launchBrowser&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">&quot;environmentVariables&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">        <span class="s2">&quot;ASPNET_ENV&quot;</span><span class="o">:</span> <span class="s2">&quot;Development&quot;</span>
+</span>      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;web&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;commandName&quot;</span><span class="o">:</span> <span class="s2">&quot;web&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;environmentVariables&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="hll">        <span class="s2">&quot;ASPNET_ENV&quot;</span><span class="o">:</span> <span class="s2">&quot;Staging&quot;</span>
+</span>      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Changes made to project profiles or to <em>launchSettings.json</em> directly will not take effect until the web server being used is restarted.</p>
+</div>
+</div>
+<div class="section" id="staging">
+<h3>Staging<a class="headerlink" href="#staging" title="Permalink to this headline">¶</a></h3>
+<p>By convention, a <code class="docutils literal"><span class="pre">Staging</span></code> environment is a pre-production environment used for final testing before deployment to production. Ideally, its physical characteristics should mirror that of production, so that any issues that may arise in production occur first in the staging environment, where they can be addressed without impact to users.</p>
+</div>
+<div class="section" id="production">
+<h3>Production<a class="headerlink" href="#production" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">Production</span></code> environment is the environment in which the application runs when it is live and being used by end users. This environment should be configured to maximize security, performance, and application robustness. Some common settings that a production environment might have that would differ from development include:</p>
+<ul class="simple">
+<li>Turn on caching</li>
+<li>Ensure all client-side resources are bundled, minified, and potentially served from a CDN</li>
+<li>Turn off diagnostic ErrorPages</li>
+<li>Turn on friendly error pages</li>
+<li>Enable production logging and monitoring (e.g. AppInsights)</li>
+</ul>
+<p>This is by no means meant to be a complete list. It&#8217;s best to avoid scattering environment checks in many parts of your application. Instead, the recommended approach is to perform such checks within the application&#8217;s <code class="docutils literal"><span class="pre">Startup</span></code> class(es) wherever possible</p>
+</div>
+</div>
+<div class="section" id="determining-the-environment-at-runtime">
+<h2>Determining the environment at runtime<a class="headerlink" href="#determining-the-environment-at-runtime" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">IHostingEnvironment</span></code> service provides the core abstraction for working with environments. This service is provided by the ASP.NET hosting layer, and can be injected into your startup logic via <a class="reference internal" href="dependency-injection.html"><em>|stub-icon| Dependency Injection</em></a>. The ASP.NET 5 web site template in Visual Studio uses this approach to load environment-specific configuration files (if present) and to customize the app&#8217;s error handling settings. In both cases, this behavior is achieved by referring to the currently specified environment by calling <code class="docutils literal"><span class="pre">EnvironmentName</span></code> or <code class="docutils literal"><span class="pre">IsEnvironment</span></code> on the instance of <code class="docutils literal"><span class="pre">IHostingEnvironment</span></code> passed into the appropriate method.</p>
+<p>If you need to check whether the application is running in a particular environment, use <code class="docutils literal"><span class="pre">env.IsEnvironment(&quot;environmentname&quot;)</span></code> since it will correctly ignore case (instead of checking if <code class="docutils literal"><span class="pre">env.EnvironmentName</span> <span class="pre">==</span> <span class="pre">&quot;Development&quot;</span></code> for example).</p>
+<p>For example, you can use the following code in you Configure method to setup environment specific error handling:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseBrowserLink</span><span class="p">();</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseDatabaseErrorPage</span><span class="p">(</span><span class="n">DatabaseErrorPageOptions</span><span class="p">.</span><span class="n">ShowAll</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// Add Error handling middleware which catches all application specific errors and</span>
+    <span class="c1">// sends the request to the following path or controller action.</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s">&quot;/Home/Error&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>If the app is running in a <code class="docutils literal"><span class="pre">Development</span></code> environment, then it enables BrowserLink and error pages (which typically should not be run in production). Otherwise, if the app is not running in a development environment, a standard error handling page is configured to be displayed in response to any unhandled exceptions.</p>
+</div>
+<div class="section" id="startup-conventions">
+<h2>Startup conventions<a class="headerlink" href="#startup-conventions" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 supports a convention-based approach to configuring an application&#8217;s startup based on the current environment. You can also programmatically control how your application behaves according to which environment it is in, allowing you to create and manage your own conventions.</p>
+<p>When an ASP.NET 5 application starts, the <code class="docutils literal"><span class="pre">Startup</span></code> class is used to bootstrap the application, load its configuration settings, etc. (<a class="reference internal" href="startup.html"><em>learn more about ASP.NET startup</em></a>). However, if a class exists named <code class="docutils literal"><span class="pre">Startup{EnvironmentName}</span></code>, e.g. <code class="docutils literal"><span class="pre">StartupDevelopment</span></code>, and the <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> environment variable matches that name, then that <code class="docutils literal"><span class="pre">Startup</span></code> class is used instead. Thus, you could configure <code class="docutils literal"><span class="pre">Startup</span></code> for development, but have a separate <code class="docutils literal"><span class="pre">StartupProduction</span></code> that would be used when the app is run in production. Or vice versa.</p>
+<p>The following <code class="docutils literal"><span class="pre">StartupDevelopment</span></code> file from this article&#8217;s sample project is run when the application is set to run in a Development environment:</p>
+<div class="literal-block-wrapper container" id="startupdevelopment-cs">
+<div class="code-block-caption"><span class="caption-text">StartupDevelopment.cs</span><a class="headerlink" href="#startupdevelopment-cs" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.AspNet.Builder</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Environments</span>
+<span class="p">{</span>
+<span class="hll">    <span class="k">public</span> <span class="k">class</span> <span class="nc">StartupDevelopment</span>
+</span>    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">app</span><span class="p">.</span><span class="n">UseWelcomePage</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Run the application in development, and a welcome screen is displayed. The sample also includes a <code class="docutils literal"><span class="pre">StartupStaging</span></code> class:</p>
+<div class="literal-block-wrapper container" id="startupstaging-cs">
+<div class="code-block-caption"><span class="caption-text">StartupStaging.cs</span><a class="headerlink" href="#startupstaging-cs" title="Permalink to this code">¶</a></div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">using</span> <span class="nn">Microsoft.AspNet.Builder</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNet.Http</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Environments</span>
+<span class="p">{</span>
+<span class="hll">    <span class="k">public</span> <span class="k">class</span> <span class="nc">StartupStaging</span>
+</span>    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">async</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&quot;text/plain&quot;</span><span class="p">;</span>
+                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Staging environment.&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>When the application is run with <code class="docutils literal"><span class="pre">ASPNET_ENV</span></code> set to <code class="docutils literal"><span class="pre">Staging</span></code>, this <code class="docutils literal"><span class="pre">Startup</span></code> class is used, and the application will simply display a string stating it&#8217;s running in a staging environment. The application&#8217;s default <code class="docutils literal"><span class="pre">Startup</span></code> class will only run when the environment is not set to either <code class="docutils literal"><span class="pre">Development</span></code> or <code class="docutils literal"><span class="pre">Staging</span></code> (presumably, this would be when it is set to <code class="docutils literal"><span class="pre">Production</span></code>, but you&#8217;re not limited to only these three options. Also note that if no environment is set, the default <code class="docutils literal"><span class="pre">Startup</span></code> will run).</p>
+<p>In addition to using an entirely separate <code class="docutils literal"><span class="pre">Startup</span></code> class based on the current environment, you can also make adjustments to how the application is configured within a <code class="docutils literal"><span class="pre">Startup</span></code> class. The <code class="docutils literal"><span class="pre">Configure()</span></code> and <code class="docutils literal"><span class="pre">ConfigureServices()</span></code> methods support environment-specific versions similar to the <code class="docutils literal"><span class="pre">Startup</span></code> class itself, of the form <code class="docutils literal"><span class="pre">Configure[Environment]()</span></code> and <code class="docutils literal"><span class="pre">Configure[Environment]Services()</span></code>. If you define a method <code class="docutils literal"><span class="pre">ConfigureDevelopment()</span></code> it will be called instead of <code class="docutils literal"><span class="pre">Configure()</span></code> when the environment is set to development. Likewise, <code class="docutils literal"><span class="pre">ConfigureDevelopmentServices()</span></code> would be called instead of <code class="docutils literal"><span class="pre">ConfigureServices()</span></code> in the same environment.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 provides a number of features and conventions that allow developers to easily control how their applications behave in different environments. When publishing an application from development to staging to production, environment variables set appropriately for the environment allow for optimization of the application for debugging, testing, or production use, as appropriate.</p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="configuration.html"><em>Configuration</em></a></li>
+</ul>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="websockets.html" class="btn btn-neutral float-right" title="|stub-icon| WebSockets" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app-state.html" class="btn btn-neutral" title="|stub-icon| Managing Application State" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Your First ASP.NET 5 Application on a Mac &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Tutorials" href="index.html"/>
+        <link rel="next" title="|stub-icon| Create a New NuGet Package with DNX" href="../dnx/create-package.html"/>
+        <link rel="prev" title="Your First ASP.NET 5 Application Using Visual Studio" href="your-first-aspnet-application.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="your-first-aspnet-application.html">Your First ASP.NET 5 Application Using Visual Studio</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Your First ASP.NET 5 Application on a Mac</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dnx/create-package.html">|stub-icon| Create a New NuGet Package with DNX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-to-azure-webapp-using-vs.html">Publish to an Azure Web App using Visual Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nano-server.html">|stub-icon| ASP.NET 5 on Nano Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="azure-service-fabric.html">|stub-icon| ASP.NET 5 on Azure Service Fabric</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+      
+    <li>Your First ASP.NET 5 Application on a Mac</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tutorials/your-first-mac-aspnet.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="your-first-asp-net-5-application-on-a-mac">
+<h1>Your First ASP.NET 5 Application on a Mac<a class="headerlink" href="#your-first-asp-net-5-application-on-a-mac" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://blog.falafel.com/author/steve-smith/">Steve Smith</a>, <a class="reference external" href="https://github.com/danroth27">Daniel Roth</a></p>
+<p>ASP.NET 5 is cross-platform and can be developed and run on Mac OS X as well as Linux and Windows. See how you can quickly install, scaffold, run, debug, and deploy ASP.NET applications on a Mac.</p>
+<dl class="docutils">
+<dt>In this article:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#setting-up-your-development-environment">Setting Up Your Development Environment</a></li>
+<li><a class="reference internal" href="#scaffolding-applications-using-yeoman">Scaffolding Applications Using Yeoman</a></li>
+<li><a class="reference internal" href="#developing-asp-net-applications-on-a-mac-with-visual-studio-code">Developing ASP.NET Applications on a Mac With Visual Studio Code</a></li>
+<li><a class="reference internal" href="#running-locally-using-kestrel">Running Locally Using Kestrel</a></li>
+<li><a class="reference internal" href="#publishing-to-azure">Publishing to Azure</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="setting-up-your-development-environment">
+<h2>Setting Up Your Development Environment<a class="headerlink" href="#setting-up-your-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>First, make sure you have <a class="reference internal" href="../getting-started/installing-on-mac.html"><em>installed ASP.NET on your Mac OS X machine</em></a>. This step will include installing the .NET Execution Environment (DNX) and the .NET Version Manager (DNVM). You can check which DNX version you have active by running <code class="docutils literal"><span class="pre">dnvm</span> <span class="pre">list</span></code>.</p>
+</div>
+<div class="section" id="scaffolding-applications-using-yeoman">
+<h2>Scaffolding Applications Using Yeoman<a class="headerlink" href="#scaffolding-applications-using-yeoman" title="Permalink to this headline">¶</a></h2>
+<p>You can quickly scaffold a new ASP.NET 5 or DNX application on a Mac using <a class="reference internal" href="../client-side/yeoman.html"><em>Yeoman</em></a>.</p>
+<p>First install Yeoman by following the <a class="reference external" href="http://yeoman.io/learning/index.html">instructions</a> on the Yeoman site.</p>
+<p>Install the <a class="reference external" href="https://github.com/omnisharp/generator-aspnet">OmniSharp ASP.NET generators</a> by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>npm install -g generator-aspnet
+</pre></div>
+</div>
+<p>Create a folder for your solution and then add an <code class="docutils literal"><span class="pre">src</span></code> subfolder for your project source code.</p>
+<p>In your solution folder add a global.json file to indicate the DNX version:</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;sdk&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta7&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>From your <code class="docutils literal"><span class="pre">src</span></code> folder run the aspnet generator:</p>
+<div class="highlight-python"><div class="highlight"><pre>yo aspnet
+</pre></div>
+</div>
+<p>For the purposes of this tutorial select <cite>Empty Application</cite> to create an empty ASP.NET 5 app.</p>
+<img alt="../_images/yo-aspnet.png" src="../_images/yo-aspnet.png" />
+</div>
+<div class="section" id="developing-asp-net-applications-on-a-mac-with-visual-studio-code">
+<h2>Developing ASP.NET Applications on a Mac With Visual Studio Code<a class="headerlink" href="#developing-asp-net-applications-on-a-mac-with-visual-studio-code" title="Permalink to this headline">¶</a></h2>
+<p>Now, install Visual Studio Code from <a class="reference external" href="https://code.visualstudio.com">https://code.visualstudio.com</a>. The first time you run Visual Studio Code should see a welcome screen:</p>
+<img alt="../_images/vscode-welcome.png" src="../_images/vscode-welcome.png" />
+<p>To get started with your first ASP.NET application on a Mac, select File -&gt; Open and choose the folder with your ASP.NET application.</p>
+<img alt="../_images/file-open.png" src="../_images/file-open.png" />
+<p>Visual Studio Code may detect that you need to restore dependencies, as shown in this screenshot:</p>
+<img alt="../_images/vscode-restore.png" src="../_images/vscode-restore.png" />
+<p>From a Terminal / bash prompt, run <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span></code> to restore the project&#8217;s dependencies. Alternately, you can press <code class="docutils literal"><span class="pre">command</span> <span class="pre">shift</span> <span class="pre">p</span></code> and then type <code class="docutils literal"><span class="pre">&gt;d</span></code> as shown:</p>
+<img alt="../_images/vscode-commands.png" src="../_images/vscode-commands.png" />
+<p>This will allow you to run commands directly from within Visual Studio Code, including <code class="docutils literal"><span class="pre">dnu</span> <span class="pre">restore</span></code> and any commands defined in <code class="docutils literal"><span class="pre">project.json</span></code>.</p>
+<p>At this point, you should be able to host and browse to this simple ASP.NET web application, which we&#8217;ll see in a moment.</p>
+<p>This empty project template simply displays &#8220;Hello World!&#8221;. Open <code class="docutils literal"><span class="pre">Startup.cs</span></code> in Visual Studio Code to see how this is configured:</p>
+<img alt="../_images/vscode-startupcs.png" src="../_images/vscode-startupcs.png" />
+<p>If this is your first time using Visual Studio Code (or just <em>Code</em> for short), note that it provides a very streamlined, fast, clean interface for quickly working with files, while still providing tooling to make writing code extremely productive.</p>
+<dl class="docutils">
+<dt>In the left navigation bar, there are four icons, representing four viewlets:</dt>
+<dd><ul class="first last simple">
+<li>Explore</li>
+<li>Search</li>
+<li>Git</li>
+<li>Debug</li>
+</ul>
+</dd>
+</dl>
+<p>The Explore viewlet allows you to quickly navigate within the folder system, as well as easily see the files you are currently working with. It displays a badge to indicate whether any files have unsaved changes, and new folders and files can easily be created (without having to open a separate dialog window). You can easily Save All from a menu option that appears on mouse over, as well.</p>
+<p>The Search viewlet allows you to quickly search within the folder structure, searching filenames as well as contents.</p>
+<p><em>Code</em> will integrate with Git if it is installed on your system. You can easily initialize a new repository, make commits, and push changes from the Git viewlet.</p>
+<img alt="../_images/vscode-git.png" src="../_images/vscode-git.png" />
+<p>The Debug viewlet supports interactive debugging of applications. Currently only node.js and mono applications are supported by the interactive debugger.</p>
+<p>Finally, Code&#8217;s editor has a ton of great features. You should note right away that several using statements are underlined, because Code has determined they are not necessary. Note that classes and methods also display how many references there are in the project to them. If you&#8217;re coming from Visual Studio, Code includes many of the keyboard shortcuts you&#8217;re used to, such as <code class="docutils literal"><span class="pre">command</span> <span class="pre">k</span> <span class="pre">c</span></code> to comment a block of code, and <code class="docutils literal"><span class="pre">command</span> <span class="pre">k</span> <span class="pre">u</span></code> to uncomment.</p>
+</div>
+<div class="section" id="running-locally-using-kestrel">
+<h2>Running Locally Using Kestrel<a class="headerlink" href="#running-locally-using-kestrel" title="Permalink to this headline">¶</a></h2>
+<p>The sample we&#8217;re using is configured to use Kestrel as its web server. You can see it configured in the <code class="docutils literal"><span class="pre">project.json</span></code> file, where it is specified as a dependency and as a command.</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre>{
+  &quot;webroot&quot;: &quot;wwwroot&quot;,
+  &quot;version&quot;: &quot;1.0.0-*&quot;,
+
+  &quot;dependencies&quot;: {
+    &quot;Microsoft.AspNet.Server.IIS&quot;: &quot;1.0.0-beta7&quot;,
+    &quot;Microsoft.AspNet.Server.WebListener&quot;: &quot;1.0.0-beta7&quot;,
+<span class="hll">    &quot;Microsoft.AspNet.Server.Kestrel&quot;: &quot;1.0.0-beta7&quot;
+</span>  },
+
+  &quot;commands&quot;: {
+<span class="hll">    &quot;kestrel&quot;: &quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini&quot;,
+</span>    &quot;web&quot;: &quot;Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --config hosting.ini&quot;
+  },
+  // more deleted
+}
+</pre></div>
+</td></tr></table></div>
+<p>Run the <code class="docutils literal"><span class="pre">dnx</span> <span class="pre">.</span> <span class="pre">kestrel</span></code> command to launch the web application locally:</p>
+<img alt="../_images/dnx-kestrel.png" src="../_images/dnx-kestrel.png" />
+<p>Navigate to <code class="docutils literal"><span class="pre">localhost:5000</span></code> (as specified in <code class="docutils literal"><span class="pre">hosting.ini</span></code>) and you should see:</p>
+<img alt="../_images/hello-world.png" src="../_images/hello-world.png" />
+<p>To stop the web server once you&#8217;ve started it simply press <code class="docutils literal"><span class="pre">Ctrl+C</span></code>.</p>
+<p>We can update the application to output information to the console whenever a request is received. Update the <code class="docutils literal"><span class="pre">Configure</span></code> method as follows:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Request for &quot;</span> <span class="p">+</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Path</span><span class="p">);</span>
+</span>        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Save the file and restart the web server. Make a few requests to the URL. You should see the request information output in the Terminal window (recall that most browsers will automatically attempt to request a <code class="docutils literal"><span class="pre">favicon.ico</span></code> file when making a request to a new domain):</p>
+<img alt="../_images/kestrel-logging.png" src="../_images/kestrel-logging.png" />
+<p>As you can see, it&#8217;s quite straightforward, especially if you&#8217;re already familiar with command line tooling, to get started building ASP.NET applications using Visual Studio Code on Mac OS X.</p>
+</div>
+<div class="section" id="publishing-to-azure">
+<h2>Publishing to Azure<a class="headerlink" href="#publishing-to-azure" title="Permalink to this headline">¶</a></h2>
+<p>Once you&#8217;ve developed your application, you can easily use the Git integration built into Visual Studio Code to push updates to production, hosted on <a class="reference external" href="http://azure.microsoft.com">Microsoft Azure</a>.</p>
+<div class="section" id="initialize-git">
+<h3>Initialize Git<a class="headerlink" href="#initialize-git" title="Permalink to this headline">¶</a></h3>
+<p>First, if you haven&#8217;t already done so, initialize Git in the folder you&#8217;re working in. Simply click on the Git viewlet and click the <code class="docutils literal"><span class="pre">Initialize</span> <span class="pre">Git</span> <span class="pre">repository</span></code> button.</p>
+<img alt="../_images/vscode-git-commit.png" src="../_images/vscode-git-commit.png" />
+<p>Add a commit message as shown in the image above, and press enter or click the checkmark icon to commit the staged files. Now Git is tracking changes, so if you make an update to a file, the Git viewlet will display how many files have changed since your last commit.</p>
+</div>
+<div class="section" id="initialize-azure-website">
+<h3>Initialize Azure Website<a class="headerlink" href="#initialize-azure-website" title="Permalink to this headline">¶</a></h3>
+<p>You can deploy to Azure Web Apps directly using Git. Azure also supports other publishing workflows, but being able to simply perform a <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code> to a remote can be a very convenient way to make updates.</p>
+<p>First, <a class="reference external" href="https://tryappservice.azure.com/">create a new Web App</a> in Azure. If you don&#8217;t have an Azure account, you can <a class="reference external" href="http://azure.microsoft.com/en-us/pricing/free-trial/">create a free trial</a>.</p>
+<p>Next, configure the Web App in Azure to support <a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/">continuous deployment using Git</a>.</p>
+<p>Note the Git URL for the Web App from the Azure portal:</p>
+<img alt="../_images/azure-portal.png" src="../_images/azure-portal.png" />
+<p>In a Terminal window, add a remote named <code class="docutils literal"><span class="pre">azure</span></code> with the Git URL you noted previously, and then perform <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">azure</span> <span class="pre">master</span></code> to deploy. You should see output similar to the following:</p>
+<img alt="../_images/git-push-azure-master.png" src="../_images/git-push-azure-master.png" />
+<p>Now you can browse to your Web App and you should see your newly deployed application.</p>
+<img alt="../_images/azure-hello-world.png" src="../_images/azure-hello-world.png" />
+<p>At this point, you can make additional changes to the application, commit them, and whenever you&#8217;re ready to deploy, simply perform another <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">azure</span> <span class="pre">master</span></code> from a Terminal prompt. To demonstrate, let&#8217;s update the message being printed:</p>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Request for &quot;</span> <span class="p">+</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Path</span><span class="p">);</span>
+<span class="hll">        <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">WriteAsync</span><span class="p">(</span><span class="s">&quot;Hello Azure from ASP.NET 5 and Visual Studio Code!&quot;</span><span class="p">);</span>
+</span>    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Save the changes. Commit them using the git viewlet. Run <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">azure</span> <span class="pre">master</span></code> from a Terminal prompt, once more. Then refresh your browser:</p>
+<img alt="../_images/azure-hello-from-vscode.png" src="../_images/azure-hello-from-vscode.png" />
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>ASP.NET 5 and DNX support installation on Mac OS X. Developers can quickly install the necessary tools to get started, including Yeoman for app scaffolding and <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> for rapid lightweight editing with built-in support for debugging, Git integration, and IntelliSense.</p>
+</div>
+<div class="section" id="additional-reading">
+<h2>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a></li>
+<li><a class="reference internal" href="../client-side/yeoman.html"><em>Building Projects with Yeoman</em></a></li>
+<li><a class="reference internal" href="../fundamentals/index.html"><em>ASP.NET Fundamentals</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dnx/create-package.html" class="btn btn-neutral float-right" title="|stub-icon| Create a New NuGet Package with DNX" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="your-first-aspnet-application.html" class="btn btn-neutral" title="Your First ASP.NET 5 Application Using Visual Studio" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

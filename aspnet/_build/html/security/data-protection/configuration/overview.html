@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuring Data Protection &mdash; ASP.NET 0.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/custom.css?v=1" type="text/css" />
+  
+
+  
+    <link rel="top" title="ASP.NET 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Configuration" href="index.html"/>
+        <link rel="next" title="Default Settings" href="default-settings.html"/>
+        <link rel="prev" title="Configuration" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ASP.NET
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual-overview/index.html">Conceptual Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/index.html">Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dnx/index.html">.NET Execution Environment (DNX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frameworks/index.html">Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data/index.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publishing/index.html">Publishing and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-side/index.html">Client-Side Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mobile/index.html">Mobile</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sociallogins.html">Enabling authentication using external providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accconfirm.html">Account Confirmation and Password Recovery with ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2fa.html">Two-factor authentication with SMS using ASP.NET Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../authorization/index.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Data Protection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using-data-protection.html">Getting Started with the Data Protection APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../consumer-apis/index.html">Consumer APIs</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Configuring Data Protection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="default-settings.html">Default Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="machine-wide-policy.html">Machine Wide Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="non-di-scenarios.html">Non DI Aware Scenarios</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../extensibility/index.html">Extensibility APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation/index.html">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compatibility/index.html">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../app-secrets.html">Safe Storage of Application Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anti-request-forgery.html">|stub-icon| Anti-Request Forgery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-redirect.html">|stub-icon| Preventing Open Redirect Attacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cross-site-scripting.html">|stub-icon| Preventing Cross-Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cors.html">Enabling Cross-Origin Requests (CORS)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../performance/index.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migration/index.html">Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ASP.NET</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Security</a> &raquo;</li>
+      
+          <li><a href="../index.html">Data Protection</a> &raquo;</li>
+      
+          <li><a href="index.html">Configuration</a> &raquo;</li>
+      
+    <li>Configuring Data Protection</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/security/data-protection/configuration/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+  <div class="section" id="configuring-data-protection">
+<h1>Configuring Data Protection<a class="headerlink" href="#configuring-data-protection" title="Permalink to this headline">¶</a></h1>
+<p>When the data protection system is initialized it applies some <a class="reference internal" href="default-settings.html#data-protection-default-settings"><span>default settings</span></a> based on the operational environment. These settings are generally good for applications running on a single machine. There are some cases where a developer may want to change these (perhaps because his application is spread across multiple machines or for compliance reasons), and for these scenarios the data protection system offers a rich configuration API.</p>
+<p id="data-protection-configuration-callback">There is an extension method ConfigureDataProtection hanging off of IServiceCollection. This method takes a callback, and the parameter passed to the callback object allows configuration of the system. For instance, to store keys at a UNC share instead of %LOCALAPPDATA% (the default), configure the system as follows:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddDataProtection</span><span class="p">();</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">configure</span><span class="p">.</span><span class="n">PersistKeysToFileSystem</span><span class="p">(</span><span class="k">new</span> <span class="n">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;\\server\share\directory\&quot;</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you change the key persistence location, the system will no longer automatically encrypt keys at rest since it doesn&#8217;t know whether DPAPI is an appropriate encryption mechanism.</p>
+</div>
+<p id="configuring-x509-certificate">You can configure the system to protect keys at rest by calling any of the ProtectKeysWith* configuration APIs. Consider the example below, which stores keys at a UNC share and encrypts those keys at rest with a specific X.509 certificate.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">services</span><span class="p">.</span><span class="n">AddDataProtection</span><span class="p">();</span>
+<span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+        <span class="n">configure</span><span class="p">.</span><span class="n">PersistKeysToFileSystem</span><span class="p">(</span><span class="k">new</span> <span class="n">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;\\server\share\directory\&quot;</span><span class="p">));</span>
+        <span class="n">configure</span><span class="p">.</span><span class="n">ProtectKeysWithCertificate</span><span class="p">(</span><span class="s">&quot;thumbprint&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../implementation/key-encryption-at-rest.html#data-protection-implementation-key-encryption-at-rest"><span>key encryption at rest</span></a> for more examples and for discussion on the built-in key encryption mechanisms.</p>
+<p>To configure the system to use a default key lifetime of 14 days instead of 90 days, consider the following example:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddDataProtection</span><span class="p">();</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">configure</span><span class="p">.</span><span class="n">SetDefaultKeyLifetime</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromDays</span><span class="p">(</span><span class="m">14</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>By default the data protection system isolates applications from one another, even if they&#8217;re sharing the same physical key repository. This prevents the applications from understanding each other&#8217;s protected payloads. To share protected payloads between two different applications, configure the system passing in the same application name for both applications as in the below example:</p>
+<div class="highlight-c#" id="data-protection-code-sample-application-name"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">AddDataProtection</span><span class="p">();</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">configure</span><span class="p">.</span><span class="n">SetApplicationName</span><span class="p">(</span><span class="s">&quot;my application&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p id="data-protection-configuring-disable-automatic-key-generation">Finally, you may have a scenario where you do not want an application to automatically roll keys as they approach expiration. One example of this might be applications set up in a primary / secondary relationship, where only the primary application is responsible for key management concerns, and all secondary applications simply have a read-only view of the key ring. The secondary applications can be configured to treat the key ring as read-only by configuring the system as below:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">services</span><span class="p">.</span><span class="n">AddDataProtection</span><span class="p">();</span>
+  <span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+      <span class="n">configure</span><span class="p">.</span><span class="n">DisableAutomaticKeyGeneration</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="per-application-isolation">
+<span id="data-protection-configuration-per-app-isolation"></span><h2>Per-application isolation<a class="headerlink" href="#per-application-isolation" title="Permalink to this headline">¶</a></h2>
+<p>When the data protection system is provided by an ASP.NET host, it will automatically isolate applications from one another, even if those applications are running under the same worker process account and are using the same master keying material. This is somewhat similar to the IsolateApps modifier from System.Web&#8217;s &lt;machineKey&gt; element.</p>
+<p>The isolation mechanism works by considering each application on the local machine as a unique tenant, thus the IDataProtector rooted for any given application automatically includes the application ID as a discriminator. The application&#8217;s unique ID comes from one of two places.</p>
+<ol class="arabic simple">
+<li>If the application is hosted in IIS, the unique identifier is the application&#8217;s configuration path. If an application is deployed in a farm environment, this value should be stable assuming that the IIS environments are configured similarly across all machines in the farm.</li>
+<li>If the application is not hosted in IIS, the unique identifier is the physical path of the application.</li>
+</ol>
+<p>The unique identifier is designed to survive resets - both of the individual application and of the machine itself.</p>
+<p>This isolation mechanism assumes that the applications are not malicious. A malicious application can always impact any other application running under the same worker process account. In a shared hosting environment where applications are mutually untrusted, the hosting provider should take steps to ensure OS-level isolation between applications, including separating the applications&#8217; underlying key repositories.</p>
+<p>If the data protection system is not provided by an ASP.NET host (e.g., if the developer instantiates it himself via the DataProtectionProvider concrete type), application isolation is disabled by default, and all applications backed by the same keying material can share payloads as long as they provide the appropriate purposes. To provide application isolation in this environment, call the SetApplicationName method on the configuration object, see the <a class="reference internal" href="#data-protection-code-sample-application-name"><span>code sample</span></a> above.</p>
+</div>
+<div class="section" id="changing-algorithms">
+<span id="data-protection-changing-algorithms"></span><h2>Changing algorithms<a class="headerlink" href="#changing-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>The data protection stack allows changing the default algorithm used by newly-generated keys. The simplest way to do this is to call UseCryptographicAlgorithms from the configuration callback, as in the below example.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">UseCryptographicAlgorithms</span><span class="p">(</span><span class="k">new</span> <span class="n">AuthenticatedEncryptionOptions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">EncryptionAlgorithm</span> <span class="p">=</span> <span class="n">EncryptionAlgorithm</span><span class="p">.</span><span class="n">AES_256_CBC</span><span class="p">,</span>
+        <span class="n">ValidationAlgorithm</span> <span class="p">=</span> <span class="n">ValidationAlgorithm</span><span class="p">.</span><span class="n">HMACSHA256</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The default EncryptionAlgorithm and ValidationAlgorithm are AES-256-CBC and HMACSHA256, respectively. The default policy can be set by a system administrator via <a class="reference internal" href="machine-wide-policy.html"><em>Machine Wide Policy</em></a>, but an explicit call to UseCryptographicAlgorithms will override the default policy.</p>
+<p>Calling UseCryptographicAlgorithms will allow the developer to specify the desired algorithm (from a predefined built-in list), and the developer does not need to worry about the implementation of the algorithm. For instance, in the scenario above the data protection system will attempt to use the CNG implementation of AES if running on Windows, otherwise it will fall back to the managed System.Security.Cryptography.Aes class.</p>
+<p>The developer can manually specify an implementation if desired via a call to UseCustomCryptographicAlgorithms, as show in the below examples.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Changing algorithms does not affect existing keys in the key ring. It only affects newly-generated keys.</p>
+</div>
+<div class="section" id="specifying-custom-managed-algorithms">
+<span id="data-protection-changing-algorithms-custom-managed"></span><h3>Specifying custom managed algorithms<a class="headerlink" href="#specifying-custom-managed-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>To specify custom managed algorithms, create a ManagedAuthenticatedEncryptionOptions instance that points to the implementation types.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">UseCustomCryptographicAlgorithms</span><span class="p">(</span><span class="k">new</span> <span class="n">ManagedAuthenticatedEncryptionOptions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// a type that subclasses SymmetricAlgorithm</span>
+        <span class="n">EncryptionAlgorithmType</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Aes</span><span class="p">),</span>
+
+        <span class="c1">// specified in bits</span>
+        <span class="n">EncryptionAlgorithmKeySize</span> <span class="p">=</span> <span class="m">256</span><span class="p">,</span>
+
+        <span class="c1">// a type that subclasses KeyedHashAlgorithm</span>
+        <span class="n">ValidationAlgorithmType</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">HMACSHA256</span><span class="p">)</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Generally the *Type properties must point to concrete, instantiable (via a public parameterless ctor) implementations of SymmetricAlgorithm and KeyedHashAlgorithm, though the system special-cases some values like typeof(Aes) for convenience.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The SymmetricAlgorithm must have a key length of ≥ 128 bits and a block size of ≥ 64 bits, and it must support CBC-mode encryption with PKCS #7 padding. The KeyedHashAlgorithm must have a digest size of &gt;= 128 bits, and it must support keys of length equal to the hash algorithm&#8217;s digest length. The KeyedHashAlgorithm is not strictly required to be HMAC.</p>
+</div>
+</div>
+<div class="section" id="specifying-custom-windows-cng-algorithms">
+<span id="data-protection-changing-algorithms-cng"></span><h3>Specifying custom Windows CNG algorithms<a class="headerlink" href="#specifying-custom-windows-cng-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>To specify a custom Windows CNG algorithm using CBC-mode encryption + HMAC validation, create a CngCbcAuthenticatedEncryptionOptions instance that contains the algorithmic information.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">UseCustomCryptographicAlgorithms</span><span class="p">(</span><span class="k">new</span> <span class="n">CngCbcAuthenticatedEncryptionOptions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// passed to BCryptOpenAlgorithmProvider</span>
+        <span class="n">EncryptionAlgorithm</span> <span class="p">=</span> <span class="s">&quot;AES&quot;</span><span class="p">,</span>
+        <span class="n">EncryptionAlgorithmProvider</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+
+        <span class="c1">// specified in bits</span>
+        <span class="n">EncryptionAlgorithmKeySize</span> <span class="p">=</span> <span class="m">256</span><span class="p">,</span>
+
+        <span class="c1">// passed to BCryptOpenAlgorithmProvider</span>
+        <span class="n">HashAlgorithm</span> <span class="p">=</span> <span class="s">&quot;SHA256&quot;</span><span class="p">,</span>
+        <span class="n">HashAlgorithmProvider</span> <span class="p">=</span> <span class="k">null</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The symmetric block cipher algorithm must have a key length of ≥ 128 bits and a block size of ≥ 64 bits, and it must support CBC-mode encryption with PKCS #7 padding. The hash algorithm must have a digest size of &gt;= 128 bits and must support being opened with the BCRYPT_ALG_HANDLE_HMAC_FLAG flag. The *Provider properties can be set to null to use the default provider for the specified algorithm. See the <a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa375479(v=vs.85).aspx">BCryptOpenAlgorithmProvider</a> documentation for more information.</p>
+</div>
+<p>To specify a custom Windows CNG algorithm using Galois/Counter Mode encryption + validation, create a CngGcmAuthenticatedEncryptionOptions instance that contains the algorithmic information.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="n">services</span><span class="p">.</span><span class="n">ConfigureDataProtection</span><span class="p">(</span><span class="n">configure</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">configure</span><span class="p">.</span><span class="n">UseCustomCryptographicAlgorithms</span><span class="p">(</span><span class="k">new</span> <span class="n">CngGcmAuthenticatedEncryptionOptions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// passed to BCryptOpenAlgorithmProvider</span>
+        <span class="n">EncryptionAlgorithm</span> <span class="p">=</span> <span class="s">&quot;AES&quot;</span><span class="p">,</span>
+        <span class="n">EncryptionAlgorithmProvider</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+
+        <span class="c1">// specified in bits</span>
+        <span class="n">EncryptionAlgorithmKeySize</span> <span class="p">=</span> <span class="m">256</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The symmetric block cipher algorithm must have a key length of ≥ 128 bits and a block size of exactly 128 bits, and it must support GCM encryption. The EncryptionAlgorithmProvider property can be set to null to use the default provider for the specified algorithm. See the <a class="reference external" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa375479(v=vs.85).aspx">BCryptOpenAlgorithmProvider</a> documentation for more information.</p>
+</div>
+</div>
+<div class="section" id="specifying-other-custom-algorithms">
+<h3>Specifying other custom algorithms<a class="headerlink" href="#specifying-other-custom-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Though not exposed as a first-class API, the data protection system is extensible enough to allow specifying almost any kind of algorithm. For example, it is possible to keep all keys contained within an HSM and to provide a custom implementation of the core encryption and decryption routines. See IAuthenticatedEncryptorConfiguration in the core cryptography extensibility section for more information.</p>
+</div>
+<div class="section" id="see-also">
+<h3>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="non-di-scenarios.html"><em>Non DI Aware Scenarios</em></a></p>
+<p><a class="reference internal" href="machine-wide-policy.html"><em>Machine Wide Policy</em></a></p>
+</div>
+</div>
+</div>
+
+
+
+  <!-- Helpfulness -->
+  <div id="helpful-position"></div>
+  <div id="helpful" class="helpfulness-container fixed" style="display:none;">
+    <div class="helpfulness">
+      <div class="helpfulness-form">
+        <h2>Was this page helpful?</h2>
+        <span>Your feedback about this content is important. Let us know what you think.</span>
+        <a id="helpfulness-btn-yes" href="javascript:;" class="common-btn first">Yes</a>
+        <a id="helpfulness-btn-no" href="javascript:;" class="common-btn">No</a>
+      </div>
+      <div class="helpfulness-form-no" style="display:none;">
+        <h2>Was this page helpful?</h2>
+        Sorry this wasn't helpful.
+        <input type="text" id="txt-helpfulness" placeholder="Please let us know why this wasn't helpful">
+        <span id="helpfulness-characters-left">characters remaining</span>
+        <a id="helpfulness-btn-submit" href="javascript:;" class="common-btn">Submit</a>
+        <a id="helpfulness-btn-skip" href="javascript:;" class="common-btn secondary">Skip this</a>
+      </div>
+      <a href="javascript:;" class="helpfulness-close">✖</a>
+      <div class="messages processing" style="display:none;">
+        Sending feedback...
+      </div>
+      <div class="messages success" style="display:none;">
+        Thank you for your feedback!
+      </div>
+      <div class="messages error" style="display:none;">
+        Error during submission!
+      </div>
+    </div>
+  </div>
+
+  <!-- wedc -->
+  <noscript>
+    <img alt="" width="1" height="1" src="https://c.microsoft.com/trans_pixel.aspx"/>
+  </noscript>
+
+  
+  <!-- disqus commenting disabled; set disqus_shortname -->
+  
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="default-settings.html" class="btn btn-neutral float-right" title="Default Settings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft.
+      Last updated on Nov 12, 2015.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
